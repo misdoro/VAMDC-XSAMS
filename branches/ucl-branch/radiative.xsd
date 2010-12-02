@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by B. Kergudu (Kergudu) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="./typesAttributes.xsd"/>
+	<xs:element name="Radiative" type="RadiativeType">
+		<xs:annotation>
+			<xs:documentation>Radiative transitions (both emission and absorption)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="RadiativeType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="RadiativeTransition" type="RadiativeTransitionType" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Description of a specific radiative transition</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RadiativeTransitionType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="EnergyWavelength" type="EnergyWavelengthType">
+						<xs:annotation>
+							<xs:documentation>List of energy/spectrum parameters</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="InitialStateRef" type="StateRef" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Reference to the initial state</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="FinalStateRef" type="StateRef" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Reference to the final state</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Probability" type="RadiativeTransitionProbabilityType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Radiative transition probability and related parameters</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RadiativeTransitionProbabilityType">
+		<xs:annotation>
+			<xs:documentation>spontaneous transition probability, or Einstein coefficient</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="TransitionProbabilityA" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Transition probability (Einstein coefficient)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="OscillatorStrength" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Oscillator strength</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LineStrength" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Line strength</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="WeightedOscillatorStrength" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Weighted oscillator strength</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Log10WeightedOscillatorStrength" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Log10 of the weighted oscillator strength</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="IdealisedIntensity" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Line intensity for some specific conditions.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Multipole" type="MultipoleType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Transition multipole type. Example: E2</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WavelengthWavenumberType">
+		<xs:annotation>
+			<xs:documentation>Complex type for observed, Ritz, or calculated wavelengths/wavenumbers.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="Ritz" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Calculated from the difference of experimental energy levels</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Experimental" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Experimentally measured</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Theoretical" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Calculated (theory)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="EnergyWavelengthType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="Wavenumber" type="WavelengthWavenumberType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Transition wavenumber</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Wavelength" type="WavelengthWavenumberType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Transition wavelength</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Energy" type="WavelengthWavenumberType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Transition energy</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Frequency" type="WavelengthWavenumberType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Transition frequency</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="MultipoleType">
+		<xs:annotation>
+			<xs:documentation>Radiative transition multipole</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(E|M)[1-9]\d*"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
