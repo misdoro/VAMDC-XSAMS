@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:hundb="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hundb"
+           targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hundb"
+           elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation>Schema for specifying the quantum numbers for Hund's case (b) diatomic molecules</xs:documentation>
+    </xs:annotation>
+
+    <!--=== QNs will be the root element ===-->
+    <xs:element name="QNs" type="hundb:QNsType">
+        <xs:annotation>
+            <xs:documentation>A list of quantum numbers for Hund's case(b) diatomic molecules</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="QNsType">
+        <xs:all>
+
+			<!-- ElecStateLabel -->
+            <xs:element name="ElecStateLabel" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The label of the electronic state: X, a, A, b, etc...</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+			<!-- J -->
+            <xs:element name="J" type="hundb:AMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+			<!-- S -->
+            <xs:element name="S" type="hundb:AMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The total electronic spin angular momentum quantum number</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+			<!-- N -->
+            <xs:element name="N" type="xs:nonNegativeInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The quantum number associated with the total angular momentum excluding electronic and nuclear spin: J = N + S</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+			<!-- Spin component, Fx, in ascending order of energy for each J -->
+            <xs:element name="SpinComponentLabel" type="xs:positiveInteger" minOccurs="0">
+                <xs:annotation>
+			        <xs:documentation>The positive integer x identifying the spin-component label, Fx, of the state: x=1,2,3,... in order of increasing energy for a given value of J - see Herzberg, Spectra of Diatomic Molecules, Van Nostrand, Princeton, N.J., 1950</xs:documentation>
+		        </xs:annotation>
+	        </xs:element>
+
+			<!-- Lambda -->
+            <xs:element name="Lambda" type="xs:nonNegativeInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The magnitude of the projection of the total electronic orbital angular momentum onto the internuclear axis</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+			<!-- v -->
+            <xs:element name="v" type="xs:nonNegativeInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The vibrational quantum number, v</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+			<!-- F1 -->
+            <xs:element name="F1" type="hundb:NuclearSpinAMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The quantum number, F1, associated with the intermediate angular momentum due to coupling the rotational angular momentum with one nuclear spin. F1 may not be a good quantum number.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+			<!-- F -->
+            <xs:element name="F" type="hundb:NuclearSpinAMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The quantum number, F, associated with the total angular momentum including nuclear spin</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- r -->
+            <xs:element name="r" type="hundb:RankingType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>A named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- parity -->
+            <xs:element name="parity" type="hundb:PMParityType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Total parity with respect to inversion through the molecular centre of mass in the laboratory coordinate system</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- kronigParity -->
+            <xs:element name="kronigParity" type="hundb:EFParityType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Kronig parity ('e' or 'f')</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+			<!-- asSym -->
+			<xs:element name="asSym" type="hundb:ASParityType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Symmetry of the rovibronic wavefunction for diatomic molecules with a centre of inversion: a or s such that the total wavefunction including nuclear spin is symmetric or antisymmetric under permutation of the identical nuclei, according to whether they are bosons or fermions respectively.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+        </xs:all>
+        <xs:attribute name="assigned" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="RankingType">
+        <xs:simpleContent>
+            <xs:extension base="xs:positiveInteger">
+                <xs:attribute name="name" use="required">
+                    <xs:annotation>
+                        <xs:documentation>a string identifying this ranking index</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute> 
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="NuclearSpinAMType">
+        <xs:simpleContent>
+            <xs:extension base="hundb:AMType">
+                <xs:attribute name="nuclearSpinRef">
+                    <xs:annotation>
+                        <xs:documentation>A label identifying the nuclear spin to which the intermediate angular momentum is coupled</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="Q.+"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>   
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+	<!-- angular momentum quantum number: integer or half-integer -->
+	<xs:simpleType name="AMType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d+(\.(0|5))"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+	<!-- +/- symmetry -->
+    <xs:simpleType name="PMParityType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\+|-"/>
+        </xs:restriction>
+    </xs:simpleType>
+	<!-- a/s symmetry -->
+	<xs:simpleType name="ASParityType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="a|s"/>
+        </xs:restriction>
+    </xs:simpleType>
+	<!-- e/f symmetry -->
+	<xs:simpleType name="EFParityType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="e|f"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
+
