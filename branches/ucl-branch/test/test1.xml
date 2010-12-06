@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen NVDLSchema="../ucl_ext-0.1.nvdl"?>
+
+<XSAMSData 
+    xmlns:ucl="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/ucl-branch"
+    xmlns:dcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/dcs">
+    
+    <Sources>
+        <Source sourceID="Bref">
+            <Authors>
+                <Author>
+                    <Name>M. A. H. Smith</Name>
+                </Author>
+            </Authors>
+            <Category>private communication</Category>
+            <Year>2004</Year>
+            <SourceName>private communication</SourceName>
+            <Title>private communication</Title>
+            <PageBegin>None</PageBegin>
+            <PageEnd>None</PageEnd>
+        </Source>
+    </Sources>
+    
+    <Methods>
+        <Method methodID="MEXP">
+            <Category>experiment</Category>
+            <Description>experimental data from the HITRAN database</Description>
+        </Method>
+    </Methods>
+    
+    <ucl:EquilibriumReferenceConditions id="HITRAN_refT">
+        <ucl:Temperature units="K">
+            <ucl:Value>296.</ucl:Value>
+        </ucl:Temperature>
+    </ucl:EquilibriumReferenceConditions>
+    
+    <States>
+        <Molecules>
+            <Molecule>
+                <MolecularChemicalSpecies>
+                    <OrdinaryStructuralFormula>CO: (13C)(18O)</OrdinaryStructuralFormula>
+                    <StoichiometricFormula>CO</StoichiometricFormula>
+                    <ChemicalName>Carbon Monoxide</ChemicalName>
+                </MolecularChemicalSpecies>
+                <MolecularState stateID="S1-CO-5">
+                    <Description>A state of (13C)(18O)</Description>
+                    <MolecularStateCharacterisation>
+                    </MolecularStateCharacterisation>
+                    <dcs:QNs>
+                        <dcs:ElecStateLabel>X</dcs:ElecStateLabel>
+                        <dcs:J>0</dcs:J>
+                        <dcs:v>1</dcs:v>
+                    </dcs:QNs>
+                </MolecularState>
+                <MolecularState stateID="S2-CO-5">
+                    <Description>A state of (13C)(18O)</Description>
+                    <MolecularStateCharacterisation>
+                    </MolecularStateCharacterisation>
+                    <dcs:QNs>
+                        <dcs:ElecStateLabel>X</dcs:ElecStateLabel>
+                        <dcs:J>59</dcs:J>
+                        <dcs:v>1</dcs:v>
+                    </dcs:QNs>
+                </MolecularState>
+            </Molecule>
+        </Molecules>
+    </States>
+
+    <Processes>
+        <Radiative>
+            <RadiativeTransition methodRef="MEXP" sourceRef="Bref" lineID="L1">
+                <EnergyWavelength>
+                    <Wavenumber>
+                        <Experimental sourceRef="Bref">
+                            <Value units="1/cm">3.462498</Value>
+                            <Accuracy>1.000e-04</Accuracy>
+                        </Experimental>
+                    </Wavenumber>
+                </EnergyWavelength>
+                <InitialStateRef>S1-CO-5</InitialStateRef>
+                <FinalStateRef>S2-CO-5</FinalStateRef>
+                <ucl:Intensity name="Intensity" units="cm/molec" envRef="HITRAN_refT">
+                    <ucl:Value>1.23e-24</ucl:Value>
+                </ucl:Intensity>
+                
+            </RadiativeTransition>
+        </Radiative>
+    </Processes> 
+    
+</XSAMSData>
+    

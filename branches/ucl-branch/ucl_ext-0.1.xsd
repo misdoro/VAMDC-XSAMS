@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/ucl-branch"
+    xmlns:ucl="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/ucl-branch"
+    targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/ucl-branch"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+    
+    <!-- Include the basic types -->
+    <xs:include schemaLocation="ucl-BasicTypes.xsd"/>
+
+    <xs:element name="Intensity" type="ParameterType"/>
+    <xs:element name="EquilibriumReferenceConditions" type="EquilibriumReferenceConditionsType"/>
+
+</xs:schema>

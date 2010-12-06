@@ -386,6 +386,20 @@
 				<xs:enumeration value="W/m2"/>
 				<xs:enumeration value="W/cm2"/>
 				<xs:enumeration value="W"/>
+				<xs:enumeration value="atm"/>
+				<xs:enumeration value="1/cm/atm"/>
+				<xs:enumeration value="cm/molec"/>	<!-- ie the intensity units cm-1/molec/cm-2 -->
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<!-- lineID attribute for RadiativeTransition Type -->
+	<xs:attribute name="lineID">
+		<xs:annotation>
+			<xs:documentation>ID for a specific radiative transition.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:ID">
+				<xs:pattern value="L.+"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
@@ -1979,6 +1993,7 @@
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
+				<xs:attribute ref="lineID"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/ucl-branch"
+    xmlns:ucl="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/ucl-branch"
+    targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/ucl-branch"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+    
+    <xs:annotation>
+        <xs:documentation>Schema for incorporating the ucl-branch experimental extensions into XSAMS</xs:documentation>
+    </xs:annotation>
+   
+    <!-- basic types -->
+    <xs:complexType name="PrimaryType">
+        <xs:sequence>
+            <xs:element name="Comments" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Arbitrary comments</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="ucl:primaryTypeAttributes"/>
+    </xs:complexType>
+    <xs:attributeGroup name="primaryTypeAttributes">
+        <xs:attribute name="sourceRef">
+            <xs:annotation>
+                <xs:documentation>Reference to specific bibliographic items.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:IDREFS">
+                    <xs:pattern value="B.+"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="methodRef">
+            <xs:annotation>
+                <xs:documentation>Reference to a specific method.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:IDREF">
+                    <xs:pattern value="M.+"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <!-- all PrimaryTypes may have an ID -->
+        <xs:attribute name="id" type="xs:ID"/>
+    </xs:attributeGroup>
+    
+    <xs:complexType name="ReferencedTextType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="sourceRef">
+                    <xs:annotation>
+                        <xs:documentation>Reference to specific bibliographic items.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:IDREFS">
+                            <xs:pattern value="B.+"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:complexType name="ValueType">
+        <xs:simpleContent>
+            <xs:extension base="xs:double"/>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:complexType name="PhysicalQuantityType">
+        <xs:annotation>
+            <xs:documentation>Description of a physical quantity with a value but no accuracy</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:element name="Value" type="ValueType">
+                        <xs:annotation>
+                            <xs:documentation>Value of a particular quantity</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+                <xs:attribute name="units" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="DataType">
+        <xs:annotation>
+            <xs:documentation>Description of physical data - a value with an accuracy</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="PhysicalQuantityType">
+                <xs:sequence>
+                    <xs:element name="Accuracy" type="xs:string" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>Description of the accuracy</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="ParameterType">
+        <xs:annotation>
+            <xs:documentation>Description of a parameter: a single piece of data with a name, units and an accuracy</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="DataType">
+                <xs:attribute name="name" type="xs:string" use="required"/>
+                <xs:attribute name="envRef" type="xs:IDREF" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- environment -->
+    <xs:complexType name="EquilibriumReferenceConditionsType">
+        <xs:annotation>
+            <xs:documentation>Description of some equilibrium reference conditions or environment relevant to put some data into context</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:element name="Temperature" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="TotalPressure" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="TotalNumberDensity" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Composition" type="CompositionType" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="CompositionType">
+        <xs:annotation>
+            <xs:documentation>Description of the equilibrium composition of a particular environment</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Species" type="ReferencedSpeciesType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ReferencedSpeciesType">
+        <xs:annotation>
+            <xs:documentation>A named species or reference to a species with a given equilibrium concentration, mole fraction or partial pressure</xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:element name="PartialPressure" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="MoleFraction" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Concentration" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
+        </xs:choice>
+        <xs:attribute name="name" type="xs:string" use="optional"/>
+        <xs:attribute name="speciesRef" type="xs:IDREF" use="optional"/>
+    </xs:complexType>
+
+</xs:schema>

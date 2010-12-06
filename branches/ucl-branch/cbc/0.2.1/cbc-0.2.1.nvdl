@@ -2,7 +2,7 @@
 <rules xmlns="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"
   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
     <namespace ns="">
-        <validate schema="/Users/christian/research/schemata/XSAMS/0.1.1/xsams_0.1.1.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/xsams_0.1.1.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/dcs">
         <validate schema="/Users/christian/research/schemata/cbc/0.2.1/dcs-0.2.1.xsd"/>
