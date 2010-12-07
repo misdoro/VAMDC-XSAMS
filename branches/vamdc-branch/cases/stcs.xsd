@@ -3,7 +3,7 @@
     xmlns:stcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs"
     targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs"
     elementFormDefault="qualified">
-
+	<xs:include schemaLocation="./commonTypes.xsd"/>
     <xs:annotation>
         <xs:documentation>Schema for specifying the quantum numbers of closed-shell, symmetric top molecules</xs:documentation>
     </xs:annotation>
@@ -15,14 +15,15 @@
         </xs:annotation>
     </xs:element>
     
-    <xs:simpleType name="ElecStateLabel">
-        <xs:restriction base="xs:string"/>
-    </xs:simpleType>
-    
     <xs:complexType name="QNsType">
         <xs:sequence>
             
-            <xs:element name="ElecStateLabel" type="stcs:ElecStateLabel"/>
+			<!-- ElecStateLabel -->
+            <xs:element name="ElecStateLabel" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The label of the electronic state: X, a, A, b, etc...</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             
             <!-- J -->
             <xs:element name="J" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1">
@@ -115,18 +116,6 @@
         </xs:simpleContent>
     </xs:complexType>
     
-    <xs:complexType name="RankingType">
-        <xs:simpleContent>
-            <xs:extension base="xs:positiveInteger">
-                <xs:attribute name="name" use="required">
-                    <xs:annotation>
-                        <xs:documentation>a string identifying this ranking index</xs:documentation>
-                    </xs:annotation>
-                </xs:attribute> 
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
-    
     <xs:complexType name="VibrationalAMQNType">
         <xs:simpleContent>
             <xs:extension base="xs:nonNegativeInteger">
@@ -138,40 +127,4 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-    
-    <xs:complexType name="NuclearSpinAMType">
-        <xs:simpleContent>
-            <xs:extension base="stcs:AMType">
-                <xs:attribute name="nuclearSpinRef">
-                    <xs:annotation>
-                        <xs:documentation>A label identifying the nuclear spin to which the intermediate angular momentum is coupled</xs:documentation>
-                    </xs:annotation>
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:pattern value="Q.+"/>
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:attribute>
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
-
-    <!-- angular momentum quantum number: integer or half-integer -->
-    <xs:simpleType name="AMType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="\d+(\.(0|5))"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="PMParityType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="\+|-"/>
-        </xs:restriction>
-    </xs:simpleType>
-    <!-- a/s symmetry -->
-    <xs:simpleType name="ASParityType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="a|s"/>
-        </xs:restriction>
-    </xs:simpleType>
 </xs:schema>

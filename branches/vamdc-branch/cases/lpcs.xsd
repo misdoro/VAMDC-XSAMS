@@ -3,7 +3,7 @@
     xmlns:lpcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs"
     targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs"
     elementFormDefault="qualified">
-
+	<xs:include schemaLocation="./commonTypes.xsd"/>
     <xs:annotation>
         <xs:documentation>Schema for specifying the quantum numbers of linear polyatomic molecules</xs:documentation>
     </xs:annotation>
@@ -141,47 +141,6 @@
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="NuclearSpinAMType">
-        <xs:simpleContent>
-            <xs:extension base="xs:double">
-                <xs:attribute name="nuclearSpinRef">
-                    <xs:annotation>
-                        <xs:documentation>A label identifying the nuclear spin to which the intermediate angular momentum is coupled</xs:documentation>
-                    </xs:annotation>
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:pattern value="Q.+"/>
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:attribute>
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
-
-    <xs:complexType name="RankingType">
-        <xs:simpleContent>
-            <xs:extension base="xs:positiveInteger">
-                <xs:attribute name="name" use="required">
-                    <xs:annotation>
-                        <xs:documentation>a string identifying this ranking index</xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
-
-    <!-- +/- symmetry -->
-    <xs:simpleType name="PMParityType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="\+|-"/>
-        </xs:restriction>
-    </xs:simpleType>
-    <!-- a/s symmetry -->
-    <xs:simpleType name="ASParityType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="a|s"/>
-        </xs:restriction>
-    </xs:simpleType>
     <!-- e/f symmetry -->
     <xs:simpleType name="EFParityType">
         <xs:restriction base="xs:string">

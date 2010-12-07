@@ -3,7 +3,7 @@
     xmlns:sphcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphcs"
     targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphcs"
     elementFormDefault="qualified">
-    
+	<xs:include schemaLocation="./commonTypes.xsd"/>
     <xs:annotation>
         <xs:documentation>Schema for specifying the quantum numbers of closed-shell spherical top molecules</xs:documentation>
     </xs:annotation>
@@ -114,39 +114,4 @@
         </xs:simpleContent>
     </xs:complexType>
     
-    <xs:complexType name="NuclearSpinAMType">
-        <xs:simpleContent>
-            <xs:extension base="xs:double">
-                <xs:attribute name="nuclearSpinRef">
-                    <xs:annotation>
-                        <xs:documentation>A label identifying the nuclear spin to which the intermediate angular momentum is coupled</xs:documentation>
-                    </xs:annotation>
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:pattern value="Q.+"/>
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:attribute>
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
-    
-    <xs:complexType name="RankingType">
-        <xs:simpleContent>
-            <xs:extension base="xs:positiveInteger">
-                <xs:attribute name="name" use="required">
-                    <xs:annotation>
-                        <xs:documentation>a string identifying this ranking index</xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
-    
-    <!-- +/- symmetry -->
-    <xs:simpleType name="PMParityType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="\+|-"/>
-        </xs:restriction>
-    </xs:simpleType>
 </xs:schema>
