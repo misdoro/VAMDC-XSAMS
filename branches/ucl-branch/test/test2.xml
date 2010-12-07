@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen NVDLSchema="../ucl_ext-0.1.nvdl"?>
+
+<XSAMSData 
+    xmlns:ucl="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/ucl-branch"
+    xmlns:dcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/dcs">
+    
+    <Sources>
+        <Source sourceID="Bref">
+            <Authors>
+                <Author>
+                    <Name>M. A. H. Smith</Name>
+                </Author>
+            </Authors>
+            <Category>private communication</Category>
+            <Year>2004</Year>
+            <SourceName>private communication</SourceName>
+            <Title>private communication</Title>
+            <PageBegin>None</PageBegin>
+            <PageEnd>None</PageEnd>
+        </Source>
+    </Sources>
+    
+    <Methods>
+        <Method methodID="MEXP">
+            <Category>experiment</Category>
+            <Description>experimental data from the HITRAN database</Description>
+        </Method>
+    </Methods>
+    
+    <Functions>
+        <Function functionID="FgammaL">
+            <Comments>This function gives the temperature-dependence of the Lorentzian
+                      component of the pressure-broadened line width</Comments>
+            <Expression computerLanguage="Fortran">
+                gammaL_ref * p * (296./T)**n
+            </Expression>
+            <Y units="1/cm">
+                <Name>The HWHM, gammaL, of the Lorentzian component of the pressure
+                      broadened line width at absolute temperature T</Name>
+            </Y>
+            <Arguments>
+                <Argument units="K">
+                    <Name>T</Name>
+                    <Description>The absolute temperature, in K</Description>
+                </Argument>
+                <Argument units="atm">
+                    <Name>p</Name>
+                    <Description>The partial pressure of the broadening species,
+                                 in atm</Description>
+                </Argument>
+            </Arguments>
+            <Parameters>
+                <Parameter units="1/cm">
+                    <Name>gammaL_ref</Name>
+                    <Description>The Lorentzian HWHM of the line, broadened at
+                        Tref = 296 K and broadening species partial pressure
+                        pref = 1atm</Description>
+                </Parameter>
+                <Parameter units="unitless">
+                    <Name>n</Name>
+                    <Description>
+                        The temperature exponent of the gammaL function
+                    </Description>
+                </Parameter>
+            </Parameters>
+                
+        </Function>
+    </Functions>
+    
+    <!-- the HITRAN reference temperature, 296 K -->
+    <ucl:EquilibriumReferenceConditions id="HITRAN_refT">
+        <ucl:Temperature units="K">
+            <ucl:Value>296.</ucl:Value>
+        </ucl:Temperature>
+    </ucl:EquilibriumReferenceConditions>
+    <!-- the HITRAN reference pressure and temperature, 1 atm and 296 K -->
+    <ucl:EquilibriumReferenceConditions id="HITRAN_refpT">
+        <ucl:Temperature units="K">
+            <ucl:Value>296.</ucl:Value>
+        </ucl:Temperature>
+        <ucl:TotalPressure units="atm">
+            <ucl:Value>1.</ucl:Value>
+        </ucl:TotalPressure>  
+    </ucl:EquilibriumReferenceConditions>
+    <!-- the HITRAN air-broadening reference conditions -->
+    <ucl:EquilibriumReferenceConditions id="air-broadening-ref-env">
+        <ucl:Temperature units="K">
+            <ucl:Value>296.</ucl:Value>
+        </ucl:Temperature>
+        <ucl:TotalPressure units="atm">
+            <ucl:Value>1.</ucl:Value>
+        </ucl:TotalPressure>
+        <ucl:Composition>
+            <ucl:Species name="N2">
+                <ucl:MoleFraction units="none">
+                    <ucl:Value>0.79</ucl:Value>
+                </ucl:MoleFraction>
+            </ucl:Species>
+            <ucl:Species name="O2">
+                <ucl:MoleFraction units="none">
+                    <ucl:Value>0.21</ucl:Value>
+                </ucl:MoleFraction>
+            </ucl:Species>
+        </ucl:Composition>
+    </ucl:EquilibriumReferenceConditions>
+    
+    <States>
+        <Molecules>
+            <Molecule>
+                <MolecularChemicalSpecies>
+                    <OrdinaryStructuralFormula>CO: (13C)(18O)</OrdinaryStructuralFormula>
+                    <StoichiometricFormula>CO</StoichiometricFormula>
+                    <ChemicalName>Carbon Monoxide</ChemicalName>
+                </MolecularChemicalSpecies>
+                <MolecularState stateID="S1-CO-5">
+                    <Description>A state of (13C)(18O)</Description>
+                    <MolecularStateCharacterisation>
+                    </MolecularStateCharacterisation>
+                    <dcs:QNs>
+                        <dcs:ElecStateLabel>X</dcs:ElecStateLabel>
+                        <dcs:J>0</dcs:J>
+                        <dcs:v>1</dcs:v>
+                    </dcs:QNs>
+                </MolecularState>
+                <MolecularState stateID="S2-CO-5">
+                    <Description>A state of (13C)(18O)</Description>
+                    <MolecularStateCharacterisation>
+                    </MolecularStateCharacterisation>
+                    <dcs:QNs>
+                        <dcs:ElecStateLabel>X</dcs:ElecStateLabel>
+                        <dcs:J>59</dcs:J>
+                        <dcs:v>1</dcs:v>
+                    </dcs:QNs>
+                </MolecularState>
+            </Molecule>
+        </Molecules>
+    </States>
+    
+    <Processes>
+        <Radiative>
+            <RadiativeTransition methodRef="MEXP" sourceRef="Bref" lineID="L1">
+                <EnergyWavelength>
+                    <Wavenumber>
+                        <Experimental sourceRef="Bref">
+                            <Value units="1/cm">3.462498</Value>
+                            <Accuracy>1.000e-04</Accuracy>
+                        </Experimental>
+                    </Wavenumber>
+                </EnergyWavelength>
+                <InitialStateRef>S1-CO-5</InitialStateRef>
+                <FinalStateRef>S2-CO-5</FinalStateRef>
+                <ucl:Intensity name="Intensity" units="cm/molec" envRef="HITRAN_refT">
+                    <ucl:Value>1.23e-24</ucl:Value>
+                </ucl:Intensity>
+                <ucl:Broadening name="van-der-waals" envRef="HITRAN_refpT">
+                    <ucl:Voigt>
+                        <ucl:gammaL units="1/cm">
+                            <ucl:Value>0.01</ucl:Value>
+                            <ucl:Accuracy>0.001</ucl:Accuracy>
+                        </ucl:gammaL>
+                        <ucl:alphaD units="1/cm">
+                            <ucl:Value>0.005</ucl:Value>
+                            <ucl:Accuracy>0.001</ucl:Accuracy>
+                        </ucl:alphaD>
+                    </ucl:Voigt>
+                    <ucl:Lineshape name="superLorentzian">
+                        <ucl:Comments>The "super-Lorentzian lineshape, (A/pi).gammaL^(eta-1) / [(nu-nu0)^2 + gammaL^2]^(eta/2)</ucl:Comments>
+                        <ucl:LineshapeParameter name="gammaL" units="1/cm">
+                            <ucl:Value>0.007</ucl:Value>
+                            <ucl:Accuracy>0.0005</ucl:Accuracy>
+                        </ucl:LineshapeParameter>
+                        <ucl:LineshapeParameter name="eta" units="none">
+                            <ucl:Value>1.5</ucl:Value>
+                            <ucl:Accuracy>0.02</ucl:Accuracy>
+                        </ucl:LineshapeParameter>
+                    </ucl:Lineshape>
+                </ucl:Broadening>
+                <ucl:Broadening name="van-der-waals" envRef="air-broadening-ref-env">
+                    <ucl:Comments>Pressure-broadening by air - the parameters to the FgammaL function describing the
+                                  temperature and pressure dependence of the Lorentzian HWHM</ucl:Comments>
+                    <ucl:Lineshape name="Lorentzian">
+                        <ucl:Comments>The temperature-dependent pressure broadening Lorentzian lineshape</ucl:Comments>
+                        <ucl:LineshapeParameter name="gammaL_ref" units="1/cm" functionRef="FgammaL">
+                            <ucl:Value>0.01</ucl:Value>
+                        </ucl:LineshapeParameter>
+                        <ucl:LineshapeParameter name="n" units="unitless" functionRef="FgammaL">
+                            <ucl:Value>0.75</ucl:Value>
+                        </ucl:LineshapeParameter>                  
+                    </ucl:Lineshape>
+                </ucl:Broadening>
+                
+            </RadiativeTransition>
+        </Radiative>
+    </Processes> 
+    
+</XSAMSData>
+

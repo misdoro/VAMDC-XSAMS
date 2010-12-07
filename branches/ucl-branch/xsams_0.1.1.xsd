@@ -294,7 +294,7 @@
 	</xs:complexType>
 	<xs:complexType name="ParametersType">
 		<xs:sequence>
-			<xs:element name="Parameter" type="ParameterType" maxOccurs="unbounded"/>
+			<xs:element name="Parameter" type="ArgumentType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ParameterType">
