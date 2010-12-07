@@ -27,11 +27,21 @@
             <Description>experimental data from the HITRAN database</Description>
         </Method>
     </Methods>
-    
+
+    <!-- the HITRAN reference temperature, 296 K -->
     <ucl:EquilibriumReferenceConditions id="HITRAN_refT">
         <ucl:Temperature units="K">
             <ucl:Value>296.</ucl:Value>
         </ucl:Temperature>
+    </ucl:EquilibriumReferenceConditions>
+    <!-- the HITRAN reference pressure and temperature, 1 atm and 296 K -->
+    <ucl:EquilibriumReferenceConditions id="HITRAN_refpT">
+        <ucl:Temperature units="K">
+            <ucl:Value>296.</ucl:Value>
+        </ucl:Temperature>
+        <ucl:TotalPressure units="atm">
+            <ucl:Value>1.</ucl:Value>
+        </ucl:TotalPressure>  
     </ucl:EquilibriumReferenceConditions>
     
     <States>
@@ -82,6 +92,29 @@
                 <ucl:Intensity name="Intensity" units="cm/molec" envRef="HITRAN_refT">
                     <ucl:Value>1.23e-24</ucl:Value>
                 </ucl:Intensity>
+                <ucl:Broadening name="van-der-waals" envRef="HITRAN_refpT">
+                    <ucl:Voigt>
+                        <ucl:gammaL units="1/cm">
+                            <ucl:Value>0.01</ucl:Value>
+                            <ucl:Accuracy>0.001</ucl:Accuracy>
+                        </ucl:gammaL>
+                        <ucl:alphaD units="1/cm">
+                            <ucl:Value>0.005</ucl:Value>
+                            <ucl:Accuracy>0.001</ucl:Accuracy>
+                        </ucl:alphaD>
+                    </ucl:Voigt>
+                    <ucl:Lineshape name="superLorentzian">
+                        <ucl:Comments>The "super-Lorentzian lineshape, (A/pi).gammaL^(eta-1) / [(nu-nu0)^2 + gammaL^2]^(eta/2)</ucl:Comments>
+                        <ucl:LineshapeParameter name="gammaL" units="1/cm">
+                            <ucl:Value>0.007</ucl:Value>
+                            <ucl:Accuracy>0.0005</ucl:Accuracy>
+                        </ucl:LineshapeParameter>
+                        <ucl:LineshapeParameter name="eta" units="none">
+                            <ucl:Value>1.5</ucl:Value>
+                            <ucl:Accuracy>0.02</ucl:Accuracy>
+                        </ucl:LineshapeParameter>
+                    </ucl:Lineshape>
+                </ucl:Broadening>
                 
             </RadiativeTransition>
         </Radiative>

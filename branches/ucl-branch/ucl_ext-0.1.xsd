@@ -11,5 +11,59 @@
 
     <xs:element name="Intensity" type="ParameterType"/>
     <xs:element name="EquilibriumReferenceConditions" type="EquilibriumReferenceConditionsType"/>
+    <xs:element name="Broadening" type="BroadeningType"/>
+    
+    <xs:complexType name="BroadeningType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:element name="Lorentzian" type="LorentzianType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Gaussian" type="LorentzianType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Voigt" type="VoigtType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Lineshape" type="LineshapeType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="envRef" type="xs:IDREF"/>
+                <xs:attribute name="name" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="LorentzianType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:element name="gammaL" type="DataType" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="GaussianType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:element name="alphaD" type="DataType" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="VoigtType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:element name="gammaL" type="DataType" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="alphaD" type="DataType" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="LineshapeType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:element name="LineshapeParameter" type="ParameterType" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="name" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 
 </xs:schema>
