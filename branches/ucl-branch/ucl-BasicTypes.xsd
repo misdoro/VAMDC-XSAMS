@@ -100,11 +100,10 @@
                         </xs:annotation>
                     </xs:element>
                 </xs:sequence>
-                <xs:attribute name="functionRef" type="xs:IDREF" use="optional"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
     <xs:complexType name="ParameterType">
         <xs:annotation>
             <xs:documentation>Description of a parameter: a single piece of data with a name, units and an accuracy</xs:documentation>
@@ -115,6 +114,46 @@
                 <xs:attribute name="envRef" type="xs:IDREF" use="optional"/>
             </xs:extension>
         </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="ParameterOrFitType">
+        <xs:annotation>
+            <xs:documentation>Description of a parameter: a single piece of data with a name, units and an accuracy</xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+           <xs:sequence>
+               <xs:element name="Value" type="ValueType" minOccurs="1" maxOccurs="1"/>
+               <xs:element name="Accuracy" type="xs:string" minOccurs="0" maxOccurs="1"/>
+           </xs:sequence>
+           <xs:element name="FitParameters" type="FitParametersType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="envRef" type="xs:IDREF" use="optional"/>
+        <xs:attribute name="units" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="FitParametersType">
+        <xs:annotation>
+            <xs:documentation>A list of fit parameters and arguments</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="FitArgument" type="FitArgumentType"  minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="FitParameter" type="ParameterType"  minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="functionRef" type="xs:IDREF" use="optional"/>
+    </xs:complexType>
+    
+    <xs:complexType name="FitArgumentType">
+        <xs:annotation>
+            <xs:documentation>An argument to a fit function, with validity limits</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="lowerLimit" type="xs:double"/>
+                <xs:attribute name="upperLimit" type="xs:double"/>
+                <xs:attribute name="units" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
 
     <!-- environment -->

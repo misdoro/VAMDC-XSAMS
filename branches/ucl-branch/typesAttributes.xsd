@@ -389,6 +389,9 @@
 				<xs:enumeration value="W/m2"/>
 				<xs:enumeration value="W/cm2"/>
 				<xs:enumeration value="W"/>
+				<xs:enumeration value="atm"/>
+				<xs:enumeration value="1/cm/atm"/>
+				<xs:enumeration value="cm/molec"/>	<!-- ie the intensity units cm-1/molec/cm-2 -->
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>

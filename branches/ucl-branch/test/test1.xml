@@ -43,6 +43,27 @@
             <ucl:Value>1.</ucl:Value>
         </ucl:TotalPressure>  
     </ucl:EquilibriumReferenceConditions>
+    <!-- the HITRAN air-broadening reference conditions -->
+    <ucl:EquilibriumReferenceConditions id="air-broadening-ref-env">
+        <ucl:Temperature units="K">
+            <ucl:Value>296.</ucl:Value>
+        </ucl:Temperature>
+        <ucl:TotalPressure units="atm">
+            <ucl:Value>1.</ucl:Value>
+        </ucl:TotalPressure>
+        <ucl:Composition>
+            <ucl:Species name="N2">
+                <ucl:MoleFraction units="none">
+                    <ucl:Value>0.79</ucl:Value>
+                </ucl:MoleFraction>
+            </ucl:Species>
+            <ucl:Species name="O2">
+                <ucl:MoleFraction units="none">
+                    <ucl:Value>0.21</ucl:Value>
+                </ucl:MoleFraction>
+            </ucl:Species>
+        </ucl:Composition>
+    </ucl:EquilibriumReferenceConditions>
     
     <States>
         <Molecules>
@@ -92,7 +113,7 @@
                 <ucl:Intensity name="Intensity" units="cm/molec" envRef="HITRAN_refT">
                     <ucl:Value>1.23e-24</ucl:Value>
                 </ucl:Intensity>
-                <ucl:Broadening name="van-der-waals" envRef="HITRAN_refpT">
+                <ucl:Broadening name="van-der-waals" envRef="air-broadening-ref-env">
                     <ucl:Voigt>
                         <ucl:gammaL units="1/cm">
                             <ucl:Value>0.01</ucl:Value>

@@ -30,14 +30,13 @@
     
     <Functions>
         <Function functionID="FgammaL">
-            <Comments>This function gives the temperature-dependence of the Lorentzian
-                      component of the pressure-broadened line width</Comments>
+            <Comments>This function gives the pressure- and temperature-dependence of the Lorentzian
+                      component of the pressure-broadened line width (HWHM)</Comments>
             <Expression computerLanguage="Fortran">
                 gammaL_ref * p * (296./T)**n
             </Expression>
             <Y units="1/cm">
-                <Name>The HWHM, gammaL, of the Lorentzian component of the pressure
-                      broadened line width at absolute temperature T</Name>
+                <Name>gammaL</Name>
             </Y>
             <Arguments>
                 <Argument units="K">
@@ -181,12 +180,18 @@
                                   temperature and pressure dependence of the Lorentzian HWHM</ucl:Comments>
                     <ucl:Lineshape name="Lorentzian">
                         <ucl:Comments>The temperature-dependent pressure broadening Lorentzian lineshape</ucl:Comments>
-                        <ucl:LineshapeParameter name="gammaL_ref" units="1/cm" functionRef="FgammaL">
-                            <ucl:Value>0.01</ucl:Value>
+                        <ucl:LineshapeParameter name="gammaL" units="1/cm">
+                            <ucl:FitParameters functionRef="FgammaL">
+                                <ucl:FitArgument lowerLimit="240" upperLimit="350" units="K">T</ucl:FitArgument>
+                                <ucl:FitArgument lowerLimit="0." upperLimit="1.2" units="atm">p</ucl:FitArgument>
+                                <ucl:FitParameter name="gammaL_ref" units="1/cm">
+                                    <ucl:Value>0.01</ucl:Value>
+                                </ucl:FitParameter>
+                                <ucl:FitParameter name="n" units="unitless">
+                                    <ucl:Value>0.76</ucl:Value>
+                                </ucl:FitParameter>
+                            </ucl:FitParameters>
                         </ucl:LineshapeParameter>
-                        <ucl:LineshapeParameter name="n" units="unitless" functionRef="FgammaL">
-                            <ucl:Value>0.75</ucl:Value>
-                        </ucl:LineshapeParameter>                  
                     </ucl:Lineshape>
                 </ucl:Broadening>
                 
