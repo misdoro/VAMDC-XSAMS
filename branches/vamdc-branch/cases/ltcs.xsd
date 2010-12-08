@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:ltcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltcs"
+	xmlns:ctypes="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
     targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltcs"
     elementFormDefault="qualified">
-    <xs:include schemaLocation="./commonTypes.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
+				schemaLocation="commonTypes.xsd"/>
     <xs:annotation>
         <xs:documentation>Schema for specifying the quantum numbers of closed-shell linear triatomic molecules</xs:documentation>
     </xs:annotation>
@@ -60,63 +62,55 @@
             </xs:element>
             
             <!-- F1 -->
-            <xs:element name="F1" type="ltcs:NuclearSpinAMType" minOccurs="0">
+            <xs:element name="F1" type="ctypes:NuclearSpinAMType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The quantum number, F1, associated with the intermediate angular momentum due to coupling the rotational angular momentum with one nuclear spin. F1 may not be a good quantum number.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
             <!-- F2 -->
-            <xs:element name="F2" type="ltcs:NuclearSpinAMType" minOccurs="0">
+            <xs:element name="F2" type="ctypes:NuclearSpinAMType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The quantum number, F2, associated with the intermediate angular momentum due to coupling the rotational angular momentum with one nuclear spin. F2 may not be a good quantum number.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
             <!-- F -->
-            <xs:element name="F" type="ltcs:NuclearSpinAMType" minOccurs="0">
+            <xs:element name="F" type="ctypes:NuclearSpinAMType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The quantum number, F, associated with the total angular momentum including nuclear spin</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
             <!-- r -->
-            <xs:element name="r" type="ltcs:RankingType" minOccurs="0">
+            <xs:element name="r" type="ctypes:RankingType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>A ranking index for states of the same symmetry that can't be or haven't been differentiated any other way: r=1,2,...</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
             <!-- parity -->
-            <xs:element name="parity" type="ltcs:PMParityType" minOccurs="0">
+            <xs:element name="parity" type="ctypes:PMParityType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Total parity with respect to inversion through the molecular centre of mass in the laboratory coordinate system</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
             <!-- kronigParity -->
-            <xs:element name="kronigParity" type="ltcs:EFParityType" minOccurs="0" maxOccurs="1">
+            <xs:element name="kronigParity" type="ctypes:EFParityType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Kronig parity ('e' or 'f')</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
             <!-- asSym -->
-            <xs:element name="asSym" type="ltcs:ASParityType" minOccurs="0" maxOccurs="1">
+            <xs:element name="asSym" type="ctypes:ASParityType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Symmetry of the rovibronic wavefunction for diatomic molecules with a centre of inversion: a or s such that the total wavefunction including nuclear spin is symmetric or antisymmetric under permutation of the identical nuclei, according to whether they are bosons or fermions respectively.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
         </xs:all>
-        <xs:attribute name="assigned" type="xs:string" use="optional"/>
     </xs:complexType>
-    
-    <!-- e/f symmetry -->
-    <xs:simpleType name="EFParityType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="e|f"/>
-        </xs:restriction>
-    </xs:simpleType>
     
 </xs:schema>
