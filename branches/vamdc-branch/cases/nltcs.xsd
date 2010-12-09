@@ -90,7 +90,7 @@
             </xs:element>
             
             <!-- r -->
-            <xs:element name="r" type="ctypes:RankingType" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="r" type="ctypes:RankingType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>A named, non-negative integer label identifying the state if no other good quantum numbers or symmetries are known. It is possible to have more than one r defining a state, but their name attributes have to be unique.</xs:documentation>
                 </xs:annotation>

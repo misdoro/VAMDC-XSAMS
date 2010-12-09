@@ -82,7 +82,7 @@
             </xs:element>
             
             <!-- r -->
-            <xs:element name="r" type="ctypes:RankingType" minOccurs="0">
+            <xs:element name="r" type="ctypes:RankingType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>A named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.</xs:documentation>
                 </xs:annotation>
