@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-targetNamespace="http://www-amdis.iaea.org/xsams/0.2.1"
-xmlns="http://www-amdis.iaea.org/xsams/0.2.1"
-elementFormDefault="unqualified" attributeFormDefault="unqualified"
->
+elementFormDefault="unqualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="./methods.xsd"/>
 	<xs:include schemaLocation="./sources.xsd"/>
 	<xs:include schemaLocation="./functions.xsd"/>
