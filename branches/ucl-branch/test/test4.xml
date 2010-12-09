@@ -25,7 +25,7 @@
     
     <States>
         <Molecules>
-            <Molecule>
+            <Molecule id="azulene-1">
                 <MolecularChemicalSpecies>
                     <OrdinaryStructuralFormula>C10H8</OrdinaryStructuralFormula>
                     <StoichiometricFormula>C10H8</StoichiometricFormula>
@@ -43,7 +43,7 @@
                 <EnergyWavelength/>
             </RadiativeTransition>
             
-            <ucl:CrossSection molecRef="C-azulene-1" sourceRef="B_TCSD1" id="azulene-paxs">
+            <ucl:CrossSection molecRef="azulene-1" sourceRef="B_TCSD1" id="azulene-paxs">
                 <ucl:Description>Photoabsorption cross section of azulene</ucl:Description>
                 <ucl:X parameter="photon energy" units="eV" id="D-eV-series1">
                     <ucl:LinearSequence n="601" units="eV" a0="0." a1="0.05"/>
