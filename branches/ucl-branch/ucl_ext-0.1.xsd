@@ -13,6 +13,7 @@
     <xs:element name="EquilibriumReferenceConditions" type="EquilibriumReferenceConditionsType"/>
     <xs:element name="Broadening" type="BroadeningType"/>
     <xs:element name="Shifting" type="ShiftingType"/>
+    <xs:element name="CrossSection" type="CrossSectionType"/>
     
     <xs:complexType name="BroadeningType">
         <xs:complexContent>
