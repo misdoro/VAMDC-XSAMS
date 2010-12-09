@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 (http://www.altova.com) by B. Kergudu (Kergudu) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="./typesAttributes.xsd"/>
 	<xs:element name="Radiative" type="RadiativeType">

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2008 (http://www.altova.com) by jeanyves (OBSERVATOIRE DE PARIS) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="./typesAttributes.xsd"/>
 	<xs:element name="NonRadiative" type="NonRadiativeType">
