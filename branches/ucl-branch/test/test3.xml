@@ -54,7 +54,7 @@
                     <Name>gammaL_ref</Name>
                     <Description>The Lorentzian HWHM of the line, broadened at
                         Tref = 296 K and broadening species partial pressure
-                        pref = 1 atm</Description>
+                        pref = 1atm</Description>
                 </Parameter>
                 <Parameter units="unitless">
                     <Name>n</Name>
@@ -63,7 +63,32 @@
                     </Description>
                 </Parameter>
             </Parameters>
-                
+        </Function>
+        
+        <Function functionID="Fdelta">
+            <Comments>This function gives the pressure-dependence of the absorption
+                line wavenumber shift: nu = nu_ref + (delta).(p/pref)</Comments>
+            <Expression computerLanguage="Fortran">
+                delta_ref * p
+            </Expression>
+            <Y units="1/cm">
+                <Name>delta</Name>
+            </Y>
+            <Arguments>
+                <Argument units="atm">
+                    <Name>p</Name>
+                    <Description>The pressure of the shifting environment,
+                                 in atm</Description>
+                </Argument>
+            </Arguments>
+            <Parameters>
+                <Parameter units="1/cm">
+                    <Name>delta_ref</Name>
+                    <Description>The pressure-shift of the absorption line at
+                        pref = 1 atm</Description>
+                </Parameter>
+            </Parameters>
+            
         </Function>
     </Functions>
     
@@ -194,6 +219,14 @@
                         </ucl:LineshapeParameter>
                     </ucl:Lineshape>
                 </ucl:Broadening>
+                
+                <ucl:Shifting>
+                    <ucl:ShiftingParameter name="delta" units="1/cm">
+                        <ucl:FitParameters functionRef="Fdelta">
+                            <ucl:FitArgument lowerLimit="0." upperLimit="1.2" units="atm">p</ucl:FitArgument>
+                        </ucl:FitParameters>
+                    </ucl:ShiftingParameter>                    
+                </ucl:Shifting>
                 
             </RadiativeTransition>
         </Radiative>

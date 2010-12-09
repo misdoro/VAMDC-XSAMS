@@ -12,6 +12,7 @@
     <xs:element name="Intensity" type="ParameterType"/>
     <xs:element name="EquilibriumReferenceConditions" type="EquilibriumReferenceConditionsType"/>
     <xs:element name="Broadening" type="BroadeningType"/>
+    <xs:element name="Shifting" type="ShiftingType"/>
     
     <xs:complexType name="BroadeningType">
         <xs:complexContent>
@@ -62,6 +63,17 @@
                     <xs:element name="LineshapeParameter" type="ParameterOrFitType" minOccurs="1" maxOccurs="unbounded"/>
                 </xs:sequence>
                 <xs:attribute name="name" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="ShiftingType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:element name="ShiftingParameter" type="ParameterOrFitType" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="envRef" type="xs:IDREF"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
