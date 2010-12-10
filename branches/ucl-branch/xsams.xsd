@@ -21,6 +21,11 @@ Mar 2007: system of reference added
 	</xs:element>
 	<xs:complexType name="XSAMSDataType">
 		<xs:all>
+			<xs:element name="Molecules" type="MoleculesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>List of molecules</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="States" type="StatesType">
 				<xs:annotation>
 					<xs:documentation>List of atomic states, molecular states, particles, surfaces, and solids</xs:documentation>
@@ -57,13 +62,13 @@ Mar 2007: system of reference added
 		</xs:all>
 	</xs:complexType>
 	<xs:complexType name="StatesType">
-		<xs:all>
+		<xs:sequence>
 			<xs:element name="Atoms" type="AtomsType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>List of atoms</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Molecules" type="MoleculesType" minOccurs="0">
+			<xs:element name="MolecularStates" type="MolecularStatesType" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of molecules</xs:documentation>
 				</xs:annotation>
@@ -78,6 +83,6 @@ Mar 2007: system of reference added
 					<xs:documentation>List of elementary particles (electron, photon, etc.)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-		</xs:all>
+		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

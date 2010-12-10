@@ -4,7 +4,7 @@
     
     <!-- ucl-branch XSAMS Schema -->
     <namespace ns="">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/xsams_0.1.1.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/xsams.xsd"/>
     </namespace>
     
     <!-- ucl-branch extensions -->

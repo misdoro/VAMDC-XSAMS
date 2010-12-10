@@ -395,6 +395,17 @@
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
+	<!-- lineID attribute for RadiativeTransition Type -->
+	<xs:attribute name="lineID">
+		<xs:annotation>
+			<xs:documentation>ID for a specific radiative transition.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:ID">
+				<xs:pattern value="L.+"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
 	<!--=== types and attributes common to states ===-->
 	<xs:attribute name="stateID">
 		<xs:annotation>
