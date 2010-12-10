@@ -11,6 +11,22 @@
 	<xs:include schemaLocation="./radiative.xsd"/>
 	<xs:include schemaLocation="./nonradiative.xsd"/>
 	<xs:include schemaLocation="./collisions.xsd"/>
+	
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymcs" schemaLocation="./cases/asymcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymos" schemaLocation="./cases/asymos.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes" schemaLocation="./cases/commonTypes.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/dcs" schemaLocation="./cases/dcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen" schemaLocation="./cases/gen.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hunda" schemaLocation="./cases/hunda.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hundb" schemaLocation="./cases/hundb.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs" schemaLocation="./cases/lpcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltcs" schemaLocation="./cases/ltcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltcs" schemaLocation="./cases/nltcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphcs" schemaLocation="./cases/sphcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos" schemaLocation="./cases/sphos.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs" schemaLocation="./cases/stcs.xsd"/>
+	
+	
 	<!-- Nov 2006; Modified by YR:	some types removed; 'Type" appended to type names 
 Mar 2007: system of reference added
 -->
@@ -36,7 +52,7 @@ Mar 2007: system of reference added
 					<xs:documentation>Physical processes connecting states (e.g., radiative, collisional, autoionization, etc.)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element ref="Sources"/>
+			<xs:element ref="Sources" minOccurs="0"/>
 			<xs:element ref="Methods" minOccurs="0"/>
 			<xs:element ref="Functions" minOccurs="0"/>
 			<xs:element name="Comments" type="xs:string" minOccurs="0">
@@ -68,7 +84,7 @@ Mar 2007: system of reference added
 					<xs:documentation>List of atoms</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MolecularStates" type="MolecularStatesType" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="MolecularStates" type="MolecularStatesType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of molecules</xs:documentation>
 				</xs:annotation>

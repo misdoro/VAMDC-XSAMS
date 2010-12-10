@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<XSAMSData 
+    xmlns:ucl="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/ucl-branch"
+    xmlns:stcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs"
+    xmlns:nltcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltcs"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../xsams.xsd">
+
+<Molecules>
+    <Molecule id="alcohol">
+        <MolecularChemicalSpecies>
+            <OrdinaryStructuralFormula>CH3CH2OH</OrdinaryStructuralFormula>
+            <StoichiometricFormula>C2H6O</StoichiometricFormula>
+        </MolecularChemicalSpecies>
+    </Molecule>
+</Molecules>
+
+<States>
+    <!-- other XSAMS stuff goes here -->
+    <MolecularStates speciesRef="alcohol">
+        <MolecularState stateID="S1">
+            <Description>a state</Description>
+            <stcs:QNs>
+                <stcs:ElecStateLabel>X</stcs:ElecStateLabel>
+                <stcs:J>4</stcs:J>
+                <stcs:r name="alpha">1</stcs:r>
+                <stcs:r name="beta">2</stcs:r>
+            </stcs:QNs>
+        </MolecularState>
+        <MolecularState stateID="S2">
+               <Description>another state</Description>
+               <nltcs:QNs>
+                       <nltcs:ElecStateLabel>X</nltcs:ElecStateLabel>
+                       <nltcs:J>4</nltcs:J>
+                       <nltcs:r name="alpha">1</nltcs:r>
+                       <nltcs:r name="alpha">2</nltcs:r>
+                   </nltcs:QNs>
+        </MolecularState>
+    </MolecularStates>
+    <!-- other XSAMS stuff goes here -->
+</States>
+</XSAMSData>
