@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by Yura (Hren ego znaet) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="./typesAttributes.xsd"/>
+	<xs:element name="Radiative" type="RadiativeType">
+		<xs:annotation>
+			<xs:documentation>Radiative transitions (both emission and absorption)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="RadiativeType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="RadiativeTransition" type="RadiativeTransitionType" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Description of a specific radiative transition</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RadiativeTransitionType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="InitialStateRef" type="StateRef" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Reference to the initial state</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="FinalStateRef" type="StateRef" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Reference to the final state</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TransitionLabel" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Transition label, e.g., K-alpha</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Energy" type="WavelengthWavenumberType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Transition energy</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Wavelength" type="WavelengthWavenumberType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Transition wavelength</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Wavenumber" type="WavelengthWavenumberType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Transition wavenumber</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Frequency" type="WavelengthWavenumberType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Transition frequency</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Probability" type="RadiativeTransitionProbabilityType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Radiative transition probability and related parameters</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="IdealisedIntensity" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Line intensity for some specific conditions.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LineShapeShift" type="LineShapeShiftType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="OpticalDepth" type="OpticalDepthType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="LineIntensity" type="LineIntensityType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute ref="lineID"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RadiativeTransitionProbabilityType">
+		<xs:annotation>
+			<xs:documentation>spontaneous transition probability, or Einstein coefficient</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="TransitionProbabilityA" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Transition probability (Einstein coefficient)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="OscillatorStrength" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Oscillator strength</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="LineStrength" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Line strength</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="WeightedOscillatorStrength" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Weighted oscillator strength</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Log10WeightedOscillatorStrength" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Log10 of the weighted oscillator strength</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:choice>
+						<xs:element name="Total" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Total may be a sum of different multipoles (e.g. E2+M1)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Multipole" type="MultipoleType" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Transition multipole type. Example: E2</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WavelengthWavenumberType">
+		<xs:annotation>
+			<xs:documentation>Complex type for observed, Ritz, or calculated wavelengths/wavenumbers.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:attribute ref="lineOrigin"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="EnergyWavelengthType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LineWidthComponentsType">
+		<xs:sequence>
+			<xs:element name="Environment" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Pressure" type="DataType" minOccurs="0"/>
+						<xs:element name="Resonance" type="DataType" minOccurs="0"/>
+						<xs:element name="VanDerWaals" type="DataType" minOccurs="0"/>
+						<xs:element name="Comments" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute ref="mediumRef"/>
+					<xs:attribute ref="componentRef"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NonEnvironment" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Natural" type="DataType" minOccurs="0"/>
+						<xs:element name="Doppler" type="DataType" minOccurs="0"/>
+						<xs:element name="NonThermalDoppler" type="DataType" minOccurs="0"/>
+						<xs:element name="Instrumental" type="DataType" minOccurs="0"/>
+						<xs:element name="Comments" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LineWidthType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="TotalLineWidth" type="TotalLineWidthType" minOccurs="0"/>
+					<xs:element name="LineWidthComponents" type="LineWidthComponentsType" minOccurs="0"/>
+					<xs:element name="BroadeningCoefficients" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Pressure" minOccurs="0">
+									<xs:complexType>
+										<xs:complexContent>
+											<xs:extension base="DataType">
+												<xs:attribute ref="mediumRef"/>
+												<xs:attribute ref="componentRef"/>
+											</xs:extension>
+										</xs:complexContent>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="SelfBroadening" minOccurs="0">
+									<xs:complexType>
+										<xs:complexContent>
+											<xs:extension base="DataType">
+												<xs:attribute ref="mediumRef"/>
+											</xs:extension>
+										</xs:complexContent>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="Comments" type="xs:string" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute ref="mediumRef"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LineShapeShiftType">
+		<xs:sequence>
+			<xs:choice minOccurs="0">
+				<xs:element name="HWHM" type="LineWidthType" minOccurs="0"/>
+				<xs:element name="FWHM" type="LineWidthType" minOccurs="0"/>
+			</xs:choice>
+			<xs:element name="LineShift" type="LineShiftType" minOccurs="0"/>
+			<xs:element name="LineProfile" type="LineProfileType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LineProfileType">
+		<xs:choice>
+			<xs:element name="Voigt" type="VoigtType"/>
+			<xs:element name="Gauss" type="DataType"/>
+			<xs:element name="Lorentz" type="DataType"/>
+			<xs:element name="Fano" type="FanoProfileType"/>
+			<xs:element name="Shore" type="ShoreProfileType"/>
+			<xs:element name="Galatry"/>
+			<xs:element name="RautianSobelman"/>
+			<xs:element name="Comments" type="xs:string" minOccurs="0"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="FanoProfileType">
+		<xs:sequence>
+			<xs:element name="sigma_a" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Continuum contribution interactiong with the AI state</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sigma_b" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Continuum contribution non-interactiong with the AI state</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Asymmetry" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Asymmetry parameter q</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ShoreProfileType">
+		<xs:sequence>
+			<xs:element name="A" type="xs:double"/>
+			<xs:element name="B" type="xs:double"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VoigtType">
+		<xs:sequence>
+			<xs:element name="GaussWidth" type="DataType"/>
+			<xs:element name="LorentzWidth" type="DataType"/>
+			<xs:element name="Comments" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OpticalDepthType">
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:attribute ref="mediumRef"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LineIntensityType">
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:attribute ref="mediumRef"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LineShiftType">
+		<xs:sequence>
+			<xs:element name="TotalLineShift" type="TotalLineShiftType" minOccurs="0"/>
+			<xs:element name="PartialLineShift" type="PartialLineShiftType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Comments" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PartialLineShiftType">
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:attribute ref="componentRef" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TotalLineShiftType">
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:attribute ref="mediumRef" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TotalLineWidthType">
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:attribute ref="mediumRef"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="MultipoleType">
+		<xs:annotation>
+			<xs:documentation>Radiative transition multipole</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(E|M)[1-9]\d*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attribute name="lineID">
+		<xs:simpleType>
+			<xs:restriction base="xs:ID">
+				<xs:pattern value="L.+"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+</xs:schema>
