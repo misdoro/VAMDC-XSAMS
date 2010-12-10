@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		   xmlns:ctypes="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
-           targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
-	       elementFormDefault="unqualified" attributeFormDefault="unqualified">
-	
+xmlns:ctypes="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
+targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
+	elementFormDefault="unqualified" attributeFormDefault="unqualified">
 		<xs:annotation>
 			<xs:documentation>Contains data types and attributes common for most cases</xs:documentation>
 		</xs:annotation>
@@ -85,4 +84,4 @@
 				<xs:pattern value="e|f"/>
 			</xs:restriction>
 		</xs:simpleType>
-</xs:schema>
+	</xs:schema>

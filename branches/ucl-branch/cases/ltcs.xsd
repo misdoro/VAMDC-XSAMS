@@ -83,7 +83,7 @@
             </xs:element>
             
             <!-- r -->
-            <xs:element name="r" type="ctypes:RankingType" minOccurs="0">
+            <xs:element name="r" type="ctypes:RankingType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>A ranking index for states of the same symmetry that can't be or haven't been differentiated any other way: r=1,2,...</xs:documentation>
                 </xs:annotation>
