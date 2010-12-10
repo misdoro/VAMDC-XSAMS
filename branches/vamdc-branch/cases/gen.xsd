@@ -10,12 +10,14 @@
         <xs:annotation>
             <xs:documentation>A list of quantum numbers for closed-shell, symmetric top molecules</xs:documentation>
         </xs:annotation>
-        <xs:unique name="QN-name-unique">
-            <xs:selector xpath="QNs/QN"/>
+        <!-- the name attribute to qn must be unique within each state -->
+        <xs:unique name="qn-name">
+            <xs:selector xpath="gen:QN"/>
             <xs:field xpath="@name"/>
         </xs:unique>
-        <xs:unique name="Sym-name-unique">
-            <xs:selector xpath="QNs/Sym"/>
+        <!-- the name attribute to symmetry must be unique within each state -->
+        <xs:unique name="sym-name">
+            <xs:selector xpath="gen:Sym"/>
             <xs:field xpath="@name"/>
         </xs:unique>
     </xs:element>
