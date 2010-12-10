@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by Denis Humbert (International Atomic Energy Agency) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="typesAttributes.xsd"/>
+	<xs:element name="Methods" type="MethodsType">
+		<xs:annotation>
+			<xs:documentation>List of methods used to produce the data</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="MethodsType">
+		<xs:sequence>
+			<xs:element name="Method" type="MethodType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MethodType">
+		<xs:sequence>
+			<xs:element name="Category" type="MethodCategoryType">
+				<xs:annotation>
+					<xs:documentation>Enumerated list of method classifications. Example: theory.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Method description. Example: Convergent Close Coupling.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Comments" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="methodID" use="required"/>
+		<xs:attribute ref="sourceRef" use="optional"/>
+		<xs:attribute ref="functionRef" use="optional"/>
+	</xs:complexType>
+	<xs:simpleType name="MethodCategoryType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="experiment"/>
+			<xs:enumeration value="theory"/>
+			<xs:enumeration value="recommended"/>
+			<xs:enumeration value="evaluated"/>
+			<xs:enumeration value="empirical"/>
+			<xs:enumeration value="scalingLaw"/>
+			<xs:enumeration value="semiempirical"/>
+			<xs:enumeration value="compilation"/>
+			<xs:enumeration value="derived"/>
+			<xs:enumeration value="observed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attribute name="methodID">
+		<xs:annotation>
+			<xs:documentation>ID for a specific method</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:ID">
+				<xs:pattern value="M.+"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+</xs:schema>
