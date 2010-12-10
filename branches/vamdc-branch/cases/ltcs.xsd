@@ -15,9 +15,14 @@
         <xs:annotation>
             <xs:documentation>A list of quantum numbers for linear triatomic, closed-shell molecules</xs:documentation>
         </xs:annotation>
+		<!-- the name attribute to r must be unique within each state -->
+		<xs:unique name="r-name">
+			<xs:selector xpath="ltcs:r"/>
+			<xs:field xpath="@name"/>
+		</xs:unique>
     </xs:element>
     <xs:complexType name="QNsType">
-        <xs:all>
+        <xs:sequence>
             
             <!-- ElecStateLabel -->
             <xs:element name="ElecStateLabel" type="xs:string" minOccurs="0">
@@ -83,7 +88,7 @@
             </xs:element>
             
             <!-- r -->
-            <xs:element name="r" type="ctypes:RankingType" minOccurs="0" maxOccurs="1">
+            <xs:element name="r" type="ctypes:RankingType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>A ranking index for states of the same symmetry that can't be or haven't been differentiated any other way: r=1,2,...</xs:documentation>
                 </xs:annotation>
@@ -110,7 +115,7 @@
                 </xs:annotation>
             </xs:element>
             
-        </xs:all>
+        </xs:sequence>
     </xs:complexType>
     
 </xs:schema>

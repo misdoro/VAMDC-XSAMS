@@ -84,7 +84,7 @@
                                         <xs:element name="Description" type="xs:string"/>
                                         <xs:element name="MolecularStateCharacterisation" type="MolecularStateCharacterisationType" minOccurs="0"/>
                                         <xs:element name="Parity" type="ParityType" minOccurs="0"/>
-                                        <xs:any namespace="##other" minOccurs="0" maxOccurs="1">
+                                        <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
                                                 <xs:annotation>
                                                         <xs:documentation>Placeholder for QNs from all namespaces</xs:documentation>
                                                 </xs:annotation>
