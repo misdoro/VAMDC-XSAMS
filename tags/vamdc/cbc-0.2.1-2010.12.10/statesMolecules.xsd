@@ -20,7 +20,7 @@
                                 <xs:attribute name="isotope" default="xs:positiveInteger"/>
                                 <xs:attribute name="charge" type="xs:integer"/>
                                 <xs:attribute name="nuclearSpin" type="AngularMomentumType"/>
-                                <xs:attribute name="hydrogenCount" type="xs:positiveInteger"/>
+                                <xs:attribute name="hydrogenCount" type="xs:nonNegativeInteger"/>
                                 <xs:attribute name="count" type="xs:positiveInteger"/>
                         </xs:extension>
                 </xs:complexContent>
