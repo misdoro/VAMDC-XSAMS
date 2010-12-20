@@ -68,22 +68,22 @@
     </Functions>
     
     <!-- the HITRAN reference temperature, 296 K -->
-    <ucl:EquilibriumReferenceConditions id="HITRAN_refT">
+    <ucl:Environment id="HITRAN_refT">
         <ucl:Temperature units="K">
             <ucl:Value>296.</ucl:Value>
         </ucl:Temperature>
-    </ucl:EquilibriumReferenceConditions>
+    </ucl:Environment>
     <!-- the HITRAN reference pressure and temperature, 1 atm and 296 K -->
-    <ucl:EquilibriumReferenceConditions id="HITRAN_refpT">
+    <ucl:Environment id="HITRAN_refpT">
         <ucl:Temperature units="K">
             <ucl:Value>296.</ucl:Value>
         </ucl:Temperature>
         <ucl:TotalPressure units="atm">
             <ucl:Value>1.</ucl:Value>
         </ucl:TotalPressure>  
-    </ucl:EquilibriumReferenceConditions>
+    </ucl:Environment>
     <!-- the HITRAN air-broadening reference conditions -->
-    <ucl:EquilibriumReferenceConditions id="air-broadening-ref-env">
+    <ucl:Environment id="air-broadening-ref-env">
         <ucl:Temperature units="K">
             <ucl:Value>296.</ucl:Value>
         </ucl:Temperature>
@@ -102,7 +102,7 @@
                 </ucl:MoleFraction>
             </ucl:Species>
         </ucl:Composition>
-    </ucl:EquilibriumReferenceConditions>
+    </ucl:Environment>
     
     <States>
         <Molecules>

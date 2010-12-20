@@ -157,7 +157,7 @@
     </xs:complexType>
 
     <!-- environment -->
-    <xs:complexType name="EquilibriumReferenceConditionsType">
+    <xs:complexType name="EnvironmentType">
         <xs:annotation>
             <xs:documentation>Description of some equilibrium reference conditions or environment relevant to put some data into context</xs:documentation>
         </xs:annotation>
