@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
-	<xs:include schemaLocation="./typesAttributes.xsd"/>
-	<xs:element name="Particles" type="ParticlesType"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+elementFormDefault="unqualified" attributeFormDefault="unqualified"
+xmlns:typ="http://www-amdis.iaea.org/xsams/0.3/types"
+xmlns:spartic="http://www-amdis.iaea.org/xsams/0.3/statesParticles"
+targetNamespace="http://www-amdis.iaea.org/xsams/0.3/statesParticles"
+>
+	<xs:import namespace="http://www-amdis.iaea.org/xsams/0.3/types" schemaLocation="typesAttributes.xsd"/>
+	<xs:element name="Particles" type="spartic:ParticlesType"/>
 	<xs:complexType name="ParticlesType">
 		<xs:sequence>
-			<xs:element name="Particle" type="ParticleType" maxOccurs="unbounded"/>
+			<xs:element name="Particle" type="spartic:ParticleType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ParticleType">
 		<xs:sequence>
-			<xs:element name="ParticleProperties" type="ParticlePropertiesType" minOccurs="0">
+			<xs:element name="ParticleProperties" type="spartic:ParticlePropertiesType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Description of particle properties</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Comments" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute ref="stateID" use="required"/>
-		<xs:attribute name="name" type="ParticleNameType"/>
+		<xs:attribute ref="typ:stateID" use="required"/>
+		<xs:attribute name="name" type="spartic:ParticleNameType"/>
 	</xs:complexType>
 	<xs:simpleType name="ParticleNameType">
 		<xs:restriction base="xs:string">
@@ -34,17 +39,17 @@
 					<xs:documentation>Particle charge</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ParticleMass" type="DataType" minOccurs="0">
+			<xs:element name="ParticleMass" type="typ:DataType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Mass of the particle</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ParticleSpin" type="AngularMomentumType" minOccurs="0">
+			<xs:element name="ParticleSpin" type="typ:AngularMomentumType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Spin of the particle</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ParticlePolarization" type="AngularMomentumProjectionType" minOccurs="0">
+			<xs:element name="ParticlePolarization" type="typ:AngularMomentumProjectionType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Polarization of the particle</xs:documentation>
 				</xs:annotation>

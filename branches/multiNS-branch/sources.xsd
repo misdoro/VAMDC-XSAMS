@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
-	<xs:element name="Sources" type="SourcesType">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+elementFormDefault="unqualified" attributeFormDefault="unqualified"
+xmlns:src="http://www-amdis.iaea.org/xsams/0.3/sources"
+targetNamespace="http://www-amdis.iaea.org/xsams/0.3/sources"
+>
+	<xs:element name="Sources" type="src:SourcesType">
 		<xs:annotation>
 			<xs:documentation>All relevant references to data sources</xs:documentation>
 		</xs:annotation>
@@ -21,7 +25,7 @@
 	</xs:complexType>
 	<xs:complexType name="SourcesType">
 		<xs:sequence>
-			<xs:element name="Source" type="SourceType" maxOccurs="unbounded">
+			<xs:element name="Source" type="src:SourceType" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A bibliography (bibreference) entry</xs:documentation>
 				</xs:annotation>
@@ -33,7 +37,7 @@
 			<xs:documentation>Description of bibliography (references). Word "reference" is avoided</xs:documentation>
 		</xs:annotation>
 		<xs:all>
-			<xs:element name="Category" type="CategoryType">
+			<xs:element name="Category" type="src:CategoryType">
 				<xs:annotation>
 					<xs:documentation>Bibliographic reference type. Example: journal</xs:documentation>
 				</xs:annotation>
@@ -48,7 +52,7 @@
 					<xs:documentation>Year of the bibliographic reference. Example: 2008</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Authors" type="AuthorsType"/>
+			<xs:element name="Authors" type="src:AuthorsType"/>
 			<xs:element name="Title" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Title</xs:documentation>
@@ -89,7 +93,7 @@
 					<xs:documentation>City of publication. Example: Bristol.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Editors" type="EditorsType" minOccurs="0"/>
+			<xs:element name="Editors" type="src:EditorsType" minOccurs="0"/>
 			<xs:element name="ProductionDate" type="xs:date" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Date of the reference</xs:documentation>
@@ -102,11 +106,11 @@
 			</xs:element>
 			<xs:element name="Comments" type="xs:string" minOccurs="0"/>
 		</xs:all>
-		<xs:attribute ref="sourceID" use="required"/>
+		<xs:attribute ref="src:sourceID" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="AuthorsType">
 		<xs:sequence>
-			<xs:element name="Author" type="AuthorType" maxOccurs="unbounded">
+			<xs:element name="Author" type="src:AuthorType" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Author of bibliographic reference.</xs:documentation>
 				</xs:annotation>

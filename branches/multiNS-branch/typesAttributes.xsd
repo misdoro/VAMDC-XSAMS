@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+elementFormDefault="unqualified" attributeFormDefault="unqualified"
+xmlns:typ="http://www-amdis.iaea.org/xsams/0.3/types"
+targetNamespace="http://www-amdis.iaea.org/xsams/0.3/types"
+>
 	<xs:annotation>
 		<xs:documentation>Contains general data types and attributes used in several subschemas</xs:documentation>
 	</xs:annotation>
@@ -12,8 +16,8 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute ref="sourceRef"/>
-		<xs:attribute ref="methodRef"/>
+		<xs:attribute ref="typ:sourceRef"/>
+		<xs:attribute ref="typ:methodRef"/>
 	</xs:complexType>
 	<xs:attribute name="sourceRef">
 		<xs:annotation>
@@ -55,7 +59,7 @@
 					<xs:documentation>Nuclear charge in units of electron charge</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ElementSymbol" type="ElementSymbolType" minOccurs="0">
+			<xs:element name="ElementSymbol" type="typ:ElementSymbolType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Standard symbol of a chemical element (e.g., H or Ta)</xs:documentation>
 				</xs:annotation>
@@ -68,9 +72,9 @@
 			<xs:documentation>Description of physical data</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="PrimaryType">
+			<xs:extension base="typ:PrimaryType">
 				<xs:sequence>
-					<xs:element name="Value" type="ValueType">
+					<xs:element name="Value" type="typ:ValueType">
 						<xs:annotation>
 							<xs:documentation>Value of a particular quantity</xs:documentation>
 						</xs:annotation>
@@ -95,26 +99,26 @@
 			<xs:documentation>Gives the actual data either (or both) with numerical tabulated data or (and) fitted data </xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="PrimaryType">
+			<xs:extension base="typ:PrimaryType">
 				<xs:sequence>
-					<xs:element name="FitData" type="FitDataType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="FitData" type="typ:FitDataType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Fits of data</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="TabulatedData" type="TabulatedDataType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="TabulatedData" type="typ:TabulatedDataType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Tables of data</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute name="dataDescription" type="DataDescriptionType" use="required"/>
+				<xs:attribute name="dataDescription" type="typ:DataDescriptionType" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="DataSetsType">
 		<xs:sequence>
-			<xs:element name="DataSet" type="DataSetType" maxOccurs="unbounded">
+			<xs:element name="DataSet" type="typ:DataSetType" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of datasets of different nature (cross sections, rate coefficients, etc.)</xs:documentation>
 				</xs:annotation>
@@ -143,22 +147,22 @@
 			<xs:documentation>Similar to DataType but for tabular type of data</xs:documentation>
 		</xs:annotation>
 		<xs:all>
-			<xs:element name="DataList" type="DataListType">
+			<xs:element name="DataList" type="typ:DataListType">
 				<xs:annotation>
 					<xs:documentation>List of data values. Example: 3 15 33.3 1e3</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Error" type="DataListType" minOccurs="0">
+			<xs:element name="Error" type="typ:DataListType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Error for each data point of the list</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NegativeError" type="DataListType" minOccurs="0">
+			<xs:element name="NegativeError" type="typ:DataListType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Negative error for each data point of</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PositiveError" type="DataListType" minOccurs="0">
+			<xs:element name="PositiveError" type="typ:DataListType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Positive error for each data point of the list</xs:documentation>
 				</xs:annotation>
@@ -169,7 +173,7 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:all>
-		<xs:attribute ref="units" use="required"/>
+		<xs:attribute ref="typ:units" use="required"/>
 		<xs:attribute name="parameter" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="DataXYType">
@@ -177,8 +181,8 @@
 			<xs:documentation>Gives the structure of X Y data tables (several X are allowed)</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="X" type="DataTableType" maxOccurs="unbounded"/>
-			<xs:element name="Y" type="DataTableType">
+			<xs:element name="X" type="typ:DataTableType" maxOccurs="unbounded"/>
+			<xs:element name="Y" type="typ:DataTableType">
 				<xs:annotation>
 					<xs:documentation>Data value</xs:documentation>
 				</xs:annotation>
@@ -187,10 +191,10 @@
 	</xs:complexType>
 	<xs:complexType name="TabulatedDataType">
 		<xs:complexContent>
-			<xs:extension base="PrimaryType">
+			<xs:extension base="typ:PrimaryType">
 				<xs:sequence>
-					<xs:element name="DataXY" type="DataXYType"/>
-					<xs:element name="ReferenceFrame" type="ReferenceFrameType" minOccurs="0">
+					<xs:element name="DataXY" type="typ:DataXYType"/>
+					<xs:element name="ReferenceFrame" type="typ:ReferenceFrameType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Reference frame in which is given the energy, velocity...</xs:documentation>
 						</xs:annotation>
@@ -203,19 +207,19 @@
 	</xs:complexType>
 	<xs:complexType name="FitDataType">
 		<xs:complexContent>
-			<xs:extension base="PrimaryType">
+			<xs:extension base="typ:PrimaryType">
 				<xs:sequence>
 					<xs:element name="FunctionRef" type="xs:IDREF">
 						<xs:annotation>
 							<xs:documentation>Reference to the fitting function</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="FitValidityLimits" type="FitValidityLimitsType" maxOccurs="unbounded">
+					<xs:element name="FitValidityLimits" type="typ:FitValidityLimitsType" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Limits of the fit validity</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="FitParameters" type="FitParametersType">
+					<xs:element name="FitParameters" type="typ:FitParametersType">
 						<xs:annotation>
 							<xs:documentation>Fitting parameters</xs:documentation>
 						</xs:annotation>
@@ -246,12 +250,12 @@
 	</xs:complexType>
 	<xs:complexType name="FitValidityLimitsType">
 		<xs:sequence>
-			<xs:element name="LowerLimit" type="ValueType" minOccurs="0">
+			<xs:element name="LowerLimit" type="typ:ValueType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Lower limit of fit validity</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="UpperLimit" type="ValueType" minOccurs="0">
+			<xs:element name="UpperLimit" type="typ:ValueType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Upper limit of fit validity</xs:documentation>
 				</xs:annotation>
@@ -271,7 +275,7 @@
 	</xs:complexType>
 	<xs:complexType name="ArgumentsType">
 		<xs:sequence>
-			<xs:element name="Argument" type="ArgumentType" maxOccurs="unbounded"/>
+			<xs:element name="Argument" type="typ:ArgumentType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ArgumentType">
@@ -287,7 +291,7 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute ref="units" use="required"/>
+		<xs:attribute ref="typ:units" use="required"/>
 		<xs:attribute name="parameter">
 			<xs:annotation>
 				<xs:documentation>type of units (surface, energy, time...)</xs:documentation>
@@ -296,7 +300,7 @@
 	</xs:complexType>
 	<xs:complexType name="ParametersType">
 		<xs:sequence>
-			<xs:element name="Parameter" type="ParameterType" maxOccurs="unbounded"/>
+			<xs:element name="Parameter" type="typ:ParameterType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ParameterType">
@@ -323,7 +327,7 @@
 	<xs:complexType name="ValueType">
 		<xs:simpleContent>
 			<xs:extension base="xs:double">
-				<xs:attribute ref="units" use="required"/>
+				<xs:attribute ref="typ:units" use="required"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -404,7 +408,7 @@
 	</xs:attribute>
 	<xs:complexType name="jjCouplingType">
 		<xs:sequence>
-			<xs:element name="j" type="AngularMomentumType" minOccurs="2" maxOccurs="unbounded">
+			<xs:element name="j" type="typ:AngularMomentumType" minOccurs="2" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Value of the total angular momentum</xs:documentation>
 				</xs:annotation>
@@ -413,17 +417,17 @@
 	</xs:complexType>
 	<xs:complexType name="jKCouplingType">
 		<xs:all>
-			<xs:element name="j" type="AngularMomentumType" minOccurs="0">
+			<xs:element name="j" type="typ:AngularMomentumType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Value of the total angular momentum of the core</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="S2" type="AngularMomentumType" minOccurs="0">
+			<xs:element name="S2" type="typ:AngularMomentumType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Spin of the external electron(s)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="K" type="AngularMomentumType">
+			<xs:element name="K" type="typ:AngularMomentumType">
 				<xs:annotation>
 					<xs:documentation>Value of the K-number (j + orbital angular momentum of the external electron(s))</xs:documentation>
 				</xs:annotation>
@@ -432,17 +436,17 @@
 	</xs:complexType>
 	<xs:complexType name="LKCouplingType">
 		<xs:all>
-			<xs:element name="L" type="OrbitalAngularMomentumType">
+			<xs:element name="L" type="typ:OrbitalAngularMomentumType">
 				<xs:annotation>
 					<xs:documentation>Value of the sum of orbital angular momenta of the core and external electron </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="K" type="AngularMomentumType">
+			<xs:element name="K" type="typ:AngularMomentumType">
 				<xs:annotation>
 					<xs:documentation>Value of the K-number (L + spin of the core)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="S2" type="AngularMomentumType" minOccurs="0">
+			<xs:element name="S2" type="typ:AngularMomentumType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Spin of the external electron(s)</xs:documentation>
 				</xs:annotation>
@@ -451,12 +455,12 @@
 	</xs:complexType>
 	<xs:complexType name="LSCouplingType">
 		<xs:all>
-			<xs:element name="L" type="OrbitalAngularMomentumType">
+			<xs:element name="L" type="typ:OrbitalAngularMomentumType">
 				<xs:annotation>
 					<xs:documentation>Orbital angular momentum of the term in LS-coupling</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="S" type="AngularMomentumType">
+			<xs:element name="S" type="typ:AngularMomentumType">
 				<xs:annotation>
 					<xs:documentation>Spin angular momentum of the term in LS-coupling</xs:documentation>
 				</xs:annotation>
@@ -473,7 +477,7 @@
 				<xs:complexType>
 					<xs:simpleContent>
 						<xs:extension base="xs:nonNegativeInteger">
-							<xs:attribute ref="sourceRef"/>
+							<xs:attribute ref="typ:sourceRef"/>
 						</xs:extension>
 					</xs:simpleContent>
 				</xs:complexType>
@@ -483,7 +487,7 @@
 	<xs:complexType name="MixingCoefficientType">
 		<xs:simpleContent>
 			<xs:extension base="xs:double">
-				<xs:attribute name="mixingClass" type="MixingClassType" use="required">
+				<xs:attribute name="mixingClass" type="typ:MixingClassType" use="required">
 					<xs:annotation>
 						<xs:documentation>Indicator of whether amplitude or amplitude squared is given</xs:documentation>
 					</xs:annotation>
@@ -501,7 +505,7 @@
 					<xs:documentation>Value of the orbital angular momentum</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Symbol" type="OrbitalAngularMomentumSymbolType" minOccurs="0">
+			<xs:element name="Symbol" type="typ:OrbitalAngularMomentumSymbolType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Symbol of the orbital angular momentum</xs:documentation>
 				</xs:annotation>
@@ -513,27 +517,27 @@
 			<xs:documentation>Complex term for atomic term in different couplings (e.g., LS or jj).</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="LS" type="LSCouplingType" minOccurs="0">
+			<xs:element name="LS" type="typ:LSCouplingType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Term in LS-coupling</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="jj" type="jjCouplingType" minOccurs="0">
+			<xs:element name="jj" type="typ:jjCouplingType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Term in jj-coupling</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="J1J2" type="jjCouplingType" minOccurs="0">
+			<xs:element name="J1J2" type="typ:jjCouplingType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Term in J1J2-coupling</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="jK" type="jKCouplingType" minOccurs="0">
+			<xs:element name="jK" type="typ:jKCouplingType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Term in jK-coupling</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="LK" type="LKCouplingType" minOccurs="0">
+			<xs:element name="LK" type="typ:LKCouplingType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Term in LK-coupling</xs:documentation>
 				</xs:annotation>
@@ -594,7 +598,7 @@
 	<!--=== types common to collisions, radiative and autoionisation ===-->
 	<xs:complexType name="ReactantsType">
 		<xs:sequence minOccurs="2" maxOccurs="unbounded">
-			<xs:element name="StateRef" type="StateRef">
+			<xs:element name="StateRef" type="typ:StateRef">
 				<xs:annotation>
 					<xs:documentation>Reference to a specific state</xs:documentation>
 				</xs:annotation>
@@ -603,7 +607,7 @@
 	</xs:complexType>
 	<xs:complexType name="ProductsType">
 		<xs:sequence maxOccurs="unbounded">
-			<xs:element name="StateRef" type="StateRef">
+			<xs:element name="StateRef" type="typ:StateRef">
 				<xs:annotation>
 					<xs:documentation>Reference to a specific state</xs:documentation>
 				</xs:annotation>

@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
-	<xs:include schemaLocation="./typesAttributes.xsd"/>
-	<xs:element name="Radiative" type="RadiativeType">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+elementFormDefault="unqualified" attributeFormDefault="unqualified"
+xmlns:typ="http://www-amdis.iaea.org/xsams/0.3/types"
+xmlns:rad="http://www-amdis.iaea.org/xsams/0.3/processRadiative"
+targetNamespace="http://www-amdis.iaea.org/xsams/0.3/processRadiative"
+>
+	<xs:import namespace="http://www-amdis.iaea.org/xsams/0.3/types" schemaLocation="typesAttributes.xsd"/>
+	
+	<xs:element name="Radiative" type="rad:RadiativeType">
 		<xs:annotation>
 			<xs:documentation>Radiative transitions (both emission and absorption)</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="RadiativeType">
 		<xs:complexContent>
-			<xs:extension base="PrimaryType">
+			<xs:extension base="typ:PrimaryType">
 				<xs:sequence>
-					<xs:element name="RadiativeTransition" type="RadiativeTransitionType" maxOccurs="unbounded">
+					<xs:element name="RadiativeTransition" type="rad:RadiativeTransitionType" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Description of a specific radiative transition</xs:documentation>
 						</xs:annotation>
@@ -21,24 +27,24 @@
 	</xs:complexType>
 	<xs:complexType name="RadiativeTransitionType">
 		<xs:complexContent>
-			<xs:extension base="PrimaryType">
+			<xs:extension base="typ:PrimaryType">
 				<xs:sequence>
-					<xs:element name="EnergyWavelength" type="EnergyWavelengthType">
+					<xs:element name="EnergyWavelength" type="rad:EnergyWavelengthType">
 						<xs:annotation>
 							<xs:documentation>List of energy/spectrum parameters</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="InitialStateRef" type="StateRef" minOccurs="0">
+					<xs:element name="InitialStateRef" type="typ:StateRef" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Reference to the initial state</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="FinalStateRef" type="StateRef" minOccurs="0">
+					<xs:element name="FinalStateRef" type="typ:StateRef" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Reference to the final state</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Probability" type="RadiativeTransitionProbabilityType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="Probability" type="rad:RadiativeTransitionProbabilityType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Radiative transition probability and related parameters</xs:documentation>
 						</xs:annotation>
@@ -52,39 +58,39 @@
 			<xs:documentation>spontaneous transition probability, or Einstein coefficient</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="PrimaryType">
+			<xs:extension base="typ:PrimaryType">
 				<xs:sequence>
-					<xs:element name="TransitionProbabilityA" type="DataType" minOccurs="0">
+					<xs:element name="TransitionProbabilityA" type="typ:DataType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Transition probability (Einstein coefficient)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="OscillatorStrength" type="DataType" minOccurs="0">
+					<xs:element name="OscillatorStrength" type="typ:DataType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Oscillator strength</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="LineStrength" type="DataType" minOccurs="0">
+					<xs:element name="LineStrength" type="typ:DataType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Line strength</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="WeightedOscillatorStrength" type="DataType" minOccurs="0">
+					<xs:element name="WeightedOscillatorStrength" type="typ:DataType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Weighted oscillator strength</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Log10WeightedOscillatorStrength" type="DataType" minOccurs="0">
+					<xs:element name="Log10WeightedOscillatorStrength" type="typ:DataType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Log10 of the weighted oscillator strength</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="IdealisedIntensity" type="DataType" minOccurs="0">
+					<xs:element name="IdealisedIntensity" type="typ:DataType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Line intensity for some specific conditions.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Multipole" type="MultipoleType" minOccurs="0">
+					<xs:element name="Multipole" type="rad:MultipoleType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Transition multipole type. Example: E2</xs:documentation>
 						</xs:annotation>
@@ -98,19 +104,19 @@
 			<xs:documentation>Complex type for observed, Ritz, or calculated wavelengths/wavenumbers.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="PrimaryType">
+			<xs:extension base="typ:PrimaryType">
 				<xs:sequence>
-					<xs:element name="Ritz" type="DataType" minOccurs="0">
+					<xs:element name="Ritz" type="typ:DataType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Calculated from the difference of experimental energy levels</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Experimental" type="DataType" minOccurs="0">
+					<xs:element name="Experimental" type="typ:DataType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Experimentally measured</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Theoretical" type="DataType" minOccurs="0">
+					<xs:element name="Theoretical" type="typ:DataType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Calculated (theory)</xs:documentation>
 						</xs:annotation>
@@ -121,24 +127,24 @@
 	</xs:complexType>
 	<xs:complexType name="EnergyWavelengthType">
 		<xs:complexContent>
-			<xs:extension base="PrimaryType">
+			<xs:extension base="typ:PrimaryType">
 				<xs:sequence>
-					<xs:element name="Wavenumber" type="WavelengthWavenumberType" minOccurs="0">
+					<xs:element name="Wavenumber" type="rad:WavelengthWavenumberType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Transition wavenumber</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Wavelength" type="WavelengthWavenumberType" minOccurs="0">
+					<xs:element name="Wavelength" type="rad:WavelengthWavenumberType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Transition wavelength</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Energy" type="WavelengthWavenumberType" minOccurs="0">
+					<xs:element name="Energy" type="rad:WavelengthWavenumberType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Transition energy</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Frequency" type="WavelengthWavenumberType" minOccurs="0">
+					<xs:element name="Frequency" type="rad:WavelengthWavenumberType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Transition frequency</xs:documentation>
 						</xs:annotation>

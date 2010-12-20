@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
-	<xs:include schemaLocation="./typesAttributes.xsd"/>
-	<xs:element name="Functions" type="FunctionsType">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+elementFormDefault="unqualified" attributeFormDefault="unqualified"
+xmlns:func="http://www-amdis.iaea.org/xsams/0.3/functions"
+targetNamespace="http://www-amdis.iaea.org/xsams/0.3/functions"
+xmlns:typ="http://www-amdis.iaea.org/xsams/0.3/types"
+>
+	<xs:import namespace="http://www-amdis.iaea.org/xsams/0.3/types" schemaLocation="typesAttributes.xsd"/>
+	<xs:element name="Functions" type="func:FunctionsType">
 		<xs:annotation>
 			<xs:documentation>List of functions used for data description and/or presentation (e.g., fitting)</xs:documentation>
 		</xs:annotation>
@@ -11,7 +16,7 @@
 	</xs:annotation>
 	<xs:complexType name="FunctionsType">
 		<xs:sequence>
-			<xs:element name="Function" type="FunctionType" maxOccurs="unbounded"/>
+			<xs:element name="Function" type="func:FunctionType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="FunctionType">
@@ -19,26 +24,26 @@
 			<xs:documentation>Description of used functions</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="PrimaryType">
+			<xs:extension base="typ:PrimaryType">
 				<xs:sequence>
 					<xs:element name="Name" type="xs:string" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Function name. Example: BELI</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Expression" type="ExpressionType">
+					<xs:element name="Expression" type="typ:ExpressionType">
 						<xs:annotation>
 							<xs:documentation>Function expression in a specified programming language. Example: a*X1**2+2.5 (a is the parameter defined in the "parameters" list).</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Y" type="ArgumentType"/>
-					<xs:element name="Arguments" type="ArgumentsType"/>
-					<xs:element name="Parameters" type="ParametersType" minOccurs="0">
+					<xs:element name="Y" type="typ:ArgumentType"/>
+					<xs:element name="Arguments" type="typ:ArgumentsType"/>
+					<xs:element name="Parameters" type="typ:ParametersType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>List of parameters used in the function</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="ReferenceFrame" type="ReferenceFrameType" minOccurs="0">
+					<xs:element name="ReferenceFrame" type="typ:ReferenceFrameType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Reference frame in which is given the velocity, energy...</xs:documentation>
 						</xs:annotation>
@@ -54,7 +59,7 @@
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute ref="functionID" use="required"/>
+				<xs:attribute ref="func:functionID" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
