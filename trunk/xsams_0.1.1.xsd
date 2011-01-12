@@ -244,12 +244,12 @@
 	</xs:complexType>
 	<xs:complexType name="FitValidityLimitsType">
 		<xs:sequence>
-			<xs:element name="LowerLimit" type="ValueType" minOccurs="0">
+			<xs:element name="LowerLimit" type="xs:double" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Lower limit of fit validity</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="UpperLimit" type="ValueType" minOccurs="0">
+			<xs:element name="UpperLimit" type="xs:double" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Upper limit of fit validity</xs:documentation>
 				</xs:annotation>
