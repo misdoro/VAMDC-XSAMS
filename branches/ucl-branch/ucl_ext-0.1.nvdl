@@ -4,49 +4,49 @@
     
     <!-- ucl-branch XSAMS Schema -->
     <namespace ns="">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/xsams.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/xsams.xsd"/>
     </namespace>
     
     <!-- ucl-branch extensions -->
     <namespace ns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/ucl-branch">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/ucl_ext-0.1.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/ucl_ext-0.1.xsd"/>
     </namespace>
     
     <!-- case-by-case Schemata -->
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/dcs">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/dcs.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/dcs.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hunda">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/hunda.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/hunda.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hundb">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/hundb.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/hundb.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltcs">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/ltcs.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/ltcs.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltcs">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/nltcs.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/nltcs.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/stcs.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/stcs.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/lpcs.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/lpcs.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymcs">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/asymcs.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/asymcs.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymos">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/asymos.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/asymos.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphcs">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/sphcs.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/sphcs.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/sphos.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/sphos.xsd"/>
     </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen">
-        <validate schema="/Users/christian/research/schemata/XSAMS/xsams/cases/gen.xsd"/>
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/gen.xsd"/>
     </namespace>
 </rules>

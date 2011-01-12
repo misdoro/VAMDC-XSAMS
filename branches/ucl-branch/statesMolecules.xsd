@@ -95,12 +95,22 @@
                         </xs:extension>
                 </xs:complexContent>
         </xs:complexType>
+        <xs:simpleType name="NuclearSpinIsomerType">
+                <xs:annotation>
+                        <xs:documentation>NuclearSpinIsomer identifies the nuclear spin isomer with the modification "ortho", "meta", or "para" according to the criteria of Hugo, J. Chem. Phys. 130, 164302 (2009).</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="ortho"/>
+                        <xs:enumeration value="meta"/>
+                        <xs:enumeration value="para"/>
+                </xs:restriction>
+        </xs:simpleType>
         <xs:complexType name="MolecularStateCharacterisationType">
                 <xs:sequence>
                         <xs:element name="StateEnergy" type="StateEnergyType" minOccurs="0"/>
                         <xs:element name="TotalStatisticalWeight" type="xs:positiveInteger" minOccurs="0"/>
                         <xs:element name="NuclearStatisticalWeight" type="xs:positiveInteger" minOccurs="0"/>
-                        <xs:element name="NuclearSpinSymmetry" type="xs:string" minOccurs="0"/>
+                        <xs:element name="NuclearSpinIsomer" type="NuclearSpinIsomerType" minOccurs="0"/>
                         <xs:element name="LifeTime" type="DataType" minOccurs="0"/>
                         <xs:element name="Parameters" type="CharacterisationType" minOccurs="0" maxOccurs="unbounded"/>
                         <xs:element name="FracPop296" type="xs:double" minOccurs="0"/>

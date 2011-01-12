@@ -34,6 +34,11 @@
 			<xs:selector xpath="sphcs:Fj"/>
 			<xs:field xpath="@nuclearSpinRef"/>
 		</xs:unique>
+        <!-- the j of Fj must be unique within each state -->
+        <xs:unique name="Fj-ref">
+            <xs:selector xpath="sphcs:Fj"/>
+            <xs:field xpath="@j"/>
+        </xs:unique>
     </xs:element>
     <xs:complexType name="QNsType">
         <xs:sequence>
@@ -74,9 +79,9 @@
             </xs:element>
             
             <!-- Fj -->
-            <xs:element name="Fj" type="ctypes:NuclearSpinAMType" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Fj" type="ctypes:NuclearSpinIntermediateAMType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>The quantum number, F_i, associated with the intermediate angular momentum due to coupling the rotational angular momentum with one nuclear spin (F_i may not be a good quantum number)</xs:documentation>
+                    <xs:documentation>The quantum number, F_j, associated with the intermediate angular momentum due to coupling the rotational angular momentum with one nuclear spin (F_j may not be a good quantum number)</xs:documentation>
                 </xs:annotation>
             </xs:element>
             

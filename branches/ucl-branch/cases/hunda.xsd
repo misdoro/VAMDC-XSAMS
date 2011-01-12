@@ -47,20 +47,20 @@
                 </xs:annotation>
             </xs:element>
 
-			<!-- Omega -->
-            <xs:element name="Omega" type="ctypes:AMType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>The magnitude of the projection of the total electronic angular momentum onto the internuclear axis</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-
 			<!-- Lambda -->
             <xs:element name="Lambda" type="xs:nonNegativeInteger" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The magnitude of the projection of the total electronic orbital angular momentum onto the internuclear axis</xs:documentation>
                 </xs:annotation>
             </xs:element>
-
+            
+            <!-- Omega -->
+            <xs:element name="Omega" type="ctypes:AMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The magnitude of the projection of the total electronic angular momentum onto the internuclear axis</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
 			<!-- v -->
             <xs:element name="v" type="xs:nonNegativeInteger" minOccurs="0">
                 <xs:annotation>
