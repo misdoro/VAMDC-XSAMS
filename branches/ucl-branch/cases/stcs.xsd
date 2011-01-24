@@ -51,20 +51,6 @@
                 </xs:annotation>
             </xs:element>
             
-            <!-- J -->
-            <xs:element name="J" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            
-            <!-- K -->
-            <xs:element name="K" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The quantum number, K, associated with the projection of the total angular momentum excluding nuclear spin, J, onto the molecular symmetry axis</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            
             <!-- vi -->
             <xs:element name="vi" type="ctypes:VibrationalQNType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
@@ -83,6 +69,34 @@
             <xs:element name="vibInv" type="ctypes:ASParityType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system: 'a' or 's'</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- vibSym -->
+            <xs:element name="vibSym" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Symmetry species of the rotational wavefunction, in some appropriate symmetry group</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- J -->
+            <xs:element name="J" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- K -->
+            <xs:element name="K" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The quantum number, K, associated with the projection of the total angular momentum excluding nuclear spin, J, onto the molecular symmetry axis</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- rotSym -->
+            <xs:element name="rotSym" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Symmetry species of the rotational wavefunction, in some appropriate symmetry group</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
@@ -111,20 +125,6 @@
             <xs:element name="r" type="ctypes:RankingType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>A named ranking index for states of the same symmetry that can't be or haven't been differentiated any other way: r=1,2,... It is possible to have more than one r defining a state, but their name attributes have to be unique.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            
-            <!-- rotSym -->
-            <xs:element name="rotSym" type="xs:string" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>Symmetry species of the rotational wavefunction, in some appropriate symmetry group</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            
-            <!-- vibSym -->
-            <xs:element name="vibSym" type="xs:string" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>Symmetry species of the rotational wavefunction, in some appropriate symmetry group</xs:documentation>
                 </xs:annotation>
             </xs:element>
             

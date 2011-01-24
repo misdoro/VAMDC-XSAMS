@@ -49,13 +49,6 @@
                 </xs:annotation>
             </xs:element>
             
-            <!-- J -->
-            <xs:element name="J" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            
             <!-- vi -->
             <xs:element name="vi" type="ctypes:VibrationalQNType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
@@ -88,6 +81,13 @@
             <xs:element name="vibRefl" type="ctypes:PMParityType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Parity of the vibrational wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system: '+' or '-'</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- J -->
+            <xs:element name="J" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
                 </xs:annotation>
             </xs:element>
             

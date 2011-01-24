@@ -26,13 +26,6 @@
                 </xs:annotation>
             </xs:element>
             
-            <!-- J -->
-            <xs:element name="J" type="xs:nonNegativeInteger" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            
             <!-- v1 -->
             <xs:element name="v1" type="xs:nonNegativeInteger" minOccurs="0">
                 <xs:annotation>
@@ -58,6 +51,13 @@
             <xs:element name="v3" type="xs:nonNegativeInteger" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The vibrational quantum number, v3</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- J -->
+            <xs:element name="J" type="xs:nonNegativeInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
                 </xs:annotation>
             </xs:element>
             

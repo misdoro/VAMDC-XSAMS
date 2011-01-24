@@ -25,18 +25,32 @@
                     <xs:documentation>The label of the electronic state: X, a, A, b, etc...</xs:documentation>
                 </xs:annotation>
             </xs:element>
-
+            
+            <!-- Lambda -->
+            <xs:element name="Lambda" type="xs:nonNegativeInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The magnitude of the projection of the total electronic orbital angular momentum onto the internuclear axis</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- S -->
+            <xs:element name="S" type="ctypes:AMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The total electronic spin angular momentum quantum number</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- v -->
+            <xs:element name="v" type="xs:nonNegativeInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The vibrational quantum number, v</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
 			<!-- J -->
             <xs:element name="J" type="ctypes:AMType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-
-			<!-- S -->
-            <xs:element name="S" type="ctypes:AMType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>The total electronic spin angular momentum quantum number</xs:documentation>
                 </xs:annotation>
             </xs:element>
 
@@ -53,20 +67,6 @@
 			        <xs:documentation>The positive integer x identifying the spin-component label, Fx, of the state: x=1,2,3,... in order of increasing energy for a given value of J - see Herzberg, Spectra of Diatomic Molecules, Van Nostrand, Princeton, N.J., 1950</xs:documentation>
 		        </xs:annotation>
 	        </xs:element>
-
-			<!-- Lambda -->
-            <xs:element name="Lambda" type="xs:nonNegativeInteger" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>The magnitude of the projection of the total electronic orbital angular momentum onto the internuclear axis</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-
-			<!-- v -->
-            <xs:element name="v" type="xs:nonNegativeInteger" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>The vibrational quantum number, v</xs:documentation>
-                </xs:annotation>
-            </xs:element>
 
 			<!-- F1 -->
             <xs:element name="F1" type="ctypes:NuclearSpinAMType" minOccurs="0">

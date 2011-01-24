@@ -26,20 +26,20 @@
                 </xs:annotation>
             </xs:element>
 
+            <!-- v -->
+            <xs:element name="v" type="xs:nonNegativeInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The vibrational quantum number, v</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
 			<!-- J -->
             <xs:element name="J" type="xs:nonNegativeInteger" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
                 </xs:annotation>
             </xs:element>
-
-			<!-- v -->
-            <xs:element name="v" type="xs:nonNegativeInteger" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>The vibrational quantum number, v</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-
+			
 			<!-- F1 -->
             <xs:element name="F1" type="ctypes:NuclearSpinAMType" minOccurs="0">
                 <xs:annotation>

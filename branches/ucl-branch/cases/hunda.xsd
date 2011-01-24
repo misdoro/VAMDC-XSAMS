@@ -25,32 +25,18 @@
                     <xs:documentation>The label of the electronic state: X, a, A, b, etc...</xs:documentation>
                 </xs:annotation>
             </xs:element>
-
-			<!-- J -->
-            <xs:element name="J" type="ctypes:AMType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-
-			<!-- S -->
-            <xs:element name="S" type="ctypes:AMType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>The total electronic spin angular momentum quantum number</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-
-			<!-- Sigma -->
-            <xs:element name="Sigma" type="ctypes:AMType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>The magnitude of the projection of the total electronic spin angular momentum onto the internuclear axis</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-
-			<!-- Lambda -->
+            
+            <!-- Lambda -->
             <xs:element name="Lambda" type="xs:nonNegativeInteger" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The magnitude of the projection of the total electronic orbital angular momentum onto the internuclear axis</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- Sigma -->
+            <xs:element name="Sigma" type="ctypes:AMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The magnitude of the projection of the total electronic spin angular momentum onto the internuclear axis</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
@@ -61,10 +47,24 @@
                 </xs:annotation>
             </xs:element>
             
-			<!-- v -->
+            <!-- S -->
+            <xs:element name="S" type="ctypes:AMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The total electronic spin angular momentum quantum number</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- v -->
             <xs:element name="v" type="xs:nonNegativeInteger" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The vibrational quantum number, v</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+			<!-- J -->
+            <xs:element name="J" type="ctypes:AMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
                 </xs:annotation>
             </xs:element>
 
