@@ -101,6 +101,11 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Comments" type="xs:string" minOccurs="0"/>
+			<xs:element name="BibTeX" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>BibTeX representation of reference, for those who already have it in database</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:all>
 		<xs:attribute ref="sourceID" use="required"/>
 	</xs:complexType>
