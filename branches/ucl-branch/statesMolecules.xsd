@@ -89,11 +89,28 @@
                                                         <xs:documentation>Placeholder for QNs from all namespaces</xs:documentation>
                                                 </xs:annotation>
                                         </xs:any>
+                                        <xs:element name="StateExpansion" type="StateExpansionType" minOccurs="0"/>
                                 </xs:sequence>
                                 <xs:attribute ref="stateID" use="required"/>
                                 <xs:attribute name="fullyAssigned" type="xs:boolean" use="optional"/>
                         </xs:extension>
                 </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="StateExpansionType">
+                <xs:complexContent>
+                        <xs:extension base="PrimaryType">
+                                <xs:sequence>
+                                        <xs:element name="coeff" type="coeffType" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="coeffType">
+                <xs:simpleContent>
+                        <xs:extension base="xs:double">
+                                <xs:attribute name="stateRef" type="xs:IDREF" use="required"/>
+                        </xs:extension>
+                </xs:simpleContent>
         </xs:complexType>
         <xs:simpleType name="NuclearSpinIsomerType">
                 <xs:annotation>

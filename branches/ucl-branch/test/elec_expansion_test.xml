@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<XSAMSData xmlns:ucl="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/ucl-branch"
+    xmlns:elec="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/elec"
+    xmlns:gen="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../xsams.xsd">
+
+    <Molecules>
+        <Molecule id="H2">
+            <MolecularChemicalSpecies>
+                <OrdinaryStructuralFormula>H2</OrdinaryStructuralFormula>
+                <StoichiometricFormula>H2</StoichiometricFormula>
+            </MolecularChemicalSpecies>
+        </Molecule>
+    </Molecules>
+
+    <States>
+        <MolecularStates speciesRef="H2">
+            <MolecularState stateID="S-X">
+                <Description>The ground electronic state of H2</Description>
+                <elec:QNs>
+                    <elec:Lambda>0</elec:Lambda>
+                    <elec:S>0</elec:S>
+                    <elec:inv>g</elec:inv>
+                    <elec:refl>+</elec:refl>
+                </elec:QNs>
+            </MolecularState>
+            <MolecularState stateID="S-B">
+                <Description>The B(^1Sigma_u^+) electronic state of H2</Description>
+                <elec:QNs>
+                    <elec:Lambda>0</elec:Lambda>
+                    <elec:S>0</elec:S>
+                    <elec:inv>u</elec:inv>
+                    <elec:refl>+</elec:refl>
+                </elec:QNs>
+            </MolecularState>
+            <MolecularState stateID="S-Bp">
+                <Description>The B'(^1Sigma_u^+) electronic state of H2</Description>
+                <elec:QNs>
+                    <elec:Lambda>0</elec:Lambda>
+                    <elec:S>0</elec:S>
+                    <elec:inv>u</elec:inv>
+                    <elec:refl>+</elec:refl>
+                </elec:QNs>
+            </MolecularState>
+            <MolecularState stateID="S-C">
+                <Description>The C(^1Pi_u) electronic state of H2</Description>
+                <elec:QNs>
+                    <elec:Lambda>1</elec:Lambda>
+                    <elec:S>0</elec:S>
+                    <elec:inv>u</elec:inv>
+                </elec:QNs>
+            </MolecularState>
+            <MolecularState stateID="S-D">
+                <Description>The D(^1Pi_u) electronic state of H2</Description>
+                <elec:QNs>
+                    <elec:Lambda>1</elec:Lambda>
+                    <elec:S>0</elec:S>
+                    <elec:inv>u</elec:inv>
+                </elec:QNs>
+            </MolecularState>
+
+            <!-- ... -->
+
+            <MolecularState stateID="S-1">
+                <Description>A rovibronic state of H2</Description>
+                <MolecularStateCharacterisation>
+                    <StateEnergy
+                        energyOrigin="energy origin taken to be 118377.2 cm-1 above the (v=0, J=0) state of the X electronic ground state">
+                        <Value units="1/cm">-28134.81347</Value>
+                    </StateEnergy>
+                </MolecularStateCharacterisation>
+                <gen:QNs>
+                    <gen:QN name="v">0</gen:QN>
+                    <gen:QN name="J">1</gen:QN>
+                </gen:QNs>
+                <StateExpansion>
+                    <Comments>The coefficients of each electronic state</Comments>
+                    <coeff stateRef="S-B">0.999965</coeff>
+                    <coeff stateRef="S-C">0.281658E-04</coeff>
+                    <coeff stateRef="S-Bp">0.671058E-05</coeff>
+                    <coeff stateRef="S-D">0.253547E-06</coeff>
+                </StateExpansion>
+            </MolecularState>
+        </MolecularStates>
+    </States>
+</XSAMSData>

@@ -79,7 +79,7 @@ targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
 		<!-- angular momentum quantum number: integer or half-integer -->
 		<xs:simpleType name="AMType">
 			<xs:restriction base="xs:double">
-				<xs:pattern value="\d+(\.(0|5))"/>
+				<xs:pattern value="\d+(\.(0|5))?"/>
 			</xs:restriction>
 		</xs:simpleType>
 		<!-- +/- symmetry -->
