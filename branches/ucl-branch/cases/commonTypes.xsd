@@ -9,7 +9,7 @@ targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
 		
 		<xs:complexType name="RankingType">
 			<xs:simpleContent>
-				<xs:extension base="xs:positiveInteger">
+				<xs:extension base="xs:nonNegativeInteger">
 					<xs:attribute name="name" use="required">
 						<xs:annotation>
 							<xs:documentation>a string identifying this ranking index</xs:documentation>
