@@ -22,6 +22,7 @@ elementFormDefault="unqualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hundb" schemaLocation="./cases/hundb.xsd"/>
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs" schemaLocation="./cases/lpcs.xsd"/>
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltcs" schemaLocation="./cases/ltcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltos" schemaLocation="./cases/ltos.xsd"/>
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltcs" schemaLocation="./cases/nltcs.xsd"/>
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphcs" schemaLocation="./cases/sphcs.xsd"/>
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos" schemaLocation="./cases/sphos.xsd"/>

@@ -37,6 +37,9 @@
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos">
         <validate schema="/Users/christian/research/schemata/cbc/0.2.1/sphos-0.2.1.xsd"/>
     </namespace>
+    <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltos">
+        <validate schema="/Users/christian/research/schemata/cbc/0.2.1/ltos-0.2.1.xsd"/>
+    </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen">
         <validate schema="/Users/christian/research/schemata/cbc/0.2.1/gen-0.2.1.xsd"/>
     </namespace>

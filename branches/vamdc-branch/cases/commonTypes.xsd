@@ -22,20 +22,32 @@ targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
 		<xs:complexType name="NuclearSpinAMType">
 			<xs:simpleContent>
 				<xs:extension base="ctypes:AMType">
-					<xs:attribute name="nuclearSpinRef">
+					<xs:attribute name="nuclearSpinRef" use="required">
 						<xs:annotation>
-							<xs:documentation>A label identifying the nuclear spin to which the intermediate angular momentum is coupled</xs:documentation>
+							<xs:documentation>A label identifying the nuclear spin to which an intermediate angular momentum is coupled</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
-								<xs:pattern value="Q.+"/>
+								<xs:pattern value=".+"/>
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:attribute>
 				</xs:extension>
 			</xs:simpleContent>
 		</xs:complexType>
-		
+
+		<xs:complexType name="NuclearSpinIntermediateAMType">
+			<xs:simpleContent>
+				<xs:extension base="ctypes:NuclearSpinAMType">
+					<xs:attribute name="j" type="xs:positiveInteger" use="required">
+						<xs:annotation>
+							<xs:documentation>An integer label, j, identifying Fj, an intermediate angular momentum quantum number</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	
 		<xs:complexType name="VibrationalQNType">
 			<xs:simpleContent>
 				<xs:extension base="xs:nonNegativeInteger">
@@ -63,7 +75,7 @@ targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
 		<!-- angular momentum quantum number: integer or half-integer -->
 		<xs:simpleType name="AMType">
 			<xs:restriction base="xs:double">
-				<xs:pattern value="\d+(\.(0|5))"/>
+				<xs:pattern value="\d+(\.[0|5]?)?"/>
 			</xs:restriction>
 		</xs:simpleType>
 		<!-- +/- symmetry -->
