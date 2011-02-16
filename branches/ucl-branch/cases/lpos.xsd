@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:lpcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs"
-	xmlns:ctypes="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
-    targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs"
+    xmlns:lpos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpos"
+    xmlns:ctypes="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
+    targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpos"
     elementFormDefault="qualified">
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
-				schemaLocation="commonTypes.xsd"/>
+    <xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
+        schemaLocation="commonTypes.xsd"/>
     <xs:annotation>
-        <xs:documentation>Schema for specifying the quantum numbers of closed-shell linear polyatomic molecules</xs:documentation>
+        <xs:documentation>Schema for specifying the quantum numbers of open-shell linear polyatomic molecules</xs:documentation>
     </xs:annotation>
-
+    
     <!--=== QNs will be the root element ===-->
-    <xs:element name="QNs" type="lpcs:QNsType">
+    <xs:element name="QNs" type="lpos:QNsType">
         <xs:annotation>
-            <xs:documentation>A list of quantum numbers for closed-shell linear polyatomic molecules</xs:documentation>
+            <xs:documentation>A list of quantum numbers for open-shell linear polyatomic molecules</xs:documentation>
         </xs:annotation>
-		<!-- the name attribute to r must be unique within each state -->
-		<xs:unique name="r-name">
-			<xs:selector xpath="lpcs:r"/>
-			<xs:field xpath="@name"/>
-		</xs:unique>
-		<!-- the mode index of Vi and li must be unique within each state -->
-		<xs:unique name="vi-mode">
-			<xs:selector xpath="lpcs:vi"/>
-			<xs:field xpath="@mode"/>
-		</xs:unique>
-		<xs:unique name="li-mode">
-			<xs:selector xpath="lpcs:li"/>
-			<xs:field xpath="@mode"/>
-		</xs:unique>
-		<!-- the spin ref of Fj must be unique within each state -->
-		<xs:unique name="Fj-spinref">
-			<xs:selector xpath="lpcs:Fj"/>
-			<xs:field xpath="@nuclearSpinRef"/>
-		</xs:unique>
+        <!-- the name attribute to r must be unique within each state -->
+        <xs:unique name="r-name">
+            <xs:selector xpath="lpos:r"/>
+            <xs:field xpath="@name"/>
+        </xs:unique>
+        <!-- the mode index of Vi and li must be unique within each state -->
+        <xs:unique name="vi-mode">
+            <xs:selector xpath="lpos:vi"/>
+            <xs:field xpath="@mode"/>
+        </xs:unique>
+        <xs:unique name="li-mode">
+            <xs:selector xpath="lpos:li"/>
+            <xs:field xpath="@mode"/>
+        </xs:unique>
+        <!-- the spin ref of Fj must be unique within each state -->
+        <xs:unique name="Fj-spinref">
+            <xs:selector xpath="lpos:Fj"/>
+            <xs:field xpath="@nuclearSpinRef"/>
+        </xs:unique>
         <!-- the j of Fj must be unique within each state -->
         <xs:unique name="Fj-ref">
-            <xs:selector xpath="lpcs:Fj"/>
+            <xs:selector xpath="lpos:Fj"/>
             <xs:field xpath="@j"/>
         </xs:unique>
     </xs:element>
@@ -46,6 +46,13 @@
             <xs:element name="ElecStateLabel" type="xs:string" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>The label of the electronic state: X, a, A, b, etc...</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- S -->
+            <xs:element name="S" type="ctypes:AMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The total electronic spin angular momentum quantum number</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
@@ -62,7 +69,7 @@
                     <xs:documentation>A quantum number, l_i, associated with the vibrational angular momentum of the nu_i normal mode; l_i are not totally good quantum numbers - see e.g. Herzberg II, p.212</xs:documentation>
                 </xs:annotation>
             </xs:element>
-
+            
             <!-- l -->
             <xs:element name="l" type="ctypes:VibrationalAMQNType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
@@ -71,12 +78,12 @@
             </xs:element>
             
             <!-- vibInv -->
-            <xs:element name="vibInv" type="lpcs:UGParityType" minOccurs="0" maxOccurs="1">
+            <xs:element name="vibInv" type="lpos:UGParityType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system: 'u' or 'g'</xs:documentation>
                 </xs:annotation>
             </xs:element>
-
+            
             <!-- vibRefl -->
             <xs:element name="vibRefl" type="ctypes:PMParityType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
@@ -88,6 +95,13 @@
             <xs:element name="J" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>The rotational quantum number, J, associated with the total angular momentum excluding nuclear spin</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- N -->
+            <xs:element name="N" type="xs:nonNegativeInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The quantum number associated with the total angular momentum excluding electronic and nuclear spin: J = N + S</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
@@ -111,7 +125,7 @@
                     <xs:documentation>The quantum number, F, associated with the total angular momentum including nuclear spin</xs:documentation>
                 </xs:annotation>
             </xs:element>
-
+            
             <!-- r -->
             <xs:element name="r" type="ctypes:RankingType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
@@ -142,7 +156,7 @@
             
         </xs:sequence>
     </xs:complexType>
-
+    
     <!-- u/g symmetry -->
     <xs:simpleType name="UGParityType">
         <xs:restriction base="xs:string">
