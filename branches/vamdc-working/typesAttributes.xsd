@@ -11,20 +11,14 @@
 					<xs:documentation>Arbitrary comments</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="SourceRef" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>One or more source references - these entries should match the sourceID attributes of the Sources</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
-		<xs:attribute ref="sourceRef"/>
 		<xs:attribute ref="methodRef"/>
 	</xs:complexType>
-	<xs:attribute name="sourceRef">
-		<xs:annotation>
-			<xs:documentation>Reference to specific bibliographic items.</xs:documentation>
-		</xs:annotation>
-		<xs:simpleType>
-			<xs:restriction base="xs:IDREFS">
-				<xs:pattern value="B.+"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
 	<xs:attribute name="methodRef">
 		<xs:annotation>
 			<xs:documentation>Reference to a specific method.</xs:documentation>
@@ -63,9 +57,10 @@
 		</xs:all>
 	</xs:complexType>
 	<!--===  types related to numerical data ===-->
-	<xs:complexType name="DataType">
+	
+	<xs:complexType name="PhysicalQuantityType">
 		<xs:annotation>
-			<xs:documentation>Description of physical data</xs:documentation>
+			<xs:documentation>Description of a physical quantity with a value but no accuracy</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
@@ -75,15 +70,60 @@
 							<xs:documentation>Value of a particular quantity</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Accuracy" type="xs:string" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Description of the accuracy</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	
+	<xs:complexType name="DataType">
+		<xs:annotation>
+			<xs:documentation>Description of physical data - either a Value/Accuracy pair or a FitParametersType</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:choice>
+					<xs:sequence>
+						<xs:element name="Value" type="ValueType">
+							<xs:annotation>
+								<xs:documentation>Value of a particular quantity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Accuracy" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Description of the accuracy</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:element name="FitParameters" type="FitParametersType" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="FitParametersType">
+		<xs:annotation>
+			<xs:documentation>A list of fit parameters and arguments</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FitArgument" type="FitArgumentType"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="FitParameter" type="ParameterType"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="functionRef" type="xs:IDREF" use="optional"/>
+	</xs:complexType>
+	
+	<xs:complexType name="FitArgumentType">
+		<xs:annotation>
+			<xs:documentation>An argument to a fit function, with validity limits</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="lowerLimit" type="xs:double"/>
+				<xs:attribute name="upperLimit" type="xs:double"/>
+				<xs:attribute name="units" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:simpleType name="DataListType">
 		<xs:annotation>
 			<xs:documentation>List of numerical data</xs:documentation>
@@ -239,11 +279,8 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="FitParametersType">
-		<xs:sequence>
-			<xs:element name="Parameter" type="xs:double" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
+	
+	<!-- Needed for FitDataType, but not implemented anywhere yet(?) -->
 	<xs:complexType name="FitValidityLimitsType">
 		<xs:sequence>
 			<xs:element name="LowerLimit" type="ValueType" minOccurs="0">
@@ -473,7 +510,6 @@
 				<xs:complexType>
 					<xs:simpleContent>
 						<xs:extension base="xs:nonNegativeInteger">
-							<xs:attribute ref="sourceRef"/>
 						</xs:extension>
 					</xs:simpleContent>
 				</xs:complexType>

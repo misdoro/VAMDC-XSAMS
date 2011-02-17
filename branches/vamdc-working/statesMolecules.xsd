@@ -156,22 +156,18 @@
                         </xs:extension>
                 </xs:complexContent>
         </xs:complexType>
-        <!--Seems to be unreferenced
-        <xs:complexType name="TotalSpinMomentumSType">
-                <xs:simpleContent>
-                        <xs:extension base="AngularMomentumType">
-                                <xs:attribute name="electronicSpinId" type="xs:ID"/>
-                        </xs:extension>
-                </xs:simpleContent>
-        </xs:complexType>
-        -->
+        
         <xs:complexType name="ReferencedTextType">
-                <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                                <xs:attribute ref="sourceRef"/>
+                <xs:complexContent>
+                        <xs:extension base="PrimaryType">
+                                <xs:sequence>
+                                        <xs:element name="Value" minOccurs="1" maxOccurs="1" type="xs:string"/>
+                                        <xs:element name="SourceRef" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
                         </xs:extension>
-                </xs:simpleContent>
+                </xs:complexContent>
         </xs:complexType>
+        
         <xs:complexType name="CharacterisationType">
                 <xs:complexContent>
                         <xs:extension base="PrimaryType">

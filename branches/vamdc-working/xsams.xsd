@@ -4,6 +4,7 @@ elementFormDefault="unqualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="./methods.xsd"/>
 	<xs:include schemaLocation="./sources.xsd"/>
 	<xs:include schemaLocation="./functions.xsd"/>
+	<xs:include schemaLocation="./environments.xsd"/>
 	<xs:include schemaLocation="./typesAttributes.xsd"/>
 	<xs:include schemaLocation="./statesAtoms.xsd"/>
 	<xs:include schemaLocation="./statesMolecules.xsd"/>
@@ -27,10 +28,9 @@ elementFormDefault="unqualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphcs" schemaLocation="./cases/sphcs.xsd"/>
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos" schemaLocation="./cases/sphos.xsd"/>
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs" schemaLocation="./cases/stcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpos" schemaLocation="./cases/lpos.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltcs" schemaLocation="./cases/nltos.xsd"/>
 	
-
-
-
 	
 	<xs:element name="XSAMSData" type="XSAMSDataType">
 		<xs:annotation>
@@ -39,6 +39,11 @@ elementFormDefault="unqualified" attributeFormDefault="unqualified">
 	</xs:element>
 	<xs:complexType name="XSAMSDataType">
 		<xs:all>
+			<xs:element name="Environments" type="EnvironmentsType">
+				<xs:annotation>
+					<xs:documentation>List of environments relevant to the data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="Species" type="SpeciesType">
 				<xs:annotation>
 					<xs:documentation>List of atomic states, molecular states, particles, surfaces, and solids</xs:documentation>

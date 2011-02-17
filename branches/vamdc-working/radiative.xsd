@@ -43,6 +43,16 @@
 							<xs:documentation>Radiative transition probability and related parameters</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="Broadenings" type="BroadeningsType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Description of line broadening processes and related parameters</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Shiftings" type="ShiftingsType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Description of line shifting processes and related parameters</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -155,4 +165,90 @@
 			<xs:pattern value="(E|M)[1-9]\d*"/>
 		</xs:restriction>
 	</xs:simpleType>
+	
+	<xs:complexType name="BroadeningsType">
+		<xs:annotation>
+			<xs:documentation>Description of line broadening processes and related parameters</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="StarkBroadening" type="BroadeningType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Stark broadening line shape description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="VanDerWaalsBroadening" type="BroadeningType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>van-der-Waals broadening line shape description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="NaturalBroadening" type="BroadeningType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Natural (radiative) broadening line shape description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="InstrumentBroadening" type="BroadeningType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Instrument broadening line shape description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="BroadeningType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="Lineshape" type="LineshapeType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="envRef" type="xs:IDREF"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="LineshapeType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="LineshapeParameter" type="DataType" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="name" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="ShiftingsType">
+		<xs:annotation>
+			<xs:documentation>Description of line shifting processes and related parameters</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="Shifting" type="ShiftingType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Shifting description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="ShiftingType">
+		<xs:annotation>
+			<xs:documentation>Description of line shifting processes and related parameters</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="ShiftingParameter" type="DataType" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="envRef" type="xs:IDREF"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
 </xs:schema>
