@@ -165,6 +165,16 @@
 							<xs:documentation>Statistical weight. May be non-integer due to plasma environment effects.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="HyperfineConstantA" type="DataType">
+						<xs:annotation>
+							<xs:documentation>Hyperfine Structure Constant A, interaction with magnetic dipole nuclear moment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="HyperfineConstantB" type="DataType">
+						<xs:annotation>
+							<xs:documentation>Hyperfine Structure Constant B, interaction with the electric quadropole nuclear moment</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

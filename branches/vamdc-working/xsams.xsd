@@ -39,7 +39,7 @@ elementFormDefault="unqualified" attributeFormDefault="unqualified">
 	</xs:element>
 	<xs:complexType name="XSAMSDataType">
 		<xs:all>
-			<xs:element name="States" type="StatesType">
+			<xs:element name="Species" type="SpeciesType">
 				<xs:annotation>
 					<xs:documentation>List of atomic states, molecular states, particles, surfaces, and solids</xs:documentation>
 				</xs:annotation>
@@ -74,7 +74,7 @@ elementFormDefault="unqualified" attributeFormDefault="unqualified">
 			</xs:element>
 		</xs:all>
 	</xs:complexType>
-	<xs:complexType name="StatesType">
+	<xs:complexType name="SpeciesType">
 		<xs:all>
 			<xs:element name="Atoms" type="AtomsType" minOccurs="0">
 				<xs:annotation>
