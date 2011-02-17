@@ -29,7 +29,7 @@ elementFormDefault="unqualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos" schemaLocation="./cases/sphos.xsd"/>
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs" schemaLocation="./cases/stcs.xsd"/>
 	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpos" schemaLocation="./cases/lpos.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltcs" schemaLocation="./cases/nltos.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltos" schemaLocation="./cases/nltos.xsd"/>
 	
 	
 	<xs:element name="XSAMSData" type="XSAMSDataType">

@@ -43,7 +43,7 @@
 					<xs:documentation>Parameters of a specific isotope</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="IonState" type="IonStateType" maxOccurs="unbounded">
+			<xs:element name="Ion" type="AtomicIonType" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of ionization states</xs:documentation>
 				</xs:annotation>
@@ -74,7 +74,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="IonStateType">
+	<xs:complexType name="AtomicIonType">
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
@@ -93,7 +93,18 @@
 							<xs:documentation>List of atomic states within an ion</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="InChI" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Standard InChI identifier</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="InChIKey" type="xs:string" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Standard InChI key. Relatively reliable way to decide if species are equal</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
+				<xs:attribute ref="specieID" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

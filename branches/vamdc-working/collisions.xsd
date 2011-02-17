@@ -28,6 +28,7 @@
 							<xs:documentation>Collisional process</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					
 					<xs:element name="Reactants" type="ReactantsType">
 						<xs:annotation>
 							<xs:documentation>List of reacting systems</xs:documentation>

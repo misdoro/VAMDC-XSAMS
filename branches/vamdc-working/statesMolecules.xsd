@@ -57,7 +57,7 @@
                                         <xs:documentation>Standard InChI identifier</xs:documentation>
                                 </xs:annotation>
                         </xs:element>
-                        <xs:element name="InChIKey" type="xs:string" minOccurs="0">
+                        <xs:element name="InChIKey" type="xs:string" minOccurs="1">
                                 <xs:annotation>
                                         <xs:documentation>Standard InChI key</xs:documentation>
                                 </xs:annotation>
@@ -68,6 +68,7 @@
                         <xs:element name="StableMolecularProperties" type="MolecularPropertiesType" minOccurs="0"/>
                         <xs:element name="Comment" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
+				<xs:attribute ref="specieID" use="required"/>
         </xs:complexType>
         <xs:complexType name="MolecularPropertiesType">
                 <xs:sequence>
@@ -162,8 +163,7 @@
                         <xs:extension base="PrimaryType">
                                 <xs:sequence>
                                         <xs:element name="Value" minOccurs="1" maxOccurs="1" type="xs:string"/>
-                                        <xs:element name="SourceRef" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-                                </xs:sequence>
+								</xs:sequence>
                         </xs:extension>
                 </xs:complexContent>
         </xs:complexType>

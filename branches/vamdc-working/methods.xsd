@@ -25,7 +25,6 @@
 							<xs:documentation>Method description. Example: Convergent Close Coupling.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Comments" type="xs:string" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute ref="methodID" use="required"/>
 				<xs:attribute ref="functionRef" use="optional"/>
