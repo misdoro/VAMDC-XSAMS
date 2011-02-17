@@ -113,6 +113,7 @@
                                         <xs:element name="MolecularChemicalSpecies" type="MolecularChemicalSpeciesType"/>
                                         <xs:element name="MolecularState" type="MolecularStateType" maxOccurs="unbounded"/>
                                 </xs:sequence>
+                                <xs:attribute ref="speciesID" use="required"/>
                         </xs:extension>
                 </xs:complexContent>
         </xs:complexType>
@@ -128,7 +129,6 @@
                                 <xs:sequence>
                                         <xs:element name="Molecule" type="MoleculeType" maxOccurs="unbounded"/>
                                 </xs:sequence>
-								<xs:attribute ref="speciesID" use="required"/>
                         </xs:extension>
                 </xs:complexContent>
         </xs:complexType>
