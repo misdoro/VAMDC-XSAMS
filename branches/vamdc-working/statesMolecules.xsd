@@ -100,7 +100,7 @@
                         <xs:element name="StateEnergy" type="StateEnergyType" minOccurs="0"/>
                         <xs:element name="TotalStatisticalWeight" type="xs:positiveInteger" minOccurs="0"/>
                         <xs:element name="NuclearStatisticalWeight" type="xs:positiveInteger" minOccurs="0"/>
-                        <xs:element name="NuclearSpinSymmetry" type="xs:string" minOccurs="0"/>
+                        <xs:element name="NuclearSpinIsomer" type="xs:string" minOccurs="0"/>
                         <xs:element name="LifeTime" type="DataType" minOccurs="0"/>
                         <xs:element name="Parameters" type="CharacterisationType" minOccurs="0" maxOccurs="unbounded"/>
                         <xs:element name="FracPop296" type="xs:double" minOccurs="0"/>
