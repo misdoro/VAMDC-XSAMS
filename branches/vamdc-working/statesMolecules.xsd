@@ -111,7 +111,7 @@
                         <xs:extension base="PrimaryType">
                                 <xs:sequence>
                                         <xs:element name="MolecularChemicalSpecies" type="MolecularChemicalSpeciesType"/>
-                                        <xs:element name="MolecularState" type="MolecularStateType" maxOccurs="unbounded"/>
+                                        <xs:element name="MolecularState" type="MolecularStateType" minOccurs="0" maxOccurs="unbounded"/>
                                 </xs:sequence>
                                 <xs:attribute ref="speciesID" use="required"/>
                         </xs:extension>
