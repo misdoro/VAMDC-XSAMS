@@ -122,7 +122,7 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="FitArgument" type="FitArgumentType"  minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="FitParameter" type="ParameterType"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="FitParameter" type="NamedDataType"  minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="functionRef" type="xs:IDREF" use="optional"/>
 	</xs:complexType>
@@ -322,52 +322,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:complexType name="ArgumentsType">
-		<xs:sequence>
-			<xs:element name="Argument" type="ArgumentType" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ArgumentType">
-		<xs:sequence>
-			<xs:element name="Name">
-				<xs:annotation>
-					<xs:documentation>Name of the argument. Example: a</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Description" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Further description of the argument if definition in `parameter` is not sufficient</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-		<xs:attribute ref="units" use="required"/>
-		<xs:attribute name="parameter">
-			<xs:annotation>
-				<xs:documentation>type of units (surface, energy, time...)</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-	</xs:complexType>
-	<xs:complexType name="ParametersType">
-		<xs:sequence>
-			<xs:element name="Parameter" type="ParameterType" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ParameterType">
-		<xs:sequence>
-			<xs:element name="Name" type="xs:token">
-				<xs:annotation>
-					<xs:documentation>Name of a parameter. Example: a</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Description" type="xs:string" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Description of a parameter</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-		<!--<xs:attribute name="name" type="xs:string" use="required"/>-->
-		<xs:attribute ref="units" use="required"/>
-	</xs:complexType>
+	
 	<xs:simpleType name="ReferenceFrameType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="CenterOfMass"/>

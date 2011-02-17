@@ -31,9 +31,9 @@
 							<xs:documentation>Function expression in a specified programming language. Example: a*X1**2+2.5 (a is the parameter defined in the "parameters" list).</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Y" type="ArgumentType"/>
-					<xs:element name="Arguments" type="ArgumentsType"/>
-					<xs:element name="Parameters" type="ParametersType" minOccurs="0">
+					<xs:element name="Y" type="FunctionArgumentType"/>
+					<xs:element name="Arguments" type="FunctionArgumentsType"/>
+					<xs:element name="Parameters" type="FunctionParametersType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>List of parameters used in the function</xs:documentation>
 						</xs:annotation>
@@ -58,6 +58,53 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	
+	<xs:complexType name="FunctionArgumentsType">
+		<xs:sequence>
+			<xs:element name="Argument" type="FunctionArgumentType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FunctionArgumentType">
+		<xs:sequence>
+			<xs:element name="Name">
+				<xs:annotation>
+					<xs:documentation>Name of the argument. Example: a</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Further description of the argument if definition in `parameter` is not sufficient</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute ref="units" use="required"/>
+		<xs:attribute name="parameter">
+			<xs:annotation>
+				<xs:documentation>type of units (surface, energy, time...)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="FunctionParametersType">
+		<xs:sequence>
+			<xs:element name="Parameter" type="FunctionParameterType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FunctionParameterType">
+		<xs:sequence>
+			<xs:element name="Name">
+				<xs:annotation>
+					<xs:documentation>Name of the argument. Example: a</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Description of a parameter</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute ref="units" use="required"/>
+	</xs:complexType>
+	
 	<xs:attribute name="functionID">
 		<xs:annotation>
 			<xs:documentation>ID for a specific function</xs:documentation>
