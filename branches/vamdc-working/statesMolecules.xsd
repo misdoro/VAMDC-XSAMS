@@ -68,7 +68,6 @@
                         <xs:element name="StableMolecularProperties" type="MolecularPropertiesType" minOccurs="0"/>
                         <xs:element name="Comment" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
-				<xs:attribute ref="specieID" use="required"/>
         </xs:complexType>
         <xs:complexType name="MolecularPropertiesType">
                 <xs:sequence>
@@ -129,6 +128,7 @@
                                 <xs:sequence>
                                         <xs:element name="Molecule" type="MoleculeType" maxOccurs="unbounded"/>
                                 </xs:sequence>
+								<xs:attribute ref="speciesID" use="required"/>
                         </xs:extension>
                 </xs:complexContent>
         </xs:complexType>

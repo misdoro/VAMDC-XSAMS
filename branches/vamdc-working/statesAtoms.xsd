@@ -104,7 +104,7 @@
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute ref="specieID" use="required"/>
+				<xs:attribute ref="speciesID" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

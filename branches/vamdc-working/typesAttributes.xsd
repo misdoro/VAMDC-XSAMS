@@ -11,10 +11,15 @@
 					<xs:documentation>Arbitrary comments</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SourceRef" type="xs:IDREF" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="SourceRef" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>One or more source references - these entries should match the sourceID attributes of the Sources</xs:documentation>
 				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:IDREF">
+						<xs:pattern value="B.+"/>
+					</xs:restriction>
+				</xs:simpleType>
 			</xs:element>
 		</xs:sequence>
 		<xs:attribute ref="methodRef"/>
@@ -442,19 +447,19 @@
 		</xs:simpleType>
 	</xs:attribute>
 	<!--=== types and attributes common to species ===-->
-	<xs:attribute name="specieID">
+	<xs:attribute name="speciesID">
 		<xs:simpleType>
 			<xs:annotation>
-				<xs:documentation>ID for a specie.</xs:documentation>
+				<xs:documentation>ID for a species.</xs:documentation>
 			</xs:annotation>
 			<xs:restriction base="xs:ID">
 				<xs:pattern value="X.+"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
-	<xs:simpleType name="SpecieRefType">
+	<xs:simpleType name="SpeciesRefType">
 		<xs:annotation>
-			<xs:documentation>Reference to a specie.</xs:documentation>
+			<xs:documentation>Reference to a species.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:IDREF">
 			<xs:pattern value="X.+"/>
@@ -667,7 +672,7 @@
 					<xs:documentation>Reference to a specific state</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SpecieRef" type="SpecieRefType" minOccurs="0">
+			<xs:element name="SpeciesRef" type="SpeciesRefType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Reference to a specific specie</xs:documentation>
 				</xs:annotation>
@@ -681,7 +686,7 @@
 					<xs:documentation>Reference to a specific state</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SpecieRef" type="SpecieRefType" minOccurs="0">
+			<xs:element name="SpeciesRef" type="SpeciesRefType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Reference to a specific specie</xs:documentation>
 				</xs:annotation>

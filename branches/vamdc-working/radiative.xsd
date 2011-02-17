@@ -38,7 +38,7 @@
 							<xs:documentation>Reference to the final state</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="SpecieRef" type="SpecieRefType" minOccurs="0">
+					<xs:element name="SpeciesRef" type="SpeciesRefType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Reference to specie</xs:documentation>
 						</xs:annotation>
