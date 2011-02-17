@@ -100,6 +100,17 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
+	<xs:complexType name="NamedDataType">
+		<xs:annotation>
+			<xs:documentation>Extension of DataType with a name attribute</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:attribute name="name"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+		
 	<xs:complexType name="FitParametersType">
 		<xs:annotation>
 			<xs:documentation>A list of fit parameters and arguments</xs:documentation>
@@ -349,6 +360,7 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
+		<xs:attribute ref="units" use="required"/>
 	</xs:complexType>
 	<xs:simpleType name="ReferenceFrameType">
 		<xs:restriction base="xs:string">
@@ -425,6 +437,7 @@
 				<xs:enumeration value="W/m2"/>
 				<xs:enumeration value="W/cm2"/>
 				<xs:enumeration value="W"/>
+				<xs:enumeration value="atm"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
