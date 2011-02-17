@@ -13,6 +13,9 @@
     </namespace>
     
     <!-- case-by-case Schemata -->
+    <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen">
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/gen.xsd"/>
+    </namespace>
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/dcs">
         <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/dcs.xsd"/>
     </namespace>
@@ -46,7 +49,10 @@
     <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos">
         <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/sphos.xsd"/>
     </namespace>
-    <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen">
-        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/gen.xsd"/>
+    <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpos">
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/lpos.xsd"/>
+    </namespace>
+    <namespace ns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltos">
+        <validate schema="/Users/christian/research/schemata/XSAMS/ucl-xsams/cases/nltos.xsd"/>
     </namespace>
 </rules>
