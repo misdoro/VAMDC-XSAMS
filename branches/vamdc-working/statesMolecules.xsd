@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cml="http://www.xml-cml.org/schema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+        <!-- Import the CML Schema into its own namespace -->
+        <xs:import namespace="http://www.xml-cml.org/schema" schemaLocation="./cml/schema.xsd"/>
+        
         <xs:include schemaLocation="typesAttributes.xsd"/>
         <xs:element name="Molecules" type="MoleculesType">
                 <xs:annotation>
@@ -64,6 +67,9 @@
                         </xs:element>
                         <xs:element name="CASRegistryNumber" type="ReferencedTextType" minOccurs="0"/>
                         <xs:element name="CNPIGroup" type="SymbolType" minOccurs="0"/>
+                        <xs:element name="MoleculeStructure" type="MoleculeStructureType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="NormalModes" type="NormalModesType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="AnharmonicityTensor" type="MatrixType" minOccurs="0" maxOccurs="1"/>
                         <xs:element name="MoleculeNuclearSpins" type="MoleculeNuclearSpinsType" minOccurs="0"/>
                         <xs:element name="StableMolecularProperties" type="MolecularPropertiesType" minOccurs="0"/>
                         <xs:element name="Comment" type="xs:string" minOccurs="0"/>
@@ -77,6 +83,47 @@
                         </xs:sequence>
                 </xs:sequence>
         </xs:complexType>
+        
+        <!-- The MolecularStructure element contains the relevant CML elements, from
+                their own namespace -->
+        <xs:complexType name="MoleculeStructureType">
+                <xs:complexContent>
+                        <xs:extension base="PrimaryType">
+                                <xs:sequence>
+                                        <xs:element ref="cml:atomArray" minOccurs="1" maxOccurs="unbounded"/>
+                                        <xs:element ref="cml:bondArray" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                                <xs:attribute name="electronicStateRef" type="xs:IDREF"/>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        
+        <!-- NormalModes container for one or more NormalMode elements-->
+        <xs:complexType name="NormalModesType">
+                <xs:complexContent>
+                        <xs:extension base="PrimaryType">
+                                <xs:sequence>
+                                        <xs:element name="NormalMode" type="NormalModeType" minOccurs="1" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                                <xs:attribute name="electronicStateRef" type="xs:IDREF"/>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        
+        <xs:complexType name="NormalModeType">
+                <xs:complexContent>
+                        <xs:extension base="PrimaryType">
+                                <xs:sequence>
+                                        <xs:element name="HarmonicFrequency" type="DataType" minOccurs="0" maxOccurs="1"/>
+                                        <xs:element name="Intensity" type="DataType" minOccurs="0" maxOccurs="1"/>
+                                        <xs:element name="DisplacementVectors" type="VectorsType" minOccurs="0" maxOccurs="1"/>
+                                </xs:sequence>
+                                <xs:attribute name="electronicStateRef" type="xs:IDREF"/>
+                                <xs:attribute name="pointGroupSymmetry" type="xs:string" use="optional"/>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        
         <xs:complexType name="MolecularStateType">
                 <xs:complexContent>
                         <xs:extension base="PrimaryType">

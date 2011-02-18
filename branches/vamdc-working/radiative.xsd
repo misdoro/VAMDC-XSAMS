@@ -256,4 +256,55 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
+	<xs:complexType name="CrossSectionType">
+		<xs:complexContent>
+			<xs:extension base="SimpleDataTableType">
+				<xs:sequence>
+					<xs:element name="SpeciesRef" type="SpeciesRefType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Reference to a specific species</xs:documentation>
+						</xs:annotation>
+					</xs:element> 
+					<xs:element name="BandAssignment" type="BandAssignmentType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="envRef" type="xs:IDREF" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="BandAssignmentType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="BandCentre" type="DataType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="BandWidth" type="DataType" minOccurs="0" maxOccurs="1"/>
+					<xs:sequence>
+						<xs:element name="Modes" type="ModesType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:sequence>
+				<xs:attribute name="name" type="xs:string"/>
+			</xs:extension>                
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="ModesType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<!--<xs:element name="DeltaV" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="unbounded"/>-->
+					<xs:element name="DeltaV" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:extension base="xs:nonNegativeInteger">
+									<xs:attribute name="modeID" type="xs:IDREF"/>
+								</xs:extension>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>                    
+				<xs:attribute name="name" type="xs:string"/>
+			</xs:extension>                
+		</xs:complexContent>
+	</xs:complexType>
+	
 </xs:schema>
