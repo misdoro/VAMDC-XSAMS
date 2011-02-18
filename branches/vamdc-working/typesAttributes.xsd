@@ -27,18 +27,17 @@
 				</xs:simpleType>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute ref="methodRef"/>
+		<xs:attribute name="methodRef" type="methodRefType"/>
 	</xs:complexType>
-	<xs:attribute name="methodRef">
+	
+	<xs:simpleType name="methodRefType">
 		<xs:annotation>
 			<xs:documentation>Reference to a specific method.</xs:documentation>
 		</xs:annotation>
-		<xs:simpleType>
-			<xs:restriction base="xs:IDREF">
-				<xs:pattern value="M.+"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="M.+"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="functionRefType">
 		<xs:annotation>
 			<xs:documentation>Reference to a specific function</xs:documentation>
@@ -105,7 +104,7 @@
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="DataType">
-				<xs:attribute name="name"/>
+				<xs:attribute name="name" type="xs:string"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -405,6 +404,7 @@
 				<xs:enumeration value="W/cm2"/>
 				<xs:enumeration value="W"/>
 				<xs:enumeration value="atm"/>
+				<xs:enumeration value="km/mol"/>
 			</xs:restriction>
 		
 	</xs:simpleType>
@@ -748,6 +748,7 @@
 				</xs:sequence>
 				<xs:attribute name="parameter" type="xs:string"/>
 				<xs:attribute name="units" type="xs:string"/>
+				<xs:attribute name="id" type="xs:ID"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

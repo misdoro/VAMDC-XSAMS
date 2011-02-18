@@ -41,7 +41,7 @@ targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-wo
 	</xs:element>
 	<xs:complexType name="XSAMSDataType">
 		<xs:all>
-			<xs:element name="Environments" type="EnvironmentsType">
+			<xs:element name="Environments" type="EnvironmentsType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>List of environments relevant to the data</xs:documentation>
 				</xs:annotation>

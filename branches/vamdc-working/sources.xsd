@@ -111,21 +111,18 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:all>
-		<xs:attributeGroup ref="sourceAttributes"/>
+		<xs:attribute name="sourceID" type="sourceIDType" use="required"/>
 	</xs:complexType>
 	
-	<xs:attributeGroup name="sourceAttributes">
-		<xs:attribute name="sourceID" use="required">
-			<xs:annotation>
-				<xs:documentation>Reference to specific bibliographic items.</xs:documentation>
-			</xs:annotation>
-			<xs:simpleType>
-				<xs:restriction base="xs:IDREFS">
-					<xs:pattern value="B.+"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:attributeGroup>
+	<xs:simpleType name="sourceIDType">
+		<xs:annotation>
+			<xs:documentation>Reference to specific bibliographic items.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="B.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	
 	<xs:complexType name="AuthorsType">
 		<xs:sequence>
@@ -157,11 +154,4 @@
 			<xs:enumeration value="theses"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:attribute name="sourceID">
-		<xs:simpleType>
-			<xs:restriction base="xs:ID">
-				<xs:pattern value="B.+"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
 </xs:schema>
