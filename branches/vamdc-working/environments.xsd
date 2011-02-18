@@ -21,9 +21,9 @@
         <xs:complexContent>
             <xs:extension base="PrimaryType">
                 <xs:sequence>
-                    <xs:element name="Temperature" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
-                    <xs:element name="TotalPressure" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
-                    <xs:element name="TotalNumberDensity" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Temperature" type="DataType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="TotalPressure" type="DataType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="TotalNumberDensity" type="DataType" minOccurs="0" maxOccurs="1"/>
                     <xs:element name="Composition" type="CompositionType" minOccurs="0" maxOccurs="1"/>
                 </xs:sequence>
                 <xs:attribute name="id" type="xs:ID"></xs:attribute>
@@ -44,9 +44,9 @@
             <xs:documentation>A named species or reference to a species with a given equilibrium concentration, mole fraction or partial pressure</xs:documentation>
         </xs:annotation>
         <xs:choice>
-            <xs:element name="PartialPressure" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="MoleFraction" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="Concentration" type="PhysicalQuantityType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="PartialPressure" type="DataType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="MoleFraction" type="DataType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Concentration" type="DataType" minOccurs="0" maxOccurs="1"/>
         </xs:choice>
         <xs:attribute name="name" type="xs:string" use="optional"/>
         <xs:attribute name="speciesRef" type="xs:IDREF" use="optional"/>
