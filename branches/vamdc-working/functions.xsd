@@ -31,8 +31,8 @@
 							<xs:documentation>Function expression in a specified programming language. Example: a*X1**2+2.5 (a is the parameter defined in the "parameters" list).</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Y" type="FunctionArgumentType"/>
-					<xs:element name="Arguments" type="FunctionArgumentsType"/>
+					<xs:element name="Y" type="ArgumentType"/>
+					<xs:element name="Arguments" type="ArgumentsType"/>
 					<xs:element name="Parameters" type="FunctionParametersType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>List of parameters used in the function</xs:documentation>
@@ -59,12 +59,12 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
-	<xs:complexType name="FunctionArgumentsType">
+	<xs:complexType name="ArgumentsType">
 		<xs:sequence>
-			<xs:element name="Argument" type="FunctionArgumentType" maxOccurs="unbounded"/>
+			<xs:element name="Argument" type="ArgumentType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="FunctionArgumentType">
+	<xs:complexType name="ArgumentType">
 		<xs:sequence>
 			<xs:element name="Name">
 				<xs:annotation>
@@ -76,13 +76,24 @@
 					<xs:documentation>Further description of the argument if definition in `parameter` is not sufficient</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="LowerLimit" type="ValueType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Lower limit of fit validity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UpperLimit" type="ValueType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Upper limit of fit validity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 		<xs:attribute ref="units" use="required"/>
+		<!-- what's this for? 
 		<xs:attribute name="parameter">
 			<xs:annotation>
 				<xs:documentation>type of units (surface, energy, time...)</xs:documentation>
 			</xs:annotation>
-		</xs:attribute>
+		</xs:attribute> -->
 	</xs:complexType>
 	<xs:complexType name="FunctionParametersType">
 		<xs:sequence>

@@ -63,23 +63,6 @@
 	</xs:complexType>
 	<!--===  types related to numerical data ===-->
 	
-	<xs:complexType name="PhysicalQuantityType">
-		<xs:annotation>
-			<xs:documentation>Description of a physical quantity with a value but no accuracy</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="PrimaryType">
-				<xs:sequence>
-					<xs:element name="Value" type="ValueType">
-						<xs:annotation>
-							<xs:documentation>Value of a particular quantity</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	
 	<xs:complexType name="DataType">
 		<xs:annotation>
 			<xs:documentation>Description of physical data - either a Value/Accuracy pair or a FitParametersType</xs:documentation>
@@ -121,23 +104,10 @@
 			<xs:documentation>A list of fit parameters and arguments</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="FitArgument" type="FitArgumentType"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="FitArgument" type="ArgumentType"  minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="FitParameter" type="NamedDataType"  minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="functionRef" type="xs:IDREF" use="optional"/>
-	</xs:complexType>
-	
-	<xs:complexType name="FitArgumentType">
-		<xs:annotation>
-			<xs:documentation>An argument to a fit function, with validity limits</xs:documentation>
-		</xs:annotation>
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="lowerLimit" type="xs:double"/>
-				<xs:attribute name="upperLimit" type="xs:double"/>
-				<xs:attribute name="units" type="xs:string" use="required"/>
-			</xs:extension>
-		</xs:simpleContent>
 	</xs:complexType>
 	
 	<xs:simpleType name="DataListType">
