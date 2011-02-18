@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+	targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working">
+	
 	<xs:element name="Sources" type="SourcesType">
 		<xs:annotation>
 			<xs:documentation>All relevant references to data sources</xs:documentation>
@@ -107,8 +111,22 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:all>
-		<xs:attribute ref="sourceID" use="required"/>
+		<xs:attributeGroup ref="sourceAttributes"/>
 	</xs:complexType>
+	
+	<xs:attributeGroup name="sourceAttributes">
+		<xs:attribute name="sourceID" use="required">
+			<xs:annotation>
+				<xs:documentation>Reference to specific bibliographic items.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:IDREFS">
+					<xs:pattern value="B.+"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	
 	<xs:complexType name="AuthorsType">
 		<xs:sequence>
 			<xs:element name="Author" type="AuthorType" maxOccurs="unbounded">

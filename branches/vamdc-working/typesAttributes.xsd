@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+	xmlns:xsams="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+	targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working">
+	
 	<xs:annotation>
 		<xs:documentation>Contains general data types and attributes used in several subschemas</xs:documentation>
 	</xs:annotation>
@@ -34,16 +39,22 @@
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
-	<xs:attribute name="functionRef">
+	<xs:simpleType name="functionRefType">
 		<xs:annotation>
-			<xs:documentation>Reference to a specific fit function</xs:documentation>
+			<xs:documentation>Reference to a specific function</xs:documentation>
 		</xs:annotation>
-		<xs:simpleType>
-			<xs:restriction base="xs:IDREF">
-				<xs:pattern value="F.+"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="F.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="functionIDType">
+		<xs:annotation>
+			<xs:documentation>ID for a specific function</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="F.+"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="ChemicalElementType">
 		<xs:annotation>
 			<xs:documentation>Description of a chemical element</xs:documentation>
@@ -133,7 +144,7 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute ref="units" use="required"/>
+		<xs:attribute name="units" type="unitsType" use="required"/>
 		<!-- what's this for? 
 			<xs:attribute name="parameter">
 			<xs:annotation>
@@ -221,7 +232,7 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:all>
-		<xs:attribute ref="units" use="required"/>
+		<xs:attribute name="units" type="unitsType" use="required"/>
 		<xs:attribute name="parameter" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="DataXYType">
@@ -329,15 +340,14 @@
 	<xs:complexType name="ValueType">
 		<xs:simpleContent>
 			<xs:extension base="xs:double">
-				<xs:attribute ref="units" use="required"/>
+				<xs:attribute name="units" type="unitsType" use="required"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:attribute name="units">
+	<xs:simpleType name="unitsType">
 		<xs:annotation>
 			<xs:documentation>Description of physical units. Use "unitless" for dimensionless quantities.</xs:documentation>
 		</xs:annotation>
-		<xs:simpleType>
 			<xs:restriction base="xs:token">
 				<xs:enumeration value="undef"/>
 				<xs:enumeration value="eV/amu"/>
@@ -396,19 +406,17 @@
 				<xs:enumeration value="W"/>
 				<xs:enumeration value="atm"/>
 			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
+		
+	</xs:simpleType>
 	<!--=== types and attributes common to species ===-->
-	<xs:attribute name="speciesID">
-		<xs:simpleType>
+	<xs:simpleType name="speciesIDType">
 			<xs:annotation>
 				<xs:documentation>ID for a species.</xs:documentation>
 			</xs:annotation>
 			<xs:restriction base="xs:ID">
 				<xs:pattern value="X.+"/>
 			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
+	</xs:simpleType>
 	<xs:simpleType name="SpeciesRefType">
 		<xs:annotation>
 			<xs:documentation>Reference to a species.</xs:documentation>
@@ -417,17 +425,23 @@
 			<xs:pattern value="X.+"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="methodIDType">
+		<xs:annotation>
+			<xs:documentation>ID for a specific method</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="M.+"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<!--=== types and attributes common to states ===-->
-	<xs:attribute name="stateID">
+	<xs:simpleType name="stateIDType">
 		<xs:annotation>
 			<xs:documentation>ID for a specific state/particle.</xs:documentation>
 		</xs:annotation>
-		<xs:simpleType>
-			<xs:restriction base="xs:ID">
-				<xs:pattern value="S.+"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="S.+"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="jjCouplingType">
 		<xs:sequence>
 			<xs:element name="j" type="AngularMomentumType" minOccurs="2" maxOccurs="unbounded">

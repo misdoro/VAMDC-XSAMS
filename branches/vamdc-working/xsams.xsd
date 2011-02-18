@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-elementFormDefault="unqualified" attributeFormDefault="unqualified">
+elementFormDefault="qualified" attributeFormDefault="unqualified"
+xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working">
 	<xs:include schemaLocation="./methods.xsd"/>
 	<xs:include schemaLocation="./sources.xsd"/>
 	<xs:include schemaLocation="./functions.xsd"/>

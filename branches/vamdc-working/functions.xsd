@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+	xmlns:xsams="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+	targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working">
+	
 	<xs:include schemaLocation="./typesAttributes.xsd"/>
 	<xs:element name="Functions" type="FunctionsType">
 		<xs:annotation>
@@ -54,7 +59,7 @@
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute ref="functionID" use="required"/>
+				<xs:attribute name="functionID" type="functionIDType" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -83,17 +88,19 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute ref="units" use="required"/>
+		<xs:attribute name="units" type="unitsType" use="required"/>
 	</xs:complexType>
 	
-	<xs:attribute name="functionID">
-		<xs:annotation>
-			<xs:documentation>ID for a specific function</xs:documentation>
-		</xs:annotation>
-		<xs:simpleType>
-			<xs:restriction base="xs:ID">
-				<xs:pattern value="F.+"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
+	<!--<xs:attributeGroup name="functionAttributes">-->
+		<xs:attribute name="functionID">
+			<xs:annotation>
+				<xs:documentation>ID for a specific function</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:ID">
+					<xs:pattern value="F.+"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	<!--</xs:attributeGroup>-->
 </xs:schema>

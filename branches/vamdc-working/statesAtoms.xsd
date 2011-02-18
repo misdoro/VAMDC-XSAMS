@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+	targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working">
+	
 	<xs:include schemaLocation="typesAttributes.xsd"/>
 	<xs:annotation>
 		<xs:documentation>5/8/07: polarizability added (DH,YR); quantumDefect added (12/5/07)</xs:documentation>
@@ -104,7 +108,7 @@
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute ref="speciesID" use="required"/>
+				<xs:attribute name="speciesID" type="speciesIDType" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -133,7 +137,7 @@
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute ref="stateID" use="required"/>
+				<xs:attribute name="stateID" type="stateIDType" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

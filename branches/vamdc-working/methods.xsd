@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+	targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working">
+	
 	<xs:include schemaLocation="typesAttributes.xsd"/>
 	<xs:element name="Methods" type="MethodsType">
 		<xs:annotation>
@@ -26,11 +30,12 @@
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute ref="methodID" use="required"/>
-				<xs:attribute ref="functionRef" use="optional"/>
+				<xs:attribute name="methodID" use="required" type="methodIDType"/>
+				<xs:attribute name="functionRef" use="optional" type="functionRefType"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	
 	<xs:simpleType name="MethodCategoryType">
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="experiment"/>
@@ -45,14 +50,5 @@
 			<xs:enumeration value="observed"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:attribute name="methodID">
-		<xs:annotation>
-			<xs:documentation>ID for a specific method</xs:documentation>
-		</xs:annotation>
-		<xs:simpleType>
-			<xs:restriction base="xs:ID">
-				<xs:pattern value="M.+"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
+	
 </xs:schema>
