@@ -111,7 +111,10 @@
 		
 	<xs:complexType name="FitParametersType">
 		<xs:annotation>
-			<xs:documentation>A list of fit parameters and arguments</xs:documentation>
+			<xs:documentation>A list of fit parameters and arguments. The function referred to takes arguments
+							  (independent variables at which the function is calculated; a range of acceptable
+							  values can be specified) and parameters (the 'constants' for a particular function
+							  which define the fit to that particular model)</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="FitArgument" type="ArgumentType"  minOccurs="0" maxOccurs="unbounded"/>
@@ -124,7 +127,7 @@
 		<xs:sequence>
 			<xs:element name="Name">
 				<xs:annotation>
-					<xs:documentation>Name of the argument. Example: a</xs:documentation>
+					<xs:documentation>Name of the argument, matching that defined in the function definition. Example: a</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Description" minOccurs="0">
@@ -667,6 +670,9 @@
 	
 	<!-- VectorsType container for one or more Vector elements-->
 	<xs:complexType name="VectorsType">
+		<xs:annotation>
+			<xs:documentation>A container for a collection of Vectors</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
@@ -679,6 +685,9 @@
 	
 	<xs:complexType name="VectorType">
 		<xs:complexContent>
+			<xs:annotation>
+				<xs:documentation>A vector in 3-D space defined by its x,y,z components, and a reference string giving context</xs:documentation>
+			</xs:annotation>
 			<xs:extension base="PrimaryType">
 				<xs:attribute name="ref" type="xs:string"/>
 				<xs:attribute name="x3" type="xs:double"/>
@@ -690,6 +699,13 @@
 	
 	<!-- A matrix -->
 	<xs:complexType name="MatrixType">
+		<xs:annotation>
+			<xs:documentation>A nrows x ncols matrix. RowRefs is a whitespace separated list of row names, ColRefs is the same for
+							  columns. The attribute 'form' identifies the type of matrix ('symmetric', 'diagonal', etc.), and the
+							  attribute 'values' is 'real', 'imaginary', or 'complex'. The matrix itself is a whitespace separated
+							  list of values. For an arbitrary matrix, it has nrows*ncols entries. For a diagonal matrix there are
+							  nrows=ncols entries. For a symmetric matrix there are nrows(nrows+1)/2 entries etc.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
