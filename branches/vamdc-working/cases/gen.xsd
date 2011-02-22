@@ -80,7 +80,12 @@
                     <xs:annotation>
                         <xs:documentation>a string identifying this symmetry</xs:documentation>
                     </xs:annotation>
-                </xs:attribute> 
+                </xs:attribute>
+                <xs:attribute name="group" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>a string identifying the symmetry group this species belongs to</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
