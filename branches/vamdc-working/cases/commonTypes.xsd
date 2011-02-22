@@ -71,6 +71,19 @@ targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
 				</xs:extension>
 			</xs:simpleContent>
 		</xs:complexType>
+	
+	<xs:complexType name="SymmetrySpeciesType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="group" use="optional">
+					<xs:annotation>
+						<xs:documentation>a string identifying the symmetry group this species belongs to</xs:documentation>
+					</xs:annotation>
+				</xs:attribute> 
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 		
 		<!-- angular momentum quantum number: integer or half-integer -->
 		<xs:simpleType name="AMType">
@@ -94,6 +107,12 @@ targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
 		<xs:simpleType name="EFParityType">
 			<xs:restriction base="xs:string">
 				<xs:pattern value="e|f"/>
+			</xs:restriction>
+		</xs:simpleType>
+		<!-- u/g symmetry -->
+		<xs:simpleType name="UGParityType">
+			<xs:restriction base="xs:string">
+				<xs:pattern value="u|g"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:schema>

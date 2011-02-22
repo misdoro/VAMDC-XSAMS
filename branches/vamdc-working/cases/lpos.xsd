@@ -78,7 +78,7 @@
             </xs:element>
             
             <!-- vibInv -->
-            <xs:element name="vibInv" type="lpos:UGParityType" minOccurs="0" maxOccurs="1">
+            <xs:element name="vibInv" type="ctypes:UGParityType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system: 'u' or 'g'</xs:documentation>
                 </xs:annotation>
@@ -156,11 +156,5 @@
             
         </xs:sequence>
     </xs:complexType>
-    
-    <!-- u/g symmetry -->
-    <xs:simpleType name="UGParityType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="u|g"/>
-        </xs:restriction>
-    </xs:simpleType>
+
 </xs:schema>

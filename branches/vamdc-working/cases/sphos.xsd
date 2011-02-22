@@ -72,7 +72,7 @@
             </xs:element>
             
             <!-- vibSym -->
-            <xs:element name="vibSym" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:element name="vibSym" type="ctypes:SymmetrySpeciesType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Symmetry species of the rotational wavefunction, in some appropriate symmetry group</xs:documentation>
                 </xs:annotation>
@@ -93,7 +93,7 @@
             </xs:element>
             
             <!-- rotSym -->
-            <xs:element name="rotSym" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:element name="rotSym" type="ctypes:SymmetrySpeciesType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Symmetry species of the rotational wavefunction, in some appropriate symmetry group</xs:documentation>
                 </xs:annotation>
