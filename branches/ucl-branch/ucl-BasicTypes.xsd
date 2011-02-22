@@ -193,5 +193,107 @@
         <xs:attribute name="name" type="xs:string" use="optional"/>
         <xs:attribute name="speciesRef" type="xs:IDREF" use="optional"/>
     </xs:complexType>
+    
+    <!-- VectorsType container for one or more Vector elements-->
+    <xs:complexType name="VectorsType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:element name="Vector" type="VectorType" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="units" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="VectorType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:attribute name="ref" type="xs:string"/>
+                <xs:attribute name="x3" type="xs:double"/>
+                <xs:attribute name="y3" type="xs:double"/>
+                <xs:attribute name="z3" type="xs:double"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!-- A matrix -->
+    <xs:complexType name="MatrixType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:element name="RowRefs" type="xs:string"/>
+                    <xs:element name="ColRefs" type="xs:string"/>
+                    <xs:element name="Matrix" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+                <xs:attribute name="units" type="xs:string" use="required"/>
+                <xs:attribute name="nrows" type="xs:integer" use="required"/>
+                <xs:attribute name="ncols" type="xs:integer" use="required"/>
+                <xs:attribute name="form" type="xs:string" use="required"/>
+                <xs:attribute name="values" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!-- The data list type: a whitespace-delimited string of numbers -->
+    <!-- It doesn't need sources and comments, because it always appears inside
+        another element which provides these -->
+    <xs:complexType name="DataListType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="n" type="xs:positiveInteger"/>
+                <xs:attribute name="units" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>    
+    </xs:complexType>
+    
+    <!-- The linear sequence type: for describing arithmetic progressions of the
+        form a0 a0+a1 a0+2a1 a0+3a1 ... a0+(n-1)a1 -->
+    <xs:complexType name="LinearSequenceType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:attribute name="n" type="xs:positiveInteger"/>
+                <xs:attribute name="units" type="xs:string"/>
+                <xs:attribute name="a0" type="xs:double" use="required"/>
+                <xs:attribute name="a1" type="xs:double" use="required"/>
+            </xs:extension>
+        </xs:complexContent>      
+    </xs:complexType>
+    
+    <!-- A data series type -->
+    <xs:complexType name="DataSeriesType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:choice>
+                        <xs:element name="DataList" type="DataListType" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="LinearSequence" type="LinearSequenceType"/>
+                        <xs:element name="DataFile" type="xs:string"/>
+                    </xs:choice>
+                    <xs:choice>
+                        <xs:element name="ErrorList" type="DataListType" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="Error" type="xs:double" minOccurs="0" maxOccurs="1"/>
+                    </xs:choice>
+                </xs:sequence>
+                <xs:attribute name="parameter" type="xs:string"/>
+                <xs:attribute name="units" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!-- A data table: one or more X-columns (abcissa(e); independent variable(s)) and one or more
+        Y-columns (dependent variable(s)) -->
+    <xs:complexType name="DataTableType">
+        <xs:complexContent>
+            <xs:extension base="PrimaryType">
+                <xs:sequence>
+                    <xs:element name="Description" type="xs:string"/>
+                    <xs:element name="X" type="DataSeriesType"/>
+                    <xs:element name="Y" type="DataSeriesType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
 
 </xs:schema>

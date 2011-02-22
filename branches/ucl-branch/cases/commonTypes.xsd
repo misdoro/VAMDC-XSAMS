@@ -9,7 +9,7 @@ targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
 		
 		<xs:complexType name="RankingType">
 			<xs:simpleContent>
-				<xs:extension base="xs:nonNegativeInteger">
+				<xs:extension base="xs:positiveInteger">
 					<xs:attribute name="name" use="required">
 						<xs:annotation>
 							<xs:documentation>a string identifying this ranking index</xs:documentation>
@@ -39,14 +39,10 @@ targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
 		<xs:complexType name="NuclearSpinIntermediateAMType">
 			<xs:simpleContent>
 				<xs:extension base="ctypes:NuclearSpinAMType">
-					<xs:attribute name="j" use="required">
+					<xs:attribute name="j" type="xs:positiveInteger" use="required">
 						<xs:annotation>
 							<xs:documentation>An integer label, j, identifying Fj, an intermediate angular momentum quantum number</xs:documentation>
 						</xs:annotation>
-						<xs:simpleType>
-							<xs:restriction base="xs:positiveInteger">
-							</xs:restriction>
-						</xs:simpleType>
 					</xs:attribute>
 				</xs:extension>
 			</xs:simpleContent>
@@ -75,6 +71,19 @@ targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
 				</xs:extension>
 			</xs:simpleContent>
 		</xs:complexType>
+	
+	<xs:complexType name="SymmetrySpeciesType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="group" use="optional">
+					<xs:annotation>
+						<xs:documentation>a string identifying the symmetry group this species belongs to</xs:documentation>
+					</xs:annotation>
+				</xs:attribute> 
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 		
 		<!-- angular momentum quantum number: integer or half-integer -->
 		<xs:simpleType name="AMType">
@@ -98,6 +107,12 @@ targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
 		<xs:simpleType name="EFParityType">
 			<xs:restriction base="xs:string">
 				<xs:pattern value="e|f"/>
+			</xs:restriction>
+		</xs:simpleType>
+		<!-- u/g symmetry -->
+		<xs:simpleType name="UGParityType">
+			<xs:restriction base="xs:string">
+				<xs:pattern value="u|g"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:schema>

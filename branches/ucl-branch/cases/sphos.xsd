@@ -34,11 +34,11 @@
 			<xs:selector xpath="sphos:Fj"/>
 			<xs:field xpath="@nuclearSpinRef"/>
 		</xs:unique>
-        <!-- the j of Fj must be unique within each state -->
-        <xs:unique name="Fj-ref">
-            <xs:selector xpath="sphos:Fj"/>
-            <xs:field xpath="@j"/>
-        </xs:unique>
+		<!-- the j of Fj must be unique within each state -->
+		<xs:unique name="Fj-ref">
+			<xs:selector xpath="sphos:Fj"/>
+			<xs:field xpath="@j"/>
+		</xs:unique>
     </xs:element>
     <xs:complexType name="QNsType">
         <xs:sequence>
@@ -72,7 +72,7 @@
             </xs:element>
             
             <!-- vibSym -->
-            <xs:element name="vibSym" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:element name="vibSym" type="ctypes:SymmetrySpeciesType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Symmetry species of the rotational wavefunction, in some appropriate symmetry group</xs:documentation>
                 </xs:annotation>
@@ -93,7 +93,7 @@
             </xs:element>
             
             <!-- rotSym -->
-            <xs:element name="rotSym" type="xs:string" minOccurs="0" maxOccurs="1">
+            <xs:element name="rotSym" type="ctypes:SymmetrySpeciesType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Symmetry species of the rotational wavefunction, in some appropriate symmetry group</xs:documentation>
                 </xs:annotation>
