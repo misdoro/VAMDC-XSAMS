@@ -113,6 +113,11 @@
 							<xs:documentation>Transition multipole type. Example: E2</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="EffectiveLandeFactor" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Effective Lande factor for transition</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
