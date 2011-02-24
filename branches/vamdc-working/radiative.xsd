@@ -198,7 +198,7 @@
 				<xs:sequence>
 					<xs:element name="Lineshape" type="LineshapeType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
-				<xs:attribute name="envRef" type="xs:IDREF"/>
+				<xs:attribute name="envRef" type="EnvironmentRefType"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -240,7 +240,7 @@
 				<xs:sequence>
 					<xs:element name="ShiftingParameter" type="NamedDataType" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
-				<xs:attribute name="envRef" type="xs:IDREF"/>
+				<xs:attribute name="envRef" type="EnvironmentRefType"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -256,7 +256,7 @@
 					</xs:element> 
 					<xs:element name="BandAssignment" type="BandAssignmentType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
-				<xs:attribute name="envRef" type="xs:IDREF" use="optional"/>
+				<xs:attribute name="envRef" type="EnvironmentRefType" use="optional"/>
 				<xs:attribute name="id" type="xs:ID"/>
 			</xs:extension>
 		</xs:complexContent>

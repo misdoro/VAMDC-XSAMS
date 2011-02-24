@@ -436,6 +436,22 @@
 			<xs:pattern value="M.+"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="environmentIDType">
+		<xs:annotation>
+			<xs:documentation>ID for environments.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="E.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EnvironmentRefType">
+		<xs:annotation>
+			<xs:documentation>Reference to environment.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="E.+"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<!--=== types and attributes common to states ===-->
 	<xs:simpleType name="stateIDType">
 		<xs:annotation>

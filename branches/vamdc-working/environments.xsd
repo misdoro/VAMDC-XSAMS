@@ -30,7 +30,7 @@
                     <xs:element name="TotalNumberDensity" type="DataType" minOccurs="0" maxOccurs="1"/>
                     <xs:element name="Composition" type="CompositionType" minOccurs="0" maxOccurs="1"/>
                 </xs:sequence>
-                <xs:attribute name="id" type="xs:ID"></xs:attribute>
+                <xs:attribute name="envID" type="environmentIDType"></xs:attribute>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -53,6 +53,6 @@
             <xs:element name="Concentration" type="DataType" minOccurs="0" maxOccurs="1"/>
         </xs:choice>
         <xs:attribute name="name" type="xs:string" use="optional"/>
-        <xs:attribute name="speciesRef" type="xs:IDREF" use="optional"/>
+        <xs:attribute name="speciesRef" type="SpeciesRefType" use="optional"/>
     </xs:complexType>
 </xs:schema>
