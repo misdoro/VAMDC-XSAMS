@@ -64,7 +64,7 @@
             </xs:element>
 
             <!-- l -->
-            <xs:element name="l" type="ctypes:VibrationalAMQNType" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="l" type="xs:integer" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>The quantum number, l, associated with the total vibrational angular momentum about the molecular axis</xs:documentation>
                 </xs:annotation>
