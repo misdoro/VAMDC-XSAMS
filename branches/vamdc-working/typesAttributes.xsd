@@ -799,5 +799,18 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
+	<!-- The partition function as a function of temperature: Q(T), expressed as a pair of
+		 DataSeries columns -->
+	<xs:complexType name="PartitionFunctionType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="T" type="DataSeriesType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="Q" type="DataSeriesType" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
 	
 </xs:schema>
