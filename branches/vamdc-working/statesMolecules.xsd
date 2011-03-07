@@ -134,7 +134,7 @@
                 <xs:complexContent>
                         <xs:extension base="PrimaryType">
                                 <xs:sequence>
-                                        <xs:element name="Description" type="xs:string"/>
+                                        <xs:element name="Description" type="xs:string" minOccurs="0"/>
                                         <xs:element name="MolecularStateCharacterisation" type="MolecularStateCharacterisationType" minOccurs="0"/>
                                         <xs:element name="Parity" type="ParityType" minOccurs="0"/>
                                         <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
@@ -142,10 +142,45 @@
                                                         <xs:documentation>Placeholder for QNs from all namespaces</xs:documentation>
                                                 </xs:annotation>
                                         </xs:any>
+                                        <xs:element name="StateExpansion" type="StateExpansionType" minOccurs="0" maxOccurs="unbounded"/>
                                 </xs:sequence>
                                 <xs:attribute name="stateID" type="stateIDType" use="required"/>
                                 <xs:attribute name="fullyAssigned" type="xs:boolean" use="optional"/>
                         </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="StateExpansionType">
+                <xs:complexContent>
+                        <xs:extension base="PrimaryType">
+                                <xs:sequence>
+                                        <xs:element name="Coeff" type="StateCoeffType" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="StateCoeffType">
+                <xs:simpleContent>
+                        <xs:extension base="xs:double">
+                                <xs:attribute name="stateRef" type="StateRef"/>
+                        </xs:extension>
+                </xs:simpleContent>
+        </xs:complexType>
+        <xs:complexType name="BasisStatesType">
+                <xs:complexContent>
+                        <xs:extension base="PrimaryType">
+                                <xs:sequence>
+                                        <xs:element name="MolecularState" type="MolecularStateType" minOccurs="1" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                        </xs:extension>
+                        <!--<xs:extension base="PrimaryType">
+                                <xs:sequence>
+                                        <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation>Placeholder for QNs from all namespaces</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:any>
+                                </xs:sequence>
+                        </xs:extension>-->
                 </xs:complexContent>
         </xs:complexType>
         <xs:complexType name="MolecularStateCharacterisationType">
@@ -164,6 +199,7 @@
                                 <xs:sequence>
                                         <xs:element name="MolecularChemicalSpecies" type="MolecularChemicalSpeciesType"/>
                                         <xs:element name="MolecularState" type="MolecularStateType" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element name="BasisStates" type="BasisStatesType" minOccurs="0" maxOccurs="unbounded"/>
                                 </xs:sequence>
                                 <xs:attribute name="speciesID" type="speciesIDType" use="required"/>
                         </xs:extension>
