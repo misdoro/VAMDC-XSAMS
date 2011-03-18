@@ -167,6 +167,11 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
+					<xs:element name="DopplerBroadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Doppler broadening line shape description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="StarkBroadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Stark broadening line shape description</xs:documentation>
