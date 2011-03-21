@@ -46,7 +46,7 @@ targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-wo
 					<xs:documentation>List of environments relevant to the data</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Species" type="SpeciesType">
+			<xs:element name="Species" type="SpeciesType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>List of atomic states, molecular states, particles, surfaces, and solids</xs:documentation>
 				</xs:annotation>
@@ -56,7 +56,7 @@ targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-wo
 					<xs:documentation>Physical processes connecting states (e.g., radiative, collisional, autoionization, etc.)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element ref="Sources"/>
+			<xs:element ref="Sources" minOccurs="0"/>
 			<xs:element ref="Methods" minOccurs="0"/>
 			<xs:element ref="Functions" minOccurs="0"/>
 			<xs:element name="Comments" type="xs:string" minOccurs="0">
