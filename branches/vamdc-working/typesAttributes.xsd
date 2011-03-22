@@ -11,6 +11,11 @@
 	<!--=== general attributes and types ===-->
 	<xs:complexType name="PrimaryType">
 		<xs:sequence>
+			<xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A string giving the name of a data set or item of data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="Comments" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Arbitrary comments</xs:documentation>
@@ -97,8 +102,9 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	
-	<xs:complexType name="NamedDataType">
+
+<!-- the need for this has been obviated by MLD's suggestion of adding a Name attribute to PrimaryType -->
+<!--	<xs:complexType name="NamedDataType">
 		<xs:annotation>
 			<xs:documentation>Extension of DataType with a name attribute</xs:documentation>
 		</xs:annotation>
@@ -108,7 +114,8 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-		
+-->
+	
 	<xs:complexType name="FitParametersType">
 		<xs:annotation>
 			<xs:documentation>A list of fit parameters and arguments. The function referred to takes arguments
@@ -118,7 +125,7 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="FitArgument" type="ArgumentType"  minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="FitParameter" type="NamedDataType"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="FitParameter" type="DataType"  minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="functionRef" type="xs:IDREF" use="optional"/>
 	</xs:complexType>

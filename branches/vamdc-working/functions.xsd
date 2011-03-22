@@ -26,11 +26,6 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="Name" type="xs:string" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Function name. Example: BELI</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element name="Expression" type="ExpressionType">
 						<xs:annotation>
 							<xs:documentation>Function expression in a specified programming language. Example: a*X1**2+2.5 (a is the parameter defined in the "parameters" list).</xs:documentation>
