@@ -109,7 +109,7 @@
                 
                 <StableMolecularProperties>
                     <OtherProperties>
-                        <Name>Anharmonicity Matrix</Name>
+                        <Name>Anharmonicity Tensor</Name>
                         <MatrixData units="1/cm" nrows="48" ncols="48" form="symmetric" values="real">
                             <RowRefs>v1 v2 v3 ... v48</RowRefs>
                             <ColRefs>v1 v2 v3 ... v48</ColRefs>

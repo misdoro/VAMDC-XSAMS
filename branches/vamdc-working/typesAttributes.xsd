@@ -817,6 +817,7 @@
 					<xs:element name="T" type="DataSeriesType" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="Q" type="DataSeriesType" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
+				<xs:attribute name="nuclearSpinIsomer" type="xs:string"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

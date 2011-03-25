@@ -71,11 +71,11 @@
                         </xs:element>
                         <xs:element name="CASRegistryNumber" type="ReferencedTextType" minOccurs="0"/>
                         <xs:element name="CNPIGroup" type="SymbolType" minOccurs="0"/>
-                        <xs:element name="PartitionFunction" type="PartitionFunctionType" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="PartitionFunction" type="PartitionFunctionType" minOccurs="0" maxOccurs="unbounded"/>
                         <xs:element name="MoleculeStructure" type="MoleculeStructureType" minOccurs="0" maxOccurs="unbounded"/>
                         <xs:element name="NormalModes" type="NormalModesType" minOccurs="0" maxOccurs="unbounded"/>
-                        <xs:element name="AnharmonicityTensor" type="MatrixType" minOccurs="0" maxOccurs="1"/>
-                        <xs:element name="MoleculeNuclearSpins" type="MoleculeNuclearSpinsType" minOccurs="0"/>
+                        <!--<xs:element name="AnharmonicityTensor" type="MatrixType" minOccurs="0" maxOccurs="1"/>-->
+                        <!--<xs:element name="MoleculeNuclearSpins" type="MoleculeNuclearSpinsType" minOccurs="0"/>-->
                         <xs:element name="StableMolecularProperties" type="MolecularPropertiesType" minOccurs="0"/>
                         <xs:element name="Comment" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
