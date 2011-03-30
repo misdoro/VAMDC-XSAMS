@@ -172,14 +172,9 @@
 							<xs:documentation>Doppler broadening line shape description</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="StarkBroadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="PressureBroadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>Stark broadening line shape description</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="VanDerWaalsBroadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>van-der-Waals broadening line shape description</xs:documentation>
+							<xs:documentation>Pressure broadening line shape description</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="NaturalBroadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
