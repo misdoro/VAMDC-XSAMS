@@ -80,6 +80,30 @@
 	
 	<xs:complexType name="DataType">
 		<xs:annotation>
+			<xs:documentation>Description of physical data - a Value/Accuracy pair</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:choice>
+					<xs:sequence>
+						<xs:element name="Value" type="ValueType">
+							<xs:annotation>
+								<xs:documentation>Value of a particular quantity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Accuracy" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Description of the accuracy</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="DataFuncType">
+		<xs:annotation>
 			<xs:documentation>Description of physical data - either a Value/Accuracy pair or a FitParametersType</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
@@ -102,19 +126,6 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-
-<!-- the need for this has been obviated by MLD's suggestion of adding a Name attribute to PrimaryType -->
-<!--	<xs:complexType name="NamedDataType">
-		<xs:annotation>
-			<xs:documentation>Extension of DataType with a name attribute</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="DataType">
-				<xs:attribute name="name" type="xs:string"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
--->
 	
 	<xs:complexType name="FitParametersType">
 		<xs:annotation>

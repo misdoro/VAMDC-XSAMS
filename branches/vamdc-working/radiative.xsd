@@ -167,24 +167,9 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="DopplerBroadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="Broadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>Doppler broadening line shape description</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="PressureBroadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Pressure broadening line shape description</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="NaturalBroadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Natural (radiative) broadening line shape description</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="InstrumentBroadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Instrument broadening line shape description</xs:documentation>
+							<xs:documentation>Broadening line shape description</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -207,9 +192,8 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="LineshapeParameter" type="DataType" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="LineshapeParameter" type="DataFuncType" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
-				<xs:attribute name="name" type="xs:string"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -238,7 +222,7 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="ShiftingParameter" type="DataType" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="ShiftingParameter" type="DataFuncType" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute name="envRef" type="EnvironmentRefType"/>
 			</xs:extension>
