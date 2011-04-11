@@ -85,17 +85,5 @@
 		</xs:sequence>
 		<xs:attribute name="units" type="unitsType" use="required"/>
 	</xs:complexType>
-	
-	<!--<xs:attributeGroup name="functionAttributes">-->
-		<xs:attribute name="functionID">
-			<xs:annotation>
-				<xs:documentation>ID for a specific function</xs:documentation>
-			</xs:annotation>
-			<xs:simpleType>
-				<xs:restriction base="xs:ID">
-					<xs:pattern value="F.+"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	<!--</xs:attributeGroup>-->
+
 </xs:schema>

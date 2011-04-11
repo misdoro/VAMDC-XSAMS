@@ -35,30 +35,8 @@
 		<xs:attribute name="methodRef" type="methodRefType"/>
 	</xs:complexType>
 	
-	<xs:simpleType name="methodRefType">
-		<xs:annotation>
-			<xs:documentation>Reference to a specific method.</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:IDREF">
-			<xs:pattern value="M.+"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="functionRefType">
-		<xs:annotation>
-			<xs:documentation>Reference to a specific function</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:IDREF">
-			<xs:pattern value="F.+"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="functionIDType">
-		<xs:annotation>
-			<xs:documentation>ID for a specific function</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:ID">
-			<xs:pattern value="F.+"/>
-		</xs:restriction>
-	</xs:simpleType>
+	
+	
 	<xs:complexType name="ChemicalElementType">
 		<xs:annotation>
 			<xs:documentation>Description of a chemical element</xs:documentation>
@@ -138,7 +116,7 @@
 			<xs:element name="FitArgument" type="ArgumentType"  minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="FitParameter" type="DataType"  minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-		<xs:attribute name="functionRef" type="xs:IDREF" use="optional"/>
+		<xs:attribute name="functionRef" type="functionRefType" use="optional"/>
 	</xs:complexType>
 	
 	<xs:complexType name="ArgumentType">
@@ -288,7 +266,7 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="FunctionRef" type="xs:IDREF">
+					<xs:element name="FunctionRef" type="functionRefType">
 						<xs:annotation>
 							<xs:documentation>Reference to the fitting function</xs:documentation>
 						</xs:annotation>
@@ -431,56 +409,9 @@
 			</xs:restriction>
 		
 	</xs:simpleType>
-	<!--=== types and attributes common to species ===-->
-	<xs:simpleType name="speciesIDType">
-			<xs:annotation>
-				<xs:documentation>ID for a species.</xs:documentation>
-			</xs:annotation>
-			<xs:restriction base="xs:ID">
-				<xs:pattern value="X.+"/>
-			</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="SpeciesRefType">
-		<xs:annotation>
-			<xs:documentation>Reference to a species.</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:IDREF">
-			<xs:pattern value="X.+"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="methodIDType">
-		<xs:annotation>
-			<xs:documentation>ID for a specific method</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:ID">
-			<xs:pattern value="M.+"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="environmentIDType">
-		<xs:annotation>
-			<xs:documentation>ID for environments.</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:ID">
-			<xs:pattern value="E.+"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="EnvironmentRefType">
-		<xs:annotation>
-			<xs:documentation>Reference to environment.</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:IDREF">
-			<xs:pattern value="E.+"/>
-		</xs:restriction>
-	</xs:simpleType>
+	
 	<!--=== types and attributes common to states ===-->
-	<xs:simpleType name="stateIDType">
-		<xs:annotation>
-			<xs:documentation>ID for a specific state/particle.</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:ID">
-			<xs:pattern value="S.+"/>
-		</xs:restriction>
-	</xs:simpleType>
+
 	<xs:complexType name="jjCouplingType">
 		<xs:sequence>
 			<xs:element name="j" type="AngularMomentumType" minOccurs="2" maxOccurs="unbounded">
@@ -698,11 +629,7 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="StateRef">
-		<xs:restriction base="xs:IDREF">
-			<xs:pattern value="S.+"/>
-		</xs:restriction>
-	</xs:simpleType>
+
 	
 	<!-- VectorsType container for one or more Vector elements-->
 	<xs:complexType name="VectorsType">
@@ -832,6 +759,113 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	
+	
+	<!-- ID types definitions-->
+	<xs:simpleType name="environmentIDType">
+		<xs:annotation>
+			<xs:documentation>ID for environments.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="E.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="functionIDType">
+		<xs:annotation>
+			<xs:documentation>ID for a specific function</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="F.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="methodIDType">
+		<xs:annotation>
+			<xs:documentation>ID for a specific method</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="M.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="sourceIDType">
+		<xs:annotation>
+			<xs:documentation>Reference to specific bibliographic items.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="B.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="speciesIDType">
+		<xs:annotation>
+			<xs:documentation>ID for a species. 
+					Is used to speed-up location of species information from processes.
+					May be used instead of stateID if exact state is not known or irrelevant.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="X.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="stateIDType">
+		<xs:annotation>
+			<xs:documentation>ID for a specific atomic/molecular state, particle or solid.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="S.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- References types definition. All IDREF's should be here.-->
+	<xs:simpleType name="methodRefType">
+		<xs:annotation>
+			<xs:documentation>Reference to a specific method.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="M.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="functionRefType">
+		<xs:annotation>
+			<xs:documentation>Reference to a specific function</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="F.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="SpeciesRefType">
+		<xs:annotation>
+			<xs:documentation>Reference to a species. 
+				References atomic ion or molecule.
+				Particles and solids are always referred by stateID
+				</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="X.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="EnvironmentRefType">
+		<xs:annotation>
+			<xs:documentation>Reference to environment.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="E.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="StateRef">
+		<xs:annotation>
+			<xs:documentation>Reference to state: atomic, molecular, particle or solid one.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="S.+"/>
+		</xs:restriction>
+	</xs:simpleType>
 	
 	
 </xs:schema>
