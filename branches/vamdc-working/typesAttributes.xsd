@@ -397,6 +397,8 @@
 				<xs:enumeration value="W"/>
 				<xs:enumeration value="atm"/>
 				<xs:enumeration value="km/mol"/>
+				<xs:enumeration value="1/cm2/atm"/>
+				<xs:enumeration value="1/cm/atm"/>
 			</xs:restriction>
 		
 	</xs:simpleType>
