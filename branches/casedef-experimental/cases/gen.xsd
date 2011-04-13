@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:gen="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen"
+	xmlns:ctypes="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
     xmlns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen"
     targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen"
     elementFormDefault="qualified">
-    
+    <xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes" schemaLocation="commonTypes.xsd"/>
+	
     <!--=== QNs will be the root element ===-->
     <xs:element name="QNs" type="gen:QNsType">
         <xs:annotation>
@@ -21,30 +23,50 @@
             <xs:field xpath="@name"/>
         </xs:unique>
     </xs:element>
+	
+	<!--Following two types are used to link case to base schema-->
+	<xs:complexType name="ThisCase" abstract="true">
+		<xs:complexContent>
+			<xs:restriction base="ctypes:BaseCase">
+				<xs:attribute name="caseID" type="xs:string" use="required" fixed="gen"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="Case">
+		<xs:complexContent>
+			<xs:extension base="gen:ThisCase">
+				<xs:sequence>
+					<xs:element ref="gen:QNs" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
     
-    <xs:complexType name="QNsType">
-        <xs:sequence>
-            <!-- ElecStateLabel -->
-            <xs:element name="ElecStateLabel" type="xs:string" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation>The label of the electronic state: X, a, A, b, etc...</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-                    
-            <!-- QN -->
-            <xs:element name="QN" type="gen:GenericQNType" minOccurs="0" maxOccurs="unbounded">
-                <xs:annotation>
-                    <xs:documentation>A generic, named quantum number.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <!-- Sym -->
-            <xs:element name="Sym" type="gen:GenericSymType" minOccurs="0" maxOccurs="unbounded">
-                <xs:annotation>
-                    <xs:documentation>A generic, named symmetry.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
+	<xs:complexType name="QNsType">
+		<xs:sequence>
+			<!-- ElecStateLabel -->
+			<xs:element name="ElecStateLabel" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The label of the electronic state: X, a, A, b, etc...</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<!-- QN -->
+			<xs:element name="QN" type="gen:GenericQNType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A generic, named quantum number.</xs:documentation>
+				</xs:annotation>
+				
+			</xs:element>
+			<!-- Sym -->
+			<xs:element name="Sym" type="gen:GenericSymType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A generic, named symmetry.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 
     <!-- we repeat QN and Sym here so that they can be used (within the gen namespace) inside any other
         case QNs element to extend the range of quantum numbers and symmetries that can be specified -->

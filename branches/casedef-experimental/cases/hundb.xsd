@@ -16,6 +16,26 @@
             <xs:documentation>A list of quantum numbers for Hund's case(b) diatomic molecules</xs:documentation>
         </xs:annotation>
     </xs:element>
+	
+	<!--Following two types are used to link case to base schema-->
+	<xs:complexType name="ThisCase" abstract="true">
+		<xs:complexContent>
+			<xs:restriction base="ctypes:BaseCase">
+				<xs:attribute name="caseID" type="xs:string" use="required" fixed="hundb"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="Case">
+		<xs:complexContent>
+			<xs:extension base="hundb:ThisCase">
+				<xs:sequence>
+					<xs:element ref="hundb:QNs" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
     <xs:complexType name="QNsType">
         <xs:all>
 
