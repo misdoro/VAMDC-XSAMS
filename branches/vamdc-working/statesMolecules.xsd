@@ -161,7 +161,7 @@
         <xs:complexType name="StateCoeffType">
                 <xs:simpleContent>
                         <xs:extension base="xs:double">
-                                <xs:attribute name="stateRef" type="StateRefType"/>
+                                <xs:attribute name="stateRef" type="StateRef"/>
                         </xs:extension>
                 </xs:simpleContent>
         </xs:complexType>

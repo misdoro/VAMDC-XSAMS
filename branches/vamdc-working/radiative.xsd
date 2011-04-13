@@ -37,12 +37,12 @@
 							<xs:documentation>List of energy/spectrum parameters</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="InitialStateRef" type="StateRefType" minOccurs="0">
+					<xs:element name="InitialStateRef" type="StateRef" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Reference to the initial state</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="FinalStateRef" type="StateRefType" minOccurs="0">
+					<xs:element name="FinalStateRef" type="StateRef" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Reference to the final state</xs:documentation>
 						</xs:annotation>
@@ -256,6 +256,7 @@
 						<xs:element name="Modes" type="ModesType" minOccurs="0" maxOccurs="unbounded"/>
 					</xs:sequence>
 				</xs:sequence>
+				<xs:attribute name="name" type="xs:string"/>
 			</xs:extension>                
 		</xs:complexContent>
 	</xs:complexType>
@@ -274,7 +275,8 @@
 							</xs:simpleContent>
 						</xs:complexType>
 					</xs:element>
-				</xs:sequence>
+				</xs:sequence>                    
+				<xs:attribute name="name" type="xs:string"/>
 			</xs:extension>                
 		</xs:complexContent>
 	</xs:complexType>

@@ -23,12 +23,12 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="InitialStateRef" type="StateRefType">
+					<xs:element name="InitialStateRef" type="StateRef">
 						<xs:annotation>
 							<xs:documentation>Reference to the initial state</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="FinalStateRef" type="StateRefType" minOccurs="0">
+					<xs:element name="FinalStateRef" type="StateRef" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Reference to the final state</xs:documentation>
 						</xs:annotation>
