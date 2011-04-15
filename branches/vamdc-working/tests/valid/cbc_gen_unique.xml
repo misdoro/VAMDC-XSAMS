@@ -3,7 +3,6 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gen="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen"
     xsi:schemaLocation="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working ../../statesMolecules.xsd http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen ../../cases/gen.xsd">
-    <Comments></Comments>
     <Molecule speciesID="X1">
         <Comments></Comments>
         <MolecularChemicalSpecies>

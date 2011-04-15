@@ -614,7 +614,7 @@
 	<!--=== types common to collisions, radiative and autoionisation ===-->
 	<xs:complexType name="ReactantsType">
 		<xs:sequence minOccurs="2" maxOccurs="unbounded">
-			<xs:element name="StateRef" type="StateRef">
+			<xs:element name="StateRef" type="StateRefType">
 				<xs:annotation>
 					<xs:documentation>Reference to a specific state</xs:documentation>
 				</xs:annotation>
@@ -628,7 +628,7 @@
 	</xs:complexType>
 	<xs:complexType name="ProductsType">
 		<xs:sequence maxOccurs="unbounded">
-			<xs:element name="StateRef" type="StateRef">
+			<xs:element name="StateRef" type="StateRefType">
 				<xs:annotation>
 					<xs:documentation>Reference to a specific state</xs:documentation>
 				</xs:annotation>
@@ -829,6 +829,15 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
+	<xs:simpleType name="normalModeIDType">
+		<xs:annotation>
+			<xs:documentation>ID for a normal vibrational mode of complex molecule.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="V.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<!-- References types definition. All IDREF's should be here.-->
 	<xs:simpleType name="methodRefType">
 		<xs:annotation>
@@ -869,12 +878,21 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:simpleType name="StateRef">
+	<xs:simpleType name="StateRefType">
 		<xs:annotation>
 			<xs:documentation>Reference to state: atomic, molecular, particle or solid one.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:IDREF">
 			<xs:pattern value="S.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+		<xs:simpleType name="normalModeRefType">
+		<xs:annotation>
+			<xs:documentation>Reference to a normal vibrational mode of complex molecule.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="V.+"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
