@@ -344,6 +344,7 @@
 			<xs:enumeration value="TargetFrame"/>
 		</xs:restriction>
 	</xs:simpleType>
+	
 	<xs:complexType name="ValueType">
 		<xs:simpleContent>
 			<xs:extension base="xs:double">
@@ -351,6 +352,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	
 	<xs:simpleType name="unitsType">
 		<xs:annotation>
 			<xs:documentation>Description of physical units. Use "unitless" for dimensionless quantities.</xs:documentation>
@@ -418,7 +420,6 @@
 				<xs:enumeration value="1/cm2/atm"/>
 				<xs:enumeration value="1/cm/atm"/>
 			</xs:restriction>
-		
 	</xs:simpleType>
 	
 	<!--=== types and attributes common to states ===-->
@@ -565,6 +566,26 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	
+	<xs:complexType name="LifeTimeType">
+		<xs:annotation>
+			<xs:documentation>Lifetime, with state decay mechanism: total, radiative, non-radiative</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:attribute name="mechanism" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="total"/>
+							<xs:enumeration value="totalRadiative"/>
+							<xs:enumeration value="totalNonRadiative"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
 	<xs:simpleType name="AngularMomentumProjectionType">
 		<xs:restriction base="xs:decimal">
 			<xs:pattern value="(\+|-)?\d+(\.(0|5)?)?"/>
@@ -611,6 +632,7 @@
 			<xs:pattern value="\w"/>
 		</xs:restriction>
 	</xs:simpleType>
+	
 	<!--=== types common to collisions, radiative and autoionisation ===-->
 	<xs:complexType name="ReactantsType">
 		<xs:sequence minOccurs="2" maxOccurs="unbounded">

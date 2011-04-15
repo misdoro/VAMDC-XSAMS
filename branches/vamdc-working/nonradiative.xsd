@@ -38,7 +38,7 @@
 							<xs:documentation>Reference to specie</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Probability" type="DataType">
+					<xs:element name="Probability" type="DataType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Transition probability</xs:documentation>
 						</xs:annotation>
