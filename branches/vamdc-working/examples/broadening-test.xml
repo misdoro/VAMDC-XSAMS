@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working /Users/christian/research/schemata/XSAMS/vamdc-working/xsams.xsd" xmlns:dcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/dcs" xmlns:hunda="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hunda" xmlns:hundb="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hundb" xmlns:ltcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltcs" xmlns:nltcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltcs" xmlns:stcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs" xmlns:lpcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs" xmlns:asymcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymcs" xmlns:asymos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymos" xmlns:sphcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphcs" xmlns:sphos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos" xmlns:ltos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltos" xmlns:lpos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpos" xmlns:nltos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltos">
+<XSAMSData xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working ../xsams.xsd" xmlns:dcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/dcs" xmlns:hunda="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hunda" xmlns:hundb="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hundb" xmlns:ltcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltcs" xmlns:nltcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltcs" xmlns:stcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs" xmlns:lpcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs" xmlns:asymcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymcs" xmlns:asymos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymos" xmlns:sphcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphcs" xmlns:sphos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos" xmlns:ltos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltos" xmlns:lpos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpos" xmlns:nltos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltos">
 
 <!--
    ATTENTION: The amount of data returned has been truncated by the node.
@@ -77,29 +77,23 @@
             <Expression computerLanguage="Fortran">
                 gammaL_ref * p * (296./T)**n
             </Expression>
-            <Y units="1/cm">
-                <Name>gammaL</Name>
-            </Y>
+            <Y name="gammaL" units="1/cm"/>
             <Arguments>
-                <Argument units="K">
-                    <Name>T</Name>
+                <Argument name="T" units="K">
                     <Description>The absolute temperature, in K</Description>
                 </Argument>
-                <Argument units="atm">
-                    <Name>p</Name>
+                <Argument  name="p" units="atm">
                     <Description>The partial pressure of the broadening species,
                                  in atm</Description>
                 </Argument>
             </Arguments>
             <Parameters>
-                <Parameter units="1/cm">
-                    <Name>gammaL_ref</Name>
+                <Parameter name="gammaL_ref" units="1/cm">
                     <Description>The Lorentzian HWHM of the line, broadened at
                         Tref = 296 K and broadening species partial pressure
                         pref = 1atm</Description>
                 </Parameter>
-                <Parameter units="unitless">
-                    <Name>n</Name>
+                <Parameter name="n" units="unitless">
                     <Description>
                         The temperature exponent of the gammaL function
                     </Description>
@@ -111,19 +105,15 @@
             <Expression computerLanguage="Fortran">
                 delta_ref * p
             </Expression>
-            <Y units="1/cm">
-                <Name>delta</Name>
-            </Y>
+            <Y name="delta" units="1/cm"/>
             <Arguments>
-                <Argument units="atm">
-                    <Name>p</Name>
+                <Argument name="p" units="atm">
                     <Description>The pressure of the shifting environment,
                                  in atm</Description>
                 </Argument>
             </Arguments>
             <Parameters>
-                <Parameter units="1/cm">
-                    <Name>delta_ref</Name>
+                <Parameter name="delta_ref" units="1/cm">
                     <Description>The pressure-shift of the absorption line at
                         pref = 1 atm</Description>
                 </Parameter>
@@ -197,6 +187,8 @@
   </StateEnergy>
   <TotalStatisticalWeight>360</TotalStatisticalWeight>
   </MolecularStateCharacterisation>
+    
+    <Case xsi:type="lpcs:Case" caseID="lpcs">
 <lpcs:QNs>
 <lpcs:ElecStateLabel>X</lpcs:ElecStateLabel>
 <lpcs:vi mode="2">0</lpcs:vi>
@@ -211,6 +203,7 @@
 <lpcs:parity>+</lpcs:parity>
 <lpcs:kronigParity>e</lpcs:kronigParity>
 </lpcs:QNs>
+        </Case>
 </MolecularState>
 
 <MolecularState stateID="SS342-C2H2-2">
@@ -221,6 +214,8 @@
   </StateEnergy>
   <TotalStatisticalWeight>376</TotalStatisticalWeight>
   </MolecularStateCharacterisation>
+    
+    <Case xsi:type="lpcs:Case" caseID="lpcs">
 <lpcs:QNs>
 <lpcs:ElecStateLabel>X</lpcs:ElecStateLabel>
 <lpcs:vi mode="2">0</lpcs:vi>
@@ -235,6 +230,7 @@
 <lpcs:parity>+</lpcs:parity>
 <lpcs:kronigParity>f</lpcs:kronigParity>
 </lpcs:QNs>
+    </Case>
 </MolecularState>
 
 </Molecule>
@@ -251,32 +247,25 @@
 <Probability>
 <TransitionProbabilityA><SourceRef>BHIT-B_HITRAN2008</SourceRef><Value units="1/s">4.173</Value><Accuracy>0.08346</Accuracy></TransitionProbabilityA></Probability>
    <Broadenings>
-    <Broadening envRef="Eair-broadening-ref-env">
-      <Name>pressure</Name>
-      <Lineshape>
-      <Name>Lorentzian</Name>
+    <Broadening envRef="Eair-broadening-ref-env" name="pressure">
+     <Lineshape name="Lorentzian">
       <Comments>The temperature-dependent pressure broadening Lorentzian lineshape</Comments>
-      <LineshapeParameter>
-        <Name>gammaL</Name>
+      <LineshapeParameter name="gammaL">
         <FitParameters functionRef="FgammaL">
-          <FitArgument units="K">
-            <Name>T</Name>
+          <FitArgument units="K" name="T">
             <LowerLimit units="K">240</LowerLimit>
             <UpperLimit units="K">350</UpperLimit>
           </FitArgument>
-          <FitArgument units="K">
-            <Name>p</Name>
+          <FitArgument units="atm" name="p">
             <LowerLimit units="atm">0.</LowerLimit>
             <UpperLimit units="atm">1.2</UpperLimit>
           </FitArgument>
-          <FitParameter>
-            <Name>gammaL_ref</Name>
+          <FitParameter name="gammaL_ref">
             <SourceRef>BHIT-B_HITRAN2008</SourceRef>
             <Value units="1/cm">0.0635</Value>
             <Accuracy>0.003175</Accuracy>
           </FitParameter>
-          <FitParameter>
-            <Name>n</Name>
+          <FitParameter name="n">
             <SourceRef>BHIT-B_HITRAN2008</SourceRef>
             <Value units="unitless">0.75</Value>
             <Accuracy>0.15</Accuracy>
@@ -285,12 +274,9 @@
       </LineshapeParameter>
     </Lineshape>
     </Broadening>
-    <Broadening envRef="Eself-broadening-ref-env">
-      <Name>pressure</Name>
-      <Lineshape>
-        <Name>Lorentzian</Name>
-        <LineshapeParameter>
-          <Name>gammaL</Name>
+    <Broadening envRef="Eself-broadening-ref-env" name="pressure">
+      <Lineshape name="Lorentzian">
+        <LineshapeParameter name="gammaL">
           <SourceRef>BHIT-B_HITRAN2008</SourceRef>
           <Value units="1/cm">0.116</Value>
           <Accuracy>0.0058</Accuracy>
@@ -300,16 +286,13 @@
     </Broadenings>
     <Shiftings>
     <Shifting envRef="Eair-broadening-ref-env">
-      <ShiftingParameter>
-          <Name>delta</Name>
+      <ShiftingParameter name="delta">
           <FitParameters functionRef="Fdelta">
-          <FitArgument units="K">
-            <Name>p</Name>
+          <FitArgument name="p" units="atm">
             <LowerLimit units="atm">0.</LowerLimit>
             <UpperLimit units="atm">1.2</UpperLimit>
           </FitArgument>
-          <FitParameter>
-            <Name>delta_ref</Name>
+          <FitParameter name="delta_ref">
             <SourceRef>BHIT-B_HITRAN2008</SourceRef>
             <Value units="unitless">-0.001</Value>
             <Accuracy>0.1</Accuracy>

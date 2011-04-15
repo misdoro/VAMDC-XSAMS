@@ -11,11 +11,6 @@
 	<!--=== general attributes and types ===-->
 	<xs:complexType name="PrimaryType">
 		<xs:sequence>
-			<xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>A string giving the name of a data set or item of data</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="Comments" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Arbitrary comments</xs:documentation>
@@ -62,22 +57,35 @@
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
-				<xs:choice>
-					<xs:sequence>
-						<xs:element name="Value" type="ValueType">
-							<xs:annotation>
-								<xs:documentation>Value of a particular quantity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="Accuracy" type="xs:string" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>Description of the accuracy</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-					</xs:sequence>
-				</xs:choice>
+				<xs:sequence>
+					<xs:element name="Value" type="ValueType">
+						<xs:annotation>
+							<xs:documentation>Value of a particular quantity</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Accuracy" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Description of the accuracy</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="NamedDataType">
+		<xs:annotation>
+			<xs:documentation>Named description of physical data. Used, for example, in function's parameters.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:attribute name="name" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Name of the function parameter, example:a</xs:documentation>
+				</xs:annotation>
+		</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>	
 	</xs:complexType>
 	
 	<xs:complexType name="DataFuncType">
@@ -101,6 +109,7 @@
 					</xs:sequence>
 					<xs:element name="FitParameters" type="FitParametersType" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:choice>
+				<xs:attribute name="name" type="xs:string"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -114,18 +123,13 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="FitArgument" type="ArgumentType"  minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="FitParameter" type="DataType"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="FitParameter" type="NamedDataType"  minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="functionRef" type="functionRefType" use="optional"/>
 	</xs:complexType>
 	
 	<xs:complexType name="ArgumentType">
 		<xs:sequence>
-			<xs:element name="Name">
-				<xs:annotation>
-					<xs:documentation>Name of the argument, matching that defined in the function definition. Example: a</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="Description" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Further description of the argument if definition in `parameter` is not sufficient</xs:documentation>
@@ -142,6 +146,11 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Name of the argument, matching that defined in the function definition. Example: a</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 		<xs:attribute name="units" type="unitsType" use="required"/>
 		<!-- what's this for? 
 			<xs:attribute name="parameter">

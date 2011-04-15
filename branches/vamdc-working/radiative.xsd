@@ -178,11 +178,20 @@
 	</xs:complexType>
 	
 	<xs:complexType name="BroadeningType">
+		<xs:annotation>
+			<xs:documentation>Specific broadening mechanism description.
+				In sourceRef </xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
 					<xs:element name="Lineshape" type="LineshapeType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
+				<xs:attribute name="name" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>Broadening name</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attribute name="envRef" type="EnvironmentRefType"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -194,6 +203,7 @@
 				<xs:sequence>
 					<xs:element name="LineshapeParameter" type="DataFuncType" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
+				<xs:attribute name="name" type="xs:string"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -224,6 +234,7 @@
 				<xs:sequence>
 					<xs:element name="ShiftingParameter" type="DataFuncType" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
+				<xs:attribute name="name" type="xs:string"/>
 				<xs:attribute name="envRef" type="EnvironmentRefType"/>
 			</xs:extension>
 		</xs:complexContent>
