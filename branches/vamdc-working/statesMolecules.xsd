@@ -51,7 +51,6 @@
 							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="BasisStates" type="BasisStatesType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute name="speciesID" type="speciesIDType" use="required"/>
 			</xs:extension>
@@ -91,103 +90,116 @@
 		</xs:sequence>
 	</xs:complexType>
 	
-        <xs:complexType name="MolecularPropertiesType">
-                <xs:sequence>
-                        <xs:element name="MolecularWeight" type="DataType" minOccurs="0"/>
-                        <xs:sequence maxOccurs="unbounded">
-                                <xs:element name="OtherProperties" type="CharacterisationType" minOccurs="0"/>
-                        </xs:sequence>
-                </xs:sequence>
-        </xs:complexType>
-        
-        <xs:complexType name="MoleculeStructureType">
+	<xs:complexType name="MolecularPropertiesType">
+		<xs:sequence>
+			<xs:element name="MolecularWeight" type="DataType" minOccurs="0"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="OtherProperties" type="CharacterisationType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="MoleculeStructureType">
+		<xs:annotation>
+			<xs:documentation>Molecular structure description, using CML atomArray and bondArray imported from CML namespace</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element ref="cml:atomArray" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element ref="cml:bondArray" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="electronicStateRef" type="StateRefType"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="NormalModesType">
+		<xs:annotation>
+			<xs:documentation>NormalModes container for one or more NormalMode elements</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="NormalMode" type="NormalModeType" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="electronicStateRef" type="StateRefType"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="NormalModeType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="HarmonicFrequency" type="DataType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="Intensity" type="DataType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="DisplacementVectors" type="VectorsType" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="electronicStateRef" type="StateRefType"/>
+				<xs:attribute name="pointGroupSymmetry" type="xs:string" use="optional"/>
+				<xs:attribute name="id" type="normalModeIDType"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="MolecularStateType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string" minOccurs="0"/>
+					<xs:element name="MolecularStateCharacterisation" type="MolecularStateCharacterisationType" minOccurs="0"/>
+					<xs:element name="Parity" type="ParityType" minOccurs="0"/>
+					<xs:element name="Case" type="cases:BaseCase" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>
+								Description of state using quantum numbers from one of defined cases
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="StateExpansion" type="StateExpansionType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="stateID" type="stateIDType" use="required"/>
+				<xs:attribute name="fullyAssigned" type="xs:boolean" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="StateExpansionType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="BasisState" type="StateCoeffType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>
+								Basis state with it's coefficient
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StateCoeffType">
+		<xs:sequence>
+			<xs:element name="Case" type="cases:BaseCase">
+				<xs:annotation>
+					<xs:documentation>
+						Description of basis state using one of defined cases
+						Attention! All basis states of the same StateExpansion should use the same case.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="coeff" type="xs:double">
 			<xs:annotation>
-				<xs:documentation>Molecular structure description, using CML atomArray and bondArray imported from CML namespace</xs:documentation>
+				<xs:documentation>
+					Coefficient for this basis state
+				</xs:documentation>
 			</xs:annotation>
-                <xs:complexContent>
-                        <xs:extension base="PrimaryType">
-                                <xs:sequence>
-                                        <xs:element ref="cml:atomArray" minOccurs="1" maxOccurs="unbounded"/>
-                                        <xs:element ref="cml:bondArray" minOccurs="0" maxOccurs="unbounded"/>
-                                </xs:sequence>
-                                <xs:attribute name="electronicStateRef" type="StateRefType"/>
-                        </xs:extension>
-                </xs:complexContent>
-        </xs:complexType>
-        
-        <!-- NormalModes container for one or more NormalMode elements-->
-        <xs:complexType name="NormalModesType">
-                <xs:complexContent>
-                        <xs:extension base="PrimaryType">
-                                <xs:sequence>
-                                        <xs:element name="NormalMode" type="NormalModeType" minOccurs="1" maxOccurs="unbounded"/>
-                                </xs:sequence>
-                                <xs:attribute name="electronicStateRef" type="StateRefType"/>
-                        </xs:extension>
-                </xs:complexContent>
-        </xs:complexType>
-        
-        <xs:complexType name="NormalModeType">
-                <xs:complexContent>
-                        <xs:extension base="PrimaryType">
-                                <xs:sequence>
-                                        <xs:element name="HarmonicFrequency" type="DataType" minOccurs="0" maxOccurs="1"/>
-                                        <xs:element name="Intensity" type="DataType" minOccurs="0" maxOccurs="1"/>
-                                        <xs:element name="DisplacementVectors" type="VectorsType" minOccurs="0" maxOccurs="1"/>
-                                </xs:sequence>
-                                <xs:attribute name="electronicStateRef" type="StateRefType"/>
-                                <xs:attribute name="pointGroupSymmetry" type="xs:string" use="optional"/>
-                                <xs:attribute name="id" type="normalModeIDType"/>
-                        </xs:extension>
-                </xs:complexContent>
-        </xs:complexType>
-        
-        <xs:complexType name="MolecularStateType">
-                <xs:complexContent>
-                        <xs:extension base="PrimaryType">
-                                <xs:sequence>
-                                        <xs:element name="Description" type="xs:string" minOccurs="0"/>
-                                        <xs:element name="MolecularStateCharacterisation" type="MolecularStateCharacterisationType" minOccurs="0"/>
-                                        <xs:element name="Parity" type="ParityType" minOccurs="0"/>
-										<!--
-                                        <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
-                                                <xs:annotation>
-                                                        <xs:documentation>Placeholder for QNs from all namespaces</xs:documentation>
-                                                </xs:annotation>
-											</xs:any>-->
-										<xs:element name="Case" type="cases:BaseCase" minOccurs="0" maxOccurs="unbounded"/>
-                                        <xs:element name="StateExpansion" type="StateExpansionType" minOccurs="0" maxOccurs="unbounded"/>
-                                </xs:sequence>
-                                <xs:attribute name="stateID" type="stateIDType" use="required"/>
-                                <xs:attribute name="fullyAssigned" type="xs:boolean" use="optional"/>
-                        </xs:extension>
-                </xs:complexContent>
-        </xs:complexType>
-        <xs:complexType name="StateExpansionType">
-                <xs:complexContent>
-                        <xs:extension base="PrimaryType">
-                                <xs:sequence>
-                                        <xs:element name="Coeff" type="StateCoeffType" minOccurs="1" maxOccurs="unbounded"></xs:element>
-                                </xs:sequence>
-                        </xs:extension>
-                </xs:complexContent>
-        </xs:complexType>
-        <xs:complexType name="StateCoeffType">
-                <xs:simpleContent>
-                        <xs:extension base="xs:double">
-                                <xs:attribute name="stateRef" type="StateRefType"/>
-                        </xs:extension>
-                </xs:simpleContent>
-        </xs:complexType>
-        <xs:complexType name="BasisStatesType">
-                <xs:complexContent>
-                        <xs:extension base="PrimaryType">
-                                <xs:sequence>
-                                        <xs:element name="MolecularState" type="MolecularStateType" minOccurs="1" maxOccurs="unbounded"/>
-                                </xs:sequence>
-                        </xs:extension>
-                </xs:complexContent>
-        </xs:complexType>
+		</xs:attribute>
+	</xs:complexType>
+		
         <xs:complexType name="MolecularStateCharacterisationType">
                 <xs:sequence>
                         <xs:element name="StateEnergy" type="StateEnergyType" minOccurs="0"/>

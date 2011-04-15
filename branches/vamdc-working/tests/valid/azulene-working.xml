@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--<?oxygen NVDLSchema="/Users/christian/research/schemata/XSAMS/vamdc-working/vamdc-working.nvdl"?>-->
 <XSAMSData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working ../xsams.xsd"
+ xsi:schemaLocation="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working ../../xsams.xsd"
  xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
  xmlns:cml="http://www.xml-cml.org/schema">
 
@@ -78,7 +77,7 @@
                 </MoleculeStructure>
 
                 <NormalModes electronicStateRef="SX_Azulene-1">
-                    <NormalMode id="v1" pointGroupSymmetry="A1">
+                    <NormalMode id="V1" pointGroupSymmetry="A1">
                         <HarmonicFrequency>
                             <Value units="1/cm">162</Value>
                             <Accuracy>1</Accuracy>
@@ -93,13 +92,13 @@
                             <!-- etc... -->
                         </DisplacementVectors>
                     </NormalMode>
-                    <NormalMode id="v2" pointGroupSymmetry="A2">
+                    <NormalMode id="V2" pointGroupSymmetry="A2">
                         <HarmonicFrequency>
                             <Value units="1/cm">214</Value>
                             <Accuracy>5</Accuracy>
                         </HarmonicFrequency>
                     </NormalMode>
-                    <NormalMode id="v3" pointGroupSymmetry="A1">
+                    <NormalMode id="V3" pointGroupSymmetry="A1">
                         <HarmonicFrequency>
                             <Value units="1/cm">1720.21</Value>
                             <Accuracy>0.05</Accuracy>
@@ -111,8 +110,8 @@
                     <OtherProperties>
                         <Name>Anharmonicity Tensor</Name>
                         <MatrixData units="1/cm" nrows="48" ncols="48" form="symmetric" values="real">
-                            <RowRefs>v1 v2 v3 ... v48</RowRefs>
-                            <ColRefs>v1 v2 v3 ... v48</ColRefs>
+                            <RowRefs>V1 V2 V3 ... V48</RowRefs>
+                            <ColRefs>V1 V2 V3 ... V48</ColRefs>
                             <!-- because the anharmonicity tensor is symmetric and square (n x n),
                                 we only need to store n(n+1)/2 elements:
                                 a11, a12, ..., a1n, a22, a23, ..., a2n, ..., ann -->
@@ -173,8 +172,8 @@
             <Accuracy>5</Accuracy>
         </BandWidth>
         <Modes>
-            <DeltaV modeID="v1">2</DeltaV>
-            <DeltaV modeID="v2">1</DeltaV>
+            <DeltaV modeID="V1">2</DeltaV>
+            <DeltaV modeID="V2">1</DeltaV>
         </Modes>
     </BandAssignment>
     <BandAssignment name="3v4+2v5">
@@ -187,8 +186,8 @@
             <Accuracy>15.5</Accuracy>
         </BandWidth>
         <Modes>
-            <DeltaV modeID="v2">3</DeltaV>
-            <DeltaV modeID="v3">2</DeltaV>
+            <DeltaV modeID="V2">3</DeltaV>
+            <DeltaV modeID="V3">2</DeltaV>
         </Modes>
     </BandAssignment>
 
