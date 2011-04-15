@@ -16,6 +16,24 @@
             <xs:documentation>A list of quantum numbers for linear triatomic, open-shell molecules</xs:documentation>
         </xs:annotation>
     </xs:element>
+	<!--Following two types are used to link case to base schema-->
+	<xs:complexType name="ThisCase" abstract="true">
+		<xs:complexContent>
+			<xs:restriction base="ctypes:BaseCase">
+				<xs:attribute name="caseID" type="xs:string" use="required" fixed="ltos"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="Case">
+		<xs:complexContent>
+			<xs:extension base="ltos:ThisCase">
+				<xs:sequence>
+					<xs:element ref="ltos:QNs" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
     <xs:complexType name="QNsType">
         <xs:all>
             

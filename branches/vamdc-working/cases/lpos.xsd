@@ -40,6 +40,26 @@
             <xs:field xpath="@j"/>
         </xs:unique>
     </xs:element>
+	
+		<!--Following two types are used to link case to base schema-->
+	<xs:complexType name="ThisCase" abstract="true">
+		<xs:complexContent>
+			<xs:restriction base="ctypes:BaseCase">
+				<xs:attribute name="caseID" type="xs:string" use="required" fixed="lpos"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="Case">
+		<xs:complexContent>
+			<xs:extension base="lpos:ThisCase">
+				<xs:sequence>
+					<xs:element ref="lpos:QNs" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
     <xs:complexType name="QNsType">
         <xs:sequence>
             <!-- ElecStateLabel -->

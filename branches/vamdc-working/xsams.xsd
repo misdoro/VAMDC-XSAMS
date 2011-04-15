@@ -16,22 +16,8 @@ targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-wo
 	<xs:include schemaLocation="./nonradiative.xsd"/>
 	<xs:include schemaLocation="./collisions.xsd"/>
 	
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymcs" schemaLocation="./cases/asymcs.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymos" schemaLocation="./cases/asymos.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes" schemaLocation="./cases/commonTypes.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/dcs" schemaLocation="./cases/dcs.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen" schemaLocation="./cases/gen.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hunda" schemaLocation="./cases/hunda.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hundb" schemaLocation="./cases/hundb.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs" schemaLocation="./cases/lpcs.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltcs" schemaLocation="./cases/ltcs.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltos" schemaLocation="./cases/ltos.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltcs" schemaLocation="./cases/nltcs.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphcs" schemaLocation="./cases/sphcs.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos" schemaLocation="./cases/sphos.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs" schemaLocation="./cases/stcs.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpos" schemaLocation="./cases/lpos.xsd"/>
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltos" schemaLocation="./cases/nltos.xsd"/>
+	<!--Import all case namespaces-->
+	<xs:include schemaLocation="./cases/import.xsd"/>
 	
 	
 	<xs:element name="XSAMSData" type="XSAMSDataType">

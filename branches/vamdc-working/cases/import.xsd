@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+elementFormDefault="qualified" attributeFormDefault="unqualified"
+xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working">
+
+	<xs:annotation>
+		<xs:documentation>Schema to be included from xsams.xsd, imports all case namespaces for validation</xs:documentation>
+	</xs:annotation>
+	
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymcs" schemaLocation="./asymcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymos" schemaLocation="./asymos.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/dcs" schemaLocation="./dcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen" schemaLocation="./gen.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hunda" schemaLocation="./hunda.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hundb" schemaLocation="./hundb.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs" schemaLocation="./lpcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpos" schemaLocation="./lpos.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltcs" schemaLocation="./ltcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltos" schemaLocation="./ltos.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltcs" schemaLocation="./nltcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltos" schemaLocation="./nltos.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphcs" schemaLocation="./sphcs.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos" schemaLocation="./sphos.xsd"/>
+	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs" schemaLocation="./stcs.xsd"/>
+</xs:schema>

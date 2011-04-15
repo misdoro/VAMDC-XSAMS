@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Molecules xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gen="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen"
+    xsi:schemaLocation="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working ../../statesMolecules.xsd http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen ../../cases/gen.xsd">
+    <Name></Name>
+    <Comments></Comments>
+    <Molecule speciesID="X1">
+        <Name></Name>
+        <Comments></Comments>
+        <MolecularChemicalSpecies>
+            <OrdinaryStructuralFormula>
+                <Name>CO</Name>
+                <Comments>blah</Comments>
+                <Value>1</Value>
+            </OrdinaryStructuralFormula>
+            <StoichiometricFormula>CO</StoichiometricFormula>
+            <ChemicalName>
+                <Value>1</Value>
+            </ChemicalName>
+            <InChIKey>234</InChIKey>
+        </MolecularChemicalSpecies>
+        <MolecularState stateID="S1">
+            <Name></Name>
+            <Comments></Comments>
+            <Description></Description>
+            <MolecularStateCharacterisation>
+                <StateEnergy energyOrigin="">
+                    <Name></Name>
+                    <Comments></Comments>
+                    <Value units="eV">1</Value>
+                    <Accuracy></Accuracy>
+                </StateEnergy>
+            </MolecularStateCharacterisation>
+            <Case xsi:type="gen:Case" caseID="gen">
+                <gen:QNs>
+                    <gen:ElecStateLabel>X</gen:ElecStateLabel>
+                    <gen:QN name="a">1</gen:QN>
+                    <gen:QN name="a">2</gen:QN>
+                </gen:QNs>
+            </Case>
+        </MolecularState>
+    </Molecule>
+</Molecules>

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cml="http://www.xml-cml.org/schema"
+		xmlns:cases="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
         elementFormDefault="qualified" attributeFormDefault="unqualified"
         xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
         targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working">
         
         <!-- Import the CML Schema into its own namespace -->
         <xs:import namespace="http://www.xml-cml.org/schema" schemaLocation="./cml/schema.xsd"/>
+		<!-- Import base CASE-BY-CASE namespace-->
+		<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes" schemaLocation="./cases/commonTypes.xsd"/>
+
         
         <xs:include schemaLocation="typesAttributes.xsd"/>
         <xs:element name="Molecules" type="MoleculesType">
@@ -137,11 +141,13 @@
                                         <xs:element name="Description" type="xs:string" minOccurs="0"/>
                                         <xs:element name="MolecularStateCharacterisation" type="MolecularStateCharacterisationType" minOccurs="0"/>
                                         <xs:element name="Parity" type="ParityType" minOccurs="0"/>
+										<!--
                                         <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
                                                 <xs:annotation>
                                                         <xs:documentation>Placeholder for QNs from all namespaces</xs:documentation>
                                                 </xs:annotation>
-                                        </xs:any>
+											</xs:any>-->
+										<xs:element name="Case" type="cases:BaseCase" minOccurs="0" maxOccurs="unbounded"/>
                                         <xs:element name="StateExpansion" type="StateExpansionType" minOccurs="0" maxOccurs="unbounded"/>
                                 </xs:sequence>
                                 <xs:attribute name="stateID" type="stateIDType" use="required"/>

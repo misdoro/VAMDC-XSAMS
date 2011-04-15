@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 xmlns:ctypes="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
+xmlns="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
 targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
-	elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
 		<xs:annotation>
 			<xs:documentation>Contains data types and attributes common for most cases</xs:documentation>
 		</xs:annotation>
+		
+		<xs:complexType name="BaseCase">
+			<xs:annotation>
+				<xs:documentation>
+					root for QNs elements of cases.
+					In main schema it's it that is referenced.
+					Each case should extend this type to add his qn's and restrictions
+				</xs:documentation>
+			</xs:annotation>
+			<xs:attribute name="caseID" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>The name of the case</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
 		
 		<xs:complexType name="RankingType">
 			<xs:simpleContent>
