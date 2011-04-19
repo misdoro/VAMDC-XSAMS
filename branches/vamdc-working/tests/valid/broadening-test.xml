@@ -374,61 +374,57 @@
                         <Accuracy>0.08346</Accuracy>
                     </TransitionProbabilityA>
                 </Probability>
-                <Broadenings>
-                    <Broadening envRef="Eair-broadening-ref-env" name="pressure">
-                        <Lineshape name="Lorentzian">
-                            <Comments>The temperature-dependent pressure broadening Lorentzian lineshape</Comments>
-                            <LineshapeParameter name="gammaL">
-                                <FitParameters functionRef="FgammaL">
-                                    <FitArgument units="K" name="T">
-                                        <LowerLimit units="K">240</LowerLimit>
-                                        <UpperLimit units="K">350</UpperLimit>
-                                    </FitArgument>
-                                    <FitArgument units="atm" name="p">
-                                        <LowerLimit units="atm">0.</LowerLimit>
-                                        <UpperLimit units="atm">1.2</UpperLimit>
-                                    </FitArgument>
-                                    <FitParameter name="gammaL_ref">
-                                        <SourceRef>BHIT-B_HITRAN2008</SourceRef>
-                                        <Value units="1/cm">0.0635</Value>
-                                        <Accuracy>0.003175</Accuracy>
-                                    </FitParameter>
-                                    <FitParameter name="n">
-                                        <SourceRef>BHIT-B_HITRAN2008</SourceRef>
-                                        <Value units="unitless">0.75</Value>
-                                        <Accuracy>0.15</Accuracy>
-                                    </FitParameter>
-                                </FitParameters>
-                            </LineshapeParameter>
-                        </Lineshape>
-                    </Broadening>
-                    <Broadening envRef="Eself-broadening-ref-env" name="pressure">
-                        <Lineshape name="Lorentzian">
-                            <LineshapeParameter name="gammaL">
-                                <SourceRef>BHIT-B_HITRAN2008</SourceRef>
-                                <Value units="1/cm">0.116</Value>
-                                <Accuracy>0.0058</Accuracy>
-                            </LineshapeParameter>
-                        </Lineshape>
-                    </Broadening>
-                </Broadenings>
-                <Shiftings>
-                    <Shifting envRef="Eair-broadening-ref-env">
-                        <ShiftingParameter name="delta">
-                            <FitParameters functionRef="Fdelta">
-                                <FitArgument name="p" units="atm">
-                                    <LowerLimit units="atm">0.</LowerLimit>
-                                    <UpperLimit units="atm">1.2</UpperLimit>
-                                </FitArgument>
-                                <FitParameter name="delta_ref">
-                                    <SourceRef>BHIT-B_HITRAN2008</SourceRef>
-                                    <Value units="unitless">-0.001</Value>
-                                    <Accuracy>0.1</Accuracy>
-                                </FitParameter>
-                            </FitParameters>
-                        </ShiftingParameter>
-                    </Shifting>
-                </Shiftings>
+				<Broadening envRef="Eair-broadening-ref-env" name="pressure">
+					<Lineshape name="Lorentzian">
+						<Comments>The temperature-dependent pressure broadening Lorentzian lineshape</Comments>
+						<LineshapeParameter name="gammaL">
+							<FitParameters functionRef="FgammaL">
+								<FitArgument units="K" name="T">
+									<LowerLimit units="K">240</LowerLimit>
+									<UpperLimit units="K">350</UpperLimit>
+								</FitArgument>
+								<FitArgument units="atm" name="p">
+									<LowerLimit units="atm">0.</LowerLimit>
+									<UpperLimit units="atm">1.2</UpperLimit>
+								</FitArgument>
+								<FitParameter name="gammaL_ref">
+									<SourceRef>BHIT-B_HITRAN2008</SourceRef>
+									<Value units="1/cm">0.0635</Value>
+									<Accuracy>0.003175</Accuracy>
+								</FitParameter>
+								<FitParameter name="n">
+									<SourceRef>BHIT-B_HITRAN2008</SourceRef>
+									<Value units="unitless">0.75</Value>
+									<Accuracy>0.15</Accuracy>
+								</FitParameter>
+							</FitParameters>
+						</LineshapeParameter>
+					</Lineshape>
+				</Broadening>
+				<Broadening envRef="Eself-broadening-ref-env" name="pressure">
+					<Lineshape name="Lorentzian">
+						<LineshapeParameter name="gammaL">
+							<SourceRef>BHIT-B_HITRAN2008</SourceRef>
+							<Value units="1/cm">0.116</Value>
+							<Accuracy>0.0058</Accuracy>
+						</LineshapeParameter>
+					</Lineshape>
+				</Broadening>
+				<Shifting envRef="Eair-broadening-ref-env">
+					<ShiftingParameter name="delta">
+						<FitParameters functionRef="Fdelta">
+							<FitArgument name="p" units="atm">
+								<LowerLimit units="atm">0.</LowerLimit>
+								<UpperLimit units="atm">1.2</UpperLimit>
+							</FitArgument>
+							<FitParameter name="delta_ref">
+								<SourceRef>BHIT-B_HITRAN2008</SourceRef>
+								<Value units="unitless">-0.001</Value>
+								<Accuracy>0.1</Accuracy>
+							</FitParameter>
+						</FitParameters>
+					</ShiftingParameter>
+				</Shifting>
             </RadiativeTransition>
         </Radiative>
     </Processes>

@@ -62,12 +62,12 @@
 							<xs:documentation>Satellite line properties</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Broadenings" type="BroadeningsType" minOccurs="0" maxOccurs="1">
+					<xs:element name="Broadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Description of line broadening processes and related parameters</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Shiftings" type="ShiftingsType" minOccurs="0" maxOccurs="1">
+					<xs:element name="Shifting" type="ShiftingType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Description of line shifting processes and related parameters</xs:documentation>
 						</xs:annotation>
@@ -192,23 +192,6 @@
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:complexType name="BroadeningsType">
-		<xs:annotation>
-			<xs:documentation>Description of line broadening processes and related parameters</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="PrimaryType">
-				<xs:sequence>
-					<xs:element name="Broadening" type="BroadeningType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Broadening line shape description</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	
 	<xs:complexType name="BroadeningType">
 		<xs:annotation>
 			<xs:documentation>Specific broadening mechanism description.
@@ -236,23 +219,6 @@
 					<xs:element name="LineshapeParameter" type="DataFuncType" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute name="name" type="xs:string"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	
-	<xs:complexType name="ShiftingsType">
-		<xs:annotation>
-			<xs:documentation>Description of line shifting processes and related parameters</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="PrimaryType">
-				<xs:sequence>
-					<xs:element name="Shifting" type="ShiftingType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Shifting description</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
