@@ -573,7 +573,7 @@
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="DataType">
-				<xs:attribute name="mechanism" use="required">
+				<xs:attribute name="decay" use="required">
 					<xs:simpleType>
 						<xs:restriction base="xs:token">
 							<xs:enumeration value="total"/>

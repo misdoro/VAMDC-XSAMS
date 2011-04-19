@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Molecules xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gen="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen"
+    xsi:schemaLocation="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working ../../statesMolecules.xsd http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/gen ../../cases/gen.xsd">
+    <!-- Failing test for molecular state total lifetime type uniqueness-->
+    <Molecule speciesID="X1">
+        <Comments></Comments>
+        <MolecularChemicalSpecies>
+            <OrdinaryStructuralFormula>
+                <Comments>blah</Comments>
+                <Value>1</Value>
+            </OrdinaryStructuralFormula>
+            <StoichiometricFormula>CO</StoichiometricFormula>
+            <ChemicalName>
+                <Value>1</Value>
+            </ChemicalName>
+            <InChIKey>234</InChIKey>
+        </MolecularChemicalSpecies>
+        <MolecularState stateID="S1">
+            <Comments></Comments>
+            <Description></Description>
+            <MolecularStateCharacterisation>
+                <StateEnergy energyOrigin="ground state">
+                    <Comments></Comments>
+                    <Value units="eV">1</Value>
+                    <Accuracy></Accuracy>
+                </StateEnergy>
+                <LifeTime mechanism="totalRadiative">
+                    <Value units="s">1</Value>
+                </LifeTime>
+                <LifeTime mechanism="totalRadiative">
+                    <Value units="s">0.5</Value>
+                </LifeTime>
+            </MolecularStateCharacterisation>
+        </MolecularState>
+    </Molecule>
+</Molecules>

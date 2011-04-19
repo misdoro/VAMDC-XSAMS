@@ -132,22 +132,22 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="Wavenumber" type="DataType" minOccurs="0">
+					<xs:element name="Wavenumber" type="DataType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Transition wavenumber</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Wavelength" type="DataType" minOccurs="0">
+					<xs:element name="Wavelength" type="DataType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Transition wavelength</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Energy" type="DataType" minOccurs="0">
+					<xs:element name="Energy" type="DataType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Transition energy</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Frequency" type="DataType" minOccurs="0">
+					<xs:element name="Frequency" type="DataType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Transition frequency</xs:documentation>
 						</xs:annotation>
