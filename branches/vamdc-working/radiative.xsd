@@ -245,7 +245,7 @@
 						<xs:annotation>
 							<xs:documentation>Reference to a specific species or state</xs:documentation>
 						</xs:annotation>
-					</xs:element>/>
+					</xs:element>
 					<xs:element name="BandAssignment" type="BandAssignmentType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute name="envRef" type="EnvironmentRefType" use="optional"/>
@@ -260,9 +260,7 @@
 				<xs:sequence>
 					<xs:element name="BandCentre" type="DataType" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="BandWidth" type="DataType" minOccurs="0" maxOccurs="1"/>
-					<xs:sequence>
-						<xs:element name="Modes" type="ModesType" minOccurs="0" maxOccurs="unbounded"/>
-					</xs:sequence>
+					<xs:element name="Modes" type="ModesType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute name="name" type="xs:string"/>
 			</xs:extension>                
