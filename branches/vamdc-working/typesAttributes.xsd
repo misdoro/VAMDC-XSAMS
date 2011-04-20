@@ -30,8 +30,6 @@
 		<xs:attribute name="methodRef" type="methodRefType"/>
 	</xs:complexType>
 	
-	
-	
 	<xs:complexType name="ChemicalElementType">
 		<xs:annotation>
 			<xs:documentation>Description of a chemical element</xs:documentation>
@@ -109,7 +107,7 @@
 					</xs:sequence>
 					<xs:element name="FitParameters" type="FitParametersType" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:choice>
-				<xs:attribute name="name" type="xs:string"/>
+				<xs:attribute name="name" type="xs:string" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -628,6 +626,19 @@
 	</xs:simpleType>
 	
 	<!--=== types common to collisions, radiative and autoionisation ===-->
+	<xs:complexType name="SpeciesStateRefType">
+		<xs:annotation>
+			<xs:documentation>Choice of either species or specific state or both</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="SpeciesRef" type="SpeciesRefType"/>
+				<xs:element name="StateRef" type="StateRefType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="StateRef" type="StateRefType"/>
+		</xs:choice>
+	</xs:complexType>
+	
 	<xs:complexType name="ReactantsType">
 		<xs:sequence minOccurs="2" maxOccurs="unbounded">
 			<xs:element name="StateRef" type="StateRefType">

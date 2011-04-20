@@ -194,13 +194,12 @@
 	
 	<xs:complexType name="BroadeningType">
 		<xs:annotation>
-			<xs:documentation>Specific broadening mechanism description.
-				In sourceRef </xs:documentation>
+			<xs:documentation>Specific broadening mechanism description.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="Lineshape" type="LineshapeType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Lineshape" type="LineshapeType" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute name="name" type="xs:string" use="required">
 					<xs:annotation>
@@ -242,11 +241,11 @@
 		<xs:complexContent>
 			<xs:extension base="SimpleDataTableType">
 				<xs:sequence>
-					<xs:element name="SpeciesRef" type="SpeciesRefType" minOccurs="0" maxOccurs="1">
+					<xs:element name="Species" type="SpeciesStateRefType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Reference to a specific species</xs:documentation>
+							<xs:documentation>Reference to a specific species or state</xs:documentation>
 						</xs:annotation>
-					</xs:element> 
+					</xs:element>/>
 					<xs:element name="BandAssignment" type="BandAssignmentType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute name="envRef" type="EnvironmentRefType" use="optional"/>
