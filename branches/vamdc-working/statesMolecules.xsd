@@ -154,7 +154,7 @@
 						<xs:unique name="molStateLifeTime">
 							<!--Molecular state life time decay mechanism shouldn't be repeated within same state-->
 							<xs:selector xpath="xsams:LifeTime"/>
-							<xs:field xpath="@mechanism"/>
+							<xs:field xpath="@decay"/>
 						</xs:unique>
 					</xs:element>
 					<xs:element name="Parity" type="ParityType" minOccurs="0"/>

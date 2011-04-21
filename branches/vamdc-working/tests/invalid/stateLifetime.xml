@@ -26,10 +26,10 @@
                     <Value units="eV">1</Value>
                     <Accuracy></Accuracy>
                 </StateEnergy>
-                <LifeTime mechanism="totalRadiative">
+                <LifeTime decay="totalRadiative">
                     <Value units="s">1</Value>
                 </LifeTime>
-                <LifeTime mechanism="totalRadiative">
+                <LifeTime decay="totalRadiative">
                     <Value units="s">0.5</Value>
                 </LifeTime>
             </MolecularStateCharacterisation>

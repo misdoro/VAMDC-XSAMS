@@ -124,7 +124,7 @@
 						<xs:unique name="atomStateLifeTime">
 							<!--Atomic state life time decay mechanism shouldn't be repeated within same state-->
 							<xs:selector xpath="xsams:LifeTime"/>
-							<xs:field xpath="@mechanism"/>
+							<xs:field xpath="@decay"/>
 						</xs:unique>
 					</xs:element>
 					<xs:element name="AtomicQuantumNumbers" type="AtomicQuantumNumbersType" minOccurs="0">
