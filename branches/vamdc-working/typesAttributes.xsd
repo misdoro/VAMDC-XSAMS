@@ -679,7 +679,7 @@
 				<xs:sequence>
 					<xs:element name="Vector" type="VectorType" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
-				<xs:attribute name="units" type="xs:string" use="required"/>
+				<xs:attribute name="units" type="unitsType" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -710,27 +710,48 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="RowRefs" type="xs:string"/>
-					<xs:element name="ColRefs" type="xs:string"/>
+					<xs:element name="RowRefs" type="StringListType"/>
+					<xs:element name="ColRefs" type="StringListType"/>
 					<xs:element name="Matrix" type="xs:string" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
-				<xs:attribute name="units" type="xs:string" use="required"/>
+				<xs:attribute name="units" type="unitsType" use="required"/>
 				<xs:attribute name="nrows" type="xs:integer" use="required"/>
 				<xs:attribute name="ncols" type="xs:integer" use="required"/>
 				<xs:attribute name="form" type="xs:string" use="required"/>
-				<xs:attribute name="values" type="xs:string" use="required"/>
+				<xs:attribute name="values" type="StringListType" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	
-	<!-- The data list type: a whitespace-delimited string of numbers -->
+
+	<xs:simpleType name="DoubleListType">
+		<xs:annotation>
+			<xs:documentation>List of double, base for other types</xs:documentation>
+		</xs:annotation>
+		<xs:list itemType="xs:double"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="StringListType">
+		<xs:annotation>
+			<xs:documentation>List of strings, base for other types</xs:documentation>
+		</xs:annotation>
+		<xs:list itemType="xs:string"/>
+	</xs:simpleType>
+	
 	<!-- It doesn't need sources and comments, because it always appears inside
 		another element which provides these -->
 	<xs:complexType name="DataListType">
+		<xs:annotation>
+			<xs:documentation>Whitespace-delimited list of numbers, with optional units and items count</xs:documentation>
+		</xs:annotation>
 		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="n" type="xs:positiveInteger"/>
-				<xs:attribute name="units" type="xs:string"/>
+			<xs:extension base="DoubleListType">
+				<xs:attribute name="n" type="xs:positiveInteger">
+					<xs:annotation>
+						<xs:documentation>List elements count</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="units" type="unitsType"/>
 			</xs:extension>
 		</xs:simpleContent>    
 	</xs:complexType>
@@ -741,7 +762,7 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:attribute name="n" type="xs:positiveInteger"/>
-				<xs:attribute name="units" type="xs:string"/>
+				<xs:attribute name="units" type="unitsType"/>
 				<xs:attribute name="a0" type="xs:double" use="required"/>
 				<xs:attribute name="a1" type="xs:double" use="required"/>
 			</xs:extension>
@@ -764,7 +785,7 @@
 					</xs:choice>
 				</xs:sequence>
 				<xs:attribute name="parameter" type="xs:string"/>
-				<xs:attribute name="units" type="xs:string"/>
+				<xs:attribute name="units" type="unitsType"/>
 				<xs:attribute name="id" type="xs:ID"/>
 			</xs:extension>
 		</xs:complexContent>
