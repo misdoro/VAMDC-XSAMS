@@ -234,6 +234,10 @@
 	</xs:complexType>
 	
 	<xs:complexType name="CrossSectionType">
+		<xs:annotation>
+			<xs:documentation>Cross Section data of some sort, e.g. a photoabsorption cross section, possibly
+				              with band assignments.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="SimpleDataTableType">
 				<xs:sequence>
@@ -251,6 +255,10 @@
 	</xs:complexType>
 	
 	<xs:complexType name="BandAssignmentType">
+		<xs:annotation>
+			<xs:documentation>Assignment of a band in a tabulated cross section, giving the centre position (wavelength or
+				              frequency), width and assignment of contributing normal modes, if relevant.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>

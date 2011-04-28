@@ -131,6 +131,12 @@
 	</xs:complexType>
 	
 	<xs:complexType name="NormalModeType">
+		<xs:annotation>
+			<xs:documentation>Data relating to the normal modes of a molecule in a particular electronic state,
+							  giving the frequency, intensity and atomic displacement vectors. The electronic
+							  state is identified by the electronicStateRef attribute and the normal mode
+							  symmetry species by the pointGroupSymmetry attribute.</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
