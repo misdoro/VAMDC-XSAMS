@@ -4,7 +4,7 @@
 \usepackage{amssymb,amsmath}
 \title{The `Case-By-Case' Schema for Molecular States in XSAMS - v0.2.1}
 \author{Christian Hill\thanks{Email christian.hill@ucl.ac.uk} and Jonathan Tennyson\\ University College London}
-\date{22 February 2011}
+\date{3 May 2011}
 
 \begin{document}
 
@@ -289,6 +289,38 @@ None.
 \vspace{0.5cm}
 \fbox{
 \parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecRefl}}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:elecRefl>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecRefl} is the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system).
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
 \subsection*{$|\mathit{\Lambda}|$}
 \subsubsection*{\underline{Element}}
 \texttt{<hunda:Lambda>}
@@ -499,6 +531,38 @@ None.
 \subsubsection*{\underline{Restrictions}}
 \begin{itemize}
 \item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecRefl}}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:elecRefl>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecRefl} is the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system).
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
 \end{itemize}
 }
 }
@@ -1821,6 +1885,38 @@ None.
 \vspace{0.5cm}
 \fbox{
 \parbox{12cm}{
+\subsection*{\texttt{elecSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:elecSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{elecSym} is the symmetry species of the electronic wavefunction described by some symmetry group..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
 \subsection*{$S$}
 \subsubsection*{\underline{Element}}
 \texttt{<asymos:S>}
@@ -2252,6 +2348,38 @@ None.
 \vspace{0.5cm}
 \fbox{
 \parbox{12cm}{
+\subsection*{\texttt{elecSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:elecSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{elecSym} is the symmetry species of the electronic wavefunction described by some symmetry group..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
 \subsection*{$S$}
 \subsubsection*{\underline{Element}}
 \texttt{<sphos:S>}
@@ -2460,6 +2588,38 @@ None.
 \subsubsection*{\underline{Restrictions}}
 \begin{itemize}
 \item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecRefl}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:elecRefl>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecRefl} is the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system).
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
 \end{itemize}
 }
 }
@@ -2715,6 +2875,38 @@ None.
 \vspace{0.5cm}
 \fbox{
 \parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecRefl}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:elecRefl>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecRefl} is the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system).
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
 \subsection*{$S$}
 \subsubsection*{\underline{Element}}
 \texttt{<lpos:S>}
@@ -2786,7 +2978,7 @@ $l$ is the total vibrational angular momentum quantum number associated with res
 \subsubsection*{\underline{Attributes}}
 None.
 \subsubsection*{\underline{Description}}
-\texttt{vibInv} is the parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+\texttt{vibInv} is the parity of the vibronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
 \subsubsection*{\underline{Restrictions}}
 \begin{itemize}
 \item `g' or `u'.
@@ -2802,7 +2994,7 @@ None.
 \subsubsection*{\underline{Attributes}}
 None.
 \subsubsection*{\underline{Description}}
-\texttt{vibRefl} is the parity of the vibrational wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system.
+\texttt{vibRefl} is the parity of the vibronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system.
 \subsubsection*{\underline{Restrictions}}
 \begin{itemize}
 \item `$+$' or `$-$'.
@@ -2972,6 +3164,38 @@ None.
 \subsubsection*{\underline{Restrictions}}
 \begin{itemize}
 \item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:elecSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{elecSym} is the symmetry species of the electronic wavefunction described by some symmetry group..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
 \end{itemize}
 }
 }
@@ -3207,8 +3431,6 @@ None.
 }
 }
 \vspace{0.5cm}
-
-
 
 
 
