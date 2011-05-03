@@ -30,8 +30,8 @@
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute name="methodID" use="required" type="methodIDType"/>
-				<xs:attribute name="functionRef" use="optional" type="functionRefType"/>
+				<xs:attribute name="methodID" use="required" type="MethodIDType"/>
+				<xs:attribute name="functionRef" use="optional" type="FunctionRefType"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

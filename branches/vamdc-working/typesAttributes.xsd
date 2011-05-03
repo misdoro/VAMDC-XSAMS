@@ -27,7 +27,7 @@
 				</xs:simpleType>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute name="methodRef" type="methodRefType"/>
+		<xs:attribute name="methodRef" type="MethodRefType"/>
 	</xs:complexType>
 	
 	<xs:complexType name="ChemicalElementType">
@@ -123,7 +123,7 @@
 			<xs:element name="FitArgument" type="ArgumentType"  minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="FitParameter" type="NamedDataType"  minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-		<xs:attribute name="functionRef" type="functionRefType" use="optional"/>
+		<xs:attribute name="functionRef" type="FunctionRefType" use="optional"/>
 	</xs:complexType>
 	
 	<xs:complexType name="ArgumentType">
@@ -149,7 +149,7 @@
 				<xs:documentation>Name of the argument, matching that defined in the function definition. Example: a</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="units" type="unitsType" use="required"/>
+		<xs:attribute name="units" type="UnitsType" use="required"/>
 	</xs:complexType>
 	
 	<xs:complexType name="DataSetType">
@@ -231,7 +231,7 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:all>
-		<xs:attribute name="units" type="unitsType" use="required"/>
+		<xs:attribute name="units" type="UnitsType" use="required"/>
 		<xs:attribute name="parameter" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="DataXYType">
@@ -267,7 +267,7 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="FunctionRef" type="functionRefType">
+					<xs:element name="FunctionRef" type="FunctionRefType">
 						<xs:annotation>
 							<xs:documentation>Reference to the fitting function</xs:documentation>
 						</xs:annotation>
@@ -340,12 +340,12 @@
 	<xs:complexType name="ValueType">
 		<xs:simpleContent>
 			<xs:extension base="xs:double">
-				<xs:attribute name="units" type="unitsType" use="required"/>
+				<xs:attribute name="units" type="UnitsType" use="required"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	
-	<xs:simpleType name="unitsType">
+	<xs:simpleType name="UnitsType">
 		<xs:annotation>
 			<xs:documentation>Description of physical units. Use "unitless" for dimensionless quantities.</xs:documentation>
 		</xs:annotation>
@@ -679,7 +679,7 @@
 				<xs:sequence>
 					<xs:element name="Vector" type="VectorType" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
-				<xs:attribute name="units" type="unitsType" use="required"/>
+				<xs:attribute name="units" type="UnitsType" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -714,7 +714,7 @@
 					<xs:element name="ColRefs" type="StringListType"/>
 					<xs:element name="Matrix" type="xs:string" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
-				<xs:attribute name="units" type="unitsType" use="required"/>
+				<xs:attribute name="units" type="UnitsType" use="required"/>
 				<xs:attribute name="nrows" type="xs:integer" use="required"/>
 				<xs:attribute name="ncols" type="xs:integer" use="required"/>
 				<xs:attribute name="form" type="xs:string" use="required"/>
@@ -751,7 +751,7 @@
 						<xs:documentation>List elements count</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
-				<xs:attribute name="units" type="unitsType"/>
+				<xs:attribute name="units" type="UnitsType"/>
 			</xs:extension>
 		</xs:simpleContent>    
 	</xs:complexType>
@@ -764,7 +764,7 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:attribute name="n" type="xs:positiveInteger"/>
-				<xs:attribute name="units" type="unitsType"/>
+				<xs:attribute name="units" type="UnitsType"/>
 				<xs:attribute name="a0" type="xs:double" use="required">
 					<xs:annotation>
 						<xs:documentation>initial value</xs:documentation>
@@ -795,7 +795,7 @@
 					</xs:choice>
 				</xs:sequence>
 				<xs:attribute name="parameter" type="xs:string"/>
-				<xs:attribute name="units" type="unitsType"/>
+				<xs:attribute name="units" type="UnitsType"/>
 				<xs:attribute name="id" type="xs:ID"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -831,7 +831,7 @@
 	
 	
 	<!-- ID types definitions-->
-	<xs:simpleType name="environmentIDType">
+	<xs:simpleType name="EnvironmentIDType">
 		<xs:annotation>
 			<xs:documentation>ID for environments.</xs:documentation>
 		</xs:annotation>
@@ -840,7 +840,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:simpleType name="functionIDType">
+	<xs:simpleType name="FunctionIDType">
 		<xs:annotation>
 			<xs:documentation>ID for a specific function</xs:documentation>
 		</xs:annotation>
@@ -849,7 +849,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:simpleType name="methodIDType">
+	<xs:simpleType name="MethodIDType">
 		<xs:annotation>
 			<xs:documentation>ID for a specific method</xs:documentation>
 		</xs:annotation>
@@ -858,7 +858,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:simpleType name="sourceIDType">
+	<xs:simpleType name="SourceIDType">
 		<xs:annotation>
 			<xs:documentation>Reference to specific bibliographic items.</xs:documentation>
 		</xs:annotation>
@@ -867,7 +867,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:simpleType name="speciesIDType">
+	<xs:simpleType name="SpeciesIDType">
 		<xs:annotation>
 			<xs:documentation>ID for a species. 
 					Is used to speed-up location of species information from processes.
@@ -878,7 +878,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:simpleType name="stateIDType">
+	<xs:simpleType name="StateIDType">
 		<xs:annotation>
 			<xs:documentation>ID for a specific atomic/molecular state, particle or solid.</xs:documentation>
 		</xs:annotation>
@@ -887,7 +887,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:simpleType name="normalModeIDType">
+	<xs:simpleType name="NormalModeIDType">
 		<xs:annotation>
 			<xs:documentation>ID for a normal vibrational mode of complex molecule.</xs:documentation>
 		</xs:annotation>
@@ -897,7 +897,7 @@
 	</xs:simpleType>
 	
 	<!-- References types definition. All IDREF's should be here.-->
-	<xs:simpleType name="methodRefType">
+	<xs:simpleType name="MethodRefType">
 		<xs:annotation>
 			<xs:documentation>Reference to a specific method.</xs:documentation>
 		</xs:annotation>
@@ -906,7 +906,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:simpleType name="functionRefType">
+	<xs:simpleType name="FunctionRefType">
 		<xs:annotation>
 			<xs:documentation>Reference to a specific function</xs:documentation>
 		</xs:annotation>
@@ -945,7 +945,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-		<xs:simpleType name="normalModeRefType">
+		<xs:simpleType name="NormalModeRefType">
 		<xs:annotation>
 			<xs:documentation>Reference to a normal vibrational mode of complex molecule.</xs:documentation>
 		</xs:annotation>

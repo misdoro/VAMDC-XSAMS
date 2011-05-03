@@ -22,7 +22,7 @@
 				<xs:sequence>
 					<xs:element name="Layer" type="MaterialType" maxOccurs="unbounded"/>
 				</xs:sequence>
-				<xs:attribute name="stateID" type="stateIDType" use="required"/>
+				<xs:attribute name="stateID" type="StateIDType" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
