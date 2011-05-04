@@ -362,7 +362,7 @@
                     <Wavenumber>
                         <SourceRef>BHIT-B_HITRAN2008</SourceRef>
                         <Value units="1/cm">6588.9347</Value>
-                        <Accuracy>0.001</Accuracy>
+                        <Accuracy><Statistical absolute="false">0.000001</Statistical></Accuracy>
                     </Wavenumber>
                 </EnergyWavelength>
                 <InitialStateRef>SS300-C2H2-2</InitialStateRef>
@@ -390,12 +390,12 @@
 								<FitParameter name="gammaL_ref">
 									<SourceRef>BHIT-B_HITRAN2008</SourceRef>
 									<Value units="1/cm">0.0635</Value>
-									<Accuracy>0.003175</Accuracy>
+								    <Accuracy><Statistical>0.003175</Statistical></Accuracy>
 								</FitParameter>
 								<FitParameter name="n">
 									<SourceRef>BHIT-B_HITRAN2008</SourceRef>
 									<Value units="unitless">0.75</Value>
-									<Accuracy>0.15</Accuracy>
+									<Accuracy><Statistical>0.15</Statistical></Accuracy>
 								</FitParameter>
 							</FitParameters>
 						</LineshapeParameter>
@@ -406,7 +406,7 @@
 						<LineshapeParameter name="gammaL">
 							<SourceRef>BHIT-B_HITRAN2008</SourceRef>
 							<Value units="1/cm">0.116</Value>
-							<Accuracy>0.0058</Accuracy>
+							<Accuracy><Statistical>0.0058</Statistical></Accuracy>
 						</LineshapeParameter>
 					</Lineshape>
 				</Broadening>
@@ -420,7 +420,7 @@
 							<FitParameter name="delta_ref">
 								<SourceRef>BHIT-B_HITRAN2008</SourceRef>
 								<Value units="unitless">-0.001</Value>
-								<Accuracy>0.1</Accuracy>
+								<Accuracy><Statistical absolute="false">0.1</Statistical></Accuracy>
 							</FitParameter>
 						</FitParameters>
 					</ShiftingParameter>

@@ -4,6 +4,8 @@
 	xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
 	targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working">
 	
+	<xs:include schemaLocation="typesAttributes.xsd"/>
+	
 	<xs:element name="Sources" type="SourcesType">
 		<xs:annotation>
 			<xs:documentation>All relevant references to data sources</xs:documentation>

@@ -61,7 +61,7 @@
 							<xs:documentation>Value of a particular quantity</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Accuracy" type="xs:string" minOccurs="0">
+					<xs:element name="Accuracy" type="AccuracyType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Description of the accuracy</xs:documentation>
 						</xs:annotation>
@@ -99,7 +99,7 @@
 								<xs:documentation>Value of a particular quantity</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="Accuracy" type="xs:string" minOccurs="0">
+						<xs:element name="Accuracy" type="AccuracyType" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>Description of the accuracy</xs:documentation>
 							</xs:annotation>
@@ -111,6 +111,60 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	
+	<xs:complexType name="AccuracyType">
+		<xs:annotation>
+			<xs:documentation>Accuracy of numerical data</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Systematic" type="AccuracyErrorType" minOccurs="0"/>
+			<xs:choice minOccurs="0">
+				<xs:element name="Statistical" type="AccuracyErrorType"/>
+				<xs:sequence>
+					<xs:element name="StatHigh" type="AccuracyErrorType"/>
+					<xs:element name="StatLow" type="AccuracyErrorType"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="calibration" type="AccuracyCalibrationType"/>
+		<xs:attribute name="quality" type="xs:nonNegativeInteger">
+			<xs:annotation>
+				<xs:documentation>0 means quality is guaranteed, 
+					any other value means data might be bad for some reason</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="AccuracyErrorType">
+		<xs:annotation>
+			<xs:documentation>Statistical error</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:double">
+				<xs:attribute name="confidence">
+					<xs:simpleType>
+						<xs:restriction base="xs:double">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="absolute" type="xs:boolean"/> 
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:simpleType name="AccuracyCalibrationType">
+		<xs:annotation>
+			<xs:documentation>Describes the reference point for measured data</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="absolute"/>
+			<xs:enumeration value="relative"/>
+			<xs:enumeration value="normalized"/>
+			<xs:enumeration value="uncalibrated"/>
+		</xs:restriction>
+	</xs:simpleType>
 	
 	<xs:complexType name="FitParametersType">
 		<xs:annotation>
@@ -480,16 +534,10 @@
 					<xs:documentation>2S+1</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Seniority" minOccurs="0">
+			<xs:element name="Seniority" type="xs:nonNegativeInteger" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Seniority number</xs:documentation>
 				</xs:annotation>
-				<xs:complexType>
-					<xs:simpleContent>
-						<xs:extension base="xs:nonNegativeInteger">
-						</xs:extension>
-					</xs:simpleContent>
-				</xs:complexType>
 			</xs:element>
 		</xs:all>
 	</xs:complexType>
