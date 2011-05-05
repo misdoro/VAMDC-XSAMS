@@ -195,11 +195,11 @@
     <BandAssignment name="3v4+2v5">
         <BandCentre>
             <Value units="1/cm">1657</Value>
-            <Accuracy><Statistical absolute="true">10</Statistical></Accuracy>
+            <Accuracy><Statistical relative="false">10</Statistical></Accuracy>
         </BandCentre>
         <BandWidth>
             <Value units="1/cm">120</Value>
-            <Accuracy><Statistical absolute="true">15.5</Statistical></Accuracy>
+            <Accuracy><Statistical relative="false">15.5</Statistical></Accuracy>
         </BandWidth>
         <Modes>
             <DeltaV modeID="V2">3</DeltaV>

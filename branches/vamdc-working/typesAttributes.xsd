@@ -149,7 +149,7 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
-				<xs:attribute name="absolute" type="xs:boolean"/> 
+				<xs:attribute name="relative" type="xs:boolean" default="false"/> 
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
