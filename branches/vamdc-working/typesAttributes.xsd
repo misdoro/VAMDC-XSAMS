@@ -833,13 +833,13 @@
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
 					<xs:choice>
-						<xs:element name="DataList" type="DataListType" minOccurs="0" maxOccurs="1"/>
+						<xs:element name="DataList" type="DataListType"/>
 						<xs:element name="LinearSequence" type="LinearSequenceType"/>
 						<xs:element name="DataFile" type="xs:string"/>
 					</xs:choice>
-					<xs:choice>
-						<xs:element name="ErrorList" type="DataListType" minOccurs="0" maxOccurs="1"/>
-						<xs:element name="Error" type="xs:double" minOccurs="0" maxOccurs="1"/>
+					<xs:choice minOccurs="0">
+						<xs:element name="ErrorList" type="DataListType"/>
+						<xs:element name="Error" type="xs:double"/>
 					</xs:choice>
 				</xs:sequence>
 				<xs:attribute name="parameter" type="xs:string"/>
