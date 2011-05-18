@@ -321,16 +321,6 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="FunctionRef" type="FunctionRefType">
-						<xs:annotation>
-							<xs:documentation>Reference to the fitting function</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="FitValidityLimits" type="FitValidityLimitsType" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Limits of the fit validity</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element name="FitParameters" type="FitParametersType">
 						<xs:annotation>
 							<xs:documentation>Fitting parameters</xs:documentation>
