@@ -116,23 +116,27 @@
 		<xs:annotation>
 			<xs:documentation>Accuracy of numerical data</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Systematic" type="AccuracyErrorType" minOccurs="0"/>
-			<xs:choice minOccurs="0">
-				<xs:element name="Statistical" type="AccuracyErrorType"/>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="StatHigh" type="AccuracyErrorType"/>
-					<xs:element name="StatLow" type="AccuracyErrorType"/>
+					<xs:element name="Systematic" type="AccuracyErrorType" minOccurs="0"/>
+					<xs:choice minOccurs="0">
+						<xs:element name="Statistical" type="AccuracyErrorType"/>
+						<xs:sequence>
+							<xs:element name="StatHigh" type="AccuracyErrorType"/>
+							<xs:element name="StatLow" type="AccuracyErrorType"/>
+						</xs:sequence>
+					</xs:choice>
 				</xs:sequence>
-			</xs:choice>
-		</xs:sequence>
-		<xs:attribute name="calibration" type="AccuracyCalibrationType"/>
-		<xs:attribute name="quality" type="xs:nonNegativeInteger">
-			<xs:annotation>
-				<xs:documentation>0 means quality is guaranteed, 
-					any other value means data might be bad for some reason</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
+				<xs:attribute name="calibration" type="AccuracyCalibrationType"/>
+				<xs:attribute name="quality" type="xs:nonNegativeInteger">
+					<xs:annotation>
+						<xs:documentation>0 means quality is guaranteed, 
+							any other value means data might be bad for some reason</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	
 	<xs:complexType name="AccuracyErrorType">
