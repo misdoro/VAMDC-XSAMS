@@ -677,36 +677,6 @@
 		</xs:choice>
 	</xs:complexType>
 	
-	<xs:complexType name="ReactantsType">
-		<xs:sequence minOccurs="2" maxOccurs="unbounded">
-			<xs:element name="StateRef" type="StateRefType">
-				<xs:annotation>
-					<xs:documentation>Reference to a specific state</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="SpeciesRef" type="SpeciesRefType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Reference to a specific species</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ProductsType">
-		<xs:sequence maxOccurs="unbounded">
-			<xs:element name="StateRef" type="StateRefType">
-				<xs:annotation>
-					<xs:documentation>Reference to a specific state</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="SpeciesRef" type="SpeciesRefType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Reference to a specific specie</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-
-	
 	<!-- VectorsType container for one or more Vector elements-->
 	<xs:complexType name="VectorsType">
 		<xs:annotation>
