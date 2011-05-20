@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:stcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs"
-	xmlns:ctypes="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
-    targetNamespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs"
+    xmlns:stcs="http://vamdc.org/xml/xsams/0.2/cases/stcs"
+	xmlns:ctypes="http://vamdc.org/xml/xsams/0.2/cases/commonTypes"
+    targetNamespace="http://vamdc.org/xml/xsams/0.2/cases/stcs"
     elementFormDefault="qualified">
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
+	<xs:import namespace="http://vamdc.org/xml/xsams/0.2/cases/commonTypes"
 				schemaLocation="commonTypes.xsd"/>
     <xs:annotation>
         <xs:documentation>Schema for specifying the quantum numbers of closed-shell, symmetric top molecules</xs:documentation>

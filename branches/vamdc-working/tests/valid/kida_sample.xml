@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+<XSAMSData xmlns="http://vamdc.org/xml/xsams/0.2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working file:/home/doronin/VAMDC/xsams/svn-sf/branches/vamdc-working/xsams.xsd">
+	xsi:schemaLocation="http://vamdc.org/xml/xsams/0.2 ../../xsams.xsd">
     <!--<Environments>
         <Environment>
             <Comments></Comments>

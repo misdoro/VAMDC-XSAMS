@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
+<XSAMSData xmlns="http://vamdc.org/xml/xsams/0.2"
+    xmlns:targetNamespace="http://vamdc.org/xml/xsams/0.2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working ../../xsams.xsd"
-    xmlns:dcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/dcs"
-    xmlns:hunda="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hunda"
-    xmlns:hundb="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/hundb"
-    xmlns:ltcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltcs"
-    xmlns:nltcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltcs"
-    xmlns:stcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/stcs"
-    xmlns:lpcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpcs"
-    xmlns:asymcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymcs"
-    xmlns:asymos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/asymos"
-    xmlns:sphcs="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphcs"
-    xmlns:sphos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/sphos"
-    xmlns:ltos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/ltos"
-    xmlns:lpos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/lpos"
-    xmlns:nltos="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/nltos">
+    xsi:schemaLocation="http://vamdc.org/xml/xsams/0.2 ../../xsams.xsd"
+    xmlns:dcs="http://vamdc.org/xml/xsams/0.2/cases/dcs"
+    xmlns:hunda="http://vamdc.org/xml/xsams/0.2/cases/hunda"
+    xmlns:hundb="http://vamdc.org/xml/xsams/0.2/cases/hundb"
+    xmlns:ltcs="http://vamdc.org/xml/xsams/0.2/cases/ltcs"
+    xmlns:nltcs="http://vamdc.org/xml/xsams/0.2/cases/nltcs"
+    xmlns:stcs="http://vamdc.org/xml/xsams/0.2/cases/stcs"
+    xmlns:lpcs="http://vamdc.org/xml/xsams/0.2/cases/lpcs"
+    xmlns:asymcs="http://vamdc.org/xml/xsams/0.2/cases/asymcs"
+    xmlns:asymos="http://vamdc.org/xml/xsams/0.2/cases/asymos"
+    xmlns:sphcs="http://vamdc.org/xml/xsams/0.2/cases/sphcs"
+    xmlns:sphos="http://vamdc.org/xml/xsams/0.2/cases/sphos"
+    xmlns:ltos="http://vamdc.org/xml/xsams/0.2/cases/ltos"
+    xmlns:lpos="http://vamdc.org/xml/xsams/0.2/cases/lpos"
+    xmlns:nltos="http://vamdc.org/xml/xsams/0.2/cases/nltos">
 
     <!--
    ATTENTION: The amount of data returned has been truncated by the node.

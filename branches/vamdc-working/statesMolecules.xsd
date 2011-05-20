@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cml="http://www.xml-cml.org/schema"
-	xmlns:cases="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes"
+	xmlns:cases="http://vamdc.org/xml/xsams/0.2/cases/commonTypes"
 	elementFormDefault="qualified" attributeFormDefault="unqualified"
-	xmlns:xsams="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
-	xmlns="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working"
-	targetNamespace="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working">
+	xmlns="http://vamdc.org/xml/xsams/0.2"
+	xmlns:xsams="http://vamdc.org/xml/xsams/0.2"
+	targetNamespace="http://vamdc.org/xml/xsams/0.2">
 	
 	<!-- Import the CML Schema into its own namespace -->
 	<xs:import namespace="http://www.xml-cml.org/schema" schemaLocation="./cml/schema.xsd"/>
 	<!-- Import base CASE-BY-CASE namespace-->
-	<xs:import namespace="http://www.ucl.ac.uk/~ucapch0/XSAMS/cases/0.2.1/commonTypes" schemaLocation="./cases/commonTypes.xsd"/>
+	<xs:import namespace="http://vamdc.org/xml/xsams/0.2/cases/commonTypes" schemaLocation="./cases/commonTypes.xsd"/>
 	<xs:include schemaLocation="typesAttributes.xsd"/>
 	<xs:element name="Molecules" type="MoleculesType">
 		<xs:annotation>
