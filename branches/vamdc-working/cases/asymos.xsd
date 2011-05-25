@@ -66,6 +66,20 @@
                 </xs:annotation>
             </xs:element>
             
+            <!-- elecSym -->
+            <xs:element name="elecSym" type="ctypes:SymmetrySpeciesType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Symmetry species of the electronic wavefunction</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- elecInv -->
+            <xs:element name="elecInv" type="ctypes:UGParityType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system: 'g' or 'u'</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
             <!-- S -->
             <xs:element name="S" type="ctypes:AMType" minOccurs="0">
                 <xs:annotation>
