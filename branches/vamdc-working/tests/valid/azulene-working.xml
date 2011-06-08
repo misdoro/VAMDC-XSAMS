@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE XSAMSData [
+<!ENTITY azulene_partition_function SYSTEM "azulene_partition_function.xml">
+]>
+
 <XSAMSData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://vamdc.org/xml/xsams/0.2 ../../xsams.xsd"
  xmlns="http://vamdc.org/xml/xsams/0.2"
@@ -33,6 +38,14 @@
                 <IUPACName><Value>bicyclo[5.3.0]decapentaene</Value></IUPACName>
                 <InChI>1/C10H8/c1-2-5-9-7-4-8-10(9)6-3-1/h1-8H</InChI>
                 <InChIKey>GQPLMRYTRLFLPF-LRGBUXLWSA-N</InChIKey>
+                <PartitionFunction>
+                    <T units="K">
+                        <DataList>70. 71. 72.</DataList>
+                    </T>
+                    <Q units="unitless">
+                        <DataList>&azulene_partition_function;</DataList>
+                    </Q>
+                </PartitionFunction>
                 <MoleculeStructure electronicStateRef="SX_Azulene-1">
                     <cml:atomArray>
                         <cml:atom id="C1" elementType="C" x3="0." y3="0." z3="-2.52211414"/>

@@ -141,7 +141,7 @@
 	
 	<xs:complexType name="AccuracyErrorType">
 		<xs:annotation>
-			<xs:documentation>Statistical error</xs:documentation>
+			<xs:documentation>Statistical or Systematic error</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:double">
