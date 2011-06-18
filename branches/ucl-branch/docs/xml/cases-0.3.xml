@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vr:capability xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
+   standardID="ivo://vamdc/std/TAP-XSAMS" xsi:type="tx:TapXsamsCapability"
+   xmlns:tx="http://vamdc.eu/schema/capability/TAP-XSAMS/20100609"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0
+   http://www.ivoa.net/xml/VOResource/v1.0
+   http://vamdc.eu/schema/capability/TAP-XSAMS/20100609 TAP-XSAMS-20100609.xsd">
+   <case name="dcs" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/dcs.xsd">
+      <title>Diatomic closed-shell molecules</title>
+      <qn name="ElecStateLabel" tag="dcs:ElecStateLabel">a label identifying the electronic state: X, A, a, B, etc.</qn>
+      <qn name="v" tag="dcs:v">the vibrational quantum number</qn>
+      <qn name="J" tag="dcs:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="F1" tag="dcs:F1">the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two such couplings are resolved: F1 = J + I1; F1 is often not a good quantum number</qn>
+      <qn name="F" tag="dcs:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F1 + I2 if both couplings are resolved</qn>
+      <qn name="r" tag="dcs:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="dcs:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+      <qn name="asSym" tag="dcs:asSym">(for diatomic molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (P_12), according to whether they are bosons or fermions respectively</qn>
+   </case>
+   <case name="hunda" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/hunda.xsd">
+      <title>Hund's case (a) diatomics</title>
+      <qn name="ElecStateLabel" tag="hunda:ElecStateLabel">a label identifying the electronic state: X, A, a, B, etc.</qn>
+      <qn name="elecInv" tag="hunda:elecInv">the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system</qn>
+      <qn name="elecRefl" tag="hunda:elecRefl">the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system)</qn>
+      <qn name="Lambda" tag="hunda:Lambda">the quantum number associated with the magnitude of the projection of the total electronic orbital angular momentum, L, onto the molecular axis</qn>
+      <qn name="Sigma" tag="hunda:Sigma">the quantum number associated with the magnitude of the projection of S onto the molecular axis</qn>
+      <qn name="Omega" tag="hunda:Omega">the quantum number associated with the projection of the total angular momentum (excluding nuclear spin), J, onto the molecular axis: Omega = |Lambda + Sigma| (or Omega = |Lambda| + Sigma if S > |Lambda| > 0)</qn>
+      <qn name="S" tag="hunda:S">the quantum number associated with the total electronic spin angular momentum, S</qn>
+      <qn name="v" tag="hunda:v">the vibrational quantum number</qn>
+      <qn name="J" tag="hunda:J">the quantum number associated with the total angular momentum excluding nuclear spin: J=L+S+R</qn>
+      <qn name="F1" tag="hunda:F1">the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two such couplings are resolved: F1 = J + I1; F1 is often not a good quantum number</qn>
+      <qn name="F" tag="hunda:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F1 + I2 if both couplings are resolved</qn>
+      <qn name="r" tag="hunda:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="hunda:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+      <qn name="kronigParity" tag="hunda:kronigParity">the 'rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system</qn>
+      <qn name="asSym" tag="hunda:asSym">(for diatomic molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (P_12), according to whether they are bosons or fermions respectively</qn>
+   </case>
+   <case name="hundb" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/hundb.xsd">
+      <title>Hund's case (b) diatomics</title>
+      <qn name="ElecStateLabel" tag="hundb:ElecStateLabel">a label identifying the electronic state: X, A, a, B, etc.</qn>
+      <qn name="elecInv" tag="hundb:elecInv">the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system</qn>
+      <qn name="elecRefl" tag="hundb:elecRefl">the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system)</qn>
+      <qn name="Lambda" tag="hundb:Lambda">the quantum number associated with the magnitude of the projection of the total electronic orbital angular momentum, L, onto the molecular axis</qn>
+      <qn name="S" tag="hundb:S">the quantum number associated with the total electronic spin angular momentum, S</qn>
+      <qn name="v" tag="hundb:v">the vibrational quantum number</qn>
+      <qn name="J" tag="hundb:J">the quantum number associated with the total angular momentum excluding nuclear spin: J = N + S = L + S + R</qn>
+      <qn name="N" tag="hundb:N">the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: J = N + S</qn>
+      <qn name="SpinComponentLabel" tag="hundb:SpinComponentLabel">the positive integer identifying the spin-component label, Fx, where x=1,2,3,... in order of increasing energy for a given value of J - see Herzberg, Spectra of Diatomic Molecules, Van Nostrand, Princeton, N.J., 1950</qn>
+      <qn name="F1" tag="hundb:F1">the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two such couplings are resolved: F1 = J + I1; F1 is often not a good quantum number</qn>
+      <qn name="F" tag="hundb:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F1 + I2 if both couplings are resolved</qn>
+      <qn name="r" tag="hundb:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="hundb:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+      <qn name="kronigParity" tag="hundb:kronigParity">the 'rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system</qn>
+      <qn name="asSym" tag="hundb:asSym">(for diatomic molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (P_12), according to whether they are bosons or fermions respectively</qn>
+   </case>
+   <case name="ltcs" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/ltcs.xsd">
+      <title>Closed-shell, linear triatomic molecules</title>
+      <qn name="ElecStateLabel" tag="ltcs:ElecStateLabel">a label identifying the electronic state: X, A, a, B, etc.</qn>
+      <qn name="v1" tag="ltcs:v1">the vibrational quantum number associated with the nu1 normal mode</qn>
+      <qn name="v2" tag="ltcs:v2">the vibrational quantum number associated with the doubly-degenerate nu2 normal mode</qn>
+      <qn name="l2" tag="ltcs:l2">the vibrational angular momentum quantum number associated with the degenerate bending vibration, nu2; positive and negative values distinguish l-type doubling components</qn>
+      <qn name="v3" tag="ltcs:v3">the vibrational quantum number associated with the nu3 normal mode</qn>
+      <qn name="J" tag="ltcs:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="F1" tag="ltcs:F1">the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two or more such couplings are resolved: F1 = J + I1; F1 is often not a good quantum number</qn>
+      <qn name="F2" tag="ltcs:F2">the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 2 where three such couplings are resolved: F2 = F1 + I2; F2 is often not a good quantum number</qn>
+      <qn name="F" tag="ltcs:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one hyperfine coupling is resolved, F = F1 + I2 if two couplings are resolved, or F = F2 + I3 if all three couplings are resolved</qn>
+      <qn name="r" tag="ltcs:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="ltcs:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+      <qn name="kronigParity" tag="ltcs:kronigParity">the 'rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system</qn>
+      <qn name="asSym" tag="ltcs:asSym">(for linear molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (P_12), according to whether they are bosons or fermions respectively</qn>
+   </case>
+   <case name="nltcs" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/nltcs.xsd">
+      <title>Closed-shell, non-linear triatomics</title>
+      <qn name="ElecStateLabel" tag="nltcs:ElecStateLabel">a label identifying the electronic state: X, A, a, B, etc.</qn>
+      <qn name="v1" tag="nltcs:v1">the vibrational quantum number associated with the nu1 normal mode</qn>
+      <qn name="v2" tag="nltcs:v2">the vibrational quantum number associated with the nu2 normal mode</qn>
+      <qn name="v3" tag="nltcs:v3">the vibrational quantum number associated with the nu3 normal mode</qn>
+      <qn name="J" tag="nltcs:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="Ka" tag="nltcs:Ka">the rotational quantum label of an asymmetric top molecule, correlating to K in the prolate symmetric top limit</qn>
+      <qn name="Kc" tag="nltcs:Kc">the rotational quantum label of an asymmetric top molecule, correlating to K in the oblate symmetric top limit</qn>
+      <qn name="F1" tag="nltcs:F1">the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two or more such couplings are resolved: F1 = J + I1; F1 is often not a good quantum number</qn>
+      <qn name="F2" tag="nltcs:F2">the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 2 where three such couplings are resolved: F2 = F1 + I2; F2 is often not a good quantum number</qn>
+      <qn name="F" tag="nltcs:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one hyperfine coupling is resolved, F = F1 + I2 if two couplings are resolved, or F = F2 + I3 if all three couplings are resolved</qn>
+      <qn name="r" tag="nltcs:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="nltcs:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+      <qn name="asSym" tag="nltcs:asSym">the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (P_12), according to whether they are bosons or fermions respectively</qn>
+   </case>
+   <case name="stcs" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/stcs.xsd">
+      <title>Closed shell, symmetric-top molecules</title>
+      <qn name="ElecStateLabel" tag="stcs:ElecStateLabel">a label identifying the electronic state</qn>
+      <qn name="vi" tag="stcs:vi">the vibrational quantum number associated with the nu_i normal mode</qn>
+      <qn name="li" tag="stcs:li">the vibrational angular momentum quantum number associated with the degenerate nu_i normal mode; positive and negative values distinguish l-type doubling components</qn>
+      <qn name="vibInv" tag="stcs:vibInv">the parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system. Only really necessary for molecules with a low barrier to such an inversion (for example, NH3)</qn>
+      <qn name="vibSym" tag="stcs:vibSym">the symmetry species of the vibrational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="J" tag="stcs:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="K" tag="stcs:K">the quantum number associated with the projection of the total angular momentum excluding nuclear spin, J, onto the molecular symmetry axis</qn>
+      <qn name="rotSym" tag="stcs:rotSym">the symmetry species of the rotational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="rovibSym" tag="stcs:rovibSym">the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="I" tag="stcs:I">the quantum number associated with the total nuclear spin angular momentum: I = I1 + I2 + ... where nuclei 1, 2, ... have individual nuclear spin angular momenta I1, I2, ...</qn>
+      <qn name="Fj" tag="stcs:Fj">the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus j to the intermediate angular momentum: F1 = J + I1 or Fj = F(j-1) + Ij; Fj is often not a good quantum number</qn>
+      <qn name="F" tag="stcs:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F(j-1) + Ij if two or more such couplings are resolved</qn>
+      <qn name="r" tag="stcs:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="stcs:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+   </case>
+   <case name="lpcs" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/lpcs.xsd">
+      <title>Closed-shell, linear polyatomic molecules</title>
+      <qn name="ElecStateLabel" tag="lpcs:ElecStateLabel">a label identifying the electronic state</qn>
+      <qn name="vi" tag="lpcs:vi">the vibrational quantum number associated with the nu_i normal mode</qn>
+      <qn name="li" tag="lpcs:li">the vibrational angular momentum quantum number associated with the degenerate nu_i normal mode; positive and negative values distinguish l-type doubling components; if two or more degenerate vibrations are excited, li is only approximately defined (i.e. it is not a totally good quantum number) - see e.g. Herzerg II, p.212</qn>
+      <qn name="l" tag="lpcs:l">the total vibrational angular momentum quantum number associated with resultant vibrational angular momentum about the internuclear axis</qn>
+      <qn name="vibInv" tag="lpcs:vibInv">the parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system</qn>
+      <qn name="vibRefl" tag="lpcs:vibRefl">the parity of the vibrational wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system</qn>
+      <qn name="J" tag="lpcs:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="I" tag="lpcs:I">the quantum number associated with the total nuclear spin angular momentum: I = I1 + I2 + ... where nuclei 1, 2, ... have individual nuclear spin angular momenta I1, I2, ...</qn>
+      <qn name="Fj" tag="lpcs:Fj">the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus j to the intermediate angular momentum: F1 = J + I1 or Fj = F(j-1) + Ij; Fj is often not a good quantum number</qn>
+      <qn name="F" tag="lpcs:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F(j-1) + Ij if two or more such couplings are resolved</qn>
+      <qn name="r" tag="lpcs:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="lpcs:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+      <qn name="kronigParity" tag="lpcs:kronigParity">the 'rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system</qn>
+      <qn name="asSym" tag="lpcs:asSym">(for linear molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (P_12), according to whether they are bosons or fermions respectively</qn>
+   </case>
+   <case name="asymcs" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/asymcs.xsd">
+      <title>Closed-shell, asymmetric top molecules</title>
+      <qn name="ElecStateLabel" tag="asymcs:ElecStateLabel">a label identifying the electronic state</qn>
+      <qn name="vi" tag="asymcs:vi">the vibrational quantum number associated with the nu_i normal mode</qn>
+      <qn name="vibInv" tag="asymcs:vibInv">the parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.</qn>
+      <qn name="vibSym" tag="asymcs:vibSym">the symmetry species of the vibrational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="J" tag="asymcs:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="Ka" tag="asymcs:Ka">the rotational quantum label of an asymmetric top molecule, correlating to K in the prolate symmetric top limit</qn>
+      <qn name="Kc" tag="asymcs:Kc">the rotational quantum label of an asymmetric top molecule, correlating to K in the oblate symmetric top limit</qn>
+      <qn name="rotSym" tag="asymcs:rotSym">the symmetry species of the rotational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="rovibSym" tag="asymcs:rovibSym">the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="I" tag="asymcs:I">the quantum number associated with the total nuclear spin angular momentum: I = I1 + I2 + ... where nuclei 1, 2, ... have individual nuclear spin angular momenta I1, I2, ...</qn>
+      <qn name="Fj" tag="asymcs:Fj">the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus j to the intermediate angular momentum: F1 = J + I1 or Fj = F(j-1) + Ij; Fj is often not a good quantum number</qn>
+      <qn name="F" tag="asymcs:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F(j-1) + Ij if two or more such couplings are resolved</qn>
+      <qn name="r" tag="asymcs:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="asymcs:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+   </case>
+   <case name="asymos" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/asymos.xsd">
+      <title>Open-shell, asymmetric top molecules</title>
+      <qn name="ElecStateLabel" tag="asymos:ElecStateLabel">a label identifying the electronic state</qn>
+      <qn name="elecSym" tag="asymos:elecSym">the symmetry species of the electronic wavefunction described by some symmetry group.</qn>
+      <qn name="elecInv" tag="asymos:elecInv">the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.</qn>
+      <qn name="S" tag="asymos:S">the quantum number associated with the total electronic spin angular momentum, S</qn>
+      <qn name="vi" tag="asymos:vi">the vibrational quantum number associated with the nu_i normal mode</qn>
+      <qn name="vibInv" tag="asymos:vibInv">the parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.</qn>
+      <qn name="vibSym" tag="asymos:vibSym">the symmetry species of the vibrational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="J" tag="asymos:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="N" tag="asymos:N">the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: J = N + S</qn>
+      <qn name="Ka" tag="asymos:Ka">the rotational quantum label of an asymmetric top molecule, correlating to K in the prolate symmetric top limit</qn>
+      <qn name="Kc" tag="asymos:Kc">the rotational quantum label of an asymmetric top molecule, correlating to K in the oblate symmetric top limit</qn>
+      <qn name="rotSym" tag="asymos:rotSym">the symmetry species of the rotational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="rovibSym" tag="asymos:rovibSym">the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="I" tag="asymos:I">the quantum number associated with the total nuclear spin angular momentum: I = I1 + I2 + ... where nuclei 1, 2, ... have individual nuclear spin angular momenta I1, I2, ...</qn>
+      <qn name="Fj" tag="asymos:Fj">the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus j to the intermediate angular momentum: F1 = J + I1 or Fj = F(j-1) + Ij; Fj is often not a good quantum number</qn>
+      <qn name="F" tag="asymos:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F(j-1) + Ij if two or more such couplings are resolved</qn>
+      <qn name="r" tag="asymos:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="asymos:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+   </case>
+   <case name="sphcs" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/sphcs.xsd">
+      <title>Closed-shell, spherical-top molecules</title>
+      <qn name="ElecStateLabel" tag="sphcs:ElecStateLabel">a label identifying the electronic state</qn>
+      <qn name="vi" tag="sphcs:vi">the vibrational quantum number associated with the nu_i normal mode</qn>
+      <qn name="li" tag="sphcs:li">the vibrational angular momentum quantum number associated with the degenerate nu_i normal mode; positive and negative values distinguish l-type doubling components</qn>
+      <qn name="vibSym" tag="sphcs:vibSym">the symmetry species of the vibrational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="J" tag="sphcs:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="rotSym" tag="sphcs:rotSym">the symmetry species of the rotational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="rovibSym" tag="sphcs:rovibSym">the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="I" tag="sphcs:I">the quantum number associated with the total nuclear spin angular momentum: I = I1 + I2 + ... where nuclei 1, 2, ... have individual nuclear spin angular momenta I1, I2, ...</qn>
+      <qn name="Fj" tag="sphcs:Fj">the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus j to the intermediate angular momentum: F1 = J + I1 or Fj = F(j-1) + Ij; Fj is often not a good quantum number</qn>
+      <qn name="F" tag="sphcs:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F(j-1) + Ij if two or more such couplings are resolved</qn>
+      <qn name="r" tag="sphcs:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="sphcs:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+   </case>
+   <case name="sphos" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/sphos.xsd">
+      <title>Open-shell, spherical-top molecules</title>
+      <qn name="ElecStateLabel" tag="sphos:ElecStateLabel">a label identifying the electronic state</qn>
+      <qn name="elecSym" tag="sphos:elecSym">the symmetry species of the electronic wavefunction described by some symmetry group.</qn>
+      <qn name="elecInv" tag="sphos:elecInv">the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.</qn>
+      <qn name="S" tag="sphos:S">the quantum number associated with the total electronic spin angular momentum, S</qn>
+      <qn name="vi" tag="sphos:vi">the vibrational quantum number associated with the nu_i normal mode</qn>
+      <qn name="li" tag="sphos:li">the vibrational angular momentum quantum number associated with the degenerate nu_i normal mode; positive and negative values distinguish l-type doubling components</qn>
+      <qn name="vibSym" tag="sphos:vibSym">the symmetry species of the vibrational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="J" tag="sphos:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="N" tag="sphos:N">the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: J = N + S</qn>
+      <qn name="rotSym" tag="sphos:rotSym">the symmetry species of the rotational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="rovibSym" tag="sphos:rovibSym">the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group</qn>
+      <qn name="I" tag="sphos:I">the quantum number associated with the total nuclear spin angular momentum: I = I1 + I2 + ... where nuclei 1, 2, ... have individual nuclear spin angular momenta I1, I2, ...</qn>
+      <qn name="Fj" tag="sphos:Fj">the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus j to the intermediate angular momentum: F1 = J + I1 or Fj = F(j-1) + Ij; Fj is often not a good quantum number</qn>
+      <qn name="F" tag="sphos:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F(j-1) + Ij if two or more such couplings are resolved</qn>
+      <qn name="r" tag="sphos:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="sphos:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+   </case>
+   <case name="ltos" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/ltos.xsd">
+      <title>Open-shell,linear triatomic molecules</title>
+      <qn name="ElecStateLabel" tag="ltos:ElecStateLabel">a label identifying the electronic state: X, A, a, B, etc.</qn>
+      <qn name="elecInv" tag="ltos:elecInv">the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system</qn>
+      <qn name="elecRefl" tag="ltos:elecRefl">the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system)</qn>
+      <qn name="S" tag="ltos:S">the quantum number associated with the total electronic spin angular momentum, S</qn>
+      <qn name="v1" tag="ltos:v1">the vibrational quantum number associated with the nu1 normal mode</qn>
+      <qn name="v2" tag="ltos:v2">the vibrational quantum number associated with the doubly-degenerate nu2 normal mode</qn>
+      <qn name="l2" tag="ltos:l2">the vibrational angular momentum quantum number associated with the degenerate bending vibration, nu2; positive and negative values distinguish l-type doubling components</qn>
+      <qn name="v3" tag="ltos:v3">the vibrational quantum number associated with the nu3 normal mode</qn>
+      <qn name="J" tag="ltos:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="N" tag="ltos:N">the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: J = N + S</qn>
+      <qn name="F1" tag="ltos:F1">the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two or more such couplings are resolved: F1 = J + I1; F1 is often not a good quantum number</qn>
+      <qn name="F2" tag="ltos:F2">the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 2 where three such couplings are resolved: F2 = F1 + I2; F2 is often not a good quantum number</qn>
+      <qn name="F" tag="ltos:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one hyperfine coupling is resolved, F = F1 + I2 if two couplings are resolved, or F = F2 + I3 if all three couplings are resolved</qn>
+      <qn name="r" tag="ltos:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="ltos:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+      <qn name="kronigParity" tag="ltos:kronigParity">the 'rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system</qn>
+      <qn name="asSym" tag="ltos:asSym">(for linear molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (P_12), according to whether they are bosons or fermions respectively</qn>
+   </case>
+   <case name="lpos" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/lpos.xsd">
+      <title>Open-shell, linear polyatomic molecules</title>
+      <qn name="ElecStateLabel" tag="lpos:ElecStateLabel">a label identifying the electronic state</qn>
+      <qn name="elecInv" tag="lpos:elecInv">the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system</qn>
+      <qn name="elecRefl" tag="lpos:elecRefl">the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system)</qn>
+      <qn name="S" tag="lpos:S">the quantum number associated with the total electronic spin angular momentum, S</qn>
+      <qn name="vi" tag="lpos:vi">the vibrational quantum number associated with the nu_i normal mode</qn>
+      <qn name="li" tag="lpos:li">the vibrational angular momentum quantum number associated with the degenerate nu_i normal mode; positive and negative values distinguish l-type doubling components; if two or more degenerate vibrations are excited, li is only approximately defined (i.e. it is not a totally good quantum number) - see e.g. Herzerg II, p.212</qn>
+      <qn name="l" tag="lpos:l">the total vibrational angular momentum quantum number associated with resultant vibrational angular momentum about the internuclear axis</qn>
+      <qn name="vibInv" tag="lpos:vibInv">the parity of the vibronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system</qn>
+      <qn name="vibRefl" tag="lpos:vibRefl">the parity of the vibronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system</qn>
+      <qn name="J" tag="lpos:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="N" tag="lpos:N">the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: J = N + S</qn>
+      <qn name="I" tag="lpos:I">the quantum number associated with the total nuclear spin angular momentum: I = I1 + I2 + ... where nuclei 1, 2, ... have individual nuclear spin angular momenta I1, I2, ...</qn>
+      <qn name="Fj" tag="lpos:Fj">the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus j to the intermediate angular momentum: F1 = J + I1 or Fj = F(j-1) + Ij; Fj is often not a good quantum number</qn>
+      <qn name="F" tag="lpos:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F(j-1) + Ij if two or more such couplings are resolved</qn>
+      <qn name="r" tag="lpos:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="lpos:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+      <qn name="kronigParity" tag="lpos:kronigParity">the 'rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system</qn>
+      <qn name="asSym" tag="lpos:asSym">(for linear molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (P_12), according to whether they are bosons or fermions respectively</qn>
+   </case>
+   <case name="nltos" href="http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/cases/nltos.xsd">
+      <title>Open-shell, non-linear triatomics</title>
+      <qn name="ElecStateLabel" tag="nltos:ElecStateLabel">a label identifying the electronic state: X, A, a, B, etc.</qn>
+      <qn name="elecSym" tag="nltos:elecSym">the symmetry species of the electronic wavefunction described by some symmetry group.</qn>
+      <qn name="elecInv" tag="nltos:elecInv">the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.</qn>
+      <qn name="S" tag="nltos:S">the quantum number associated with the total electronic spin angular momentum, S</qn>
+      <qn name="v1" tag="nltos:v1">the vibrational quantum number associated with the nu1 normal mode</qn>
+      <qn name="v2" tag="nltos:v2">the vibrational quantum number associated with the nu2 normal mode</qn>
+      <qn name="v3" tag="nltos:v3">the vibrational quantum number associated with the nu3 normal mode</qn>
+      <qn name="J" tag="nltos:J">the quantum number associated with the total angular momentum excluding nuclear spin, J</qn>
+      <qn name="N" tag="nltos:N">the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: J = N + S</qn>
+      <qn name="Ka" tag="nltos:Ka">the rotational quantum label of an asymmetric top molecule, correlating to K in the prolate symmetric top limit</qn>
+      <qn name="Kc" tag="nltos:Kc">the rotational quantum label of an asymmetric top molecule, correlating to K in the oblate symmetric top limit</qn>
+      <qn name="F1" tag="nltos:F1">the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two or more such couplings are resolved: F1 = J + I1; F1 is often not a good quantum number</qn>
+      <qn name="F2" tag="nltos:F2">the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 2 where three such couplings are resolved: F2 = F1 + I2; F2 is often not a good quantum number</qn>
+      <qn name="F" tag="nltos:F">the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one hyperfine coupling is resolved, F = F1 + I2 if two couplings are resolved, or F = F2 + I3 if all three couplings are resolved</qn>
+      <qn name="r" tag="nltos:r">a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known</qn>
+      <qn name="parity" tag="nltos:parity">the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation</qn>
+      <qn name="asSym" tag="nltos:asSym">the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (P_12), according to whether they are bosons or fermions respectively</qn>
+   </case>
+</vr:capability>

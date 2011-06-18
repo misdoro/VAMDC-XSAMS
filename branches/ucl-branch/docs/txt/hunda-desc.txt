@@ -1,0 +1,299 @@
+2 hunda
+
+# name
+ElecStateLabel
+<tt>ElecStateLabel</tt>
+\texttt{ElecStateLabel}
+
+# attributes 
+\N
+\N
+\N
+
+# description 
+a label identifying the electronic state: X, A, a, B, etc.
+a label identifying the electronic state: <em>X</em>, <em>A</em>, <em>a</em>, <em>B</em>, etc.
+a label identifying the electronic state: $X$, $A$, $a$, $B$, etc.
+
+# restrictions 
+string
+string
+string
+
+# name
+elecInv
+<tt>elecInv</tt>
+\texttt{elecInv}
+
+# attributes
+\N
+\N
+\N
+
+# description
+the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system
+the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system
+the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system
+
+# restrictions
+'g' or 'u'
+'g' or 'u'
+`g' or `u'
+
+# name
+elecRefl
+<tt>elecRefl</tt>
+\texttt{elecRefl}
+
+# attributes
+\N
+\N
+\N
+
+# description
+the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system)
+the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system)
+the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system)
+
+# restrictions
+'+' or '-'
+'+' or '-'
+`$+$' or `$-$'
+
+# name
+Lambda
+|<em>&Lambda;</em>|
+$|\mathit{\Lambda}|$
+
+# attributes
+\N
+\N
+\N
+
+# description
+the quantum number associated with the magnitude of the projection of the total electronic orbital angular momentum, L, onto the molecular axis
+the quantum number associated with the magnitude of the projection of the total electronic orbital angular momentum, <strong><em>L</em></strong>, onto the molecular axis
+the quantum number associated with the magnitude of the projection of the total electronic orbital angular momentum, $\boldsymbol{L}$, onto the molecular axis
+
+# restrictions
+non-negative integer
+non-negative integer
+non-negative integer
+
+
+# name
+Sigma
+|<em>&Sigma;</em>|
+$|\mathit{\Sigma}|$
+
+# attributes
+\N
+\N
+\N
+
+# description
+the quantum number associated with the magnitude of the projection of S onto the molecular axis
+the quantum number associated with the magnitude of the projection of <strong><em>S</em></strong> onto the molecular axis
+the quantum number associated with the magnitude of the projection of $\boldsymbol{S}$ onto the molecular axis
+
+# restrictions
+non-negative integer or half-odd integer; |Sigma| = S, S-1, ..., 0.5 or 0
+non-negative integer or half-odd integer; |<em>&Sigma;</em>| = <em>S</em>, <em>S</em>-1, ..., 0.5 or 0
+non-negative integer or half-odd integer; $|\mathit{\Sigma}| = S, S-1, \cdots, \frac{1}{2}\;\mathrm{or}\;0$
+
+# name
+Omega
+<em>&Omega;</em>
+$\mathit{\Omega}$
+
+# attributes
+\N
+\N
+\N
+
+# description
+the quantum number associated with the projection of the total angular momentum (excluding nuclear spin), J, onto the molecular axis: Omega = |Lambda + Sigma| (or Omega = |Lambda| + Sigma if S > |Lambda| > 0)
+the quantum number associated with the projection of the total angular momentum (excluding nuclear spin), <strong><em>J</em></strong>, onto the molecular axis: <em>&Omega;</em>&nbsp;=&nbsp;|<em>&Lambda;</em>&nbsp;+&nbsp;<em>&Sigma;</em>| (or <em>&Omega;</em>&nbsp;=&nbsp;|<em>&Lambda;</em>|&nbsp;+&nbsp;<em>&Sigma;</em> if <em>S</em>&nbsp;&gt;&nbsp;|<em>&Lambda;</em>|&nbsp;&gt;&nbsp;0)
+the quantum number associated with the projection of the total angular momentum (excluding nuclear spin), $\boldsymbol{J}$, onto the molecular axis: $\mathit{\Omega} = |\mathit{\Lambda} + \mathit{\Sigma}|$ (or $\mathit{\Omega} = |\mathit{\Lambda}| + \mathit{\Sigma}$ if $S > |\mathit{\Lambda}| > 0$)
+
+# restrictions
+non-negative integer or half-integer; |Omega| <= J
+non-negative integer or half-integer; |<em>&Omega;</em>| &le; <em>J</em>
+non-negative integer or half-integer; $|\mathit{\Omega}| \le J$
+
+# name
+S
+<em>S</em>
+$S$
+
+# attributes 
+\N
+\N
+\N
+
+# description
+the quantum number associated with the total electronic spin angular momentum, S
+the quantum number associated with the total electronic spin angular momentum, <strong><em>S</em></strong>
+the quantum number associated with the total electronic spin angular momentum, $\boldsymbol{S}$
+
+# restrictions
+non-negative integer or half-odd integer
+non-negative integer or half-odd integer
+non-negative integer or half-odd integer
+
+# name
+v
+<em>v</em>
+$v$
+
+# attributes
+\N
+\N
+\N
+
+# description
+the vibrational quantum number
+the vibrational quantum number
+the vibrational quantum number
+
+# restrictions
+non-negative integer
+non-negative integer
+non-negative integer
+
+# name
+J
+<em>J</em>
+$J$
+
+# attributes
+\N
+\N
+\N
+
+# description
+the quantum number associated with the total angular momentum excluding nuclear spin: J=L+S+R
+the quantum number associated with the total angular momentum excluding nuclear spin: <strong><em>J</em></strong>&nbsp;=&nbsp;<strong><em>L</em></strong>&nbsp;+&nbsp;<strong><em>S</em></strong>&nbsp;+&nbsp;<strong><em>R</em></strong>
+the quantum number associated with the total angular momentum excluding nuclear spin: $\boldsymbol{J}=\boldsymbol{L}+\boldsymbol{S}+\boldsymbol{R}$
+
+# restrictions
+non-negative integer or half-odd integer
+non-negative integer or half-odd integer
+non-negative integer or half-odd integer
+
+# name
+F1
+<em>F<sub>1</sub></em>
+$F_1$
+
+# attributes
+nuclearSpinRef: a label identifying the nuclear spin coupled to J to form the intermediate angular momentum
+<tt>nuclearSpinRef</tt>: a label identifying the nuclear spin coupled to <strong><em>J</em></strong> to form the intermediate angular momentum
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ to form the intermediate angular momentum
+
+# description
+the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two such couplings are resolved: F1 = J + I1; F1 is often not a good quantum number
+the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two such couplings are resolved: <strong><em>F<sub>1</sub></em></strong>&nbsp;=&nbsp;<strong><em>J</em></strong>&nbsp;+&nbsp;<strong><em>I<sub>1</sub></em></strong>; <em>F<sub>1</sub></em> is often not a good quantum number
+the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two such couplings are resolved: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$; $F_1$ is often not a good quantum number
+
+non-negative integer or half-integer; |J - I1| <= F1 <= J + I1
+non-negative integer or half-integer; |<em>J</em>&nbsp;-&nbsp;<em>I<sub>1</sub></em>|&nbsp;&le;&nbsp;<em>F<sub>1</sub></em>&nbsp;&le;&nbsp;<em>J</em>&nbsp;+&nbsp;<em>I<sub>1</sub></em>
+non-negative integer or half-integer; $|J - I_1| \le F_1 \le J + I_1$
+
+# name
+F
+<em>F</em>
+$F$
+nuclearSpinRef: a label identifying the nuclear spin coupled to J (or F1) to form the total angular momentum
+<tt>nuclearSpinRef</tt>: a label identifying the nuclear spin coupled to <strong><em>J</em></strong> (or <strong><em>F<sub>1</sub></em></strong>) to form the total angular momentum
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ (or $\boldsymbol{F_1}$) to form the total angular momentum
+
+# description
+the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F1 + I2 if both couplings are resolved
+the quantum number associated with the total angular momentum including nuclear spin: <strong><em>F</em></strong>&nbsp;=&nbsp;<strong><em>J</em></strong>&nbsp;+&nbsp;<strong><em>I<sub>1</sub></em></strong> if only one such coupling is resolved, <strong><em>F</em></strong>&nbsp;=&nbsp;<strong><em>F<sub>1</sub></em></strong>&nbsp;+&nbsp;<strong><em>I<sub>2</sub></em></strong> if both couplings are resolved
+the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved; $\boldsymbol{F} = \boldsymbol{F_1} + \boldsymbol{I_2}$ if both couplings are resolved
+
+# restrictions
+non-negative integer or half-integer
+non-negative integer or half-integer
+non-negative integer or half-integer
+
+# name
+r
+<em>r</em>
+$r$
+
+# attributes
+name: a string identifying this ranking index
+<tt>name</tt>: a string identifying this ranking index
+\texttt{name}: a string identifying this ranking index
+
+# description
+a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known
+a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known
+a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known
+
+# restrictions
+positive integer
+positive integer
+positive integer
+
+# name
+parity
+<tt>parity</tt>
+\texttt{parity}
+
+# attributes
+\N
+\N
+\N
+
+# descriptions
+the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation
+the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the <em>E<sup>*</sup></em> operation
+the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation
+
+# restrictions
+'+' or '-'
+'+' or '-'
+`$+$' or `$-$'
+
+# name
+kronigParity
+<tt>kronigParity</tt>
+\texttt{kronigParity}
+
+# attributes
+\N
+\N
+\N
+
+# description
+the 'rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system
+the 'rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system
+the `rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system. For integral $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^J,\\f\;\mathrm{if\;parity\;is}\;-(-1)^J.\end{align*}For half-odd integer $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^{J-\frac{1}{2}},\\f\;\mathrm{if\;parity\;is}\;-(-1)^{J-\frac{1}{2}}.\end{align*}
+
+# restrictions
+'e' or 'f'
+'e' or 'f'
+`e' or `f'
+
+# name
+asSym
+<tt>asSym</tt>
+\texttt{asSym}
+
+# attributes
+\N
+\N
+\N
+
+# description
+(for diatomic molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (P_12), according to whether they are bosons or fermions respectively
+(for diatomic molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (<em>P<sub>12</sub></em>), according to whether they are bosons or fermions respectively
+(for diatomic molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: `a' or `s' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei ($\hat{P}_{12}$), according to whether they are bosons or fermions respectively
+
+# restrictions
+'s' or 'a'
+'s' or 'a'
+`s' or `a'

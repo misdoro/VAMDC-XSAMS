@@ -1,0 +1,320 @@
+11 sphos
+
+# name
+ElecStateLabel
+<tt>ElecStateLabel</tt>
+\texttt{ElecStateLabel}
+
+# attributes 
+\N
+\N
+\N
+
+# description 
+a label identifying the electronic state
+a label identifying the electronic state
+a label identifying the electronic state
+
+# restrictions 
+string
+string
+string
+
+# name
+elecSym
+<tt>elecSym</tt>
+\texttt{elecSym}
+
+# attributes
+group: the symmetry group to which this species belongs
+<tt>group</tt>: the symmetry group to which this species belongs
+\texttt{group}: the symmetry group to which this species belongs
+
+# description
+the symmetry species of the electronic wavefunction described by some symmetry group.
+the symmetry species of the electronic wavefunction described by some symmetry group.
+the symmetry species of the electronic wavefunction described by some symmetry group.
+
+# restrictions 
+string
+string
+string
+
+# name
+elecInv
+<tt>elecInv</tt>
+\texttt{elecInv}
+
+# attributes
+\N
+\N
+\N
+
+# description
+the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+
+# restrictions
+'g' or 'u'
+'g' or 'u'
+`g' or `u'
+
+# name
+S
+<em>S</em>
+$S$
+
+# attributes
+\N
+\N
+\N
+
+# description
+the quantum number associated with the total electronic spin angular momentum, S
+the quantum number associated with the total electronic spin angular momentum, <strong><em>S</em></strong>
+the quantum number associated with the total electronic spin angular momentum, $\boldsymbol{S}$
+
+# restrictions
+non-negative integer or half-odd integer
+non-negative integer or half-odd integer
+non-negative integer or half-odd integer
+
+# name
+vi
+<em>v<sub>i</sub></em>
+$v_i$
+
+# attributes
+mode: a positive integer, identifying the normal mode that this quantum number is associated with
+<tt>mode</tt>: a positive integer, identifying the normal mode that this quantum number is associated with
+\texttt{mode}: a positive integer, identifying the normal mode that this quantum number is associated with
+
+# description
+the vibrational quantum number associated with the nu_i normal mode
+the vibrational quantum number associated with the &nu;<sub>i</sub> normal mode
+the vibrational quantum number associated with the $\nu_i$ normal mode
+
+# restrictions
+non-negative integer
+non-negative integer
+non-negative integer
+
+# name
+li
+<em>l<sub>i</sub></em>
+$l_i$
+
+# attributes
+mode: a positive integer, identifying the degenerate normal mode that this vibrational angular momentum quantum number is associated with
+<tt>mode</tt>: a positive integer, identifying the degenerate normal mode that this vibrational angular momentum quantum number is associated with
+\texttt{mode}: a positive integer, identifying the degenerate normal mode that this vibrational angular momentum quantum number is associated with
+
+# description
+the vibrational angular momentum quantum number associated with the degenerate nu_i normal mode; positive and negative values distinguish l-type doubling components
+the vibrational angular momentum quantum number associated with the degenerate &nu;<sub>i</sub> normal mode; positive and negative values distinguish <em>l</em>&endash;type doubling components
+the vibrational angular momentum quantum number associated with the degenerate $\nu_i$ normal mode; positive and negative values distinguish $l$-type doubling components
+
+# restrictions
+non-negative integer; |li| = vi, vi-2, ..., 1 or 0
+non-negative integer; |<em>l<sub>i</sub></em>| = <em>v<sub>i</sub></em>, <em>v<sub>i</sub></em>-2, ..., 1 or 0
+non-negative integer; $|l_i| = v_i, v_i-2, \cdots, 1 \;\mathrm{or}\;0$
+
+# name
+vibSym
+<tt>vibSym</tt>
+\texttt{vibSym}
+
+# attributes
+group: the symmetry group to which this species belongs
+<tt>group</tt>: the symmetry group to which this species belongs
+\texttt{group}: the symmetry group to which this species belongs
+
+# description
+the symmetry species of the vibrational wavefunction, in some appropriate symmetry group 
+the symmetry species of the vibrational wavefunction, in some appropriate symmetry group 
+the symmetry species of the vibrational wavefunction, in some appropriate symmetry group 
+
+# restrictions
+string
+string
+string
+
+# name
+J
+<em>J</em>
+$J$
+
+# attributes
+\N
+\N
+\N
+
+# description
+the quantum number associated with the total angular momentum excluding nuclear spin, J
+the quantum number associated with the total angular momentum excluding nuclear spin, <strong><em>J</em></strong>
+the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$
+
+# restrictions
+non-negative integer or half-odd integer
+non-negative integer or half-odd integer
+non-negative integer or half-odd integer
+
+# name
+N
+<em>N</em>
+$N$
+
+# attributes
+\N
+\N
+\N
+
+# description
+the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: J = N + S
+the quantum number associated with the total angular momentum excluding electronic and nuclear spin, <strong>N</strong>: <strong><em>J</em></strong>&nbsp;=&nbsp;<strong><em>N</em></strong>&nbsp;+&nbsp;<strong><em>S</em></strong>
+the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: $\boldsymbol{J} = \boldsymbol{N} + \boldsymbol{S}$
+
+# restrictions
+non-negative integer
+non-negative integer
+non-negative integer
+
+# name
+rotSym
+<tt>rotSym</tt>
+\texttt{rotSym}
+
+# attributes
+group: the symmetry group to which this species belongs
+<tt>group</tt>: the symmetry group to which this species belongs
+\texttt{group}: the symmetry group to which this species belongs
+
+# description
+the symmetry species of the rotational wavefunction, in some appropriate symmetry group 
+the symmetry species of the rotational wavefunction, in some appropriate symmetry group 
+the symmetry species of the rotational wavefunction, in some appropriate symmetry group 
+
+# restrictions
+string
+string
+string
+
+# name
+rovibSym
+<tt>rovibSym</tt>
+\texttt{rovibSym}
+
+# attributes
+group: the symmetry group to which this species belongs
+<tt>group</tt>: the symmetry group to which this species belongs
+\texttt{group}: the symmetry group to which this species belongs
+
+# description
+the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group 
+the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group 
+the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group 
+
+# restrictions
+string
+string
+string
+
+# name
+I
+<em>I</em>
+$I$
+
+# attributes
+nuclearSpinRef: a label identifying the group of nuclear spins coupled to one another to form a total nuclear spin angular momentum
+<tt>nuclearSpinRef</tt>: a label identifying the group of nuclear spins coupled to one another to form the a total nuclear spin angular momentum
+\texttt{nuclearSpinRef}: a label identifying the group of nuclear spins coupled to one another to form a total nuclear spin angular momentum
+
+# description
+the quantum number associated with the total nuclear spin angular momentum: I = I1 + I2 + ... where nuclei 1, 2, ... have individual nuclear spin angular momenta I1, I2, ...
+the quantum number associated with the total nuclear spin angular momentum: <strong><em>I</em></strong> = <strong><em>I<sub>1</sub></em></strong> + <strong><em>I<sub>2</sub></em></strong> + ... where nuclei 1, 2, ... have individual nuclear spin angular momenta <strong><em>I<sub>1</sub></em></strong>, <strong><em>I<sub>2</sub></em></strong>, ...
+the quantum number associated with the total nuclear spin angular momentum: $\boldsymbol{I} = \boldsymbol{I_1} + \boldsymbol{I_2} + \cdots$ where nuclei $1, 2, \cdots$ have individual nuclear spin angular momenta $\boldsymbol{I_1}, \boldsymbol{I_2}, \cdots$
+
+non-negative integer or half-integer
+non-negative integer or half-integer
+non-negative integer or half-integer
+
+# name
+Fj
+<em>F<sub>j</sub></em>
+$F_j$
+
+# attributes
+nuclearSpinRef: a label identifying the nuclear spin being coupled to J or F_(j-1) to form an intermediate angular momentum; j: an integer label identifying the order of the hyperfine coupling
+<ul><li><tt>nuclearSpinRef</tt>: a label identifying the nuclear spin being coupled to <strong><em>J</em></strong> or <strong><em>F<sub>j-1</sub></em></strong> to form an intermediate angular momentum;</li><li><em>j</em>: an integer label identifying the order of the hyperfine coupling</li></ul>
+\begin{itemize}\item\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_{j-1}}$ to form an intermediate angular momentum;\item $j$: an integer label identifying the order of the hyperfine coupling\end{itemize}
+
+# description
+the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus j to the intermediate angular momentum: F1 = J + I1 or Fj = F(j-1) + Ij; Fj is often not a good quantum number
+the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus j to the intermediate angular momentum: <strong><em>F<sub>1</sub></em></strong>&nbsp;=&nbsp;<strong><em>J</em></strong>&nbsp;+&nbsp;<strong><em>I<sub>j</sub></em></strong> or <strong><em>F<sub>j</sub></em></strong>&nbsp;=&nbsp;<strong><em>F<sub>j-1</sub></em></strong>&nbsp;+&nbsp;<strong><em>I<sub>j</sub></em></strong>; <em>F<sub>j</sub></em> is often not a good quantum number
+the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus $j$ to the intermediate angular momentum: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$ or $\boldsymbol{F_j} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$; $\boldsymbol{F_j}$ is often not a good quantum number
+
+# restrictions
+non-negative integer or half-integer
+non-negative integer or half-integer
+non-negative integer or half-integer
+
+# name
+F
+<em>F</em>
+$F$
+
+# attributes
+nuclearSpinRef: a label identifying the nuclear spin coupled to J (or Fj) to form the total angular momentum
+<tt>nuclearSpinRef</tt>: a label identifying the nuclear spin coupled to <strong><em>J</em></strong> (or <strong><em>F<sub>j</sub></em></strong>) to form the total angular momentum
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_j}$ to form the total angular momentum
+
+# description
+the quantum number associated with the total angular momentum including nuclear spin: F = J + I1 if only one such coupling is resolved, F = F(j-1) + Ij if two or more such couplings are resolved
+the quantum number associated with the total angular momentum including nuclear spin: <strong><em>F</em></strong> = <strong><em>J</em></strong> + <strong><em>I<sub>1</sub></em></strong> if only one such coupling is resolved, <strong><em>F</em></strong> = <strong><em>F<sub>j-1</sub></em></strong> + <strong><em>I<sub>j</sub></em></strong> if two or more such couplings are resolved
+the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$ if two or more such couplings are resolved
+
+# restrictions
+non-negative integer or half-integer
+non-negative integer or half-integer
+non-negative integer or half-integer
+
+# name
+r
+<em>r</em>
+$r$
+
+# attributes
+name: a string identifying this ranking index
+<tt>name</tt>: a string identifying this ranking index
+\texttt{name}: a string identifying this ranking index
+
+# description
+a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known
+a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known
+a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known
+
+# restrictions
+positive integer
+positive integer
+positive integer
+
+# name
+parity
+<tt>parity</tt>
+\texttt{parity}
+
+# attributes
+\N
+\N
+\N
+
+# descriptions
+the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation
+the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the <em>E<sup>*</sup></em> operation
+the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation
+
+# restrictions
+'+' or '-'
+'+' or '-'
+`$+$' or `$-$'
