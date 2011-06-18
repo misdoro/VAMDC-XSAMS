@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:lpos="http://vamdc.org/xml/xsams/0.2/cases/lpos"
-    xmlns:ctypes="http://vamdc.org/xml/xsams/0.2/cases/commonTypes"
-    targetNamespace="http://vamdc.org/xml/xsams/0.2/cases/lpos"
+    xmlns:lpos="http://vamdc.org/xml/xsams/0.3/cases/lpos"
+    xmlns:ctypes="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
+    targetNamespace="http://vamdc.org/xml/xsams/0.3/cases/lpos"
     elementFormDefault="qualified">
-    <xs:import namespace="http://vamdc.org/xml/xsams/0.2/cases/commonTypes"
+    <xs:import namespace="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
         schemaLocation="commonTypes.xsd"/>
     <xs:annotation>
         <xs:documentation>Schema for specifying the quantum numbers of open-shell linear polyatomic molecules</xs:documentation>

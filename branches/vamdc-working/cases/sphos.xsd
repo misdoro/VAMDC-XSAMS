@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:sphos="http://vamdc.org/xml/xsams/0.2/cases/sphos"
-	xmlns:ctypes="http://vamdc.org/xml/xsams/0.2/cases/commonTypes"
-    targetNamespace="http://vamdc.org/xml/xsams/0.2/cases/sphos"
+    xmlns:sphos="http://vamdc.org/xml/xsams/0.3/cases/sphos"
+	xmlns:ctypes="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
+    targetNamespace="http://vamdc.org/xml/xsams/0.3/cases/sphos"
     elementFormDefault="qualified">
-	<xs:import namespace="http://vamdc.org/xml/xsams/0.2/cases/commonTypes"
+	<xs:import namespace="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
 				schemaLocation="commonTypes.xsd"/>
     <xs:annotation>
         <xs:documentation>Schema for specifying the quantum numbers of closed-shell spherical top molecules</xs:documentation>
@@ -129,6 +129,13 @@
             <xs:element name="rotSym" type="ctypes:SymmetrySpeciesType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>Symmetry species of the rotational wavefunction, in some appropriate symmetry group</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- rovibSym -->
+            <xs:element name="rovibSym" type="ctypes:SymmetrySpeciesType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Symmetry species of the rovibrational wavefunction, rotSym x vibSym, in some appropriate symmetry group</xs:documentation>
                 </xs:annotation>
             </xs:element>
             

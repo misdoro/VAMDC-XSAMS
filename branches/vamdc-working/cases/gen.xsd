@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:gen="http://vamdc.org/xml/xsams/0.2/cases/gen"
-	xmlns:ctypes="http://vamdc.org/xml/xsams/0.2/cases/commonTypes"
-    xmlns="http://vamdc.org/xml/xsams/0.2/cases/gen"
-    targetNamespace="http://vamdc.org/xml/xsams/0.2/cases/gen"
+    xmlns:gen="http://vamdc.org/xml/xsams/0.3/cases/gen"
+	xmlns:ctypes="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
+    xmlns="http://vamdc.org/xml/xsams/0.3/cases/gen"
+    targetNamespace="http://vamdc.org/xml/xsams/0.3/cases/gen"
     elementFormDefault="qualified">
-    <xs:import namespace="http://vamdc.org/xml/xsams/0.2/cases/commonTypes" schemaLocation="commonTypes.xsd"/>
+    <xs:import namespace="http://vamdc.org/xml/xsams/0.3/cases/commonTypes" schemaLocation="commonTypes.xsd"/>
 	
     <!--=== QNs will be the root element ===-->
     <xs:element name="QNs" type="gen:QNsType">
