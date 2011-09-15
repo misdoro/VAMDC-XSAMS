@@ -144,7 +144,7 @@
 			<xs:enumeration value="private communication"/>
 			<xs:enumeration value="proceedings"/>
 			<xs:enumeration value="report"/>
-			<xs:enumeration value="theses"/>
+			<xs:enumeration value="thesis"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
