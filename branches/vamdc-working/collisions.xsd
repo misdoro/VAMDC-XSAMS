@@ -51,6 +51,8 @@
 					</xs:element>
 					<xs:element name="DataSets" type="DataSetsType"/>
 				</xs:sequence>
+				<xs:attribute name="id" type="ProcessID" use="required"/>
+				<xs:attribute name="groupLabel"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

@@ -908,6 +908,17 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
+	<xs:simpleType name="ProcessIDType">
+		<xs:annotation>
+			<xs:documentation>ID for a specific process record. Can be used to refer to 
+				a specific XML process block in external programs/schemas. 
+				Currently it is not referred internally in XSAMS.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="P.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<!-- References types definition. All IDREF's should be here.-->
 	<xs:simpleType name="MethodRefType">
 		<xs:annotation>
