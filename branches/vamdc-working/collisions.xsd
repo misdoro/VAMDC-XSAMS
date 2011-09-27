@@ -66,7 +66,7 @@
 					<xs:documentation>A 4-letter code describing various processes</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="IAEACode" type="IAEACodeType" minOccurs="0">
+			<xs:element name="IAEACode" type="IAEACodeType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>From the "IAEA Classification of Processes", October 2003</xs:documentation>
 				</xs:annotation>
