@@ -40,7 +40,7 @@
 			<xs:documentation>Description of bibliography (references). Word "reference" is avoided</xs:documentation>
 		</xs:annotation>
 		<xs:all>
-			<xs:element name="Category" type="CategoryType">
+			<xs:element name="Category" type="SourceCategoryType">
 				<xs:annotation>
 					<xs:documentation>Bibliographic reference type. Example: journal</xs:documentation>
 				</xs:annotation>
@@ -135,7 +135,7 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="CategoryType">
+	<xs:simpleType name="SourceCategoryType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="book"/>
 			<xs:enumeration value="database"/>
