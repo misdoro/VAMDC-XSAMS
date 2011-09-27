@@ -22,7 +22,8 @@
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute name="stateID" type="StateIDType" use="required"/>
+				<xs:attribute name="stateID" type="StateIDType" use="optional"/>
+				<xs:attribute name="speciesID" type="SpeciesIDType" use="required"/>
 				<xs:attribute name="name" type="ParticleNameType"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -33,6 +34,10 @@
 			<xs:enumeration value="electron"/>
 			<xs:enumeration value="muon"/>
 			<xs:enumeration value="positron"/>
+			<xs:enumeration value="neutron"/>
+			<xs:enumeration value="alpha"/>
+			<xs:enumeration value="cosmic"/>
+			
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="ParticlePropertiesType">
