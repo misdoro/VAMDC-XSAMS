@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	elementFormDefault="qualified" attributeFormDefault="unqualified"
-	xmlns="http://vamdc.org/xml/xsams/0.2"
-	xmlns:xsams="http://vamdc.org/xml/xsams/0.2"
-	targetNamespace="http://vamdc.org/xml/xsams/0.2">
+	xmlns="http://vamdc.org/xml/xsams/0.3"
+	xmlns:xsams="http://vamdc.org/xml/xsams/0.3"
+	targetNamespace="http://vamdc.org/xml/xsams/0.3">
 	
 	<xs:include schemaLocation="typesAttributes.xsd"/>
 	

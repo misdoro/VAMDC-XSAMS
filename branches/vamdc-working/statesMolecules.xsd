@@ -2,9 +2,9 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cml="http://www.xml-cml.org/schema"
 	xmlns:cases="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
 	elementFormDefault="qualified" attributeFormDefault="unqualified"
-	xmlns="http://vamdc.org/xml/xsams/0.2"
-	xmlns:xsams="http://vamdc.org/xml/xsams/0.2"
-	targetNamespace="http://vamdc.org/xml/xsams/0.2">
+	xmlns="http://vamdc.org/xml/xsams/0.3"
+	xmlns:xsams="http://vamdc.org/xml/xsams/0.3"
+	targetNamespace="http://vamdc.org/xml/xsams/0.3">
 	
 	<!-- Import the CML Schema into its own namespace -->
 	<xs:import namespace="http://www.xml-cml.org/schema" schemaLocation="./cml/schema.xsd"/>
