@@ -31,7 +31,7 @@
                     <xs:element name="TotalNumberDensity" type="DataType" minOccurs="0" maxOccurs="1"/>
                     <xs:element name="Composition" type="CompositionType" minOccurs="0" maxOccurs="1"/>
                 </xs:sequence>
-                <xs:attribute name="envID" type="EnvironmentIDType"></xs:attribute>
+		<xs:attribute name="envID" type="EnvironmentIDType" use="required"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
