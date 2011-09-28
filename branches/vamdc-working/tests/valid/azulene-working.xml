@@ -5,8 +5,8 @@
 ]>
 
 <XSAMSData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://vamdc.org/xml/xsams/0.2 ../../xsams.xsd"
- xmlns="http://vamdc.org/xml/xsams/0.2"
+ xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../../xsams.xsd"
+ xmlns="http://vamdc.org/xml/xsams/0.3"
  xmlns:cml="http://www.xml-cml.org/schema">
 
 <Sources>
@@ -148,7 +148,7 @@
 <Processes>
 <Radiative>
 
-<CrossSection id="azulene-paxs">
+<CrossSection id="Pazulene-paxs">
     <SourceRef>B_TCSD1</SourceRef>
     <Description>Photoabsorption cross section of azulene</Description>
     
@@ -168,7 +168,7 @@
     
 </CrossSection>
 
-<CrossSection>
+<CrossSection id="Pir">
     <SourceRef>B_NIST1</SourceRef>
     
     <Description>The IR transmittance cross section of azulene from the NIST Standard Reference Data Program Collection</Description>

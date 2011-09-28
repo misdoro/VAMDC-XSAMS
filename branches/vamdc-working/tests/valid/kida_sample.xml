@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xmlns="http://vamdc.org/xml/xsams/0.2"
+<XSAMSData xmlns="http://vamdc.org/xml/xsams/0.3"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://vamdc.org/xml/xsams/0.2 ../../xsams.xsd">
+	xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../../xsams.xsd">
     <!--<Environments>
         <Environment>
             <Comments></Comments>
@@ -129,7 +129,7 @@
     </Species>
     <Processes>
         <Collisions>
-            <CollisionalTransition>
+            <CollisionalTransition id="PCtest01">
                 <Comments></Comments>
                 <SourceRef>BKIDAS1</SourceRef>
                 <ProcessClass>

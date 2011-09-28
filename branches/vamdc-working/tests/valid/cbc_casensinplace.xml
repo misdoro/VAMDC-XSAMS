@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Molecules xmlns="http://vamdc.org/xml/xsams/0.2"
+<Molecules xmlns="http://vamdc.org/xml/xsams/0.3"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://vamdc.org/xml/xsams/0.2 ../../statesMolecules.xsd">
+    xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../../statesMolecules.xsd">
     <Molecule speciesID="X1">
         <Comments></Comments>
         <MolecularChemicalSpecies>
@@ -25,7 +25,7 @@
                     <Accuracy></Accuracy>
                 </StateEnergy>
             </MolecularStateCharacterisation>
-            <Case xsi:type="gen:Case" caseID="gen" xmlns:gen="http://vamdc.org/xml/xsams/0.2/cases/gen" xsi:schemaLocation="http://vamdc.org/xml/xsams/0.2/cases/gen ../../cases/gen.xsd">
+            <Case xsi:type="gen:Case" caseID="gen" xmlns:gen="http://vamdc.org/xml/xsams/0.3/cases/gen" xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3/cases/gen ../../cases/gen.xsd">
                 <gen:QNs>
                     <gen:ElecStateLabel>X</gen:ElecStateLabel>
                     <gen:QN name="a">1</gen:QN>
