@@ -160,7 +160,7 @@
 			<xs:enumeration value="elas"/>
 			<xs:enumeration value="inel"/>
 			<xs:enumeration value="exci"/>
-			<xs:enumeration value="dexc"/>
+			<xs:enumeration value="deex"/>
 			<xs:enumeration value="ioni"/>
 			<xs:enumeration value="tran"/>
 			<xs:enumeration value="exch"/>
@@ -171,10 +171,10 @@
 			<xs:enumeration value="diss"/>
 			<xs:enumeration value="intr"/>
 			<xs:enumeration value="chem"/>
-			<xs:enumeration value="sure"/>
-			<xs:enumeration value="suem"/>
-			<xs:enumeration value="sudp"/>
-			<xs:enumeration value="such"/>
+			<xs:enumeration value="sore"/>
+			<xs:enumeration value="soem"/>
+			<xs:enumeration value="sodp"/>
+			<xs:enumeration value="soch"/>
 			<xs:enumeration value="sope"/>
 			<xs:enumeration value=""/>
 		</xs:restriction>
