@@ -724,13 +724,23 @@
 				<xs:sequence>
 					<xs:element name="RowRefs" type="StringListType"/>
 					<xs:element name="ColRefs" type="StringListType"/>
-					<xs:element name="Matrix" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="Matrix" type="StringListType" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 				<xs:attribute name="units" type="UnitsType" use="required"/>
 				<xs:attribute name="nrows" type="xs:integer" use="required"/>
 				<xs:attribute name="ncols" type="xs:integer" use="required"/>
 				<xs:attribute name="form" type="xs:string" use="required"/>
-				<xs:attribute name="values" type="StringListType" use="required"/>
+				<xs:attribute name="values" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="binary"/>
+							<xs:enumeration value="integer"/>
+							<xs:enumeration value="real"/>
+							<xs:enumeration value="imaginary"/>
+							<xs:enumeration value="complex"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
