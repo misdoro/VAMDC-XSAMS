@@ -13,7 +13,7 @@
 	</xs:element>
 	<xs:complexType name="RadiativeType">
 		<xs:sequence>
-			<xs:element name="CrossSection" type="CrossSectionType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="AbsorptionCrossSection" type="CrossSectionType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Absorption cross section data</xs:documentation>
 				</xs:annotation>
