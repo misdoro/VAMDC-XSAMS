@@ -18,6 +18,11 @@
 					<xs:documentation>Absorption cross section data</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="CollisionInducedAbsorptionCrossSection" type="CollisionInducedAbsorptionCrossSectionType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Absorption cross section data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="RadiativeTransition" type="RadiativeTransitionType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Description of a specific radiative transition</xs:documentation>
@@ -269,6 +274,31 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
+	<xs:complexType name="CollisionInducedAbsorptionCrossSectionType">
+		<xs:annotation>
+			<xs:documentation>Collision-Induced Absorption Cross Section data, alpha, such that the absorption due to
+				short-lived pairs of species is I = alpha.p1.p2.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="SimpleDataTableType">
+				<xs:sequence>
+				<xs:element name="Species1" type="SpeciesRefType" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Reference to the first species of the collision pair</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Species2" type="SpeciesRefType" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Reference to the second species of the collision pair</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				</xs:sequence>
+				<xs:attribute name="envRef" type="EnvironmentRefType" use="optional"/>
+				<xs:attribute name="id" type="ProcessIDType" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+
 	<xs:complexType name="BandAssignmentType">
 		<xs:annotation>
 			<xs:documentation>Assignment of a band in a tabulated cross section, giving the centre position (wavelength or
