@@ -282,16 +282,11 @@
 		<xs:complexContent>
 			<xs:extension base="SimpleDataTableType">
 				<xs:sequence>
-				<xs:element name="Species1" type="SpeciesRefType" minOccurs="1" maxOccurs="1">
-					<xs:annotation>
-						<xs:documentation>Reference to the first species of the collision pair</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element name="Species2" type="SpeciesRefType" minOccurs="1" maxOccurs="1">
-					<xs:annotation>
-						<xs:documentation>Reference to the second species of the collision pair</xs:documentation>
-					</xs:annotation>
-				</xs:element>
+					<xs:element name="Species" type="SpeciesRefType" minOccurs="2" maxOccurs="2">
+						<xs:annotation>
+							<xs:documentation>Reference to the species of the collision pair</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 				<xs:attribute name="envRef" type="EnvironmentRefType" use="optional"/>
 				<xs:attribute name="id" type="ProcessIDType" use="required"/>
