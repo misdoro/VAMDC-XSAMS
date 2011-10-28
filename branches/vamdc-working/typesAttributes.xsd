@@ -814,6 +814,7 @@
 					</xs:choice>
 					<xs:choice minOccurs="0">
 						<xs:element name="ErrorList" type="DataListType"/>
+						<xs:element name="ErrorFile" type="xs:string"/>
 						<xs:element name="Error" type="xs:double"/>
 					</xs:choice>
 				</xs:sequence>
