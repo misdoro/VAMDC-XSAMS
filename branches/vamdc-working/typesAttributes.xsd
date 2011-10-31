@@ -259,24 +259,10 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:complexType name="DataXYType">
-		<xs:annotation>
-			<xs:documentation>Gives the structure of X Y data tables (several X are allowed)</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="X" type="DataSeriesType" maxOccurs="unbounded"/>
-			<xs:element name="Y" type="DataSeriesType">
-				<xs:annotation>
-					<xs:documentation>Data value</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="TabulatedDataType">
 		<xs:complexContent>
-			<xs:extension base="PrimaryType">
+			<xs:extension base="SimpleDataTableType">
 				<xs:sequence>
-					<xs:element name="DataXY" type="DataXYType"/>
 					<xs:element name="ReferenceFrame" type="ReferenceFrameType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Reference frame in which is given the energy, velocity...</xs:documentation>
@@ -646,17 +632,41 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
-	<!-- A data table: one or more X-columns (abcissa(e); independent variable(s)) and one or more
-		Y-columns (dependent variable(s)) -->
 	<xs:complexType name="SimpleDataTableType">
+		<xs:annotation>
+			<xs:documentation>Gives the structure of data tables (several X - abcissa(e); independent variable(s) are allowed)</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="Description" type="xs:string"/>
-					<xs:element name="X" type="DataSeriesType"/>
-					<xs:element name="Y" type="DataSeriesType"/>
+					<xs:element name="Description" type="xs:string" minOccurs="0"/>
+					<xs:element name="X" type="DataSeriesType" maxOccurs="unbounded">
+						<xs:annotation><xs:documentation>Parameters(independent variables) values</xs:documentation></xs:annotation>
+					</xs:element>
+					<xs:element name="Y" type="DataSeriesType">
+						<xs:annotation><xs:documentation>Data values</xs:documentation></xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="SingleParameterTableType">
+		<xs:annotation>
+			<xs:documentation>Gives the structure of data tables (only a single X column is allowed)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="SimpleDataTableType">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string" minOccurs="0"/>
+					<xs:element name="X" type="DataSeriesType">
+						<xs:annotation><xs:documentation>Parameter(independent variable) values</xs:documentation></xs:annotation>
+					</xs:element>
+					<xs:element name="Y" type="DataSeriesType">
+						<xs:annotation><xs:documentation>Data values</xs:documentation></xs:annotation>
+					</xs:element>	
+				</xs:sequence>
+			</xs:restriction>
 		</xs:complexContent>
 	</xs:complexType>
 	

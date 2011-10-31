@@ -258,7 +258,7 @@
 				              with band assignments.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="SimpleDataTableType">
+			<xs:extension base="SingleParameterTableType">
 				<xs:sequence>
 					<xs:element name="Species" type="SpeciesStateRefType" minOccurs="0">
 						<xs:annotation>
@@ -280,7 +280,7 @@
 				short-lived pairs of species is I = alpha.p1.p2.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="SimpleDataTableType">
+			<xs:extension base="SingleParameterTableType">
 				<xs:sequence>
 					<xs:element name="SpeciesRef" type="SpeciesRefType" minOccurs="2" maxOccurs="2">
 						<xs:annotation>
