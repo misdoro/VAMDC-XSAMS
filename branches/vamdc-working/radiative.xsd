@@ -282,7 +282,7 @@
 		<xs:complexContent>
 			<xs:extension base="SimpleDataTableType">
 				<xs:sequence>
-					<xs:element name="Species" type="SpeciesRefType" minOccurs="2" maxOccurs="2">
+					<xs:element name="SpeciesRef" type="SpeciesRefType" minOccurs="2" maxOccurs="2">
 						<xs:annotation>
 							<xs:documentation>Reference to the species of the collision pair</xs:documentation>
 						</xs:annotation>
