@@ -258,47 +258,14 @@
 			<xs:enumeration value="meanPenetrationDepth"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="DataTableType">
-		<xs:annotation>
-			<xs:documentation>Similar to DataType but for tabular type of data</xs:documentation>
-		</xs:annotation>
-		<xs:all>
-			<xs:element name="DataList" type="DataListType">
-				<xs:annotation>
-					<xs:documentation>List of data values. Example: 3 15 33.3 1e3</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Error" type="DataListType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Error for each data point of the list</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="NegativeError" type="DataListType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Negative error for each data point of</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="PositiveError" type="DataListType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Positive error for each data point of the list</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="DataDescription" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Additional description of the data list</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:all>
-		<xs:attribute name="units" type="UnitsType" use="required"/>
-		<xs:attribute name="parameter" type="xs:string"/>
-	</xs:complexType>
+	
 	<xs:complexType name="DataXYType">
 		<xs:annotation>
 			<xs:documentation>Gives the structure of X Y data tables (several X are allowed)</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="X" type="DataTableType" maxOccurs="unbounded"/>
-			<xs:element name="Y" type="DataTableType">
+			<xs:element name="X" type="DataSeriesType" maxOccurs="unbounded"/>
+			<xs:element name="Y" type="DataSeriesType">
 				<xs:annotation>
 					<xs:documentation>Data value</xs:documentation>
 				</xs:annotation>
@@ -464,144 +431,6 @@
 	</xs:simpleType>
 	
 	<!--=== types and attributes common to states ===-->
-
-	<xs:complexType name="jjCouplingType">
-		<xs:sequence>
-			<xs:element name="j" type="AngularMomentumType" minOccurs="2" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>Value of the total angular momentum</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="jKCouplingType">
-		<xs:all>
-			<xs:element name="j" type="AngularMomentumType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Value of the total angular momentum of the core</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="S2" type="AngularMomentumType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Spin of the external electron(s)</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="K" type="AngularMomentumType">
-				<xs:annotation>
-					<xs:documentation>Value of the K-number (j + orbital angular momentum of the external electron(s))</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:all>
-	</xs:complexType>
-	<xs:complexType name="LKCouplingType">
-		<xs:all>
-			<xs:element name="L" type="OrbitalAngularMomentumType">
-				<xs:annotation>
-					<xs:documentation>Value of the sum of orbital angular momenta of the core and external electron </xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="K" type="AngularMomentumType">
-				<xs:annotation>
-					<xs:documentation>Value of the K-number (L + spin of the core)</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="S2" type="AngularMomentumType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Spin of the external electron(s)</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:all>
-	</xs:complexType>
-	<xs:complexType name="LSCouplingType">
-		<xs:all>
-			<xs:element name="L" type="OrbitalAngularMomentumType">
-				<xs:annotation>
-					<xs:documentation>Orbital angular momentum of the term in LS-coupling</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="S" type="AngularMomentumType">
-				<xs:annotation>
-					<xs:documentation>Spin angular momentum of the term in LS-coupling</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Multiplicity" type="xs:positiveInteger" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>2S+1</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Seniority" type="xs:nonNegativeInteger" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Seniority number</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:all>
-	</xs:complexType>
-	<xs:complexType name="MixingCoefficientType">
-		<xs:simpleContent>
-			<xs:extension base="xs:double">
-				<xs:attribute name="mixingClass" type="MixingClassType" use="required">
-					<xs:annotation>
-						<xs:documentation>Indicator of whether amplitude or amplitude squared is given</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:complexType name="OrbitalAngularMomentumType">
-		<xs:annotation>
-			<xs:documentation>non-negative integer (and a symbol)</xs:documentation>
-		</xs:annotation>
-		<xs:all>
-			<xs:element name="Value" type="xs:nonNegativeInteger">
-				<xs:annotation>
-					<xs:documentation>Value of the orbital angular momentum</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Symbol" type="OrbitalAngularMomentumSymbolType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Symbol of the orbital angular momentum</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:all>
-	</xs:complexType>
-	<xs:complexType name="TermType">
-		<xs:annotation>
-			<xs:documentation>Complex term for atomic term in different couplings (e.g., LS or jj).</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="LS" type="LSCouplingType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Term in LS-coupling</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="jj" type="jjCouplingType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Term in jj-coupling</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="J1J2" type="jjCouplingType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Term in J1J2-coupling</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="jK" type="jKCouplingType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Term in jK-coupling</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="LK" type="LKCouplingType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Term in LK-coupling</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TermLabel" type="xs:string" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Arbitrary term label</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	
 	<xs:complexType name="LifeTimeType">
 		<xs:annotation>
 			<xs:documentation>Lifetime, with state decay mechanism: total, radiative, non-radiative</xs:documentation>
@@ -642,29 +471,11 @@
 			<xs:pattern value="\p{Lu}\p{Ll}?"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="PrincipalQuantumNumberType">
-		<xs:annotation>
-			<xs:documentation>Principal quantum number (positive integer)</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:positiveInteger"/>
-	</xs:simpleType>
 	<xs:simpleType name="ParityType">
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="even"/>
 			<xs:enumeration value="odd"/>
 			<xs:enumeration value="undefined"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="MixingClassType">
-		<xs:restriction base="xs:token">
-			<xs:enumeration value="squared"/>
-			<xs:enumeration value="signed"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="OrbitalAngularMomentumSymbolType">
-		<xs:restriction base="xs:string">
-			<xs:length value="1"/>
-			<xs:pattern value="\w"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -762,10 +573,10 @@
 	</xs:simpleType>
 	
 	<!-- It doesn't need sources and comments, because it always appears inside
-		another element which provides these -->
+		another element which provides them -->
 	<xs:complexType name="DataListType">
 		<xs:annotation>
-			<xs:documentation>Whitespace-delimited list of numbers, with optional units and items count</xs:documentation>
+			<xs:documentation>Whitespace-delimited list of numbers, with optional items count</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="DoubleListType">
@@ -774,7 +585,6 @@
 						<xs:documentation>List elements count</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
-				<xs:attribute name="units" type="UnitsType"/>
 			</xs:extension>
 		</xs:simpleContent>    
 	</xs:complexType>
@@ -784,22 +594,17 @@
 			<xs:documentation>describes arithmetic progressions of the form 
 				a0 a0+a1 a0+2a1 a0+3a1 ... a0+(n-1)a1</xs:documentation>
 		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="PrimaryType">
-				<xs:attribute name="n" type="xs:positiveInteger"/>
-				<xs:attribute name="units" type="UnitsType"/>
-				<xs:attribute name="a0" type="xs:double" use="required">
-					<xs:annotation>
-						<xs:documentation>initial value</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="a1" type="xs:double" use="required">
-					<xs:annotation>
-						<xs:documentation>increment</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:extension>
-		</xs:complexContent>      
+		<xs:attribute name="n" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="a0" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>initial value</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="a1" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>increment</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>   
 	</xs:complexType>
 	
 	<!-- A data series type -->
@@ -807,6 +612,11 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
+					<xs:element name="DataDescription" type="xs:string" minOccurs="0">
+						<xs:annotation>
+						<xs:documentation>Additional description of the data list</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:choice>
 						<xs:element name="DataList" type="DataListType"/>
 						<xs:element name="LinearSequence" type="LinearSequenceType"/>
@@ -815,12 +625,23 @@
 					<xs:choice minOccurs="0">
 						<xs:element name="ErrorList" type="DataListType"/>
 						<xs:element name="ErrorFile" type="xs:string"/>
-						<xs:element name="Error" type="xs:double"/>
+						<xs:element name="ErrorValue" type="xs:double"/>
+						<xs:sequence>
+							<xs:element name="NegativeErrorList" type="DataListType"/>
+							<xs:element name="PositiveErrorList" type="DataListType"/>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="NegativeErrorFile" type="xs:string"/>
+							<xs:element name="PositiveErrorFile" type="xs:string"/>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="NegativeErrorValue" type="xs:double"/>
+							<xs:element name="PositiveErrorValue" type="xs:double"/>
+						</xs:sequence>
 					</xs:choice>
 				</xs:sequence>
 				<xs:attribute name="parameter" type="xs:string"/>
 				<xs:attribute name="units" type="UnitsType"/>
-				<xs:attribute name="id" type="xs:ID"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -839,9 +660,11 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
-	<!-- The partition function as a function of temperature: Q(T), expressed as a pair of
-		 DataSeries columns -->
 	<xs:complexType name="PartitionFunctionType">
+		<xs:annotation>
+			<xs:documentation>The partition function as a function of temperature: Q(T), expressed as a pair of
+			DataSeries columns</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>

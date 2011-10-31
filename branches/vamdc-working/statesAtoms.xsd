@@ -407,4 +407,158 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+		<xs:complexType name="jjCouplingType">
+		<xs:sequence>
+			<xs:element name="j" type="AngularMomentumType" minOccurs="2" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Value of the total angular momentum</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="jKCouplingType">
+		<xs:all>
+			<xs:element name="j" type="AngularMomentumType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Value of the total angular momentum of the core</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="S2" type="AngularMomentumType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Spin of the external electron(s)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="K" type="AngularMomentumType">
+				<xs:annotation>
+					<xs:documentation>Value of the K-number (j + orbital angular momentum of the external electron(s))</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="LKCouplingType">
+		<xs:all>
+			<xs:element name="L" type="OrbitalAngularMomentumType">
+				<xs:annotation>
+					<xs:documentation>Value of the sum of orbital angular momenta of the core and external electron </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="K" type="AngularMomentumType">
+				<xs:annotation>
+					<xs:documentation>Value of the K-number (L + spin of the core)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="S2" type="AngularMomentumType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Spin of the external electron(s)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="LSCouplingType">
+		<xs:all>
+			<xs:element name="L" type="OrbitalAngularMomentumType">
+				<xs:annotation>
+					<xs:documentation>Orbital angular momentum of the term in LS-coupling</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="S" type="AngularMomentumType">
+				<xs:annotation>
+					<xs:documentation>Spin angular momentum of the term in LS-coupling</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Multiplicity" type="xs:positiveInteger" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>2S+1</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Seniority" type="xs:nonNegativeInteger" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Seniority number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="MixingCoefficientType">
+		<xs:simpleContent>
+			<xs:extension base="xs:double">
+				<xs:attribute name="mixingClass" type="MixingClassType" use="required">
+					<xs:annotation>
+						<xs:documentation>Indicator of whether amplitude or amplitude squared is given</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="OrbitalAngularMomentumType">
+		<xs:annotation>
+			<xs:documentation>non-negative integer (and a symbol)</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="Value" type="xs:nonNegativeInteger">
+				<xs:annotation>
+					<xs:documentation>Value of the orbital angular momentum</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Symbol" type="OrbitalAngularMomentumSymbolType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Symbol of the orbital angular momentum</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="TermType">
+		<xs:annotation>
+			<xs:documentation>Complex term for atomic term in different couplings (e.g., LS or jj).</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LS" type="LSCouplingType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Term in LS-coupling</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="jj" type="jjCouplingType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Term in jj-coupling</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="J1J2" type="jjCouplingType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Term in J1J2-coupling</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="jK" type="jKCouplingType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Term in jK-coupling</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LK" type="LKCouplingType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Term in LK-coupling</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TermLabel" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Arbitrary term label</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="PrincipalQuantumNumberType">
+		<xs:annotation>
+			<xs:documentation>Principal quantum number (positive integer)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger"/>
+	</xs:simpleType>
+	<xs:simpleType name="OrbitalAngularMomentumSymbolType">
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+			<xs:pattern value="\w"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MixingClassType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="squared"/>
+			<xs:enumeration value="signed"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
