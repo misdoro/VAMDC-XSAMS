@@ -413,6 +413,7 @@
 				<xs:enumeration value="1/cm2/atm"/>
 				<xs:enumeration value="1/cm/atm"/>
 				<xs:enumeration value="cm5"/>
+				<xs:enumeration value="Torr"/>
 			</xs:restriction>
 	</xs:simpleType>
 	
