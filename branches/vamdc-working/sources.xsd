@@ -45,7 +45,7 @@
 					<xs:documentation>Bibliographic reference type. Example: journal</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SourceName" type="xs:string">
+			<xs:element name="SourceName" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Bibliographic reference name. Example: Physical Review</xs:documentation>
 				</xs:annotation>
