@@ -567,7 +567,7 @@
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="DoubleListType">
-				<xs:attribute name="n" type="xs:positiveInteger">
+				<xs:attribute name="count" type="xs:positiveInteger">
 					<xs:annotation>
 						<xs:documentation>List elements count</xs:documentation>
 					</xs:annotation>
@@ -581,17 +581,9 @@
 			<xs:documentation>describes arithmetic progressions of the form 
 				a0 a0+a1 a0+2a1 a0+3a1 ... a0+(n-1)a1</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="n" type="xs:positiveInteger" use="required"/>
-		<xs:attribute name="a0" type="xs:double" use="required">
-			<xs:annotation>
-				<xs:documentation>initial value</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="a1" type="xs:double" use="required">
-			<xs:annotation>
-				<xs:documentation>increment</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>   
+		<xs:attribute name="count" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="initial" type="xs:double" use="required"/>
+		<xs:attribute name="increment" type="xs:double" use="required"/>
 	</xs:complexType>
 	
 	<!-- A data series type -->

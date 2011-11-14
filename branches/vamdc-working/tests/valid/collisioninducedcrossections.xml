@@ -40,7 +40,7 @@
 <CollisionInducedAbsorptionCrossSection envRef="EHIT-512" id="PHIT-CIA-0">
     <Description>The collision-induced absorption cross section for He-H at 1500.0 K</Description>
     <X parameter="nu" units="1/cm">
-        <LinearSequence n="10951" a0="50.000000" a1="1.000000"/>
+        <LinearSequence count="10951" initial="50.000000" increment="1.000000"/>
     </X>
     <Y parameter="alpha" units="cm5">
     <DataFile>He-H_1500.0K_50-11000.alpha</DataFile>
@@ -51,7 +51,7 @@
 <CollisionInducedAbsorptionCrossSection envRef="EHIT-513" id="PHIT-CIA-1">
     <Description>The collision-induced absorption cross section for He-H at 2250.0 K</Description>
     <X parameter="nu" units="1/cm">
-        <LinearSequence n="10951" a0="50.000000" a1="1.000000"/>
+        <LinearSequence count="10951" initial="50.000000" increment="1.000000"/>
     </X>
     <Y parameter="alpha" units="cm5">
     <DataFile>He-H_2250.0K_50-11000.alpha</DataFile>
@@ -62,7 +62,7 @@
 <CollisionInducedAbsorptionCrossSection envRef="EHIT-514" id="PHIT-CIA-2">
     <Description>The collision-induced absorption cross section for He-H at 3000.0 K</Description>
     <X parameter="nu" units="1/cm">
-        <LinearSequence n="10951" a0="50.000000" a1="1.000000"/>
+        <LinearSequence count="10951" initial="50.000000" increment="1.000000"/>
     </X>
     <Y parameter="alpha" units="cm5">
     <DataFile>He-H_3000.0K_50-11000.alpha</DataFile>
@@ -81,7 +81,7 @@
                     <Comments>The collision-induced absorption cross section for He-H at 2250.0 K</Comments>
                     <TabulatedData>
                         <X parameter="nu" units="1/cm">
-                              <LinearSequence n="10951" a0="50.000000" a1="1.000000"/>
+                              <LinearSequence count="10951" initial="50.000000" increment="1.000000"/>
                                 <NegativeErrorValue>
                                     0.2
                                 </NegativeErrorValue>
