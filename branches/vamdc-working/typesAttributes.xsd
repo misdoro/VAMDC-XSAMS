@@ -687,6 +687,16 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
+	<xs:simpleType name="TransitionType">
+		<xs:annotation>
+			<xs:documentation>Describes the transition type, excitation or deexcitation</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="excitation"/>
+			<xs:enumeration value="deexcitation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	
 	<!-- ID types definitions-->
 	<xs:simpleType name="EnvironmentIDType">
