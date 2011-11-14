@@ -357,7 +357,7 @@
     </Species>
     <Processes>
         <Radiative>
-            <RadiativeTransition id="PRtest01">
+            <RadiativeTransition id="PRtest01" process="excitation">
                 <EnergyWavelength>
 
                     <Wavenumber>
@@ -366,8 +366,8 @@
                         <Accuracy><Statistical relative="true">0.000001</Statistical></Accuracy>
                     </Wavenumber>
                 </EnergyWavelength>
-                <InitialStateRef>SS300-C2H2-2</InitialStateRef>
-                <FinalStateRef>SS342-C2H2-2</FinalStateRef>
+                <UpperStateRef>SS342-C2H2-2</UpperStateRef>
+                <LowerStateRef>SS300-C2H2-2</LowerStateRef>
                 <Probability>
                     <TransitionProbabilityA>
                         <SourceRef>BHIT-B_HITRAN2008</SourceRef>
