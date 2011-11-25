@@ -303,21 +303,6 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
-	<!-- Needed for FitDataType, but not implemented anywhere yet(?) -->
-	<xs:complexType name="FitValidityLimitsType">
-		<xs:sequence>
-			<xs:element name="LowerLimit" type="ValueType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Lower limit of fit validity</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="UpperLimit" type="ValueType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Upper limit of fit validity</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="ExpressionType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
