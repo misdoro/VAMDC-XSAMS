@@ -435,14 +435,6 @@
 			<xs:pattern value="\d+(\.(0|5)?)?"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="ElementSymbolType">
-		<xs:annotation>
-			<xs:documentation>Symbol for a chemical element</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:token">
-			<xs:pattern value="\p{Lu}\p{Ll}?"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="ParityType">
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="even"/>
@@ -726,8 +718,7 @@
 	<xs:simpleType name="ProcessIDType">
 		<xs:annotation>
 			<xs:documentation>ID for a specific process record. Can be used to refer to 
-				a specific XML process block in external programs/schemas. 
-				Currently it is not referred internally in XSAMS.</xs:documentation>
+				a specific XML process block in external programs/schemas.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:ID">
 			<xs:pattern value="P.+"/>
@@ -783,7 +774,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-		<xs:simpleType name="NormalModeRefType">
+	<xs:simpleType name="NormalModeRefType">
 		<xs:annotation>
 			<xs:documentation>Reference to a normal vibrational mode of complex molecule.</xs:documentation>
 		</xs:annotation>
@@ -792,5 +783,124 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
+	<xs:simpleType name="ElementSymbolType">
+		<xs:annotation>
+			<xs:documentation>Symbol for a chemical element</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="H"/>
+			<xs:enumeration value="He"/>
+			<xs:enumeration value="Li"/>
+			<xs:enumeration value="Be"/>
+			<xs:enumeration value="B"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="N"/>
+			<xs:enumeration value="O"/>
+			<xs:enumeration value="F"/>
+			<xs:enumeration value="Ne"/>
+			<xs:enumeration value="Na"/>
+			<xs:enumeration value="Mg"/>
+			<xs:enumeration value="Al"/>
+			<xs:enumeration value="Si"/>
+			<xs:enumeration value="P"/>
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="Cl"/>
+			<xs:enumeration value="Ar"/>
+			<xs:enumeration value="K"/>
+			<xs:enumeration value="Ca"/>
+			<xs:enumeration value="Sc"/>
+			<xs:enumeration value="Ti"/>
+			<xs:enumeration value="V"/>
+			<xs:enumeration value="Cr"/>
+			<xs:enumeration value="Mn"/>
+			<xs:enumeration value="Fe"/>
+			<xs:enumeration value="Co"/>
+			<xs:enumeration value="Ni"/>
+			<xs:enumeration value="Cu"/>
+			<xs:enumeration value="Zn"/>
+			<xs:enumeration value="Ga"/>
+			<xs:enumeration value="Ge"/>
+			<xs:enumeration value="As"/>
+			<xs:enumeration value="Se"/>
+			<xs:enumeration value="Br"/>
+			<xs:enumeration value="Kr"/>
+			<xs:enumeration value="Rb"/>
+			<xs:enumeration value="Sr"/>
+			<xs:enumeration value="Y"/>
+			<xs:enumeration value="Zr"/>
+			<xs:enumeration value="Nb"/>
+			<xs:enumeration value="Mo"/>
+			<xs:enumeration value="Tc"/>
+			<xs:enumeration value="Ru"/>
+			<xs:enumeration value="Rh"/>
+			<xs:enumeration value="Pd"/>
+			<xs:enumeration value="Ag"/>
+			<xs:enumeration value="Cd"/>
+			<xs:enumeration value="In"/>
+			<xs:enumeration value="Sn"/>
+			<xs:enumeration value="Sb"/>
+			<xs:enumeration value="Te"/>
+			<xs:enumeration value="I"/>
+			<xs:enumeration value="Xe"/>
+			<xs:enumeration value="Cs"/>
+			<xs:enumeration value="Ba"/>
+			<xs:enumeration value="La"/>
+			<xs:enumeration value="Ce"/>
+			<xs:enumeration value="Pr"/>
+			<xs:enumeration value="Nd"/>
+			<xs:enumeration value="Pm"/>
+			<xs:enumeration value="Sm"/>
+			<xs:enumeration value="Eu"/>
+			<xs:enumeration value="Gd"/>
+			<xs:enumeration value="Tb"/>
+			<xs:enumeration value="Dy"/>
+			<xs:enumeration value="Ho"/>
+			<xs:enumeration value="Er"/>
+			<xs:enumeration value="Tm"/>
+			<xs:enumeration value="Yb"/>
+			<xs:enumeration value="Lu"/>
+			<xs:enumeration value="Hf"/>
+			<xs:enumeration value="Ta"/>
+			<xs:enumeration value="W"/>
+			<xs:enumeration value="Re"/>
+			<xs:enumeration value="Os"/>
+			<xs:enumeration value="Ir"/>
+			<xs:enumeration value="Pt"/>
+			<xs:enumeration value="Au"/>
+			<xs:enumeration value="Hg"/>
+			<xs:enumeration value="Tl"/>
+			<xs:enumeration value="Pb"/>
+			<xs:enumeration value="Bi"/>
+			<xs:enumeration value="Po"/>
+			<xs:enumeration value="At"/>
+			<xs:enumeration value="Rn"/>
+			<xs:enumeration value="Fr"/>
+			<xs:enumeration value="Ra"/>
+			<xs:enumeration value="Ac"/>
+			<xs:enumeration value="Th"/>
+			<xs:enumeration value="Pa"/>
+			<xs:enumeration value="U"/>
+			<xs:enumeration value="Np"/>
+			<xs:enumeration value="Pu"/>
+			<xs:enumeration value="Am"/>
+			<xs:enumeration value="Cm"/>
+			<xs:enumeration value="Bk"/>
+			<xs:enumeration value="Cf"/>
+			<xs:enumeration value="Es"/>
+			<xs:enumeration value="Fm"/>
+			<xs:enumeration value="Md"/>
+			<xs:enumeration value="No"/>
+			<xs:enumeration value="Lr"/>
+			<xs:enumeration value="Rf"/>
+			<xs:enumeration value="Db"/>
+			<xs:enumeration value="Sg"/>
+			<xs:enumeration value="Bh"/>
+			<xs:enumeration value="Hs"/>
+			<xs:enumeration value="Mt"/>
+			<xs:enumeration value="Ds"/>
+			<xs:enumeration value="Rg"/>
+			<xs:enumeration value="Cn"/>
+		</xs:restriction>
+	</xs:simpleType>
 	
 </xs:schema>
