@@ -61,7 +61,12 @@
 							<xs:documentation>Value of a particular quantity</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Accuracy" type="AccuracyType" minOccurs="0">
+					<xs:element name="Evaluation" type="EvaluationType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Data evaluation and recommendation</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Accuracy" type="AccuracyType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Description of the accuracy</xs:documentation>
 						</xs:annotation>
@@ -99,7 +104,12 @@
 								<xs:documentation>Value of a particular quantity</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="Accuracy" type="AccuracyType" minOccurs="0">
+						<xs:element name="Evaluation" type="EvaluationType" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Data evaluation and recommendation</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Accuracy" type="AccuracyType" minOccurs="0" maxOccurs="unbounded">
 							<xs:annotation>
 								<xs:documentation>Description of the accuracy</xs:documentation>
 							</xs:annotation>
@@ -112,40 +122,35 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
-	<xs:complexType name="AccuracyType">
+	<xs:complexType name="EvaluationType">
 		<xs:annotation>
-			<xs:documentation>Accuracy of numerical data</xs:documentation>
+			<xs:documentation>Evaluation of numerical data</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
+				
 				<xs:sequence>
-					<xs:element name="Systematic" type="AccuracyErrorType" minOccurs="0"/>
-					<xs:choice minOccurs="0">
-						<xs:element name="Statistical" type="AccuracyErrorType"/>
-						<xs:sequence>
-							<xs:element name="StatHigh" type="AccuracyErrorType"/>
-							<xs:element name="StatLow" type="AccuracyErrorType"/>
-						</xs:sequence>
-					</xs:choice>
+					<xs:element name="Quality" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Arbitrary quality description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
-				<xs:attribute name="calibration" type="AccuracyCalibrationType"/>
-				<xs:attribute name="quality" type="xs:nonNegativeInteger">
-					<xs:annotation>
-						<xs:documentation>0 means quality is guaranteed, 
-							any other value means data might be bad for some reason</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
+				<xs:attribute name="recommended" type="xs:boolean" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	
-	<xs:complexType name="AccuracyErrorType">
+	<xs:complexType name="AccuracyType">
 		<xs:annotation>
-			<xs:documentation>Statistical or Systematic error</xs:documentation>
+			<xs:documentation>Data accuracy information</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:double">
-				<xs:attribute name="confidence">
+				<xs:attribute name="confidenceInterval">
+					<xs:annotation>
+						<xs:documentation>Statistical error confidence interval, in range of 0 to 1</xs:documentation>
+					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:double">
 							<xs:minInclusive value="0"/>
@@ -153,20 +158,30 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
-				<xs:attribute name="relative" type="xs:boolean" default="false"/> 
+				<xs:attribute name="type" type="AccuracyTypes" default="arbitrary">
+					<xs:annotation>
+						<xs:documentation>Error nature</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="relative" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>true if the error value is relative, 
+							accuracy value should be in range of (0,1) in this case</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	
-	<xs:simpleType name="AccuracyCalibrationType">
+	<xs:simpleType name="AccuracyTypes">
 		<xs:annotation>
-			<xs:documentation>Describes the reference point for measured data</xs:documentation>
+			<xs:documentation>Describes the nature of error - arbitrary, estimated, systematic, statistical</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="absolute"/>
-			<xs:enumeration value="relative"/>
-			<xs:enumeration value="normalized"/>
-			<xs:enumeration value="uncalibrated"/>
+			<xs:enumeration value="arbitrary"/>
+			<xs:enumeration value="estimated"/>
+			<xs:enumeration value="systematic"/>
+			<xs:enumeration value="statistical"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
