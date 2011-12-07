@@ -363,7 +363,7 @@
                     <Wavenumber>
                         <SourceRef>BHIT-B_HITRAN2008</SourceRef>
                         <Value units="1/cm">6588.9347</Value>
-                        <Accuracy><Statistical relative="true">0.000001</Statistical></Accuracy>
+                        <Accuracy type="statistical" relative="true">0.000001</Accuracy>
                     </Wavenumber>
                 </EnergyWavelength>
                 <UpperStateRef>SS342-C2H2-2</UpperStateRef>
@@ -372,8 +372,9 @@
                     <TransitionProbabilityA>
                         <SourceRef>BHIT-B_HITRAN2008</SourceRef>
                         <Value units="1/s">4.173</Value>
-                        <Accuracy><Statistical>0.08346</Statistical></Accuracy>
+                        <Accuracy type="statistical">0.08346</Accuracy>
                     </TransitionProbabilityA>
+                    <Characterisation>P</Characterisation>
                 </Probability>
 				<Broadening envRef="Eair-broadening-ref-env" name="pressure">
 					<Lineshape name="Lorentzian">
@@ -391,12 +392,12 @@
 								<FitParameter name="gammaL_ref">
 									<SourceRef>BHIT-B_HITRAN2008</SourceRef>
 									<Value units="1/cm">0.0635</Value>
-								    <Accuracy><Statistical>0.003175</Statistical></Accuracy>
+								    <Accuracy type="statistical">0.003175</Accuracy>
 								</FitParameter>
 								<FitParameter name="n">
 									<SourceRef>BHIT-B_HITRAN2008</SourceRef>
 									<Value units="unitless">0.75</Value>
-									<Accuracy><Statistical>0.15</Statistical></Accuracy>
+									<Accuracy type="statistical">0.15</Accuracy>
 								</FitParameter>
 							</FitParameters>
 						</LineshapeParameter>
@@ -407,7 +408,7 @@
 						<LineshapeParameter name="gammaL">
 							<SourceRef>BHIT-B_HITRAN2008</SourceRef>
 							<Value units="1/cm">0.116</Value>
-							<Accuracy><Statistical>0.0058</Statistical></Accuracy>
+							<Accuracy type="statistical">0.0058</Accuracy>
 						</LineshapeParameter>
 					</Lineshape>
 				</Broadening>
@@ -421,7 +422,7 @@
 							<FitParameter name="delta_ref">
 								<SourceRef>BHIT-B_HITRAN2008</SourceRef>
 								<Value units="unitless">-0.001</Value>
-								<Accuracy><Statistical relative="true">0.1</Statistical></Accuracy>
+								<Accuracy type="statistical" relative="true">0.1</Accuracy>
 							</FitParameter>
 						</FitParameters>
 					</ShiftingParameter>

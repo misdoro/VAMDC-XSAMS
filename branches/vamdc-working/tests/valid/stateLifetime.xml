@@ -24,7 +24,6 @@
                 <StateEnergy energyOrigin="ground state">
                     <Comments></Comments>
                     <Value units="eV">1</Value>
-                    <Accuracy></Accuracy>
                 </StateEnergy>
                 <LifeTime decay="total">
                     <Value units="s">1</Value>

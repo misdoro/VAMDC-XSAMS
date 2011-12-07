@@ -118,9 +118,9 @@
 							<xs:documentation>Line intensity for some specific conditions.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Multipole" type="MultipoleType" minOccurs="0">
+					<xs:element name="TransitionClass" type="MultipoleType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Transition multipole type. Example: E2</xs:documentation>
+							<xs:documentation>Transition multipole characterisation. Example: E2, M2, P (polarizability)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="EffectiveLandeFactor" type="DataType" minOccurs="0">
@@ -167,7 +167,7 @@
 			<xs:documentation>Radiative transition multipole</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:pattern value="(E|M)[1-9]\d*"/>
+			<xs:pattern value="((E|M)[1-9]\d*|P)"/>
 		</xs:restriction>
 	</xs:simpleType>
 	

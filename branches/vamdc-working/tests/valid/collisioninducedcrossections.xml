@@ -3,7 +3,17 @@
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xmlns:cml="http://www.xml-cml.org/schema"
  xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../../xsams.xsd">
-<!--<Sources></Sources>-->
+<Sources>
+    <Source sourceID="BSRC">
+        <Category>vamdc node</Category>
+        <Year>2011</Year>
+        <Authors>
+            <Author>
+                <Name></Name>
+            </Author>
+        </Authors>
+    </Source>
+</Sources>
 <Environments>
     <Environment envID="EHIT-512"><Temperature><Value units="K">1500.0</Value></Temperature></Environment>
     <Environment envID="EHIT-513"><Temperature><Value units="K">2250.0</Value></Temperature></Environment>

@@ -162,8 +162,7 @@
                                 </FitArgument>
                                 <FitParameter name="a">
                                     <Value units="cm3/s">5.6e-12</Value>
-                                    <Accuracy>
-                                        <Statistical relative="true">0.02</Statistical>
+                                    <Accuracy type="statistical" relative="true">0.02
                                     </Accuracy>
                                 </FitParameter>
                                 <FitParameter name="b">

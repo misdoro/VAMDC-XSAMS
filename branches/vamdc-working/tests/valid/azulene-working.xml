@@ -93,7 +93,7 @@
                     <NormalMode id="V1" pointGroupSymmetry="A1">
                         <HarmonicFrequency>
                             <Value units="1/cm">162</Value>
-                            <Accuracy><Systematic>1</Systematic></Accuracy>
+                            <Accuracy type="systematic">1</Accuracy>
                         </HarmonicFrequency>
                         <Intensity>
                             <Value units="km/mol">0</Value>
@@ -108,15 +108,13 @@
                     <NormalMode id="V2" pointGroupSymmetry="A2">
                         <HarmonicFrequency>
                             <Value units="1/cm">214</Value>
-                            <Accuracy><Statistical>5</Statistical></Accuracy>
+                            <Accuracy type="statistical">5</Accuracy>
                         </HarmonicFrequency>
                     </NormalMode>
                     <NormalMode id="V3" pointGroupSymmetry="A1">
                         <HarmonicFrequency>
                             <Value units="1/cm">1720.21</Value>
-                            <Accuracy>
-                                <Statistical>0.05</Statistical>
-                            </Accuracy>
+                            <Accuracy type="statistical" relative="true">0.05</Accuracy>
                         </HarmonicFrequency>
                     </NormalMode>
                 </NormalModes>
@@ -191,14 +189,11 @@
     <BandAssignment name="2v1+v2">
         <BandCentre>
             <Value units="1/cm">410</Value>
-            <Accuracy>
-                <StatHigh>2</StatHigh>
-                <StatLow>2</StatLow>
-            </Accuracy>
+            <Accuracy type="statistical">2</Accuracy>
         </BandCentre>
         <BandWidth>
             <Value units="1/cm">40</Value>
-            <Accuracy><Systematic>5</Systematic></Accuracy>
+            <Accuracy type="systematic">5</Accuracy>
         </BandWidth>
         <Modes>
             <DeltaV modeID="V1">2</DeltaV>
@@ -208,11 +203,11 @@
     <BandAssignment name="3v4+2v5">
         <BandCentre>
             <Value units="1/cm">1657</Value>
-            <Accuracy><Statistical relative="false">10</Statistical></Accuracy>
+            <Accuracy type="statistical">10</Accuracy>
         </BandCentre>
         <BandWidth>
             <Value units="1/cm">120</Value>
-            <Accuracy><Statistical relative="false">15.5</Statistical></Accuracy>
+            <Accuracy type="statistical">15.5</Accuracy>
         </BandWidth>
         <Modes>
             <DeltaV modeID="V2">3</DeltaV>

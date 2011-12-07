@@ -22,7 +22,6 @@
                 <StateEnergy energyOrigin="ground state">
                     <Comments></Comments>
                     <Value units="eV">1</Value>
-                    <Accuracy></Accuracy>
                 </StateEnergy>
             </MolecularStateCharacterisation>
             <Case xsi:type="gen:Case" caseID="gen" xmlns:gen="http://vamdc.org/xml/xsams/0.3/cases/gen" xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3/cases/gen ../../cases/gen.xsd">
