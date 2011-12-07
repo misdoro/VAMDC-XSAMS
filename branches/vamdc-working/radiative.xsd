@@ -118,7 +118,7 @@
 							<xs:documentation>Line intensity for some specific conditions.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="TransitionClass" type="MultipoleType" minOccurs="0">
+					<xs:element name="TransitionKind" type="MultipoleType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Transition multipole characterisation. Example: E2, M2, P (polarizability)</xs:documentation>
 						</xs:annotation>
