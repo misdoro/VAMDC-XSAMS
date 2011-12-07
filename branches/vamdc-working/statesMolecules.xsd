@@ -83,7 +83,11 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="CASRegistryNumber" type="ReferencedTextType" minOccurs="0"/>
-			<xs:element name="CNPIGroup" type="SymbolType" minOccurs="0"/>
+			<xs:element name="CNPIGroup" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Latex string representing the CNPI group symbol</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PartitionFunction" type="PartitionFunctionType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="MoleculeStructure" type="MoleculeStructureType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="NormalModes" type="NormalModesType" minOccurs="0" maxOccurs="unbounded"/>
@@ -223,39 +227,6 @@
                 </xs:sequence>
         </xs:complexType>
 
-		
-
-        
-	<xs:complexType name="SymbolType">
-		<xs:annotation>
-			<xs:documentation>SymbolType, SimpleSymbolType and CentralSymbolType are used by CNPIGroup </xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="PrimaryType">
-				<xs:sequence>
-					<xs:element name="Symbol" type="SimpleSymbolType" maxOccurs="unbounded"/>
-					<xs:element name="LatexExpression" type="xs:string" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="SimpleSymbolType">
-		<xs:sequence>
-			<xs:element name="CentralSymbol" type="CentralSymbolType"/>
-			<xs:element name="RightCoefficient" type="xs:string"/>
-			<xs:element name="LeftCoefficient" type="xs:string"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="CentralSymbolType">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="UpperLeftValue" type="xs:string"/>
-				<xs:attribute name="LowerLeftValue" type="xs:string"/>
-				<xs:attribute name="UpperRightValue" type="xs:string"/>
-				<xs:attribute name="LowerRightValue" type="xs:string"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 		
 	<xs:complexType name="StateEnergyType">
 		<xs:complexContent>
