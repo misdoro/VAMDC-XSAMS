@@ -71,6 +71,11 @@
 					<xs:documentation>Digital Object Identifier. Example: doi:10.1016/j.adt.2007.11.003</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="ArticleNumber" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Article number, journal-specific article identifier, may contain any string</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PageBegin" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Initial page of a bibliographic reference. Example: 22</xs:documentation>
@@ -145,6 +150,7 @@
 			<xs:enumeration value="proceedings"/>
 			<xs:enumeration value="report"/>
 			<xs:enumeration value="thesis"/>
+			<xs:enumeration value="vamdc node"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
