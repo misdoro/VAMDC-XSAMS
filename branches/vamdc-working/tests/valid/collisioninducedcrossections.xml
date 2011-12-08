@@ -92,12 +92,11 @@
                     <TabulatedData>
                         <X parameter="nu" units="1/cm">
                               <LinearSequence count="10951" initial="50.000000" increment="1.000000"/>
-                                <NegativeErrorValue>
+                              <Accuracy>
+                                <ErrorValue>
                                     0.2
-                                </NegativeErrorValue>
-                                <PositiveErrorValue>
-                                    0.5
-                                </PositiveErrorValue>
+                                </ErrorValue>
+                              </Accuracy>
                             </X>
                             <Y parameter="alpha" units="cm5">
                                 <DataFile>He-H_2250.0K_50-11000.alpha</DataFile>

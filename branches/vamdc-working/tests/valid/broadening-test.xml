@@ -374,7 +374,7 @@
                         <Value units="1/s">4.173</Value>
                         <Accuracy type="statistical">0.08346</Accuracy>
                     </TransitionProbabilityA>
-                    <Characterisation>P</Characterisation>
+                    <TransitionKind>P</TransitionKind>
                 </Probability>
 				<Broadening envRef="Eair-broadening-ref-env" name="pressure">
 					<Lineshape name="Lorentzian">

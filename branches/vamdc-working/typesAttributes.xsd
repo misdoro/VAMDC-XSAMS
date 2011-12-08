@@ -578,6 +578,30 @@
 		<xs:attribute name="increment" type="xs:double" use="required"/>
 	</xs:complexType>
 	
+	<xs:complexType name="DataSeriesAccuracyType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:choice>
+					<xs:element name="ErrorList" type="DataListType"/>
+					<xs:element name="ErrorFile" type="xs:string"/>
+					<xs:element name="ErrorValue" type="xs:double"/>
+				</xs:choice>	
+				<xs:attribute name="type" type="AccuracyTypes" default="arbitrary">
+					<xs:annotation>
+						<xs:documentation>Error nature</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="relative" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>true if the error value is relative, 
+							accuracy value should be in range of (0,1) in this case</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+		
+	
 	<!-- A data series type -->
 	<xs:complexType name="DataSeriesType">
 		<xs:complexContent>
@@ -593,23 +617,11 @@
 						<xs:element name="LinearSequence" type="LinearSequenceType"/>
 						<xs:element name="DataFile" type="xs:string"/>
 					</xs:choice>
-					<xs:choice minOccurs="0">
-						<xs:element name="ErrorList" type="DataListType"/>
-						<xs:element name="ErrorFile" type="xs:string"/>
-						<xs:element name="ErrorValue" type="xs:double"/>
-						<xs:sequence>
-							<xs:element name="NegativeErrorList" type="DataListType"/>
-							<xs:element name="PositiveErrorList" type="DataListType"/>
-						</xs:sequence>
-						<xs:sequence>
-							<xs:element name="NegativeErrorFile" type="xs:string"/>
-							<xs:element name="PositiveErrorFile" type="xs:string"/>
-						</xs:sequence>
-						<xs:sequence>
-							<xs:element name="NegativeErrorValue" type="xs:double"/>
-							<xs:element name="PositiveErrorValue" type="xs:double"/>
-						</xs:sequence>
-					</xs:choice>
+					<xs:element name="Accuracy" type="DataSeriesAccuracyType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+						<xs:documentation>Accuracy description for the column values</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 				<xs:attribute name="parameter" type="xs:string"/>
 				<xs:attribute name="units" type="UnitsType"/>

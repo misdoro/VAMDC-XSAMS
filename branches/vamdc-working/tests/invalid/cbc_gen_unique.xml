@@ -23,7 +23,6 @@
                 <StateEnergy energyOrigin="">
                     <Comments></Comments>
                     <Value units="eV">1</Value>
-                    <Accuracy></Accuracy>
                 </StateEnergy>
             </MolecularStateCharacterisation>
             <Case xsi:type="gen:Case" caseID="gen">
