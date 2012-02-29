@@ -118,9 +118,14 @@
 							<xs:documentation>Line intensity for some specific conditions.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="TransitionKind" type="MultipoleType" minOccurs="0">
+					<xs:element name="Multipole" type="MultipoleType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>Transition multipole characterisation. Example: E2, M2, P (polarizability)</xs:documentation>
+							<xs:documentation>Transition multipole characterisation. Example: E2, M2</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TransitionKind" type="TransitionKindType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Transition kind (polarizability)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="EffectiveLandeFactor" type="DataType" minOccurs="0">
@@ -167,7 +172,16 @@
 			<xs:documentation>Radiative transition multipole</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:pattern value="((E|M)[1-9]\d*|P)"/>
+			<xs:pattern value="(E|M)[1-9]\d*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="TransitionKindType">
+		<xs:annotation>
+			<xs:documentation>Type of transition, e.g. Polarizability</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="Polarizability"/>
 		</xs:restriction>
 	</xs:simpleType>
 	

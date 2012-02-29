@@ -34,6 +34,18 @@ targetNamespace="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
 				</xs:extension>
 			</xs:simpleContent>
 		</xs:complexType>
+	
+	<xs:complexType name="SymType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" use="required">
+					<xs:annotation>
+						<xs:documentation>a string identifying this symmetry label</xs:documentation>
+					</xs:annotation>
+				</xs:attribute> 
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 		
 		<xs:complexType name="NuclearSpinAMType">
 			<xs:simpleContent>

@@ -20,6 +20,11 @@
 			<xs:selector xpath="sphcs:r"/>
 			<xs:field xpath="@name"/>
 		</xs:unique>
+        <!-- the name attribute to sym must be unique within each state -->
+        <xs:unique name="sym-name">
+            <xs:selector xpath="sphcs:sym"/>
+            <xs:field xpath="@name"/>
+        </xs:unique>
 		<!-- the mode index of Vi and li must be unique within each state -->
 		<xs:unique name="vi-mode">
 			<xs:selector xpath="sphcs:vi"/>
@@ -136,6 +141,13 @@
             <xs:element name="r" type="ctypes:RankingType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>A named ranking index for states of the same symmetry that can't be or haven't been differentiated any other way: r=1,2,... It is possible to have more than one r defining a state, but their name attributes have to be unique.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- sym -->
+            <xs:element name="sym" type="ctypes:SymType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                   <xs:documentation>A named symmetry label</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
