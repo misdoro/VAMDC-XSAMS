@@ -229,8 +229,6 @@
 		<xs:annotation>
 			<xs:documentation>Gives the actual data either (or both) with numerical tabulated data or (and) fitted data </xs:documentation>
 		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="PrimaryType">
 				<xs:sequence>
 					<xs:element name="FitData" type="FitDataType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
@@ -242,16 +240,6 @@
 							<xs:documentation>Tables of data</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Evaluation" type="EvaluationType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Data evaluation and recommendation</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="Accuracy" type="AccuracyType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Description of the accuracy</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 				</xs:sequence>
 				<xs:attribute name="dataDescription" type="xs:string" use="required">
 					<xs:annotation>
@@ -259,8 +247,6 @@
 							Look in schema documentation for possible/recommended values</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
-			</xs:extension>
-		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="DataSetsType">
 		<xs:sequence>
@@ -281,8 +267,12 @@
 							<xs:documentation>Reference frame in which is given the energy, velocity...</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="PhysicalUncertainty" type="xs:string" minOccurs="0"/>
 					<xs:element name="ProductionDate" type="xs:date" minOccurs="0"/>
+					<xs:element name="Evaluation" type="EvaluationType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Data evaluation and recommendation</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -301,14 +291,14 @@
 							<xs:documentation>Description of fit accuracy</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="PhysicalUncertainty" type="xs:string" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Description of physical uncertainty</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element name="ProductionDate" type="xs:date" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Fit production date</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Evaluation" type="EvaluationType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Data evaluation and recommendation</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -605,7 +595,7 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="DataDescription" type="xs:string" minOccurs="0">
+					<xs:element name="Description" type="xs:string" minOccurs="0">
 						<xs:annotation>
 						<xs:documentation>Additional description of the data list</xs:documentation>
 						</xs:annotation>
