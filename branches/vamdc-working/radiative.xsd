@@ -152,7 +152,7 @@
 							<xs:documentation>Transition wavenumber</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Wavelength" type="DataType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="Wavelength" type="wlType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Transition wavelength</xs:documentation>
 						</xs:annotation>
@@ -347,6 +347,22 @@
 					</xs:element>
 				</xs:sequence>                    
 				<xs:attribute name="name" type="xs:string"/>
+			</xs:extension>                
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="wlType">
+		<xs:complexContent>
+			<xs:extension base="DataType">
+				<xs:sequence>
+					<xs:element name="AirToVacuum" type="dataType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="envRef" type="envRefType"/>
+				<xs:attribute name="vacuum" type="xs:boolean" default="true"/>
 			</xs:extension>                
 		</xs:complexContent>
 	</xs:complexType>
