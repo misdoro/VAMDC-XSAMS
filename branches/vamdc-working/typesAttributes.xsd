@@ -242,8 +242,23 @@
 							<xs:documentation>Tables of data</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="Evaluation" type="EvaluationType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Data evaluation and recommendation</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Accuracy" type="AccuracyType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Description of the accuracy</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
-				<xs:attribute name="dataDescription" type="DataDescriptionType" use="required"/>
+				<xs:attribute name="dataDescription" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>Descriptor for the quantity described by the dataset.
+							Look in schema documentation for possible/recommended values</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -256,23 +271,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="DataDescriptionType">
-		<xs:annotation>
-			<xs:documentation>Descriptor for the type of collisonal parameter</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:token">
-			<xs:enumeration value="crossSection"/>
-			<xs:enumeration value="collisionStrength"/>
-			<xs:enumeration value="rateCoefficient"/>
-			<xs:enumeration value="probability"/>
-			<xs:enumeration value="effectiveCollisionStrength"/>
-			<xs:enumeration value="sputteringYield"/>
-			<xs:enumeration value="sputteredEnergyCoefficient"/>
-			<xs:enumeration value="particleReflectionCoefficient"/>
-			<xs:enumeration value="energyReflectionCoefficient"/>
-			<xs:enumeration value="meanPenetrationDepth"/>
-		</xs:restriction>
-	</xs:simpleType>
 	
 	<xs:complexType name="TabulatedDataType">
 		<xs:complexContent>
