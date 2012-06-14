@@ -355,13 +355,13 @@
 		<xs:complexContent>
 			<xs:extension base="DataType">
 				<xs:sequence>
-					<xs:element name="AirToVacuum" type="dataType" minOccurs="0" maxOccurs="1">
+					<xs:element name="AirToVacuum" type="DataType" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation></xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute name="envRef" type="envRefType"/>
+				<xs:attribute name="envRef" type="EnvironmentRefType"/>
 				<xs:attribute name="vacuum" type="xs:boolean" default="true"/>
 			</xs:extension>                
 		</xs:complexContent>
