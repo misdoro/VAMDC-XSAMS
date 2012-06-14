@@ -57,7 +57,7 @@
 					</xs:element>
 				</xs:sequence>
 				<xs:attribute name="id" type="ProcessIDType" use="required"/>
-				<xs:attribute name="groupLabel"/>
+				<xs:attribute name="groupLabel" type="xs:string"/>
 				<xs:attribute name="process" type="TransitionType"/>
 			</xs:extension>
 		</xs:complexContent>

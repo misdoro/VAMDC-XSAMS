@@ -52,13 +52,13 @@
 					<xs:element name="DataSets" type="DataSetsType"/>
 				</xs:sequence>
 				<xs:attribute name="id" type="ProcessIDType" use="required"/>
-				<xs:attribute name="groupLabel"/>
+				<xs:attribute name="groupLabel" type="xs:string"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="CollisionalProcessClassType">
 		<xs:sequence>
-			<xs:element name="UserDefinition" minOccurs="0">
+			<xs:element name="UserDefinition" minOccurs="0" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>Description of the process</xs:documentation>
 				</xs:annotation>

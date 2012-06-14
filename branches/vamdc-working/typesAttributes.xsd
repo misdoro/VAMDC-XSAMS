@@ -201,7 +201,7 @@
 	
 	<xs:complexType name="ArgumentType">
 		<xs:sequence>
-			<xs:element name="Description" minOccurs="0">
+			<xs:element name="Description" minOccurs="0" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>Verbose description of argument</xs:documentation>
 				</xs:annotation>
