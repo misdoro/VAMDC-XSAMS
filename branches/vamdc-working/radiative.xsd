@@ -59,6 +59,11 @@
 							<xs:documentation>Radiative transition probability and related parameters</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="ProcessClass" type="ProcessClassType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>process description</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="SatelliteLine" type="SatelliteLineProperties" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Satellite line properties</xs:documentation>
