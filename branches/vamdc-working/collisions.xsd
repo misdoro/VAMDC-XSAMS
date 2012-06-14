@@ -49,6 +49,11 @@
 							<xs:documentation>Reaction threshold</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="BranchingRatio" type="DataType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Reaction channel branching ratio</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="DataSets" type="DataSetsType"/>
 				</xs:sequence>
 				<xs:attribute name="id" type="ProcessIDType" use="required"/>
