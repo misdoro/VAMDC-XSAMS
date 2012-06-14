@@ -255,9 +255,9 @@
 	<xs:complexType name="StateEnergyType">
 		<xs:complexContent>
 			<xs:extension base="DataType">
-				<xs:attribute name="energyOrigin" type="xs:string" use="required">
+				<xs:attribute name="energyOrigin" type="StateRefType" use="required">
 					<xs:annotation>
-						<xs:documentation>energy zero point description, like "ground state"</xs:documentation>
+						<xs:documentation>Reference to the state defining zero point energy</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
