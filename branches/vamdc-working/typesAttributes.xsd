@@ -243,7 +243,7 @@
 				</xs:sequence>
 				<xs:attribute name="dataDescription" type="xs:string" use="required">
 					<xs:annotation>
-						<xs:documentation>Descriptor for the quantity described by the dataset.
+						<xs:documentation>Descriptor for the type of quantity described by the dataset or fit.
 							Look in schema documentation for possible/recommended values</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
