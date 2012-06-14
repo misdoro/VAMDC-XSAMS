@@ -176,7 +176,13 @@
 			<xs:enumeration value="sodp"/>
 			<xs:enumeration value="soch"/>
 			<xs:enumeration value="sope"/>
-			<xs:enumeration value=""/>
+			<xs:enumeration value="rota"/>
+			<xs:enumeration value="vibr"/>
+			<xs:enumeration value="rvib"/>
+			<xs:enumeration value="hype"/>
+			<xs:enumeration value="fine"/>
+			<xs:enumeration value="tors"/>
+			<xs:enumeration value="rtor"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
