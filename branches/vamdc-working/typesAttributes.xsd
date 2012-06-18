@@ -720,6 +720,15 @@
 			<xs:pattern value="S.+"/>
 		</xs:restriction>
 	</xs:simpleType>
+        
+        <xs:simpleType name="BasisStateIDType">
+                <xs:annotation>
+                        <xs:documentation>ID for a specific atomic/molecular state, particle or solid.</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:ID">
+                        <xs:pattern value="SB.+"/>
+                </xs:restriction>
+        </xs:simpleType>
 	
 	<xs:simpleType name="NormalModeIDType">
 		<xs:annotation>
@@ -788,6 +797,15 @@
 			<xs:pattern value="S.+"/>
 		</xs:restriction>
 	</xs:simpleType>
+        
+        <xs:simpleType name="BasisStateRefType">
+                <xs:annotation>
+                        <xs:documentation>Reference to a basis state of molecule from state expansion</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:IDREF">
+                        <xs:pattern value="SB.+"/>
+                </xs:restriction>
+        </xs:simpleType>
 	
 	<xs:simpleType name="NormalModeRefType">
 		<xs:annotation>

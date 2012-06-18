@@ -202,9 +202,9 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="Case" type="cases:BaseCase" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Case" type="cases:BaseCase" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
-				<xs:attribute name="stateID" type="StateIDType" use="required"/>
+				<xs:attribute name="stateID" type="BasisStateIDType" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -231,7 +231,7 @@
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:double">
-				<xs:attribute name="stateRef" type="StateRefType">
+				<xs:attribute name="basisStateRef" type="BasisStateRefType">
 					<xs:annotation>
 						<xs:documentation>Reference to the ID of this basis state</xs:documentation>
 					</xs:annotation>
