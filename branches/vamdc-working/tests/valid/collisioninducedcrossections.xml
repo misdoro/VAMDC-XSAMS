@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xmlns="http://vamdc.org/xml/xsams/0.3"
+<XSAMSData xmlns="http://vamdc.org/xml/xsams/1.0"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xmlns:cml="http://www.xml-cml.org/schema"
- xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../../xsams.xsd">
+ xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../../xsams.xsd">
 <Sources>
     <Source sourceID="BSRC">
         <Category>vamdc node</Category>
@@ -88,8 +88,8 @@
             <Reactant><SpeciesRef>XHIT-SWQJXJOGLNCZEY-UHFFFAOYSA-N</SpeciesRef></Reactant>
             <DataSets>
                 <DataSet dataDescription="crossSection">
-                    <Comments>The collision-induced absorption cross section for He-H at 2250.0 K</Comments>
                     <TabulatedData>
+                        <Comments>The collision-induced absorption cross section for He-H at 2250.0 K</Comments>
                         <X parameter="nu" units="1/cm">
                               <LinearSequence count="10951" initial="50.000000" increment="1.000000"/>
                               <Accuracy>
@@ -101,7 +101,6 @@
                             <Y parameter="alpha" units="cm5">
                                 <DataFile>He-H_2250.0K_50-11000.alpha</DataFile>
                             </Y>
-                        
                     </TabulatedData>
                 </DataSet>
             </DataSets>

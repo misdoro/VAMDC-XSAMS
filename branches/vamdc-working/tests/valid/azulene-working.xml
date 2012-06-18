@@ -5,8 +5,8 @@
 ]>
 
 <XSAMSData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../../xsams.xsd"
- xmlns="http://vamdc.org/xml/xsams/0.3"
+ xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../../xsams.xsd"
+ xmlns="http://vamdc.org/xml/xsams/1.0"
  xmlns:cml="http://www.xml-cml.org/schema">
 
 <Sources>

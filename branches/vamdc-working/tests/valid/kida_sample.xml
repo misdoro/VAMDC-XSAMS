@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xmlns="http://vamdc.org/xml/xsams/0.3"
+<XSAMSData xmlns="http://vamdc.org/xml/xsams/1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../../xsams.xsd">
+	xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../../xsams.xsd">
     <!--<Environments>
         <Environment>
             <Comments></Comments>
@@ -150,7 +150,6 @@
                 </Product>
                 <DataSets>
                     <DataSet dataDescription="rateCoefficient">
-                        <Comments></Comments>
                         <FitData>
                             <Comments></Comments>
                             <SourceRef>BKIDAS1</SourceRef>
@@ -173,7 +172,6 @@
                                 </FitParameter>
                             </FitParameters>
                             <FitAccuracy></FitAccuracy>
-                            <PhysicalUncertainty></PhysicalUncertainty>
                         </FitData>
                     </DataSet>
                 </DataSets>

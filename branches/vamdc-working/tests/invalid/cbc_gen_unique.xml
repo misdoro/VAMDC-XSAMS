@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Molecules xmlns="http://vamdc.org/xml/xsams/0.3"
+<Molecules xmlns="http://vamdc.org/xml/xsams/1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gen="http://vamdc.org/xml/xsams/0.3/cases/gen"
-	xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../../statesMolecules.xsd http://vamdc.org/xml/xsams/0.3/cases/gen ../../cases/gen.xsd">
+    xmlns:gen="http://vamdc.org/xml/xsams/1.0/cases/gen"
+	xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../../statesMolecules.xsd http://vamdc.org/xml/xsams/1.0/cases/gen ../../cases/gen.xsd">
     <Molecule speciesID="X1">
         <Comments></Comments>
         <MolecularChemicalSpecies>
@@ -20,9 +20,9 @@
             <Comments></Comments>
             <Description></Description>
             <MolecularStateCharacterisation>
-                <StateEnergy energyOrigin="">
+                <StateEnergy energyOrigin="S1">
                     <Comments></Comments>
-                    <Value units="eV">1</Value>
+                    <Value units="eV">0</Value>
                 </StateEnergy>
             </MolecularStateCharacterisation>
             <Case xsi:type="gen:Case" caseID="gen">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Molecules xmlns="http://vamdc.org/xml/xsams/0.3"
+<Molecules xmlns="http://vamdc.org/xml/xsams/1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../../statesMolecules.xsd">
+    xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../../statesMolecules.xsd">
     <Molecule speciesID="X1">
         <Comments></Comments>
         <MolecularChemicalSpecies>
@@ -15,16 +15,31 @@
             </ChemicalName>
             <InChIKey>234</InChIKey>
         </MolecularChemicalSpecies>
+        <MolecularState stateID="S0">
+            <MolecularStateCharacterisation>
+                <StateEnergy energyOrigin="S0">
+                    <Comments></Comments>
+                    <Value units="eV">0</Value>
+                </StateEnergy>
+            </MolecularStateCharacterisation>
+            <Case xsi:type="gen:Case" caseID="gen" xmlns:gen="http://vamdc.org/xml/xsams/1.0/cases/gen" xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0/cases/gen ../../cases/gen.xsd">
+                <gen:QNs>
+                    <gen:ElecStateLabel>X</gen:ElecStateLabel>
+                    <gen:QN name="a">0</gen:QN>
+                    <gen:QN name="b">0</gen:QN>
+                </gen:QNs>
+            </Case>
+        </MolecularState>
         <MolecularState stateID="S1">
             <Comments></Comments>
             <Description></Description>
             <MolecularStateCharacterisation>
-                <StateEnergy energyOrigin="ground state">
+                <StateEnergy energyOrigin="S0">
                     <Comments></Comments>
                     <Value units="eV">1</Value>
                 </StateEnergy>
             </MolecularStateCharacterisation>
-            <Case xsi:type="gen:Case" caseID="gen" xmlns:gen="http://vamdc.org/xml/xsams/0.3/cases/gen" xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3/cases/gen ../../cases/gen.xsd">
+            <Case xsi:type="gen:Case" caseID="gen" xmlns:gen="http://vamdc.org/xml/xsams/1.0/cases/gen" xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0/cases/gen ../../cases/gen.xsd">
                 <gen:QNs>
                     <gen:ElecStateLabel>X</gen:ElecStateLabel>
                     <gen:QN name="a">1</gen:QN>

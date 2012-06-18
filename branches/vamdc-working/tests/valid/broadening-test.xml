@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xmlns="http://vamdc.org/xml/xsams/0.3"
-    xmlns:targetNamespace="http://vamdc.org/xml/xsams/0.3"
+<XSAMSData xmlns="http://vamdc.org/xml/xsams/1.0"
+    xmlns:targetNamespace="http://vamdc.org/xml/xsams/1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../../xsams.xsd"
-    xmlns:dcs="http://vamdc.org/xml/xsams/0.3/cases/dcs"
-    xmlns:hunda="http://vamdc.org/xml/xsams/0.3/cases/hunda"
-    xmlns:hundb="http://vamdc.org/xml/xsams/0.3/cases/hundb"
-    xmlns:ltcs="http://vamdc.org/xml/xsams/0.3/cases/ltcs"
-    xmlns:nltcs="http://vamdc.org/xml/xsams/0.3/cases/nltcs"
-    xmlns:stcs="http://vamdc.org/xml/xsams/0.3/cases/stcs"
-    xmlns:lpcs="http://vamdc.org/xml/xsams/0.3/cases/lpcs"
-    xmlns:asymcs="http://vamdc.org/xml/xsams/0.3/cases/asymcs"
-    xmlns:asymos="http://vamdc.org/xml/xsams/0.3/cases/asymos"
-    xmlns:sphcs="http://vamdc.org/xml/xsams/0.3/cases/sphcs"
-    xmlns:sphos="http://vamdc.org/xml/xsams/0.3/cases/sphos"
-    xmlns:ltos="http://vamdc.org/xml/xsams/0.3/cases/ltos"
-    xmlns:lpos="http://vamdc.org/xml/xsams/0.3/cases/lpos"
-    xmlns:nltos="http://vamdc.org/xml/xsams/0.3/cases/nltos">
+    xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../../xsams.xsd"
+    xmlns:dcs="http://vamdc.org/xml/xsams/1.0/cases/dcs"
+    xmlns:hunda="http://vamdc.org/xml/xsams/1.0/cases/hunda"
+    xmlns:hundb="http://vamdc.org/xml/xsams/1.0/cases/hundb"
+    xmlns:ltcs="http://vamdc.org/xml/xsams/1.0/cases/ltcs"
+    xmlns:nltcs="http://vamdc.org/xml/xsams/1.0/cases/nltcs"
+    xmlns:stcs="http://vamdc.org/xml/xsams/1.0/cases/stcs"
+    xmlns:lpcs="http://vamdc.org/xml/xsams/1.0/cases/lpcs"
+    xmlns:asymcs="http://vamdc.org/xml/xsams/1.0/cases/asymcs"
+    xmlns:asymos="http://vamdc.org/xml/xsams/1.0/cases/asymos"
+    xmlns:sphcs="http://vamdc.org/xml/xsams/1.0/cases/sphcs"
+    xmlns:sphos="http://vamdc.org/xml/xsams/1.0/cases/sphos"
+    xmlns:ltos="http://vamdc.org/xml/xsams/1.0/cases/ltos"
+    xmlns:lpos="http://vamdc.org/xml/xsams/1.0/cases/lpos"
+    xmlns:nltos="http://vamdc.org/xml/xsams/1.0/cases/nltos">
 
     <!--
    ATTENTION: The amount of data returned has been truncated by the node.
@@ -297,11 +297,35 @@
                     <InChIKey>HSFWRNGVRCDJHI-VDNDPFHPSA-N</InChIKey>
                     <Comment>(12C)(13C)H2</Comment>
                 </MolecularChemicalSpecies>
+                
+                <MolecularState stateID="SC2H2zero">
+                    <Description/>
+                    <MolecularStateCharacterisation>
+                        <StateEnergy energyOrigin="SC2H2zero">
+                            <Value units="1/cm">0</Value>
+                        </StateEnergy>
+                    </MolecularStateCharacterisation>
 
+                    <Case xsi:type="lpcs:Case" caseID="lpcs">
+                        <lpcs:QNs>
+                            <lpcs:ElecStateLabel>X</lpcs:ElecStateLabel>
+                            <lpcs:vi mode="2">0</lpcs:vi>
+                            <lpcs:vi mode="1">0</lpcs:vi>
+                            <lpcs:vi mode="3">0</lpcs:vi>
+                            <lpcs:vi mode="4">0</lpcs:vi>
+                            <lpcs:vi mode="5">0</lpcs:vi>
+                            <lpcs:li mode="4">0</lpcs:li>
+                            <lpcs:li mode="5">0</lpcs:li>
+                            <lpcs:l>0</lpcs:l>
+                            <lpcs:J>0</lpcs:J>
+                        </lpcs:QNs>
+                    </Case>
+                </MolecularState>
+                
                 <MolecularState stateID="SS300-C2H2-2">
                     <Description/>
                     <MolecularStateCharacterisation>
-                        <StateEnergy energyOrigin="Zero-point energy">
+                        <StateEnergy energyOrigin="SC2H2zero">
                             <Value units="1/cm">580.7229</Value>
                         </StateEnergy>
                         <TotalStatisticalWeight>360</TotalStatisticalWeight>
@@ -328,7 +352,7 @@
                 <MolecularState stateID="SS342-C2H2-2">
                     <Description/>
                     <MolecularStateCharacterisation>
-                        <StateEnergy energyOrigin="Zero-point energy">
+                        <StateEnergy energyOrigin="SC2H2zero">
                             <Value units="1/cm">7169.6576</Value>
                         </StateEnergy>
                         <TotalStatisticalWeight>376</TotalStatisticalWeight>
@@ -374,7 +398,7 @@
                         <Value units="1/s">4.173</Value>
                         <Accuracy type="statistical">0.08346</Accuracy>
                     </TransitionProbabilityA>
-                    <TransitionKind>P</TransitionKind>
+                    <TransitionKind>Polarizability</TransitionKind>
                 </Probability>
 				<Broadening envRef="Eair-broadening-ref-env" name="pressure">
 					<Lineshape name="Lorentzian">
