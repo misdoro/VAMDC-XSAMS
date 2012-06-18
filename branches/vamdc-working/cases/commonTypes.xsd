@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-xmlns:ctypes="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
-xmlns="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
-targetNamespace="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
+xmlns:ctypes="http://vamdc.org/xml/xsams/1.0/cases/commonTypes"
+xmlns="http://vamdc.org/xml/xsams/1.0/cases/commonTypes"
+targetNamespace="http://vamdc.org/xml/xsams/1.0/cases/commonTypes"
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
 		<xs:annotation>
 			<xs:documentation>Contains data types and attributes common for most cases</xs:documentation>

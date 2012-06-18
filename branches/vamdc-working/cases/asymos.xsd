@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:asymos="http://vamdc.org/xml/xsams/0.3/cases/asymos"
-	xmlns:ctypes="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
-    targetNamespace="http://vamdc.org/xml/xsams/0.3/cases/asymos"
+    xmlns:asymos="http://vamdc.org/xml/xsams/1.0/cases/asymos"
+	xmlns:ctypes="http://vamdc.org/xml/xsams/1.0/cases/commonTypes"
+    targetNamespace="http://vamdc.org/xml/xsams/1.0/cases/asymos"
     elementFormDefault="qualified">
-	<xs:import namespace="http://vamdc.org/xml/xsams/0.3/cases/commonTypes"
+	<xs:import namespace="http://vamdc.org/xml/xsams/1.0/cases/commonTypes"
 				schemaLocation="commonTypes.xsd"/>
     <xs:annotation>
         <xs:documentation>Schema for specifying the quantum numbers of open-shell asymmetric top molecules</xs:documentation>
