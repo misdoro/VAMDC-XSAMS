@@ -254,7 +254,7 @@
         <xs:complexType name="SpinIsomerType">
                 <xs:complexContent>
                         <xs:extension base="xs:string">
-                                <xs:attribute name="lowestEnergyState" type="StateRefType" use="required">
+                                <xs:attribute name="lowestEnergyStateRef" type="StateRefType" use="required">
                                         <xs:annotation>
                                                 <xs:documentation>Reference to the state of this spin isomer having 
                                                         the lowest energy</xs:documentation>
