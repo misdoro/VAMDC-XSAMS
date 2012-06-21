@@ -58,6 +58,13 @@
                 </xs:annotation>
             </xs:element>
             
+            <!-- Lambda -->
+            <xs:element name="Lambda" type="xs:nonNegativeInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The magnitude of the projection of the total electronic orbital angular momentum onto the internuclear axis</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
             <!-- S -->
             <xs:element name="S" type="ctypes:AMType" minOccurs="0">
                 <xs:annotation>
@@ -104,6 +111,13 @@
             <xs:element name="N" type="xs:nonNegativeInteger" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The quantum number associated with the total angular momentum excluding electronic and nuclear spin: J = N + S</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- I -->
+            <xs:element name="I" type="ctypes:CoupledNuclearSpinAMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The quantum number associated with the total nuclear spin angular momentum resulting from the coupling of two individual nuclear spin angular momenta: I = I1 + I2</xs:documentation>
                 </xs:annotation>
             </xs:element>
             

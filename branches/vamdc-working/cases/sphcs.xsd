@@ -91,7 +91,7 @@
             <!-- vibSym -->
             <xs:element name="vibSym" type="ctypes:SymmetrySpeciesType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
-                    <xs:documentation>Symmetry species of the rotational wavefunction, in some appropriate symmetry group</xs:documentation>
+                    <xs:documentation>Symmetry species of the vibrational wavefunction, in some appropriate symmetry group</xs:documentation>
                 </xs:annotation>
             </xs:element>
             
@@ -117,7 +117,7 @@
             </xs:element>
             
             <!-- I -->
-            <xs:element name="I" type="ctypes:NuclearSpinAMType" minOccurs="0">
+            <xs:element name="I" type="ctypes:CoupledNuclearSpinAMType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The quantum number associated with the total nuclear spin angular momentum resulting from the coupling of two or more individual nuclear spin angular momenta: I = I1 + I2 + ...</xs:documentation>
                 </xs:annotation>

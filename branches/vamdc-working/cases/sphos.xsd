@@ -140,7 +140,7 @@
             </xs:element>
             
             <!-- I -->
-            <xs:element name="I" type="ctypes:NuclearSpinAMType" minOccurs="0">
+            <xs:element name="I" type="ctypes:CoupledNuclearSpinAMType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>The quantum number associated with the total nuclear spin angular momentum resulting from the coupling of two or more individual nuclear spin angular momenta: I = I1 + I2 + ...</xs:documentation>
                 </xs:annotation>
@@ -157,6 +157,13 @@
             <xs:element name="F" type="ctypes:NuclearSpinAMType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>The quantum number, F, associated with the total angular momentum including nuclear spin</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <!-- sym -->
+            <xs:element name="sym" type="ctypes:SymType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>A named symmetry label</xs:documentation>
                 </xs:annotation>
             </xs:element>
             

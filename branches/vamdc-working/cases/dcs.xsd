@@ -37,7 +37,7 @@ elementFormDefault="qualified">
 		<xs:annotation>
 			<xs:documentation>A list of quantum numbers for diatomic, closed-shell molecules</xs:documentation>
 		</xs:annotation>
-		<xs:all>
+		<xs:sequence>
 			<!-- ElecStateLabel -->
 			<xs:element name="ElecStateLabel" type="xs:string" minOccurs="0">
 				<xs:annotation>
@@ -58,12 +58,20 @@ elementFormDefault="qualified">
 				</xs:annotation>
 			</xs:element>
 			
+			<!-- I -->
+			<xs:element name="I" type="ctypes:CoupledNuclearSpinAMType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The quantum number associated with the total nuclear spin angular momentum resulting from the coupling of two individual nuclear spin angular momenta: I = I1 + I2 + ...</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
 			<!-- F1 -->
 			<xs:element name="F1" type="ctypes:NuclearSpinAMType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The quantum number, F1, associated with the intermediate angular momentum due to coupling the rotational angular momentum with one nuclear spin. F1 may not be a good quantum number.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			
 			<!-- F -->
 			<xs:element name="F" type="ctypes:NuclearSpinAMType" minOccurs="0">
 				<xs:annotation>
@@ -72,7 +80,7 @@ elementFormDefault="qualified">
 			</xs:element>
 			
 			<!-- r -->
-			<xs:element name="r" type="ctypes:RankingType" minOccurs="0" maxOccurs="1">
+			<xs:element name="r" type="ctypes:RankingType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.</xs:documentation>
 				</xs:annotation>
@@ -85,6 +93,18 @@ elementFormDefault="qualified">
 				</xs:annotation>
 			</xs:element>
 			
+			<!-- kronigParity -->
+			<xs:element name="kronigParity" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Kronig parity ('e' for a closed-shell diatomic)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="e"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			
 			<!-- asSym -->
 			<xs:element name="asSym" type="ctypes:ASParityType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
@@ -92,7 +112,7 @@ elementFormDefault="qualified">
 				</xs:annotation>
 			</xs:element>
 			
-		</xs:all>
+		</xs:sequence>
 	</xs:complexType>
 	
 </xs:schema>

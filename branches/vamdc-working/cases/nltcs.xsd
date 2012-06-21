@@ -92,6 +92,13 @@
                 </xs:annotation>
             </xs:element>
             
+            <!-- I -->
+            <xs:element name="I" type="ctypes:CoupledNuclearSpinAMType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The quantum number associated with the total nuclear spin angular momentum resulting from the coupling of two individual nuclear spin angular momenta: I = I1 + I2</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
             <!-- F1 -->
             <xs:element name="F1" type="ctypes:NuclearSpinAMType" minOccurs="0">
                 <xs:annotation>
@@ -126,6 +133,13 @@
                     <xs:documentation>Total parity with respect to inversion through the molecular centre of mass in the laboratory coordinate system</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            
+            <!-- kronigParity -->
+            <xs:element name="kronigParity" type="ctypes:EFParityType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Kronig parity ('e' or 'f')</xs:documentation>
+                </xs:annotation>
+            </xs:element>            
             
             <!-- asSym -->
             <xs:element name="asSym" type="ctypes:ASParityType" minOccurs="0" maxOccurs="1">

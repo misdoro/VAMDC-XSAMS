@@ -47,6 +47,33 @@ targetNamespace="http://vamdc.org/xml/xsams/1.0/cases/commonTypes"
 		</xs:simpleContent>
 	</xs:complexType>
 		
+	<xs:complexType name="CoupledNuclearSpinAMType">
+		<xs:simpleContent>
+			<xs:extension base="ctypes:AMType">
+				<xs:attribute name="nuclearSpinRef" use="required">
+					<xs:annotation>
+						<xs:documentation>A label identifying the nuclear spin to which an intermediate angular momentum is coupled</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value=".+"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="id" use="required">
+					<xs:annotation>
+						<xs:documentation>A label this coupled nuclear spin angular momentum quantum number</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value=".+"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+		
 		<xs:complexType name="NuclearSpinAMType">
 			<xs:simpleContent>
 				<xs:extension base="ctypes:AMType">
