@@ -245,23 +245,34 @@
                         <xs:element name="StateEnergy" type="StateEnergyType" minOccurs="0"/>
                         <xs:element name="TotalStatisticalWeight" type="xs:positiveInteger" minOccurs="0"/>
                         <xs:element name="NuclearStatisticalWeight" type="xs:positiveInteger" minOccurs="0"/>
-                        <xs:element name="NuclearSpinIsomer" type="SpinIsomerType" minOccurs="0"/>
+                        <xs:element name="NuclearSpinIsomer" type="NuclearSpinIsomerType" minOccurs="0"/>
                         <xs:element name="LifeTime" type="LifeTimeType" minOccurs="0" maxOccurs="3"/>
                         <xs:element name="Parameters" type="CharacterisationType" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
         </xs:complexType>
 
-        <xs:complexType name="SpinIsomerType">
-                <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                                <xs:attribute name="lowestEnergyStateRef" type="StateRefType" use="required">
-                                        <xs:annotation>
-                                                <xs:documentation>Reference to the state of this spin isomer having 
-                                                        the lowest energy</xs:documentation>
-                                        </xs:annotation> 
-                                </xs:attribute>
-                        </xs:extension>
-                </xs:simpleContent>        
+		<xs:simpleType name="NuclearSpinIsomerValueType">
+			<xs:restriction base="xs:token">
+				<xs:enumeration value="ortho"/>
+				<xs:enumeration value="meta"/>
+				<xs:enumeration value="para"/>
+			</xs:restriction>
+		</xs:simpleType>
+	
+        <xs:complexType name="NuclearSpinIsomerType">
+        	<xs:annotation>
+        		<xs:documentation>A string, 'ortho', 'meta' or 'para' identifying the nuclear spin isomer</xs:documentation>
+        	</xs:annotation>
+            <xs:simpleContent>
+            <xs:extension base="NuclearSpinIsomerValueType">
+                <xs:attribute name="lowestEnergyStateRef" type="StateRefType" use="required">
+                    <xs:annotation>
+                        <xs:documentation>Reference to the state of this spin isomer having 
+                                          the lowest energy</xs:documentation>
+                        </xs:annotation> 
+                </xs:attribute>
+             </xs:extension>
+             </xs:simpleContent>        
         </xs:complexType>
 	
 	<xs:complexType name="StateEnergyType">

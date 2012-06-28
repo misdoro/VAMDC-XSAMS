@@ -38,11 +38,16 @@ targetNamespace="http://vamdc.org/xml/xsams/1.0/cases/commonTypes"
 	<xs:complexType name="SymType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute name="name" use="required">
+				<xs:attribute name="name" use="optional">
 					<xs:annotation>
 						<xs:documentation>a string identifying this symmetry label</xs:documentation>
 					</xs:annotation>
-				</xs:attribute> 
+				</xs:attribute>
+				<xs:attribute name="group" use="optional">
+					<xs:annotation>
+						<xs:documentation>a string identifying the group to which this symmetry label applies</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
