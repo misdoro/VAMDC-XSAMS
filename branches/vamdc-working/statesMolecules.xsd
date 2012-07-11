@@ -259,20 +259,36 @@
 			</xs:restriction>
 		</xs:simpleType>
 	
+		<xs:complexType name="NuclearSpinSymmetryType">
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="group" use="optional">
+						<xs:annotation>
+							<xs:documentation>a string identifying the group to which this symmetry label applies</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	
         <xs:complexType name="NuclearSpinIsomerType">
         	<xs:annotation>
         		<xs:documentation>A string, 'ortho', 'meta' or 'para' identifying the nuclear spin isomer</xs:documentation>
         	</xs:annotation>
-            <xs:simpleContent>
-            <xs:extension base="NuclearSpinIsomerValueType">
+            <xs:complexContent>
+            	<xs:extension base="PrimaryType">
+            	<xs:sequence>
+            		<xs:element name="Name" type="NuclearSpinIsomerValueType"/>
+            		<xs:element name="Symmetry" type="NuclearSpinSymmetryType"/>
+            	</xs:sequence>
                 <xs:attribute name="lowestEnergyStateRef" type="StateRefType" use="required">
                     <xs:annotation>
                         <xs:documentation>Reference to the state of this spin isomer having 
                                           the lowest energy</xs:documentation>
                         </xs:annotation> 
                 </xs:attribute>
-             </xs:extension>
-             </xs:simpleContent>        
+            	</xs:extension>
+             </xs:complexContent>        
         </xs:complexType>
 	
 	<xs:complexType name="StateEnergyType">
