@@ -259,7 +259,7 @@
 			</xs:restriction>
 		</xs:simpleType>
 	
-		<xs:complexType name="NuclearSpinSymmetryType">
+		<xs:complexType name="SymmetryType">
 			<xs:simpleContent>
 				<xs:extension base="xs:string">
 					<xs:attribute name="group" use="optional">
@@ -279,7 +279,7 @@
             	<xs:extension base="PrimaryType">
             	<xs:sequence>
             		<xs:element name="Name" type="NuclearSpinIsomerValueType" minOccurs="0"/>
-            		<xs:element name="Symmetry" type="NuclearSpinSymmetryType" minOccurs="0"/>
+            		<xs:element name="LowestRoVibSym" type="SymmetryType" minOccurs="0"/>
             	</xs:sequence>
                 <xs:attribute name="lowestEnergyStateRef" type="StateRefType" use="required">
                     <xs:annotation>
