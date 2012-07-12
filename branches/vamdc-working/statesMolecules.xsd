@@ -278,8 +278,8 @@
             <xs:complexContent>
             	<xs:extension base="PrimaryType">
             	<xs:sequence>
-            		<xs:element name="Name" type="NuclearSpinIsomerValueType"/>
-            		<xs:element name="Symmetry" type="NuclearSpinSymmetryType"/>
+            		<xs:element name="Name" type="NuclearSpinIsomerValueType" minOccurs="0"/>
+            		<xs:element name="Symmetry" type="NuclearSpinSymmetryType" minOccurs="0"/>
             	</xs:sequence>
                 <xs:attribute name="lowestEnergyStateRef" type="StateRefType" use="required">
                     <xs:annotation>
