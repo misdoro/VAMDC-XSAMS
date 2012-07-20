@@ -69,7 +69,7 @@
 			</xs:documentation>
 		</xs:annotation>	
 		<xs:sequence>
-			<xs:element name="OrdinaryStructuralFormula" type="ReferencedTextType"/>
+			<xs:element name="OrdinaryStructuralFormula" type="ReferencedTextType" minOccurs="0"/>
 			<xs:element name="StoichiometricFormula" type="xs:string"/>
 			<xs:element name="IonCharge" type="xs:integer" minOccurs="0"/>
 			<xs:element name="ChemicalName" type="ReferencedTextType" minOccurs="0"/>
@@ -89,6 +89,11 @@
 			<xs:element name="CNPIGroup" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Latex string representing the CNPI group symbol</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VAMDCSpeciesID" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>VAMDC species identifier, VAMDC-wide identifer from a central species database</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="PartitionFunction" type="PartitionFunctionType" minOccurs="0" maxOccurs="unbounded"/>
