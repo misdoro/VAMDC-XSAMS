@@ -143,9 +143,9 @@
 	<xs:complexType name="NormalModeType">
 		<xs:annotation>
 			<xs:documentation>Data relating to the normal modes of a molecule in a particular electronic state,
-							  giving the frequency, intensity and atomic displacement vectors. The electronic
-							  state is identified by the electronicStateRef attribute and the normal mode
-							  symmetry species by the pointGroupSymmetry attribute.</xs:documentation>
+							giving the frequency, intensity and atomic displacement vectors. The electronic
+							state is identified by the electronicStateRef attribute and the normal mode
+							symmetry species by the pointGroupSymmetry attribute.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
@@ -246,55 +246,64 @@
 	</xs:complexType>
 
 	<xs:complexType name="MolecularStateCharacterisationType">
-                <xs:sequence>
-                        <xs:element name="StateEnergy" type="StateEnergyType" minOccurs="0"/>
-                        <xs:element name="TotalStatisticalWeight" type="xs:positiveInteger" minOccurs="0"/>
-                        <xs:element name="NuclearStatisticalWeight" type="xs:positiveInteger" minOccurs="0"/>
-                        <xs:element name="NuclearSpinIsomer" type="NuclearSpinIsomerType" minOccurs="0"/>
-                        <xs:element name="LifeTime" type="LifeTimeType" minOccurs="0" maxOccurs="3"/>
-                        <xs:element name="Parameters" type="CharacterisationType" minOccurs="0" maxOccurs="unbounded"/>
-                </xs:sequence>
-        </xs:complexType>
+		<xs:sequence>
+			<xs:element name="StateEnergy" type="StateEnergyType" minOccurs="0"/>
+			<xs:element name="TotalStatisticalWeight" type="xs:positiveInteger" minOccurs="0"/>
+			<xs:element name="NuclearStatisticalWeight" type="xs:positiveInteger" minOccurs="0"/>
+			<xs:element name="NuclearSpinIsomer" type="NuclearSpinIsomerType" minOccurs="0"/>
+			<xs:element name="LifeTime" type="LifeTimeType" minOccurs="0" maxOccurs="3"/>
+			<xs:element name="Parameters" type="CharacterisationType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
 
-		<xs:simpleType name="NuclearSpinIsomerValueType">
-			<xs:restriction base="xs:token">
-				<xs:enumeration value="ortho"/>
-				<xs:enumeration value="meta"/>
-				<xs:enumeration value="para"/>
-			</xs:restriction>
-		</xs:simpleType>
+	<xs:simpleType name="NuclearSpinIsomerValueType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="ortho"/>
+			<xs:enumeration value="meta"/>
+			<xs:enumeration value="para"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="SymmetryType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="group" use="optional">
+					<xs:annotation><xs:documentation>
+						A string identifying the group to which this symmetry label applies
+					</xs:documentation></xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	
-		<xs:complexType name="SymmetryType">
-			<xs:simpleContent>
-				<xs:extension base="xs:string">
-					<xs:attribute name="group" use="optional">
-						<xs:annotation>
-							<xs:documentation>a string identifying the group to which this symmetry label applies</xs:documentation>
-						</xs:annotation>
-					</xs:attribute>
-				</xs:extension>
-			</xs:simpleContent>
-		</xs:complexType>
-	
-        <xs:complexType name="NuclearSpinIsomerType">
-        	<xs:annotation>
-        		<xs:documentation>A string, 'ortho', 'meta' or 'para' identifying the nuclear spin isomer</xs:documentation>
-        	</xs:annotation>
-            <xs:complexContent>
-            	<xs:extension base="PrimaryType">
-            	<xs:sequence>
-            		<xs:element name="Name" type="NuclearSpinIsomerValueType" minOccurs="0"/>
-            		<xs:element name="LowestRoVibSym" type="SymmetryType" minOccurs="0"/>
-            	</xs:sequence>
-                <xs:attribute name="lowestEnergyStateRef" type="StateRefType" use="required">
-                    <xs:annotation>
-                        <xs:documentation>Reference to the state of this spin isomer having 
-                                          the lowest energy</xs:documentation>
-                        </xs:annotation> 
-                </xs:attribute>
-            	</xs:extension>
-             </xs:complexContent>        
-        </xs:complexType>
+	<xs:complexType name="NuclearSpinIsomerType">
+		<xs:annotation><xs:documentation>
+			Description of nuclear spin isomer, either by name(ortho/para/meta) 
+			or by symmetry of the lowest rovibrational state
+		</xs:documentation></xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="Name" type="NuclearSpinIsomerValueType" minOccurs="0">
+						<xs:annotation><xs:documentation>
+							Spin isomer name, a choice of 'ortho','para' or 'meta'.
+						</xs:documentation></xs:annotation>
+					</xs:element>
+					<xs:element name="LowestRoVibSym" type="SymmetryType" minOccurs="0">
+						<xs:annotation><xs:documentation>
+						The symmetry species of the rovibronic wavefunction of the lowest state 
+						of the nuclear spin isomer
+						</xs:documentation></xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="lowestEnergyStateRef" type="StateRefType" use="required">
+					<xs:annotation><xs:documentation>
+					Reference to the state of this spin isomer having the lowest energy
+					</xs:documentation></xs:annotation> 
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>        
+	</xs:complexType>
 	
 	<xs:complexType name="StateEnergyType">
 		<xs:complexContent>
@@ -307,30 +316,30 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-        
-        <xs:complexType name="ReferencedTextType">
-                <xs:complexContent>
-                        <xs:extension base="PrimaryType">
-                                <xs:sequence>
-                                        <xs:element name="Value" minOccurs="1" maxOccurs="1" type="xs:string"/>
-								</xs:sequence>
-                        </xs:extension>
-                </xs:complexContent>
-        </xs:complexType>
-        
-        <xs:complexType name="CharacterisationType">
-                <xs:complexContent>
-                        <xs:extension base="PrimaryType">
-                                <xs:sequence>
-                                        <xs:element name="Name" type="xs:string" minOccurs="0"/>
-                                        <xs:choice minOccurs="0">
-                                                <xs:element name="ValueData" type="DataType"/>
-                                                <xs:element name="VectorsData" type="VectorsType"/>
-                                                <xs:element name="MatrixData" type="MatrixType"/>
-                                        </xs:choice>
-                                </xs:sequence>
-                        </xs:extension>
-                </xs:complexContent>
-        </xs:complexType>
+	
+	<xs:complexType name="ReferencedTextType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="Value" minOccurs="1" maxOccurs="1" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="CharacterisationType">
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="Name" type="xs:string" minOccurs="0"/>
+					<xs:choice minOccurs="0">
+						<xs:element name="ValueData" type="DataType"/>
+						<xs:element name="VectorsData" type="VectorsType"/>
+						<xs:element name="MatrixData" type="MatrixType"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 </xs:schema>
 
