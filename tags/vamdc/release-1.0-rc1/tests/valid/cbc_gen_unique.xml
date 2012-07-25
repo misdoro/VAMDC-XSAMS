@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Molecules xmlns="http://vamdc.org/xml/xsams/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gen="http://vamdc.org/xml/xsams/1.0/cases/gen"
+    xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../../statesMolecules.xsd http://vamdc.org/xml/xsams/0.2/cases/gen ../../cases/gen.xsd">
+    <Molecule speciesID="X1">
+        <Comments></Comments>
+        <MolecularChemicalSpecies>
+            <OrdinaryStructuralFormula>
+                <Comments>blah</Comments>
+                <Value>1</Value>
+            </OrdinaryStructuralFormula>
+            <StoichiometricFormula>CO</StoichiometricFormula>
+            <ChemicalName>
+                <Value>1</Value>
+            </ChemicalName>
+            <InChIKey>234</InChIKey>
+        </MolecularChemicalSpecies>
+         <MolecularState stateID="S0">
+            <Comments></Comments>
+            <Description></Description>
+            <MolecularStateCharacterisation>
+                <StateEnergy energyOrigin="S0">
+                    <Comments></Comments>
+                    <Value units="eV">0</Value>
+                </StateEnergy>
+            </MolecularStateCharacterisation>
+            <Case xsi:type="gen:Case" caseID="gen">
+                <gen:QNs>
+                    <gen:ElecStateLabel>X</gen:ElecStateLabel>
+                    <gen:QN name="a">0</gen:QN>
+                    <gen:QN name="b">0</gen:QN>
+                </gen:QNs>
+            </Case>
+        </MolecularState>
+        <MolecularState stateID="S1">
+            <Comments></Comments>
+            <Description></Description>
+            <MolecularStateCharacterisation>
+                <StateEnergy energyOrigin="S0">
+                    <Comments></Comments>
+                    <Value units="eV">1</Value>
+                </StateEnergy>
+            </MolecularStateCharacterisation>
+            <Case xsi:type="gen:Case" caseID="gen">
+                <gen:QNs>
+                    <gen:ElecStateLabel>X</gen:ElecStateLabel>
+                    <gen:QN name="a">1</gen:QN>
+                    <gen:QN name="b">2</gen:QN>
+                </gen:QNs>
+            </Case>
+        </MolecularState>
+    </Molecule>
+</Molecules>
