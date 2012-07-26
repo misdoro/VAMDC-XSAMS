@@ -636,23 +636,6 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
-	
-	<xs:complexType name="PartitionFunctionType">
-		<xs:annotation>
-			<xs:documentation>The partition function as a function of temperature: Q(T), expressed as a pair of
-			DataSeries columns</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="PrimaryType">
-				<xs:sequence>
-					<xs:element name="T" type="DataSeriesType" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="Q" type="DataSeriesType" minOccurs="1" maxOccurs="1"/>
-				</xs:sequence>
-				<xs:attribute name="nuclearSpinIsomer" type="xs:string"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	
 	<xs:simpleType name="TransitionType">
 		<xs:annotation>
 			<xs:documentation>Describes the transition type, excitation or deexcitation</xs:documentation>

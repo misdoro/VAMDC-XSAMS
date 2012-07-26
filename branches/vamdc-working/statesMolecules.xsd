@@ -261,6 +261,8 @@
 			<xs:enumeration value="ortho"/>
 			<xs:enumeration value="meta"/>
 			<xs:enumeration value="para"/>
+			<xs:enumeration value="A"/>
+			<xs:enumeration value="E"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -313,6 +315,22 @@
 						<xs:documentation>Reference to the state defining zero point energy</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="PartitionFunctionType">
+		<xs:annotation>
+			<xs:documentation>The partition function as a function of temperature: Q(T), expressed as a pair of
+			DataSeries columns</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PrimaryType">
+				<xs:sequence>
+					<xs:element name="T" type="DataSeriesType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="Q" type="DataSeriesType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="NuclearSpinIsomer" type="NuclearSpinIsomerType" minOccurs="0"/>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
