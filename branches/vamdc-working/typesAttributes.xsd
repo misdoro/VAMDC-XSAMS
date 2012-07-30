@@ -1043,6 +1043,15 @@
 			<xs:enumeration value="vibr"/>
 			<xs:enumeration value="rvib"/>
 			<xs:enumeration value="hype"/>
+			<xs:enumeration value="hyp1"/>
+			<xs:enumeration value="hyp2"/>
+			<xs:enumeration value="hyp3"/>
+			<xs:enumeration value="hyp4"/>
+			<xs:enumeration value="hyp5"/>
+			<xs:enumeration value="hyp6"/>
+			<xs:enumeration value="hyp7"/>
+			<xs:enumeration value="hyp8"/>
+			<xs:enumeration value="hyp9"/>
 			<xs:enumeration value="fine"/>
 			<xs:enumeration value="tors"/>
 			<xs:enumeration value="rtor"/>
