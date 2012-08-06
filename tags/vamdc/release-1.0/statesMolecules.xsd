@@ -256,16 +256,6 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:simpleType name="NuclearSpinIsomerValueType">
-		<xs:restriction base="xs:token">
-			<xs:enumeration value="ortho"/>
-			<xs:enumeration value="meta"/>
-			<xs:enumeration value="para"/>
-			<xs:enumeration value="A"/>
-			<xs:enumeration value="E"/>
-		</xs:restriction>
-	</xs:simpleType>
-
 	<xs:complexType name="SymmetryType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
@@ -286,9 +276,9 @@
 		<xs:complexContent>
 			<xs:extension base="PrimaryType">
 				<xs:sequence>
-					<xs:element name="Name" type="NuclearSpinIsomerValueType" minOccurs="0">
+					<xs:element name="Name" type="xs:string">
 						<xs:annotation><xs:documentation>
-							Spin isomer name, a choice of 'ortho','para' or 'meta'.
+							Spin isomer conventional name, like 'ortho','para','meta','A','E'.
 						</xs:documentation></xs:annotation>
 					</xs:element>
 					<xs:element name="LowestRoVibSym" type="SymmetryType" minOccurs="0">
