@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns="http://vamdc.org/xml/xsams/1.0"
+    xmlns:xsams="http://vamdc.org/xml/xsams/1.0"
+    targetNamespace="http://vamdc.org/xml/xsams/1.0">
+    
+    <xs:include schemaLocation="typesAttributes.xsd"/>
+    <xs:element name="DataOrigins" type="DataOriginsType">
+		<xs:annotation>
+			<xs:documentation>Root element to specify multiple data origin elements,
+			keeping the information on the VAMDC node, request date, query, and returned data versions
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+    
+    <xs:complexType name="DataOriginsType">
+		<xs:sequence>
+			<xs:element name="VamdcNode" type="VamdcNodeOriginType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>VAMDC node from which the document or a part of it was retreived</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+    
+    <xs:complexType name="VamdcNodeOriginType">
+		<xs:annotation><xs:documentation>The description of a VAMDC node generated the document or a part of it in the case of a transformed document</xs:documentation></xs:annotation>
+        <xs:sequence>
+            <xs:element name="IvoaId" type="xs:anyURI" minOccurs="1" maxOccurs="1">
+				<xs:annotation><xs:documentation>The node IVOA identifier, as used in the VAMDC registry</xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element name="queryString" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation><xs:documentation>The VSS query used to obtain the document</xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element name="timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+                <xs:annotation><xs:documentation>The query timestamp</xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element name="version" type="nodeVersionType" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation><xs:documentation>The node-specific version tag, referenced in DataType</xs:documentation></xs:annotation>
+                
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="idOrigin" type="OriginIDType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="nodeVersionType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="idVersion" type="OriginVersionIDType" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+</xs:schema>

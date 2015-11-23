@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XSAMSData xmlns="http://vamdc.org/xml/xsams/1.0"
+ xmlns:nltcs="http://vamdc.org/xml/xsams/1.0/cases/nltcs"
+ xmlns:ctypes="http://vamdc.org/xml/xsams/1.0/cases/commonTypes"
+ xmlns:ltcs="http://vamdc.org/xml/xsams/1.0/cases/ltcs"
+ xmlns:lpos="http://vamdc.org/xml/xsams/1.0/cases/lpos"
+ xmlns:lpcs="http://vamdc.org/xml/xsams/1.0/cases/lpcs"
+ xmlns:ltos="http://vamdc.org/xml/xsams/1.0/cases/ltos"
+ xmlns:hundb="http://vamdc.org/xml/xsams/1.0/cases/hundb"
+ xmlns:gen="http://vamdc.org/xml/xsams/1.0/cases/gen"
+ xmlns:nltos="http://vamdc.org/xml/xsams/1.0/cases/nltos"
+ xmlns:asymos="http://vamdc.org/xml/xsams/1.0/cases/asymos"
+ xmlns:cml="http://www.xml-cml.org/schema"
+ xmlns:stcs="http://vamdc.org/xml/xsams/1.0/cases/stcs"
+ xmlns:sphcs="http://vamdc.org/xml/xsams/1.0/cases/sphcs"
+ xmlns:hunda="http://vamdc.org/xml/xsams/1.0/cases/hunda"
+ xmlns:asymcs="http://vamdc.org/xml/xsams/1.0/cases/asymcs"
+ xmlns:sphos="http://vamdc.org/xml/xsams/1.0/cases/sphos"
+ xmlns:dcs="http://vamdc.org/xml/xsams/1.0/cases/dcs"
+ xmlns:h="http://www.w3.org/1999/xhtml"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 file:/home/doronin/space/doronin/VAMDC/xsams/VAMDC-XSAMS-git/xsams.xsd">
+    <Species>
+        <Molecules>
+            <Molecule speciesID="XTestMol01" originRef="ONTest" versionRef="OVTest131224">
+                <MolecularChemicalSpecies>
+                    <StoichiometricFormula>CO</StoichiometricFormula>
+                    <InChIKey>UGFAIRIUMAVXCW-UHFFFAOYSA-N</InChIKey>
+                </MolecularChemicalSpecies>
+                <MolecularState stateID="STestMol01s1">
+                </MolecularState>
+                <MolecularState stateID="STestMol01s2">
+                </MolecularState>
+                <MolecularState stateID="STestMol01s3">
+                </MolecularState>
+            </Molecule>
+        </Molecules>
+    </Species>
+    <Processes>
+        <Radiative>
+            <RadiativeTransition id="PRTest01" originRef="ONTest" versionRef="OVTest140220">
+                <EnergyWavelength>
+                </EnergyWavelength>
+            </RadiativeTransition>
+            <RadiativeTransition id="PRTest02" originRef="ONTest" versionRef="OVTest131224">
+                <EnergyWavelength>
+                </EnergyWavelength>
+            </RadiativeTransition>
+        </Radiative>
+    </Processes>
+    <DataOrigins>
+        <!-- For a node-generated document, a single VamdcNode DataOrigin element should be present
+        containing the node identifier as registered in the VAMDC registry,
+        the query string used to generate the document,
+        the query date
+        and version tags corresponding to the last modification time of the document elements.
+        
+        originRef and versionRef attributes are added to the XSAMS Primary Type and should be
+        referenced everywhere in the document. The last modification time/version number of the element
+        or sub-elements should be indicated.
+        
+        For merged or processed documents, multiple VAMDCNode elements may be present,
+        containing the information relevant to versions of particular blocks.
+        -->
+        <VamdcNode idOrigin="ONTest">
+            <IvoaId>ivo://vamdc/testNode</IvoaId>
+            <queryString>Select * where MoleculeStoichiometricFormula="CO"</queryString>
+            <timestamp>2015-01-25T12:00:00</timestamp>
+            <version idVersion="OVTest131224">2013-12-24</version>
+            <version idVersion="OVTest140220">2014-02-20</version>
+        </VamdcNode>
+    </DataOrigins>
+    <Sources>
+        <Source sourceID="B01">
+            <Category>book</Category>
+            <Year>2004</Year>
+            <Authors>
+                <Author>
+                    <Name></Name>
+                </Author>
+            </Authors>
+        </Source>
+    </Sources>
+    
+</XSAMSData>

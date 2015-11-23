@@ -28,6 +28,12 @@
 			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="methodRef" type="MethodRefType"/>
+		<xs:attribute name="originRef" type="OriginRefType">
+			<xs:annotation><xs:documentation>Reference to the document origin element, i.e. VAMDC node </xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="versionRef" type="OriginVersionRefType">
+			<xs:annotation><xs:documentation>Reference to a specific version of the document origin element, i.e. VAMDC node </xs:documentation></xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	
 	<xs:complexType name="ChemicalElementType">
@@ -734,6 +740,24 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
+	<xs:simpleType name="OriginIDType">
+		<xs:annotation>
+			<xs:documentation>Identifier of the document origin, referenced everywhere in the document.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="ON.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="OriginVersionIDType">
+		<xs:annotation>
+			<xs:documentation>Identifier of a specific version of the document origin/data, referenced everywhere in the document.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="OV.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<!-- References types definition. All IDREF's should be here.-->
 	<xs:simpleType name="MethodRefType">
 		<xs:annotation>
@@ -798,6 +822,24 @@
 		</xs:annotation>
 		<xs:restriction base="xs:IDREF">
 			<xs:pattern value="V.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="OriginRefType">
+		<xs:annotation>
+			<xs:documentation>Reference to the document origin, referenced everywhere in the document.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="ON.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="OriginVersionRefType">
+		<xs:annotation>
+			<xs:documentation>Reference to the specific version of the document origin/data, referenced everywhere in the document.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="OV.+"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
