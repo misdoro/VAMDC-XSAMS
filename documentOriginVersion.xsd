@@ -42,20 +42,25 @@
 		    A description of the VAMDC node that generated the document
 		</xs:documentation></xs:annotation>
         <xs:sequence>
-            <xs:element name="ivoaId" type="xs:anyURI" minOccurs="1" maxOccurs="1">
+            <xs:element name="IvoaId" type="xs:anyURI" minOccurs="1" maxOccurs="1">
 				<xs:annotation><xs:documentation>The node IVOA identifier, as used in the VAMDC registry</xs:documentation></xs:annotation>
             </xs:element>
-            <xs:element name="queryString" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="QueryString" type="nodeQueryType" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation>The VSS query used to obtain the document.
 				Multiple elements in case of a merged document.</xs:documentation></xs:annotation>
             </xs:element>
-            <xs:element name="timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1">
-                <xs:annotation><xs:documentation>The query timestamp</xs:documentation></xs:annotation>
-            </xs:element>
-            <xs:element name="version" type="nodeVersionType" minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="Version" type="nodeVersionType" minOccurs="1" maxOccurs="unbounded">
                 <xs:annotation><xs:documentation>The node-specific version tag, referenced in DataType</xs:documentation></xs:annotation>
             </xs:element>
         </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="nodeQueryType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="timestamp" type="xs:dateTime" use="required"/>        
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
     
     <xs:complexType name="nodeVersionType">
@@ -74,7 +79,7 @@
     
     <xs:complexType name="vamdcProcessorOriginType">
         <xs:sequence>
-            <xs:element name="ivoaId" type="xs:anyURI" minOccurs="1" maxOccurs="1">
+            <xs:element name="IvoaId" type="xs:anyURI" minOccurs="1" maxOccurs="1">
 				<xs:annotation><xs:documentation>
 				    The processor IVOA identifier, as used in the VAMDC registry</xs:documentation></xs:annotation>
             </xs:element>
@@ -83,20 +88,20 @@
                     VAMDC node from which parts of the document were retrieved before processing</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="comment" type="xs:string"/>
+            <xs:element name="Comment" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
     
     <xs:complexType name="genericOriginType">
         <xs:sequence>
             <xs:element name="SoftwareName" type="xs:string"/>
-            <xs:element name="ivoaId" type="xs:anyURI" minOccurs="0">
+            <xs:element name="IvoaId" type="xs:anyURI" minOccurs="0">
 				<xs:annotation><xs:documentation>
 				    The software IVOA identifier, as used in the VAMDC registry
 				</xs:documentation></xs:annotation>
             </xs:element>
             <xs:element name="HomepageURL" type="xs:anyURI"/>
-            <xs:element name="additionalInfo" type="xs:string"/>            
+            <xs:element name="AdditionalInfo" type="xs:string"/>            
         </xs:sequence>
     </xs:complexType>
     
