@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XSAMSData xmlns="http://vamdc.org/xml/xsams/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 file:/home/doronin/space/doronin/VAMDC/xsams/VAMDC-XSAMS-git/xsams.xsd">
+    <Species><Atoms>
+        <Atom>
+            <ChemicalElement>
+                <NuclearCharge>6</NuclearCharge>
+            </ChemicalElement>
+            <Isotope>
+                <Ion speciesID="XCarb01" versionRef="OVBAS1">
+                    <IonCharge>0</IonCharge>
+                    <AtomicState stateID="SCarbGS" versionRef="OVBAS1"></AtomicState>
+                    <InChIKey>UHFFOYSA-N</InChIKey>
+                </Ion>
+            </Isotope>
+        </Atom>
+    </Atoms>
+    <Molecules>
+        <Molecule speciesID="XMol1" versionRef="OVBAS1">
+            <MolecularChemicalSpecies>
+                <StoichiometricFormula>CStRaNGe</StoichiometricFormula>
+                <InChIKey>UHFFOYSA-N</InChIKey>
+            </MolecularChemicalSpecies>
+            <MolecularState stateID="SMol1" versionRef="OVBAS1"></MolecularState>
+        </Molecule>
+    </Molecules>
+    </Species>
+    <Processes>
+        <Radiative>
+           <RadiativeTransition id="PRT1" versionRef="OVBAS1">
+               <EnergyWavelength></EnergyWavelength>
+           </RadiativeTransition>
+            
+        </Radiative>
+    </Processes>
+    <Sources>
+        <Source sourceID="BUNNY1">
+            <Category>book</Category>
+            <Year>1968</Year>
+            <Authors>
+                <Author>
+                    <Name>Name</Name>
+                </Author>
+            </Authors>
+        </Source>
+    </Sources>
+    <DataOrigins>
+        <VamdcNode>
+            <IvoaId>ivo://test/</IvoaId>
+            <QueryString timestamp="2015-12-05T12:00:01">select * from species</QueryString>
+            <Version idVersion="OVBAS1"></Version>
+        </VamdcNode>
+        
+    </DataOrigins>
+</XSAMSData>
