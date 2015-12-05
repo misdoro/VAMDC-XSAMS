@@ -50,7 +50,7 @@
 				Multiple elements in case of a merged document.</xs:documentation></xs:annotation>
             </xs:element>
             <xs:element name="Version" type="nodeVersionType" minOccurs="1" maxOccurs="unbounded">
-                <xs:annotation><xs:documentation>The node-specific version tag, referenced in DataType</xs:documentation></xs:annotation>
+                <xs:annotation><xs:documentation>The node-specific version tag</xs:documentation></xs:annotation>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
@@ -101,7 +101,10 @@
 				</xs:documentation></xs:annotation>
             </xs:element>
             <xs:element name="HomepageURL" type="xs:anyURI"/>
-            <xs:element name="AdditionalInfo" type="xs:string"/>            
+            <xs:element name="AdditionalInfo" type="xs:string"/>         
+            <xs:element name="Version" type="nodeVersionType" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation><xs:documentation>A version tag</xs:documentation></xs:annotation>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
     
