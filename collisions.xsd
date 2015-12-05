@@ -57,6 +57,7 @@
 					<xs:element name="DataSets" type="DataSetsType"/>
 				</xs:sequence>
 				<xs:attribute name="id" type="ProcessIDType" use="required"/>
+				<xs:attribute name="versionRef" type="OriginVersionRefType" use="optional"></xs:attribute>
 				<xs:attribute name="groupLabel" type="xs:string"/>
 			</xs:extension>
 		</xs:complexContent>

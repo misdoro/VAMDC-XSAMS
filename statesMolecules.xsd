@@ -58,6 +58,7 @@
 					</xs:element>
 				</xs:sequence>
 				<xs:attribute name="speciesID" type="SpeciesIDType" use="required"/>
+				<xs:attribute name="versionRef" type="OriginVersionRefType" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -184,6 +185,7 @@
 					<xs:element name="StateExpansion" type="StateExpansionType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute name="stateID" type="StateIDType" use="required"/>
+				<xs:attribute name="versionRef" type="OriginVersionRefType" use="optional"/>
 				<xs:attribute name="fullyAssigned" type="xs:boolean" use="optional"/>
 				<xs:attribute name="auxillary" type="xs:boolean" use="optional" default="false"/>
 			</xs:extension>
