@@ -28,7 +28,7 @@
     </Species>
     <Processes>
         <Radiative>
-           <RadiativeTransition id="PRT1" versionRef="OVBAS1">
+           <RadiativeTransition id="PRT1" versionRef="OVANN1">
                <EnergyWavelength></EnergyWavelength>
            </RadiativeTransition>
             
@@ -53,6 +53,11 @@
                 <QueryString timestamp="2015-12-05T12:00:01">select * from species</QueryString>
                 <QueryString timestamp="2015-12-05T12:00:02">select * from species</QueryString>
                 <Version idVersion="OVBAS1"></Version>
+            </VamdcNode>
+            <VamdcNode>
+                <IvoaId>ivo://vamdc/anothernode</IvoaId>
+                <QueryString timestamp="2012-01-02T12:34:56">select some old data</QueryString>
+                <Version idVersion="OVANN1"></Version>
             </VamdcNode>
             <Comment></Comment>
         </VamdcProcessor>
