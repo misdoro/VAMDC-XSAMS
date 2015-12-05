@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns="http://vamdc.org/xml/xsams/1.0"
+    xmlns:xsams="http://vamdc.org/xml/xsams/1.0"
+    targetNamespace="http://vamdc.org/xml/xsams/1.0">
+<xs:annotation><xs:documentation>
+    Contains the description of XSAMS Document origin and data version information
+</xs:documentation></xs:annotation>
+    <xs:include schemaLocation="typesAttributes.xsd"/>
+    
+    <xs:element name="DataOrigins" type="DataOriginsType">
+		<xs:annotation>
+			<xs:documentation>Root element to specify multiple data origin elements,
+			keeping the information on the VAMDC node, request date, query, and returned data versions
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+    
+     <xs:complexType name="DataOriginsType">
+		<xs:choice>
+			<xs:element name="VamdcNode" type="vamdcNodeOriginType" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation>
+				    VAMDC node from which the document or a part of it was retrieved</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		    <xs:element name="VamdcProcessor" type="vamdcProcessorOriginType" minOccurs="0" maxOccurs="1">
+		        <xs:annotation><xs:documentation>
+				    Registered VAMDC processor generated the document</xs:documentation>
+				</xs:annotation>
+		    </xs:element>
+		    <xs:element name="GenericOrigin" type="genericOriginType" minOccurs="0" maxOccurs="1">
+		        <xs:annotation><xs:documentation>
+		            A non-registered
+		        </xs:documentation></xs:annotation>
+		    </xs:element>
+		</xs:choice>
+	</xs:complexType>
+    
+    <xs:complexType name="vamdcNodeOriginType">
+		<xs:annotation><xs:documentation>
+		    A description of the VAMDC node that generated the document
+		</xs:documentation></xs:annotation>
+        <xs:sequence>
+            <xs:element name="ivoaId" type="xs:anyURI" minOccurs="1" maxOccurs="1">
+				<xs:annotation><xs:documentation>The node IVOA identifier, as used in the VAMDC registry</xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element name="queryString" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation>The VSS query used to obtain the document.
+				Multiple elements in case of a merged document.</xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element name="timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+                <xs:annotation><xs:documentation>The query timestamp</xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element name="version" type="nodeVersionType" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation><xs:documentation>The node-specific version tag, referenced in DataType</xs:documentation></xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="nodeVersionType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="idVersion" type="OriginVersionIDType" use="required"/>
+                <xs:attribute name="global" type="xs:boolean" use="optional" default="false">
+                    <xs:annotation><xs:documentation>
+                        Mark the version tag as global for all the elements of the document.
+                        If true, only one version element should be exported.
+                    </xs:documentation></xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:complexType name="vamdcProcessorOriginType">
+        <xs:sequence>
+            <xs:element name="ivoaId" type="xs:anyURI" minOccurs="1" maxOccurs="1">
+				<xs:annotation><xs:documentation>
+				    The processor IVOA identifier, as used in the VAMDC registry</xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element name="VamdcNode" type="vamdcNodeOriginType" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation><xs:documentation>
+                    VAMDC node from which parts of the document were retrieved before processing</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="comment" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="genericOriginType">
+        <xs:sequence>
+            <xs:element name="SoftwareName" type="xs:string"/>
+            <xs:element name="ivoaId" type="xs:anyURI" minOccurs="0">
+				<xs:annotation><xs:documentation>
+				    The software IVOA identifier, as used in the VAMDC registry
+				</xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element name="HomepageURL" type="xs:anyURI"/>
+            <xs:element name="additionalInfo" type="xs:string"/>            
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>

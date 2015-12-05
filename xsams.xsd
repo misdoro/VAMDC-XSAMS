@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	elementFormDefault="qualified" attributeFormDefault="unqualified"
-	xmlns="http://vamdc.org/xml/xsams/1.0"
-	xmlns:xsams="http://vamdc.org/xml/xsams/1.0"
-	targetNamespace="http://vamdc.org/xml/xsams/1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+	attributeFormDefault="unqualified" xmlns="http://vamdc.org/xml/xsams/1.0"
+	xmlns:xsams="http://vamdc.org/xml/xsams/1.0" targetNamespace="http://vamdc.org/xml/xsams/1.0">
 	<xs:include schemaLocation="./methods.xsd"/>
 	<xs:include schemaLocation="./sources.xsd"/>
 	<xs:include schemaLocation="./functions.xsd"/>
@@ -16,11 +14,12 @@
 	<xs:include schemaLocation="./radiative.xsd"/>
 	<xs:include schemaLocation="./nonradiative.xsd"/>
 	<xs:include schemaLocation="./collisions.xsd"/>
-	
+	<xs:include schemaLocation="./documentOriginVersion.xsd"/>
+
 	<!--Import all case namespaces-->
 	<xs:include schemaLocation="./cases/import.xsd"/>
-	
-	
+
+
 	<xs:element name="XSAMSData" type="XSAMSDataType">
 		<xs:annotation>
 			<xs:documentation>XML schema for description of atomic, molecular, and particle-solid-interaction processes</xs:documentation>
@@ -51,6 +50,7 @@
 					<xs:documentation>Any relevant comments</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element ref="DataOrigins" minOccurs="0"/>
 		</xs:all>
 	</xs:complexType>
 	<xs:complexType name="ProcessesType">

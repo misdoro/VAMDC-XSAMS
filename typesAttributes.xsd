@@ -734,6 +734,16 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
+	<xs:simpleType name="OriginVersionIDType">
+		<xs:annotation>
+			<xs:documentation>Identifier of a specific version of the document origin/data,
+				referenced from the main states and process elements.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="OV.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<!-- References types definition. All IDREF's should be here.-->
 	<xs:simpleType name="MethodRefType">
 		<xs:annotation>
@@ -798,6 +808,16 @@
 		</xs:annotation>
 		<xs:restriction base="xs:IDREF">
 			<xs:pattern value="V.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="OriginVersionRefType">
+		<xs:annotation>
+			<xs:documentation>Reference to the specific version of the document origin/data,
+				used in the main states and process elements.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:IDREF">
+			<xs:pattern value="OV.+"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
